@@ -17,7 +17,7 @@ ___
 # Cartpole-vl
 ## 1. Import library & Parameters
 ___
-```
+```python
 import gym
 import collections
 import random
@@ -41,7 +41,7 @@ batch_size = 32
 
 ## 2. ReplayBuffer()
 *지금까지 데이터를 저장(buffer)했다가 랜덤하게 추출해서 연관성이 적은 데이터를 사용*
-```
+```python
 class ReplayBuffer():
     def __init__(self):
         self.buffer = collections.deque(maxlen=buffer_limit)
@@ -81,7 +81,7 @@ class ReplayBuffer():
 
 ## 3. Qnet(nn.Module)
 *여러 개의 레이어로 구성된 뉴럴 네트워크, pytorch에서 레이어를 구성할 때는 nn.Module을 상속받아야 된다.*
-```
+```python
 class Qnet(nn.Module):
     def __init__(self):
         super(Qnet, self).__init__()
@@ -113,7 +113,7 @@ class Qnet(nn.Module):
 
 ## 4. 
 
-```
+```python
 def train(q, q_target, memory, optimizer):
     for i in range(10):
         s,a,r,s_prime,done_mask = memory.sample(batch_size)
