@@ -12,7 +12,7 @@ thumbnail: /assets/img/posts/code.jpg
 ___
 - CNN, Experience replay, Target network 세가지 특징으로 구성되어 있다.
   
-<br/>
+
 
 # Cartpole-vl
 ___
