@@ -4,7 +4,8 @@ title:  "DQN(Deep Q-Network) & Cartploe-v1"
 summary: DQN 요약  & Cartpole 코드 리뷰
 author: yeop-giraffe
 date: '2022-08-02'
-category: [Coding, RL]
+category: [Coding, RL]\
+tags: [DQN]
 thumbnail: /assets/img/posts/code.jpg
 ---
 
