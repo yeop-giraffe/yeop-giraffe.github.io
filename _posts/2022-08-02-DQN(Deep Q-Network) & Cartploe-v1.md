@@ -111,8 +111,8 @@ class Qnet(nn.Module):
 - sample_action : 랜덤 값 반환
 </br></br>
 
-## 4. 
-
+## 4.train(q, q_target, memory, optimizer) 
+*학습하는 과정, Q(quality)는 행동의 보상의 가치라는 뜻으로 Q(s,a)는 특정 state에서 action을 취할 때 그 행동이 갖고 있는 가치를 반환하는 함수를 의미한다.*
 ```python
 def train(q, q_target, memory, optimizer):
     for i in range(10):
@@ -127,4 +127,17 @@ def train(q, q_target, memory, optimizer):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
+```
+- memory.sample(batch_size) : batch_size(32)크기의 sample을 추출해서 각 변수에 할당
+- torch.gather() : 
+- torch.unsqueeze(input, dim) : input(tensor)을 dim(int)크기의 dimension의 텐서로 변환
+```example
+>>> x = torch.tensor([1, 2, 3, 4])
+>>> torch.unsqueeze(x, 0)
+tensor([[ 1,  2,  3,  4]])
+>>> torch.unsqueeze(x, 1)
+tensor([[ 1],
+        [ 2],
+        [ 3],
+        [ 4]])
 ```
