@@ -11,12 +11,13 @@ thumbnail: /assets/img/posts/code.jpg
 # DQN(Deep Q-Network)
 ___
 - CNN, Experience replay, Target network 세가지 특징으로 구성되어 있다.
+  
 <br/></br>
 
 
 # Cartpole-vl
-## 1. Import library & Parameters
 ___
+## 1. Import library & Parameters
 ```python
 import gym
 import collections
