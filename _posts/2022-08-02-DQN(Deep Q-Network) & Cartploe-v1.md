@@ -5,7 +5,7 @@ summary: DQN 요약  & Cartpole 코드 리뷰
 author: yeop-giraffe
 date: '2022-08-02'
 category: [Coding, RL]
-tags: [dqn]
+tags: dqn
 thumbnail: /assets/img/posts/code.jpg
 ---
 
