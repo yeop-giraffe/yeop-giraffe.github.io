@@ -10,8 +10,8 @@ thumbnail: /assets/img/posts/code.jpg
 
 # DQN(Deep Q-Network)
 ___
-##  CNN, Experience replay, Target network 세가지 특징으로 구성되어 있다.
-<br/>
+- CNN, Experience replay, Target network 세가지 특징으로 구성되어 있다.
+<br/></br>
 
 
 # Cartpole-vl
@@ -37,7 +37,7 @@ batch_size = 32
 - collections : deque 사용
 - buffer_limit : 데이터 저장 limit
 - batch_size : 연산 한번에 들어가는 데이터의 크기, 1 batch_size에 해당하는 데이터 셋을 mini_batch라고 한다.
-<br/><br/>
+<br/>
 
 ## 2. ReplayBuffer()
 *지금까지 데이터를 저장(buffer)했다가 랜덤하게 추출해서 연관성이 적은 데이터를 사용*
@@ -77,7 +77,7 @@ class ReplayBuffer():
   * tensor : array, matrix와 유사한 자료구조, 3차원 이상 의미
   * tensor 반환
 - size : buffer 크기 변환
-<br/><br/>
+<br/>
 
 ## 3. Qnet(nn.Module)
 *여러 개의 레이어로 구성된 뉴럴 네트워크, pytorch에서 레이어를 구성할 때는 nn.Module을 상속받아야 된다.*
@@ -109,7 +109,7 @@ class Qnet(nn.Module):
   * relu : Rectified Linear Unit의 약자로 0보다 작으면 0, 0보다 크면 입력값 그대로를 반환
   * 데이터가 layers를 통과, 4차원->128차원->2차원
 - sample_action : 랜덤 값 반환
-</br></br>
+</br>
 
 ## 4.train(q, q_target, memory, optimizer) 
 *학습하는 과정, Q(quality)는 행동의 보상의 가치라는 뜻으로 Q(s,a)는 특정 state에서 action을 취할 때 그 행동이 갖고 있는 가치를 반환하는 함수를 의미한다.*
@@ -131,13 +131,70 @@ def train(q, q_target, memory, optimizer):
 - memory.sample(batch_size) : batch_size(32)크기의 sample을 추출해서 각 변수에 할당
 - torch.gather() : 
 - torch.unsqueeze(input, dim) : input(tensor)을 dim(int)크기의 dimension의 텐서로 변환
-```example
->>> x = torch.tensor([1, 2, 3, 4])
->>> torch.unsqueeze(x, 0)
-tensor([[ 1,  2,  3,  4]])
->>> torch.unsqueeze(x, 1)
-tensor([[ 1],
-        [ 2],
-        [ 3],
-        [ 4]])
+  
+    Example
+    >  x = torch.tensor([1, 2, 3, 4])</br>
+    > 
+    > torch.unsqueeze(x, 0)</br>
+    > -> tensor([[ 1,  2,  3,  4]])</br>
+    >
+    >  torch.unsqueeze(x, 1)</br>
+    > -> tensor([[ 1], [ 2], [ 3], [ 4]])
+- loss : smooth_l1_loss를 사용해 손실 값 계산
+</br>
+
+## 5. main()
+  *코드 실행*
+
+```python
+def main():
+    env = gym.make('CartPole-v1')
+    q = Qnet() # Neural network 통과
+    q_target = Qnet() # Neural network 통과
+    q_target.load_state_dict(q.state_dict())
+    memory = ReplayBuffer()
+
+    print_interval = 20
+    score = 0.0  
+    optimizer = optim.Adam(q.parameters(), lr=learning_rate)
+
+    for n_epi in range(10000):
+        epsilon = max(0.01, 0.08 - 0.01*(n_epi/200)) #Linear annealing from 8% to 1%
+        s = env.reset()
+        done = False
+
+        while not done:
+            a = q.sample_action(torch.from_numpy(s).float(), epsilon)      
+            s_prime, r, done, info = env.step(a)
+            done_mask = 0.0 if done else 1.0
+            memory.put((s,a,r/100.0,s_prime, done_mask))
+            s = s_prime
+
+            score += r
+            if done:
+                break
+            
+        if memory.size()>2000:
+            train(q, q_target, memory, optimizer)
+
+        if n_epi%print_interval==0 and n_epi!=0:
+            q_target.load_state_dict(q.state_dict())
+            print("n_episode :{}, score : {:.1f}, n_buffer : {}, eps : {:.1f}%".format(
+                                                            n_epi, score/print_interval, memory.size(), epsilon*100))
+            score = 0.0
+    env.close()
+
+if __name__ == '__main__':
+    main()
+
 ```
+
+- q, q_target : Neural network 통과
+- load_state_dict(), state_dict() : 각각 불러오기, 저장하기를 의미하며 q_target을 저장, 불러오기 진행
+- optimizer :
+- env.reset() : 새로운 환경 불러오기
+- q.sample.action : ???
+- env.step(a) : a라는 행동을 취했을 때 획득한 환경 정보 리턴
+- memory.put() & s = s_prime : 메모리에 step의 정보를 입력하고 s를 s'으로 변경
+- memory.size()>2000: 메모리 사이즈가 2000개가 넘을 때만 학습 진행, 샘플이 너무 적으면 안됨 
+
