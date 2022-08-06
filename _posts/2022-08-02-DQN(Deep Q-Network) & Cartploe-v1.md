@@ -16,8 +16,6 @@ ___
 - 2013년 "Playing Atari with Deep Reinforcement Learning"이라는 주제로 DeepMind에서 DQN을 처음 제시했다.
 - CNN, Experience replay, Target network 세가지 특징으로 구성되어 있다.
 
-</br>
-
 ## 특징점
 ### 1) CNN
 - 이미지 처리에 뛰어난 알고리즘
@@ -34,7 +32,6 @@ ___
 - DQN에서는 target value를 기존 Q-network와 동일하게 복제를 하여 main Q-network와 target network로 구성을 한다. 이후 C번의 step동안 target value를 고정시켜서 모델을 업데이트하고 그 이후 새롭게 target value를 설정하여 다시 반복하는 과정을 만든다.
   
 
-</br>
   
 
 # Cartpole-v1
