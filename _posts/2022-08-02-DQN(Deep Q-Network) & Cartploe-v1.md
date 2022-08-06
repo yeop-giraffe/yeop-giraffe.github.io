@@ -15,6 +15,7 @@ ___
 - 기존 Q-learning의 경우 테이블에 value를 저장하여 학습을 진행하기 때문에 state와 action의 경우가 많아지면 테이블로 표현하는 것이 불가능해진다. 이러한 한계를 극복하기 위해 딥러닝을 사용한다.
 - 2013년 "Playing Atari with Deep Reinforcement Learning"이라는 주제로 DeepMind에서 DQN을 처음 제시했다.
 - CNN, Experience replay, Target network 세가지 특징으로 구성되어 있다.
+
 </br>
 
 ## 특징점
@@ -32,10 +33,9 @@ ___
 - 기존 Q-network의 경우, target value는 동일한 시점의 파라미터로 구성되어 있었다. 이는 파라미터가 업데이트됨에 따라 action, target value가 동시에 변화하여 수렴하지 못하는 문제가 발생했다.
 - DQN에서는 target value를 기존 Q-network와 동일하게 복제를 하여 main Q-network와 target network로 구성을 한다. 이후 C번의 step동안 target value를 고정시켜서 모델을 업데이트하고 그 이후 새롭게 target value를 설정하여 다시 반복하는 과정을 만든다.
   
+
 </br>
   
-  
-
 
 # Cartpole-v1
 ___
