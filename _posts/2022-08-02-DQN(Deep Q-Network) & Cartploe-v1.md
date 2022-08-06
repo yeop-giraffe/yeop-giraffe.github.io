@@ -11,11 +11,33 @@ thumbnail: /assets/img/posts/code.jpg
 
 # DQN(Deep Q-Network)
 ___
+## Q-learning 차이점
+- 기존 Q-learning의 경우 테이블에 value를 저장하여 학습을 진행하기 때문에 state와 action의 경우가 많아지면 테이블로 표현하는 것이 불가능해진다. 이러한 한계를 극복하기 위해 딥러닝을 사용한다.
+- 2013년 "Playing Atari with Deep Reinforcement Learning"이라는 주제로 DeepMind에서 DQN을 처음 제시했다.
 - CNN, Experience replay, Target network 세가지 특징으로 구성되어 있다.
+</br>
+
+## 특징점
+### 1) CNN
+- 이미지 처리에 뛰어난 알고리즘
+- CNN의 입력으로 state만을 받으며 출력으로 Q-value를 얻는다. 
+
+### 2) Experience Replay
+- experience를 버퍼에 저장을하고 나중에 랜덤하게 추출하여 학습을 업데이트하는데 사용한다.
+- Data efficiency 증가 : 하나의 데이터를 여러번 업데이트에 사용 가능
+- Sample correlation 감소 :  랜덤으로 샘플을 추출하기 때문에 데이터 사이의 연관 감소
+- Data distribution 해결 : on-policy의 경우 현재의 파라미터로 인해 policy와 training data가 변하는 문제가 있는데 Ex replay로 인해 평균화 되기 때문에 문제가 발생하지 않는다.
+
+### 3) Target Network
+- 기존 Q-network의 경우, target value는 동일한 시점의 파라미터로 구성되어 있었다. 이는 파라미터가 업데이트됨에 따라 action, target value가 동시에 변화하여 수렴하지 못하는 문제가 발생했다.
+- DQN에서는 target value를 기존 Q-network와 동일하게 복제를 하여 main Q-network와 target network로 구성을 한다. 이후 C번의 step동안 target value를 고정시켜서 모델을 업데이트하고 그 이후 새롭게 target value를 설정하여 다시 반복하는 과정을 만든다.
+  
+</br>
+  
   
 
 
-# Cartpole-vl
+# Cartpole-v1
 ___
 ## 1. Import library & Parameters
 ```python
