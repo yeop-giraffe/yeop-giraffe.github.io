@@ -8,15 +8,15 @@ category: [Coding, RL]
 tags: dqn
 thumbnail: /assets/img/posts/code.jpg
 ---
-
+___
 # DQN(Deep Q-Network)
 ___
-## Q-learning 차이점
+## 1. Q-learning 차이점
 - 기존 Q-learning의 경우 테이블에 value를 저장하여 학습을 진행하기 때문에 state와 action의 경우가 많아지면 테이블로 표현하는 것이 불가능해진다. 이러한 한계를 극복하기 위해 딥러닝을 사용한다.
 - 2013년 "Playing Atari with Deep Reinforcement Learning"이라는 주제로 DeepMind에서 DQN을 처음 제시했다.
 - CNN, Experience replay, Target network 세가지 특징으로 구성되어 있다.
 
-## 특징점
+## 2. 특징점
 ### 1) CNN
 - 이미지 처리에 뛰어난 알고리즘
 - CNN의 입력으로 state만을 받으며 출력으로 Q-value를 얻는다. 
@@ -25,15 +25,15 @@ ___
 - experience를 버퍼에 저장을하고 나중에 랜덤하게 추출하여 학습을 업데이트하는데 사용한다.
 - Data efficiency 증가 : 하나의 데이터를 여러번 업데이트에 사용 가능
 - Sample correlation 감소 :  랜덤으로 샘플을 추출하기 때문에 데이터 사이의 연관 감소
-- Data distribution 해결 : on-policy의 경우 현재의 파라미터로 인해 policy와 training data가 변하는 문제가 있는데 Ex replay로 인해 평균화 되기 때문에 문제가 발생하지 않는다.
+- Data distribution 해결 : on-policy의 경우 현재의 파라미터로 인해 policy와 training data가 변하는 문제가 있는데 Experience replay로 인해 평균화 되기 때문에 문제가 발생하지 않는다.
 
 ### 3) Target Network
 - 기존 Q-network의 경우, target value는 동일한 시점의 파라미터로 구성되어 있었다. 이는 파라미터가 업데이트됨에 따라 action, target value가 동시에 변화하여 수렴하지 못하는 문제가 발생했다.
 - DQN에서는 target value를 기존 Q-network와 동일하게 복제를 하여 main Q-network와 target network로 구성을 한다. 이후 C번의 step동안 target value를 고정시켜서 모델을 업데이트하고 그 이후 새롭게 target value를 설정하여 다시 반복하는 과정을 만든다.
   
-
+<br/>
   
-
+___
 # Cartpole-v1
 ___
 ## 1. Import library & Parameters
@@ -129,7 +129,7 @@ class Qnet(nn.Module):
   * relu : Rectified Linear Unit의 약자로 0보다 작으면 0, 0보다 크면 입력값 그대로를 반환
   * 데이터가 layers를 통과, 4차원->128차원->2차원
 - sample_action : 랜덤 값 반환
-</br>
+<br/>
 
 ## 4.train(q, q_target, memory, optimizer) 
 *학습하는 과정, Q(quality)는 행동의 보상의 가치라는 뜻으로 Q(s,a)는 특정 state에서 action을 취할 때 그 행동이 갖고 있는 가치를 반환하는 함수를 의미한다.*
@@ -149,19 +149,19 @@ def train(q, q_target, memory, optimizer):
         optimizer.step()
 ```
 - memory.sample(batch_size) : batch_size(32)크기의 sample을 추출해서 각 변수에 할당
-- torch.gather() : 
+- torch.gather(1,a) : input으로 q_out을 받고 1(dim)차원의 기준에서 a(index)로 입력텐서를 모아준다.
 - torch.unsqueeze(input, dim) : input(tensor)을 dim(int)크기의 dimension의 텐서로 변환
   
     Example
-    >  x = torch.tensor([1, 2, 3, 4])</br>
+    >  x = torch.tensor([1, 2, 3, 4])<br/>
     > 
-    > torch.unsqueeze(x, 0)</br>
-    > -> tensor([[ 1,  2,  3,  4]])</br>
+    > torch.unsqueeze(x, 0)<br/>
+    > -> tensor([[ 1,  2,  3,  4]])<br/>
     >
-    >  torch.unsqueeze(x, 1)</br>
+    >  torch.unsqueeze(x, 1)<br/>
     > -> tensor([[ 1], [ 2], [ 3], [ 4]])
 - loss : smooth_l1_loss를 사용해 손실 값 계산
-</br>
+<br/>
 
 ## 5. main()
   *코드 실행*
@@ -211,10 +211,9 @@ if __name__ == '__main__':
 
 - q, q_target : Neural network 통과
 - load_state_dict(), state_dict() : 각각 불러오기, 저장하기를 의미하며 q_target을 저장, 불러오기 진행
-- optimizer :
+- optimizer : lr(learning rate)로 줄여나가면서 차이를 줄여 나가는 과정
 - env.reset() : 새로운 환경 불러오기
-- q.sample.action : ???
+- q.sample.action : epsilon의 확률로 랜덤 탐험
 - env.step(a) : a라는 행동을 취했을 때 획득한 환경 정보 리턴
 - memory.put() & s = s_prime : 메모리에 step의 정보를 입력하고 s를 s'으로 변경
 - memory.size()>2000: 메모리 사이즈가 2000개가 넘을 때만 학습 진행, 샘플이 너무 적으면 안됨 
-
