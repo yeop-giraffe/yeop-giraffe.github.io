@@ -9,12 +9,14 @@ tag: error
 thumbnail: /assets/img/posts/error_message.png
 ---
 
-# 1. rror messasge
-  File "/home/hms_yeop/Desktop/yolov5/utils/dataloaders.py", line 339, in __init__
+# 1. Error messasge
+```terminal
+  File "/home/hms_yeop/Desktop/yolov5/utils/dataloaders.py", line 339, in __init__ 
     assert cap.isOpened(), f'{st}Failed to open {s}'
 AssertionError: 1/1: 0... Failed to open 0
+```
 
-![error_code](/assets/img/posts/error_message.png){:style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }
+![error_code](/assets/img/posts/error_message.png){:style="border:1px solid #eaeaea; border-radius: 3px; padding: 0px;" }
 
 # 2. Solution
 ## 1) Connection test
@@ -24,14 +26,14 @@ v4l2-ctl --all
 - Driver Info에서 Card type : Video Capture #의 숫자 확인
 
 ## 2) yolov5 실행
-```
+```terminal
 python path/to/detect.py --weights yolov5s.pt --source 0
 ```
 - source 0 대신 위에서 확인한 숫자# 넣기
 - -- source #
 
 ## 3) opencv 확인(*yolov5 실행 안될 시)
-```
+```terminal
 import cv2
 
 capture = cv2.VideoCapture(4)
