@@ -10,7 +10,7 @@ thumbnail: /assets/img/posts/code.jpg
 ---
 
 # DQN(Deep Q-Network)
-
+___
 
 ## 1. Q-learning 차이점
 - 기존 Q-learning의 경우 테이블에 value를 저장하여 학습을 진행하기 때문에 state와 action의 경우가 많아지면 테이블로 표현하는 것이 불가능해진다. 이러한 한계를 극복하기 위해 딥러닝을 사용한다.
