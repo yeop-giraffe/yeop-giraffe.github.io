@@ -1,15 +1,18 @@
 ---
 layout: post
-title:  "can't open camera by index_error fix"
+title:  "[Error_fix] yolov5, can't open camera by index"
 summary: yolov5 error fix
 author: yeop-giraffe
 date: '2022-08-10'
-category: Drone
+category: [Drone, yolov5]
 tag: error
 thumbnail: /assets/img/posts/error_message.png
 ---
 
 # 1. Error messasge
+os : ubuntu 20.04 <br/>
+device : realsense d435i
+
 ```terminal
   File "/home/hms_yeop/Desktop/yolov5/utils/dataloaders.py", line 339, in __init__ 
     assert cap.isOpened(), f'{st}Failed to open {s}'
