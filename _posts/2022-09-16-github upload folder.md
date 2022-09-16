@@ -23,11 +23,22 @@ $ git remote -v
 $ git push origin main
 ```
 ## 2-1. (Error) Author identity unknown 
+git commit -m "commit log"에서 발생<br/>
 아래 명령어 중 하나 입력
 ```terminal
 $ git config --global user.email "email address"
 $ git config --global user.name "user name"
 ```
+
+## 2-2. (Error) fatal: 'origin' does not appear to be a git repository
+Git push origin main에서 발생<br/>
+```terminal
+$ git remote rm origin  //연결 해제
+$ git remote add origin "git repository address"  //재연결
+$ git push origin main  //reject 오류: git push origin +main
+```
+
+
 
 
 
