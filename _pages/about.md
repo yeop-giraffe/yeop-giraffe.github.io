@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info:
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 
 announcements:
@@ -29,3 +29,5 @@ I am a mechanical engineer focused on robotics, intelligent mobility, and human-
 I received my M.S. in Mechanical Engineering with an integrated major in Intelligent Mobility from Korea University, where I worked in the Human-Machine Systems Lab on intuitive control and monocular-vision interfaces for disaster response UAVs.
 
 My current work at Samsung Electronics focuses on mechanism design and production-quality engineering for robotic vacuum cleaner mop modules. I am especially interested in soft wearable robots, exoskeletons, multimodal sensing, and user-specific adaptation algorithms.
+
+For more details, please see my [CV](/cv/).
