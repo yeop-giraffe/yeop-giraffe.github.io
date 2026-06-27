@@ -18,6 +18,7 @@ if git diff --cached --quiet; then
 fi
 
 git commit -m "${message}"
+branch="$(git branch --show-current)"
 
 askpass="$(mktemp)"
 trap 'rm -f "${askpass}"' EXIT
@@ -32,4 +33,4 @@ esac
 ASKPASS
 chmod 700 "${askpass}"
 
-GIT_ASKPASS="${askpass}" GITHUB_TOKEN_FILE="${token_file}" GIT_TERMINAL_PROMPT=0 git push origin master
+GIT_ASKPASS="${askpass}" GITHUB_TOKEN_FILE="${token_file}" GIT_TERMINAL_PROMPT=0 git push -u origin "${branch}"
