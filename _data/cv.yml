@@ -16,10 +16,6 @@ cv:
     countryCode: KR
 
   sections:
-    Research Interests:
-      - name: Wearable and mobile robotics
-        summary: Wearable robots, soft wearable robots, exoskeleton robots, multimodal sensing, and user-specific adaptation algorithms.
-
     Education:
       - institution: Korea University
         location: Seoul, Republic of Korea
@@ -188,23 +184,19 @@ cv:
         date: 2020-06
         summary: Developed drone education content for students.
 
-    Teaching:
-      - institution: Korea University
-        position: Teaching Assistant, Dynamics
-        start_date: 2024-09
-        end_date: 2024-11
-        highlights:
-          - Explained Adams system simulation tools for building two-link manipulators.
-
-      - institution: Korea University
-        position: Teaching Assistant, Robotics
-        start_date: 2023-03
-        end_date: 2024-06
-        highlights:
-          - Explained Adams simulation tools, Raspberry Pi tutorials, and DC motor PID control.
-
     Skills:
-      - label: Hardware
-        details: 3D CAD (NX, Fusion 360), rapid prototyping, laser cutting, 3D printing
-      - label: Programming
-        details: Python, C++, ROS, MATLAB, Jetson, Arduino, Raspberry Pi
+      - name: Hardware
+        keywords:
+          - 3D CAD (NX, Fusion 360)
+          - rapid prototyping
+          - laser cutting
+          - 3D printing
+      - name: Programming
+        keywords:
+          - Python
+          - C++
+          - ROS
+          - MATLAB
+          - Jetson
+          - Arduino
+          - Raspberry Pi
