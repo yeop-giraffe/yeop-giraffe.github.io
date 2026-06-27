@@ -12,6 +12,7 @@ These posts were migrated from the previous `yeop-giraffe.github.io` site.
 {% assign archived_posts = site.posts | where_exp: "post", "post.categories contains 'archive'" %}
 
 {% if archived_posts.size > 0 %}
+
 <div class="post-list">
   {% for post in archived_posts %}
     <article class="post-preview">
