@@ -5,6 +5,7 @@ title: repositories
 description: GitHub projects and repositories.
 nav: false
 nav_order: 5
+published: false
 ---
 
 {% if site.data.repositories.github_users %}
