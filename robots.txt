@@ -1,5 +1,4 @@
 User-agent: *
-
-Disallow: /norobots/
+Disallow:
 
 Sitemap: https://yeop-giraffe.github.io/sitemap.xml
