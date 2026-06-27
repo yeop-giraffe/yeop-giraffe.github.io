@@ -1,10 +1,210 @@
 cv:
   name: Seungyeop Lee
-  label:
-  email:
-  location:
+  label: Mechanical Engineer
+  email: yeoplee0906@gmail.com
+  location: Suwon, Gyeonggi-do, Republic of Korea
   image: ""
-  summary:
-  social_networks: []
-  address: {}
-  sections: {}
+  summary: Mechanical engineer focused on robotics, intelligent mobility, wearable robots, UAV interfaces, embedded controllers, and robot mechanism design.
+
+  social_networks:
+    - network: GitHub
+      username: yeop-giraffe
+
+  address:
+    city: Suwon
+    region: Gyeonggi-do
+    countryCode: KR
+
+  sections:
+    Research Interests:
+      - name: Wearable and mobile robotics
+        summary: Wearable robots, soft wearable robots, exoskeleton robots, multimodal sensing, and user-specific adaptation algorithms.
+
+    Education:
+      - institution: Korea University
+        location: Seoul, Republic of Korea
+        area: Mechanical Engineering; Integrated Major in Intelligent Mobility
+        studyType: M.S.
+        start_date: 2022-09
+        end_date: 2025-02
+        score: "GPA: 4.45/4.5"
+        highlights:
+          - "Research Lab: Human-Machine Systems Lab, advised by Prof. Shinsuk Park."
+          - "Thesis: A Development of Intuitive Controller and Monocular Vision based Interface for Disaster Response UAV."
+
+      - institution: Korea University
+        location: Seoul, Republic of Korea
+        area: Mechanical Engineering
+        studyType: B.S.
+        start_date: 2016-03
+        end_date: 2022-08
+        score: "GPA: 3.45/4.5"
+        highlights:
+          - "Absence from Oct. 2017 to Jun. 2019 due to military service."
+
+    Experience:
+      - company: Samsung Electronics
+        position: Full-time Engineer, Robot Vacuum Cleaner Mop Module Mechanism Design
+        location: Suwon, Republic of Korea
+        start_date: 2025-02
+        end_date: present
+        highlights:
+          - Prototyped a mechanism for detecting mop attachment and detachment in a robotic vacuum cleaner, improving detection performance using a shielding plate.
+          - Designed structures for improved module durability and developed performance evaluation methods.
+          - Contributed to VR90F robotic vacuum cleaner development from design completion to mass-production readiness.
+          - Managed mass-production processes for product quality and manufacturability.
+          - Developed and implemented a vision inspection system for production lines to control part dimensions and improve quality consistency.
+
+      - company: Seoul National University, Wearable Robotics Laboratory
+        position: Intern, Embedded Computer Controller based Soft Exo-suit
+        location: Seoul, Republic of Korea
+        start_date: 2024-12
+        end_date: 2025-02
+        highlights:
+          - Developed a wearable robot controller based on the Nvidia Jetson Orin Nano platform.
+          - Developed CAN-based motor and sensor data transmission under 10 ms using multi-threaded data processing.
+          - Designed and validated a sensor integration module.
+
+      - company: Korea University, Human-Machine Systems Lab
+        position: Master's Researcher, Drone Control Assist Interface System in Non-GPS Environments
+        location: Seoul, Republic of Korea
+        start_date: 2022-09
+        end_date: 2024-12
+        highlights:
+          - Developed a drone control assistance HMI system to prevent crashes from human error during indoor drone flight.
+          - Used ROS on Jetson Nano to send flight commands to a Pixhawk flight controller.
+          - Integrated MAVLink and MAVROS for communication between companion computer and flight controller.
+          - Tested flight assist algorithms using ROS and Gazebo simulation.
+
+      - company: Drexel University, Intelligent Machine Perception and Learning Lab
+        position: Intern Robotics Researcher, Monocular Depth Estimation
+        location: Philadelphia, PA, USA
+        start_date: 2023-11
+        end_date: 2024-02
+        highlights:
+          - Used CycleGAN to convert simulation data into images resembling real-world environments for monocular depth estimation training.
+          - Proposed an evaluation method comparing predicted depth with ground-truth LiDAR point clouds.
+          - Improved supervised monocular depth estimation by mixing real and converted synthetic datasets.
+
+      - company: Drexel University, Intelligent Machine Perception and Learning Lab
+        position: Robotics Researcher, Autonomous Lighter-than-Air Vehicle
+        location: Philadelphia, PA, USA
+        start_date: 2023-09
+        end_date: 2023-11
+        highlights:
+          - Developed a drone attitude control system using STM32 embedded systems and PID control.
+          - Detected destinations and targets using OpenCV and YOLOv5.
+          - Created a suction device for capturing objects in the air.
+
+      - company: Korea University, Human-Machine Systems Lab
+        position: Undergraduate Research Student, Tethered Drone System
+        location: Seoul, Republic of Korea
+        start_date: 2021-03
+        end_date: 2022-08
+        highlights:
+          - Developed a tethered drone for integration with mobile robots in smart farms.
+          - Integrated an EtherCAT wired system with a Windows PC controller and Arduino motor driver.
+
+    Publications:
+      - title: Domain-Transferred Synthetic Data Generation for Improving Monocular Depth Estimation
+        authors:
+          - Seungyeop Lee
+          - Knut Petorson
+          - Solmaz Arezoomandan
+          - David Han
+        publisher: 25th International Conference on Control, Automation and Systems (ICCAS)
+        releaseDate: 2025
+
+      - title: 딥러닝 기반 단안 카메라 깊이 추정 방식을 활용한 소형 드론의 장애물 회피 기술
+        authors:
+          - Seungyeop Lee
+          - Shinsuk Park
+        publisher: 제어로봇시스템학회 국내학술대회 (ICROS), Daejeon, Korea
+        releaseDate: 2024-07
+
+      - title: Visual Odometry를 사용한 ROS 기반 실내 자율 비행 쿼드콥터 플랫폼 개발
+        authors:
+          - Seungyeop Lee
+          - Shinsuk Park
+        publisher: 제어로봇시스템학회 국내학술대회 (ICROS), Samcheok, Korea
+        releaseDate: 2023-06
+
+    Projects:
+      - name: Defend the Republic Autonomous Drone Competition
+        location: Lehigh University, USA
+        start_date: 2024-09
+        end_date: 2024-11
+        summary: Developed a lightweight autonomous flying vehicle using helium gas buoyancy.
+        highlights:
+          - Built the main body and object-grabbing device for an autonomous flying vehicle competition.
+          - Used carbon pipes, balsa wood, 3D-printed parts, BLDC motors, carbon rods, and vinyl film.
+
+      - name: Korea Robot Aircraft Competition
+        location: Korea Aerospace Industries Association, Republic of Korea
+        start_date: 2021-04
+        end_date: 2021-09
+        summary: Developed a pedestrian-tracking drone with Pixhawk and Jetson Xavier.
+        highlights:
+          - Mounted a three-axis gimbal to compensate yaw-control errors and improve pedestrian detection.
+          - Trained YOLOv5 on a custom dataset and maintained the drone hardware system.
+
+      - name: Pi Village Start-up Team - DRONEDU
+        location: Korea University, Republic of Korea
+        start_date: 2020-01
+        end_date: 2020-10
+        summary: Founded a drone education program for high school and college students.
+
+      - name: Horang-Nabi UAV Club
+        location: Korea University, Republic of Korea
+        start_date: 2019-08
+        end_date: 2021-12
+        summary: Founded Korea University's first model aircraft club.
+        highlights:
+          - Organized Arduino drone, model-aircraft modification, and C++ study activities.
+
+    Awards:
+      - title: Excellence Award, Future Automobile Industry-University Assignment Project Poster Competition
+        awarder: Inter-university Alliance for Future Vehicular Technology (I4FT)
+        date: 2023-01
+        summary: Developed a tethered drone using EtherCAT data transformation and proposed a combinable structure with machines such as manipulators and mobile robots.
+
+      - title: Third Prize, 21st National University Student Model Aircraft Competition
+        awarder: Gyeongsang National University
+        date: 2020-11
+        summary: Developed a scaled Boeing aircraft using carbon pipes and 3D-printed internal structures.
+
+      - title: Third Prize, 2020 Social Economy Engineering Idea Competition
+        awarder: University of Seoul
+        date: 2020-10
+        summary: Designed a foldable stair-climbing aid machine for elderly subway users.
+
+      - title: Third Prize, 2020 Creative Comprehensive Design Competition
+        awarder: Innovation Center for Engineering Education, Korea University
+        date: 2020-09
+        summary: Developed an automatic recycling trash can for beverage cup disposal.
+
+      - title: First Prize, 22nd Pi Village Start-up Team - DRONEDU
+        awarder: Korea University
+        date: 2020-06
+        summary: Developed drone education content for students.
+
+    Teaching:
+      - institution: Korea University
+        position: Teaching Assistant, Dynamics
+        start_date: 2024-09
+        end_date: 2024-11
+        highlights:
+          - Explained Adams system simulation tools for building two-link manipulators.
+
+      - institution: Korea University
+        position: Teaching Assistant, Robotics
+        start_date: 2023-03
+        end_date: 2024-06
+        highlights:
+          - Explained Adams simulation tools, Raspberry Pi tutorials, and DC motor PID control.
+
+    Skills:
+      - label: Hardware
+        details: 3D CAD (NX, Fusion 360), rapid prototyping, laser cutting, 3D printing
+      - label: Programming
+        details: Python, C++, ROS, MATLAB, Jetson, Arduino, Raspberry Pi

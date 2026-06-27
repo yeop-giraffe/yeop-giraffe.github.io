@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle:
+subtitle: Mechanical engineer working on robotics, wearable systems, and intelligent mobility.
 
 profile:
   align: right
@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info:
 
-selected_papers: false # includes a list of papers marked as "selected={true}"
+selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 
 announcements:
@@ -24,6 +24,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Welcome. This is the personal website of Seungyeop Lee.
+I am a mechanical engineer focused on robotics, intelligent mobility, and human-machine systems. My work spans wearable robots, UAV control interfaces, embedded robot controllers, and perception systems for autonomous platforms.
 
-Add a short biography, research interests, projects, and contact information here.
+I received my M.S. in Mechanical Engineering with an integrated major in Intelligent Mobility from Korea University, where I worked in the Human-Machine Systems Lab on intuitive control and monocular-vision interfaces for disaster response UAVs.
+
+My current work at Samsung Electronics focuses on mechanism design and production-quality engineering for robotic vacuum cleaner mop modules. I am especially interested in soft wearable robots, exoskeletons, multimodal sensing, and user-specific adaptation algorithms.
