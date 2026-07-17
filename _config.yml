@@ -11,6 +11,39 @@ contact_note: >
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal website of Seungyeop Lee, mechanical engineer working on robotics, wearable systems, and intelligent mobility.
 footer_text: >
+  <style>
+    :root {
+      --global-theme-color: #2563eb;
+      --global-hover-color: #1d4ed8;
+      --global-theme-color-rgb: 37, 99, 235;
+    }
+    a,
+    .navbar .navbar-nav .nav-item.active > .nav-link,
+    .navbar .navbar-brand .font-weight-bold,
+    .post-title a,
+    .post-header .fa-file-pdf,
+    .cv .fa-file-pdf,
+    .cv .iconlocation {
+      color: #2563eb !important;
+    }
+    a:hover,
+    .post-title a:hover,
+    .post-header .fa-file-pdf:hover {
+      color: #1d4ed8 !important;
+    }
+    .cv .badge.danger-color-dark,
+    .cv .badge.badge-danger,
+    .cv .badge {
+      background-color: #2563eb !important;
+      color: #ffffff !important;
+    }
+    progress::-webkit-progress-value {
+      background-color: #2563eb !important;
+    }
+    progress::-moz-progress-bar {
+      background-color: #2563eb !important;
+    }
+  </style>
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
