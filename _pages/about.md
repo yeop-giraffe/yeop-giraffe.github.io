@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Mechanical engineer working on robotics, wearable systems, and intelligent mobility.
 
