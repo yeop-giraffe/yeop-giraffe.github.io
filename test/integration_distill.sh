@@ -33,9 +33,16 @@ description: an example of a distill-style blog post
 tags: formatting distill
 categories: sample-posts
 giscus_comments: true
-mermaid: true
+mermaid:
+  enabled: true
+  zoomable: true
 tikzjax: true
 related_posts: false
+
+authors:
+  - name: Test Author
+    affiliations:
+      name: al-folio
 ---
 
 <d-front-matter>
@@ -71,14 +78,23 @@ if [ ! -f "${distill_page}" ]; then
   exit 1
 fi
 
-grep -q 'd-front-matter' "${distill_page}"
-grep -q '/assets/js/distillpub/template.v2.js' "${distill_page}"
-grep -q '/assets/js/distillpub/transforms.v2.js' "${distill_page}"
-grep -q '/assets/js/distillpub/overrides.js' "${distill_page}"
-grep -q '/assets/al_charts/js/mermaid-setup.js' "${distill_page}"
-grep -q 'https://cdn.jsdelivr.net/npm/@planktimerr/tikzjax@1.0.8/dist/fonts.css' "${distill_page}"
-grep -q 'https://cdn.jsdelivr.net/npm/@planktimerr/tikzjax@1.0.8/dist/tikzjax.js' "${distill_page}"
-grep -q 'id="giscus_thread"' "${distill_page}"
+check_contains() {
+  local pattern="$1"
+  local description="$2"
+  if ! grep -q "${pattern}" "${distill_page}"; then
+    echo "distill page is missing ${description}: ${pattern}" >&2
+    exit 1
+  fi
+}
+
+check_contains 'd-front-matter' 'front matter output'
+check_contains '/assets/js/distillpub/template.v2.js' 'distill template runtime'
+check_contains '/assets/js/distillpub/transforms.v2.js' 'distill transforms runtime'
+check_contains '/assets/js/distillpub/overrides.js' 'distill overrides runtime'
+check_contains '/assets/al_charts/js/mermaid-setup.js' 'Mermaid setup runtime'
+check_contains 'https://cdn.jsdelivr.net/npm/@planktimerr/tikzjax@1.0.8/dist/fonts.css' 'TikZJax stylesheet'
+check_contains 'https://cdn.jsdelivr.net/npm/@planktimerr/tikzjax@1.0.8/dist/tikzjax.js' 'TikZJax script'
+check_contains 'id="giscus_thread"' 'Giscus comments container'
 transforms_runtime="${tmp_site}/assets/js/distillpub/transforms.v2.js"
 distill_runtime="$(PATH="$HOME/.rbenv/shims:$PATH" bundle exec ruby -e 'spec = Gem.loaded_specs["al_folio_distill"]; puts(spec ? File.join(spec.full_gem_path, "assets/js/distillpub/transforms.v2.js") : "")')"
 if [ -f "${distill_runtime}" ]; then
