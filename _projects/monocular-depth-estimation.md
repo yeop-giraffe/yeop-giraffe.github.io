@@ -5,6 +5,9 @@ description: Domain-transferred synthetic data generation for improving monocula
 img:
 importance: 3
 category: research
+display_category: Robot Vision · Monocular Depth Estimation
+period: Nov.2023 - Feb.2024
+summary: Domain-transferred synthetic data generation for improving monocular depth estimation using CycleGAN and LiDAR-based evaluation.
 ---
 
 Worked on monocular depth estimation training methods at Drexel University's Intelligent Machine Perception and Learning Lab.

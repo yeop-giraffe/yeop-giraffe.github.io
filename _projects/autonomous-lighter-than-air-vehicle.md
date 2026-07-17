@@ -5,6 +5,9 @@ description: Lightweight autonomous flying vehicle for object collection and tra
 img:
 importance: 5
 category: project
+display_category: Autonomous UAV · Mechanism Design
+period: Sep.2024 - Nov.2024
+summary: Lightweight autonomous flying vehicle using helium gas buoyancy, built for object collection and transport in the Defend the Republic competition.
 ---
 
 Participated in the Defend the Republic autonomous drone competition at Lehigh University.

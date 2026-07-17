@@ -5,6 +5,9 @@ description: Mechanism design and production-quality engineering for robotic vac
 img:
 importance: 4
 category: industry
+display_category: Robotics · Mechanism Design · Production Engineering
+period: Feb.2025 - Present
+summary: Mechanism design and production-quality engineering for robotic vacuum cleaner mop modules, including attachment detection, durability improvement, and production inspection.
 ---
 
 At Samsung Electronics, worked on robotic vacuum cleaner mop module mechanism design.
