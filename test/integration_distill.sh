@@ -4,8 +4,13 @@ set -euo pipefail
 tmp_dir="$(mktemp -d)"
 tmp_override="${tmp_dir}/distill-override.yml"
 tmp_site="${tmp_dir}/site"
+distill_fixture="_posts/2021-07-04-distill.md"
+created_distill_fixture=false
 
 cleanup() {
+  if [ "${created_distill_fixture}" = true ]; then
+    rm -f "${distill_fixture}"
+  fi
   rm -rf "${tmp_dir}"
 }
 trap cleanup EXIT
@@ -17,6 +22,45 @@ giscus:
   category: Comments
   category_id: DIC_kwDOExample
 YAML
+
+if [ ! -e "${distill_fixture}" ]; then
+  cat >"${distill_fixture}" <<'MARKDOWN'
+---
+layout: distill
+title: Distill
+date: 2021-07-04 11:59:00-0400
+description: an example of a distill-style blog post
+tags: formatting distill
+categories: sample-posts
+giscus_comments: true
+mermaid: true
+tikzjax: true
+related_posts: false
+---
+
+<d-front-matter>
+<script type="text/json">
+{
+  "title": "Distill"
+}
+</script>
+</d-front-matter>
+
+This post exercises Distill, Mermaid, TikZJax, and Giscus integration.
+
+```mermaid
+graph TD;
+  A-->B;
+```
+
+<script type="text/tikz">
+\begin{tikzpicture}
+\draw (0,0) -- (1,1);
+\end{tikzpicture}
+</script>
+MARKDOWN
+  created_distill_fixture=true
+fi
 
 bundle exec jekyll build --config "_config.yml,${tmp_override}" -d "${tmp_site}" >/dev/null
 
