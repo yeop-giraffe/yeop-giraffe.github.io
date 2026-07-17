@@ -156,8 +156,6 @@ description: Education, research experience, publications, projects, awards, and
 
   .cv-section h2 {
     margin-bottom: 0.8rem;
-    padding-bottom: 0.25rem;
-    border-bottom: 1px solid #000000;
     font-size: 1.35rem;
     font-weight: 700;
   }
@@ -186,10 +184,6 @@ description: Education, research experience, publications, projects, awards, and
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #e5e7eb;
-  }
-
-  .cv-entry:first-of-type {
-    padding-top: 0;
   }
 
   .cv-entry:last-child {
