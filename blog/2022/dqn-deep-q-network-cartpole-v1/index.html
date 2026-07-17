@@ -116,7 +116,39 @@
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
     <span class="nf">main</span><span class="p">()</span>
 
-</code></pre></div></div> <ul> <li>q, q_target : Neural network 통과</li> <li>load_state_dict(), state_dict() : 각각 불러오기, 저장하기를 의미하며 q_target을 저장, 불러오기 진행</li> <li>optimizer : lr(learning rate)로 줄여나가면서 차이를 줄여 나가는 과정</li> <li>env.reset() : 새로운 환경 불러오기</li> <li>q.sample.action : epsilon의 확률로 랜덤 탐험</li> <li>env.step(a) : a라는 행동을 취했을 때 획득한 환경 정보 리턴</li> <li>memory.put() &amp; s = s_prime : 메모리에 step의 정보를 입력하고 s를 s’으로 변경</li> <li>memory.size()&gt;2000: 메모리 사이즈가 2000개가 넘을 때만 학습 진행, 샘플이 너무 적으면 안됨</li> </ul> </div> </article> <br> <hr> <br> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <ul class="list-disc pl-7 my-3 space-y-2 marker:text-[var(--global-theme-color)]"> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2022/upload-folders-on-github/">Upload folders on GitHub</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2022/yolov5-camera-index-error-fix/">[Error Fix] YOLOv5 can't open camera by index</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2022/welcome-to-yeop-giraffe/">Welcome to yeop-giraffe!</a> </li> </ul> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Seungyeop Lee. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+</code></pre></div></div> <ul> <li>q, q_target : Neural network 통과</li> <li>load_state_dict(), state_dict() : 각각 불러오기, 저장하기를 의미하며 q_target을 저장, 불러오기 진행</li> <li>optimizer : lr(learning rate)로 줄여나가면서 차이를 줄여 나가는 과정</li> <li>env.reset() : 새로운 환경 불러오기</li> <li>q.sample.action : epsilon의 확률로 랜덤 탐험</li> <li>env.step(a) : a라는 행동을 취했을 때 획득한 환경 정보 리턴</li> <li>memory.put() &amp; s = s_prime : 메모리에 step의 정보를 입력하고 s를 s’으로 변경</li> <li>memory.size()&gt;2000: 메모리 사이즈가 2000개가 넘을 때만 학습 진행, 샘플이 너무 적으면 안됨</li> </ul> </div> </article> <br> <hr> <br> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <ul class="list-disc pl-7 my-3 space-y-2 marker:text-[var(--global-theme-color)]"> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2022/upload-folders-on-github/">Upload folders on GitHub</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2022/yolov5-camera-index-error-fix/">[Error Fix] YOLOv5 can't open camera by index</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2022/welcome-to-yeop-giraffe/">Welcome to yeop-giraffe!</a> </li> </ul> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Seungyeop Lee. <style>
+  :root {
+    --global-theme-color: #2563eb;
+    --global-hover-color: #1d4ed8;
+    --global-theme-color-rgb: 37, 99, 235;
+  }
+  a,
+  .navbar .navbar-nav .nav-item.active > .nav-link,
+  .navbar .navbar-brand .font-weight-bold,
+  .post-title a,
+  .post-header .fa-file-pdf,
+  .cv .fa-file-pdf,
+  .cv .iconlocation {
+    color: #2563eb !important;
+  }
+  a:hover,
+  .post-title a:hover,
+  .post-header .fa-file-pdf:hover {
+    color: #1d4ed8 !important;
+  }
+  .cv .badge.danger-color-dark,
+  .cv .badge.badge-danger,
+  .cv .badge {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+  }
+  progress::-webkit-progress-value {
+    background-color: #2563eb !important;
+  }
+  progress::-moz-progress-bar {
+    background-color: #2563eb !important;
+  }
+</style> Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
