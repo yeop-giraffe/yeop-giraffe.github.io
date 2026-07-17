@@ -5,7 +5,7 @@ description: Embedded wearable robot controller based on Nvidia Jetson Orin Nano
 img:
 importance: 2
 category: research
-display_category: Wearable Robotics · Embedded Control
+display_category: Wearable Robotics / Embedded Control
 period: Dec.2024 - Feb.2025
 summary: Embedded controller development for a soft wearable exo-suit using Jetson Orin Nano, CAN communication, multi-threaded processing, and sensor integration.
 ---

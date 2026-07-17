@@ -13,38 +13,42 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
   <style>
     :root {
-      --global-theme-color: #2563eb;
-      --global-hover-color: #1d4ed8;
-      --global-theme-color-rgb: 37, 99, 235;
+      --global-theme-color: #000000;
+      --global-hover-color: #000000;
+      --global-theme-color-rgb: 0, 0, 0;
     }
     a,
     .navbar .navbar-nav .nav-item.active > .nav-link,
     .navbar .navbar-brand .font-weight-bold,
+    .navbar .navbar-brand,
     .post-title a,
     .post-header .fa-file-pdf,
+    .cv-page a,
+    .cv-page .cv-pdf-link,
     .cv .fa-file-pdf,
     .cv .iconlocation {
-      color: #2563eb !important;
+      color: #000000 !important;
     }
     a:hover,
+    .cv-page a:hover,
     .post-title a:hover,
     .post-header .fa-file-pdf:hover {
-      color: #1d4ed8 !important;
+      color: #000000 !important;
     }
     .cv .badge.danger-color-dark,
     .cv .badge.badge-danger,
     .cv .badge {
-      background-color: #2563eb !important;
+      background-color: #000000 !important;
       color: #ffffff !important;
     }
     .project-list-title a {
       color: inherit !important;
     }
     progress::-webkit-progress-value {
-      background-color: #2563eb !important;
+      background-color: #000000 !important;
     }
     progress::-moz-progress-bar {
-      background-color: #2563eb !important;
+      background-color: #000000 !important;
     }
   </style>
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
@@ -489,7 +493,7 @@ enable_cookie_consent: false # enables GDPR-compliant cookie consent dialog (htt
 enable_masonry: true # enables automatic project cards arrangement
 enable_math: true # enables math typesetting (uses MathJax)
 enable_tooltips: false # enables automatic tooltip links generated for each section titles on pages and posts
-enable_darkmode: true # enables switching between light/dark modes
+enable_darkmode: false # enables switching between light/dark modes
 enable_navbar_social: false # enables displaying social links in the navbar on the about page
 enable_project_categories: true # enables categorization of projects into multiple categories
 enable_medium_zoom: true # enables image zoom feature (as on medium.com)
