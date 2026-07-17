@@ -152,10 +152,6 @@ description: Education, research experience, publications, projects, awards, and
 
   .cv-section {
     margin-top: 1.7rem;
-    padding: 1.1rem 1.25rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.25rem;
-    background: #ffffff;
   }
 
   .cv-section h2 {
@@ -166,16 +162,39 @@ description: Education, research experience, publications, projects, awards, and
     font-weight: 700;
   }
 
+  .cv-section > :not(h2) {
+    padding: 1.1rem 1.25rem;
+    border-right: 1px solid #d1d5db;
+    border-left: 1px solid #d1d5db;
+    background: #ffffff;
+  }
+
+  .cv-section > :not(h2):nth-child(2) {
+    border-top: 1px solid #d1d5db;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+
+  .cv-section > :not(h2):last-child {
+    border-bottom: 1px solid #d1d5db;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+
   .cv-entry {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #e5e7eb;
   }
 
+  .cv-entry:first-of-type {
+    padding-top: 0;
+  }
+
   .cv-entry:last-child {
     margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: 0;
+    border-bottom-color: #d1d5db;
   }
 
   .cv-entry h3 {
