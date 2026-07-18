@@ -4,7 +4,7 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 5
-cv_pdf: /assets/pdf/seungyeop_cv.pdf # you can also use external links here
+cv_pdf: /assets/pdf/Seungyeop%20Lee_CV.pdf # you can also use external links here
 description: Education, research experience, publications, projects, awards, and skills.
 ---
 
@@ -24,12 +24,12 @@ description: Education, research experience, publications, projects, awards, and
   </header>
 
   <section class="cv-section">
-    <h2>Professional Summary</h2>
+    <h2>PROFESSIONAL SUMMARY</h2>
     <p>{{ cv.summary }}</p>
   </section>
 
   <section class="cv-section">
-    <h2>Experience</h2>
+    <h2>EXPERIENCE</h2>
     {% for item in sections.Experience %}
       <article class="cv-entry">
         <h3>{{ item.position }}</h3>
@@ -48,7 +48,7 @@ description: Education, research experience, publications, projects, awards, and
   </section>
 
   <section class="cv-section">
-    <h2>Education</h2>
+    <h2>EDUCATION</h2>
     {% for item in sections.Education %}
       <article class="cv-entry">
         <h3>{{ item.studyType }}, {{ item.area }}</h3>
@@ -70,7 +70,7 @@ description: Education, research experience, publications, projects, awards, and
   </section>
 
   <section class="cv-section">
-    <h2>Publications</h2>
+    <h2>PUBLICATIONS</h2>
     {% for item in sections.Publications %}
       <article class="cv-entry">
         <h3>{{ item.title }}</h3>
@@ -80,7 +80,7 @@ description: Education, research experience, publications, projects, awards, and
   </section>
 
   <section class="cv-section">
-    <h2>Projects</h2>
+    <h2>PROJECTS</h2>
     {% for item in sections.Projects %}
       <article class="cv-entry">
         <h3>{{ item.name }}</h3>
@@ -98,7 +98,7 @@ description: Education, research experience, publications, projects, awards, and
   </section>
 
   <section class="cv-section">
-    <h2>Awards</h2>
+    <h2>AWARDS</h2>
     {% for item in sections.Awards %}
       <article class="cv-entry">
         <h3>{{ item.title }}</h3>
@@ -109,7 +109,7 @@ description: Education, research experience, publications, projects, awards, and
   </section>
 
   <section class="cv-section">
-    <h2>Skills</h2>
+    <h2>SKILLS</h2>
     {% for item in sections.Skills %}
       <p><strong>{{ item.name }}:</strong> {{ item.keywords | join: ", " }}</p>
     {% endfor %}
@@ -195,6 +195,7 @@ description: Education, research experience, publications, projects, awards, and
     margin-bottom: 0.2rem;
     font-size: 1.05rem;
     font-weight: 700;
+    text-transform: uppercase;
   }
 
   .cv-entry ul {

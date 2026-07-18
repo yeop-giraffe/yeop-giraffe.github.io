@@ -40,10 +40,21 @@ cv:
 
     Experience:
       - company: Samsung Electronics
+        position: Robot Vacuum Cleaner Spatial AI Development
+        location: Suwon, Republic of Korea
+        start_date: 2026-04
+        end_date: present
+        highlights:
+          - Developed a computationally efficient vision-based scene graph generation pipeline for robotic vacuum cleaners, representing indoor rooms, objects, and their spatial relationships on resource-constrained platforms.
+          - Developed a Bayesian inference-based algorithm for room-type classification by aggregating semantic observations collected during robot navigation.
+          - Designed and optimized keyframe selection methods for efficient collection and processing of robot image data.
+          - Integrated VLM, perception, and navigation modules into a unified Spatial AI system and validated the integrated system using NVIDIA Isaac Sim simulation.
+
+      - company: Samsung Electronics
         position: Full-time Engineer, Robot Vacuum Cleaner Mop Module Mechanism Design
         location: Suwon, Republic of Korea
         start_date: 2025-02
-        end_date: present
+        end_date: 2026-04
         highlights:
           - Prototyped a mechanism for detecting mop attachment and detachment in a robotic vacuum cleaner, improving detection performance using a shielding plate.
           - Designed structures for improved module durability and developed performance evaluation methods.
