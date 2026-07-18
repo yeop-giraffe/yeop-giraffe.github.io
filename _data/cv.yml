@@ -73,7 +73,7 @@ cv:
           - Designed and validated a sensor integration module.
 
       - company: Korea University, Human-Machine Systems Lab
-        position: Master's Researcher, Drone Control Assist Interface System in Non-GPS Environments
+        position: Master's Student, Drone Control Assist Interface System in Non-GPS Environment
         location: Seoul, Republic of Korea
         start_date: 2022-09
         end_date: 2024-12
@@ -122,18 +122,18 @@ cv:
         publisher: 25th International Conference on Control, Automation and Systems (ICCAS)
         releaseDate: 2025
 
-      - title: 딥러닝 기반 단안 카메라 깊이 추정 방식을 활용한 소형 드론의 장애물 회피 기술
+      - title: Obstacle Avoidance for Small Unmanned Aerial Vehicles Using Deep Learning-Based Monocular Depth Estimation
         authors:
           - Seungyeop Lee
           - Shinsuk Park
-        publisher: 제어로봇시스템학회 국내학술대회 (ICROS), Daejeon, Korea
+        publisher: Institute of Control, Robotics and Systems Conference (ICROS), Daejeon, Korea
         releaseDate: 2024-07
 
-      - title: Visual Odometry를 사용한 ROS 기반 실내 자율 비행 쿼드콥터 플랫폼 개발
+      - title: Development of a ROS-Based Indoor Autonomous Quadcopter Platform Using Visual Odometry
         authors:
           - Seungyeop Lee
           - Shinsuk Park
-        publisher: 제어로봇시스템학회 국내학술대회 (ICROS), Samcheok, Korea
+        publisher: Institute of Control, Robotics and Systems Conference (ICROS), Samcheok, Korea
         releaseDate: 2023-06
 
     Projects:
