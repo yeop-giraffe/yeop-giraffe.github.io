@@ -49,7 +49,7 @@ DART·Depth·석사논문은 독립 HTML로 보존됩니다. 홈 대표 이미�
 
 로컬 미리보기 주소: http://127.0.0.1:4173/projects/dart.html
 
-논문과 함께 제출한 오버뷰 영상은 `site/assets/dart/ICRA27_7491_VI_i.mp4`에 있습니다(약 14.5 MiB). DART 페이지의 Video Overview 섹션에서 재생하거나 내려받을 수 있습니다. 원본 영상을 변환 없이 복사했으며, 배포할 때 이미지 및 PDF와 함께 포함합니다.
+논문과 함께 제출한 오버뷰 영상은 `site/assets/dart/ICRA27_7491_VI_i.mp4`에 있습니다(약 14.5 MiB). DART 페이지의 Video Overview 섹션에서 재생합니다. 원본 영상을 변환 없이 복사했으며, 배포할 때 이미지 및 PDF와 함께 포함합니다.
 
 ## Depth 논문과 석사논문 페이지
 
@@ -81,7 +81,7 @@ Showing the Intended Flight Path는 왼쪽의 `integrated-interface-annotated.sv
 
 ## 영어 PDF
 
-ICROS 2023·2024 논문, ICROS 2024 포스터, 석사논문의 영어 번역본을 게시합니다. 논문 본문·그림·표·수식·참고문헌을 유지했습니다. 석사논문은 원본과 같은 전체 62페이지이며, 목차의 페이지 참조는 원본 페이지 번호를 따릅니다. 원본에 있는 격자 수·그레이스케일 표현 차이는 ICROS 번역본의 주석에 표시했습니다.
+ICROS 2023·2024 논문, ICROS 2024 포스터, 석사논문의 영어 번역본을 게시합니다. 논문 본문·그림·표·수식·참고문헌을 유지했습니다. 석사논문은 원본 62페이지의 전체 내용을 36페이지로 재배치했으며, 목차·그림 목록·표 목록은 새 PDF의 페이지 번호를 사용합니다. ICROS 자료는 원본 영어 제목을 사용하고 번역 노트를 생략합니다.
 
 공개 파일은 `site/assets/pdf/ICROS2023_LSY.pdf`, `site/assets/pdf/ICROS2024_LSY.pdf`, `site/assets/pdf/ICROS2024-poster-en.pdf`, `site/assets/masters-thesis/paper.pdf`입니다. 한글 원본 사본은 `.source-documents/`에 보관하며 Git에서 제외합니다. ICROS 2024 포스터 링크는 CV 레코드의 `poster_pdf`에서 관리합니다.
 

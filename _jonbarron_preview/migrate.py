@@ -202,6 +202,24 @@ for data, body, slug in projects:
     else:
         project_rows += card
 
+def activity_html(item):
+    title = item.get('name', item.get('title', ''))
+    dates = item.get('dates') or item.get('date') or ' – '.join(str(item[key]) for key in ('start_date', 'end_date') if item.get(key))
+    context = ' · '.join(str(item[key]) for key in ('position', 'company') if item.get(key))
+    context_html = f'<p class="activity-meta">{esc(context)}</p>' if context else ''
+    details = ''.join(f'<p>{esc(detail)}</p>' for detail in item.get('highlights', []))
+    return f'<article class="activity-entry"><header><h3>{esc(title)}</h3><p class="activity-date">{esc(dates)}</p></header>{context_html}{details}</article>'
+
+
+leadership_names = [
+    'Horang-Nabi Model Aircraft Club Foundation',
+    'National University Student Model Aircraft Competition',
+    'Pi Village Start-up Team – DRONEDU',
+]
+leadership_records = {item['name']: item for item in cv['sections']['Selected Projects & Leadership']}
+leadership_html = ''.join(activity_html(leadership_records[name]) for name in leadership_names)
+teaching_html = ''.join(activity_html(item) for item in cv['sections']['Teaching and Mentoring'])
+
 content = f'''<section class="intro">
   <div><h1 class="name">{esc(cv['name'])}</h1>{intro}
   <nav class="contact"><a href="mailto:{esc(cv['email'])}">Email</a> / <a href="cv.html">CV</a> / <a href="{esc(download)}" download>DOCX</a> / <a href="https://github.com/yeop-giraffe">GitHub</a></nav></div>
@@ -209,7 +227,9 @@ content = f'''<section class="intro">
 </section>
 <section class="research-interests"><h2>Research Interests</h2>{research}</section>
 <section id="research"><h2>Publications &amp; Presentations</h2>{publication_rows}</section>
-<section id="projects"><h2>Selected Projects</h2>{project_rows}</section>'''
+<section id="projects"><h2>Selected Projects</h2>{project_rows}</section>
+<section id="leadership" class="activities"><h2>Leadership</h2>{leadership_html}</section>
+<section id="teaching" class="activities"><h2>Teaching &amp; Mentoring</h2>{teaching_html}</section>'''
 (SITE / 'index.html').write_text(page('Seungyeop Lee', content), encoding='utf-8')
 (SITE / '.nojekyll').touch()
 print(f'Imported {len(projects)} projects and complete CV into {SITE}')

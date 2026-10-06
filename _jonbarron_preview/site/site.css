@@ -42,6 +42,13 @@ p { margin: 12px 0; }
 .uav-figure figcaption span { display: block; color: #333; font-weight: 600; margin-bottom: 3px; }
 .uav-figure-grid, .uav-image-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
 .uav-figure-grid .uav-figure { margin-top: 0; }
+.activities { margin: 40px 0; }
+.activity-entry { margin: 24px 0; }
+.activity-entry header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.activity-entry h3 { margin: 0; font-size: 15px; line-height: 1.5; }
+.activity-entry p { margin: 6px 0 0; }
+.activity-entry .activity-date { margin: 0; flex: 0 0 auto; max-width: 235px; color: #666; font-size: 12px; text-align: right; }
+.activity-meta { color: #666; font-size: 13px; }
 .cv-section { margin: 32px 0; }
 .cv-entry { margin: 24px 0; }
 .cv-entry p { margin-top: 4px; }
@@ -54,6 +61,8 @@ pre { overflow-x: auto; }
 footer { max-width: 800px; margin: 0 auto; padding: 16px 32px 32px; color: #666; text-align: right; font-size: 12px; }
 footer a { font-size: 12px; }
 @media (max-width: 600px) {
+  .activity-entry header { flex-direction: column; gap: 3px; }
+  .activity-entry .activity-date { max-width: none; text-align: left; }
   main { padding-top: 24px; }
   .intro { grid-template-columns: 1fr; }
   .intro .profile { order: -1; width: 180px; margin: 0 auto 12px; }

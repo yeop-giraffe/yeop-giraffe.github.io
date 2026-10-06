@@ -1,2 +1,5 @@
 # Consistent text line endings
 *.sh text eol=lf
+
+# Preserve PDF bytes across Windows and deployment checkouts.
+*.pdf binary
