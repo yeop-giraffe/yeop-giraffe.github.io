@@ -79,6 +79,12 @@ Showing the Intended Flight Path는 왼쪽의 `integrated-interface-annotated.sv
 
 사용자가 확인한 10 ms는 센서 모듈에서 모터 명령까지의 처리 시간입니다. 코드의 1 kHz 목표 설정이나 실제 모터 응답 시간과 구분하며, 모터 응답 지연을 관찰한 기초 파이프라인 구축까지를 성과로 기술합니다. 원본 코드·실험 로그·랩미팅 자료는 웹에 복사하지 않습니다.
 
+## 영어 PDF
+
+ICROS 2023·2024 논문, ICROS 2024 포스터, 석사논문의 영어 번역본을 게시합니다. 논문 본문·그림·표·수식·참고문헌을 유지했습니다. 석사논문은 원본과 같은 전체 62페이지이며, 목차의 페이지 참조는 원본 페이지 번호를 따릅니다. 원본에 있는 격자 수·그레이스케일 표현 차이는 ICROS 번역본의 주석에 표시했습니다.
+
+공개 파일은 `site/assets/pdf/ICROS2023_LSY.pdf`, `site/assets/pdf/ICROS2024_LSY.pdf`, `site/assets/pdf/ICROS2024-poster-en.pdf`, `site/assets/masters-thesis/paper.pdf`입니다. 한글 원본 사본은 `.source-documents/`에 보관하며 Git에서 제외합니다. ICROS 2024 포스터 링크는 CV 레코드의 `poster_pdf`에서 관리합니다.
+
 ## GitHub Pages 배포
 
 `site/`의 내용만 GitHub Pages에 배포합니다. `.nojekyll`이 포함되어 있어 별도 Jekyll 빌드 없이 사용할 수 있습니다.

@@ -124,6 +124,10 @@ def publication_html(item, show_title=True, project_link=None, description=None,
             if not (SITE / item['pdf']).is_file():
                 raise FileNotFoundError(f'Publication PDF missing: {item["pdf"]}')
             pdf_link = f' / <a class="publication-pdf" href="{esc(item["pdf"])}" target="_blank" rel="noopener">PDF</a>'
+        if item.get('poster_pdf'):
+            if not (SITE / item['poster_pdf']).is_file():
+                raise FileNotFoundError(f'Publication poster PDF missing: {item["poster_pdf"]}')
+            pdf_link += f' / <a class="publication-poster" href="{esc(item["poster_pdf"])}" target="_blank" rel="noopener">Poster</a>'
         category_html = f'<p class="project-meta">{esc(category)}</p>'
     return f'<div class="publication-meta" data-publication-id="{esc(item["id"])}">{title}<p>{authors}</p>{affiliation}{advisor}<p class="publication-venue"><em>{esc(venue)}</em>{status}{note}{pdf_link}</p>{category_html}{description_html}</div>'
 

@@ -22,6 +22,12 @@ node _jonbarron_preview/preview.mjs
 - `docs/personal-page-workflow.md`: 작업 기록과 유지할 결정사항
 - `output/playwright/`: 검수용 자료, Git에서 제외
 
+## 공개 PDF
+
+ICROS 2023·2024 논문과 ICROS 2024 포스터, 석사논문은 영어 번역 PDF를 게시합니다. 석사논문은 요약본이 아닌 전체 62페이지 번역입니다. 기존 ICROS 논문·석사논문 PDF 주소는 유지하고 파일만 영어 버전으로 교체했습니다. ICROS 2024 포스터는 논문 목록의 `Poster` 링크와 UAV 프로젝트 페이지에서 열 수 있습니다.
+
+한글 원본 사본은 `_jonbarron_preview/.source-documents/`에 보관하며 Git과 웹 배포에서 제외합니다. DART와 ICCAS 논문은 기존 영문 원본을 유지합니다.
+
 ## 내용 편집
 
 홈·CV·일반 프로젝트는 `content/`를 수정하고 다시 생성합니다.

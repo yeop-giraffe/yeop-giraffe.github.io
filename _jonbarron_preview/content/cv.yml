@@ -125,6 +125,7 @@ cv:
         releaseDate: 2024
         short_venue: ICROS 2024
         pdf: assets/pdf/ICROS2024_LSY.pdf
+        poster_pdf: assets/pdf/ICROS2024-poster-en.pdf
         note: Poster presentation.
       - id: lee2023visual
         title: Development of ROS based indoor autonomous flight Quadcopter Platform using Visual Odometry

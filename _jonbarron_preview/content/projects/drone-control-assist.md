@@ -22,6 +22,8 @@ At Korea University's Human-Machine Systems Lab, advised by Prof. Shinsuk Park, 
 
 <h2 id="visual-odometry">ICROS 2023 — Visual Odometry for Indoor Flight</h2>
 
+[Paper (PDF)](../assets/pdf/ICROS2023_LSY.pdf)
+
 ### Hardware Platform
 
 I developed a ROS-based quadcopter platform integrating a **Pixhawk 6C flight controller**, **NVIDIA Jetson Nano**, and **ZED 2i stereo camera**. The camera's visual odometry estimates position and orientation for indoor localization without GPS.
@@ -54,6 +56,8 @@ The ROS/MAVROS pipeline transforms the camera's pose into the flight controller'
 The paper reports a physical platform and a simulated flight demonstration. It does not quantify localization errors or report physical autonomous-flight success rates.
 
 <h2 id="obstacle-avoidance">ICROS 2024 — Monocular Depth for Obstacle Avoidance</h2>
+
+[Paper (PDF)](../assets/pdf/ICROS2024_LSY.pdf) / [Poster (PDF)](../assets/pdf/ICROS2024-poster-en.pdf)
 
 ### Depth-Based Flight-Direction Selection
 
