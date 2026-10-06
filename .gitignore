@@ -1,17 +1,11 @@
-_site
-.bundle
-.DS_store
-.idea
-.jekyll-cache
-.jekyll-metadata
-.ruby-version
-.sass-cache
-.tweet-cache
-.venv
-assets/libs/
-assets/rendercv/rendercv_output/*.typ
-al-folio-upgrade-report.md
+# Local dependency and review files
 node_modules/
+.venv/
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+.idea/
 output/playwright/
 test-results/
-vendor
+tmp/

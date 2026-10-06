@@ -1,0 +1,71 @@
+/* Site-specific layout additions to Jon Barron's original stylesheet. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: #111; background: #fff; line-height: 1.5; }
+main { width: 100%; max-width: 800px; margin: 0 auto; padding: 32px 16px; }
+h1 { font-weight: normal; font-size: 28px; line-height: 1.25; }
+h3 { font-size: 15px; margin-bottom: 4px; }
+p { margin: 12px 0; }
+.intro { display: grid; grid-template-columns: 63% 37%; align-items: center; margin-bottom: 24px; }
+.intro > div { padding: 16px; }
+.name { text-align: left; padding-top: 0; margin-bottom: 12px; }
+.contact { text-align: left; word-spacing: 8px; }
+.profile { text-align: center; }
+.intro > .profile { max-width: 190px; justify-self: center; width: 100%; }
+.profile-photo { display: block; width: 100%; height: auto; border-radius: 50%; }
+.muted, .project-meta { color: #666; }
+.project { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 24px; align-items: center; padding: 20px 16px; margin: 10px 0; }
+.project-label { display: grid; place-items: center; width: 160px; aspect-ratio: 1; background: #f4f6f8; color: #647487; font-size: 22px; }
+.project-thumbnail { background: transparent; }
+.project-thumbnail img { display: block; width: 100%; height: 100%; min-width: 0; object-fit: contain; }
+.highlighted { background: #ffffd0; }
+.project-meta { margin: 6px 0; }
+.project-affiliation { margin: 6px 0; }
+.project p:last-child { margin-bottom: 0; }
+.research-interests { padding: 0 16px; margin-bottom: 36px; }
+#projects { margin-top: 40px; }
+.publication-meta { margin: 10px 0; }
+.publication-meta p { margin: 6px 0; }
+.publication-affiliation { color: #666; }
+.publication-meta .publication-description { margin-top: 10px; }
+.publication-note { color: inherit; font-size: inherit; }
+.publication-meta h3 { margin: 14px 0 4px; }
+.project > div > .publication-meta:first-child { margin-top: 0; }
+.project > div > .publication-meta:first-child h3 { margin-top: 0; }
+.related-publications { margin-top: 32px; }
+.uav-section-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 24px 0 36px; padding: 14px 0; border-top: 1px solid #e5e8eb; border-bottom: 1px solid #e5e8eb; }
+#visual-odometry, #obstacle-avoidance { margin-top: 40px; scroll-margin-top: 24px; }
+.uav-figure { margin: 24px 0 32px; min-width: 0; }
+.uav-figure-medium { max-width: 582px; margin-left: auto; margin-right: auto; }
+.uav-figure a { display: block; }
+.uav-figure img { display: block; width: 100%; height: auto; }
+.uav-figure figcaption { margin-top: 10px; color: #555; font-size: 13px; line-height: 1.5; }
+.uav-figure figcaption span { display: block; color: #333; font-weight: 600; margin-bottom: 3px; }
+.uav-figure-grid, .uav-image-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+.uav-figure-grid .uav-figure { margin-top: 0; }
+.cv-section { margin: 32px 0; }
+.cv-entry { margin: 24px 0; }
+.cv-entry p { margin-top: 4px; }
+nav { margin-bottom: 24px; }
+.intro nav { margin-bottom: 0; }
+li { margin-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; border-bottom: 1px solid #ddd; padding: 8px; }
+pre { overflow-x: auto; }
+footer { max-width: 800px; margin: 0 auto; padding: 16px 32px 32px; color: #666; text-align: right; font-size: 12px; }
+footer a { font-size: 12px; }
+@media (max-width: 600px) {
+  main { padding-top: 24px; }
+  .intro { grid-template-columns: 1fr; }
+  .intro .profile { order: -1; width: 180px; margin: 0 auto 12px; }
+  .intro .name, .contact { text-align: center; }
+  .profile p { display: none; }
+  .project { grid-template-columns: 88px minmax(0, 1fr); gap: 16px; padding: 16px 8px; }
+  .project-label { width: 88px; font-size: 16px; }
+  .research-interests { padding: 0 8px; }
+  table { display: block; overflow-x: auto; }
+  .uav-figure-grid, .uav-image-pair { grid-template-columns: 1fr; }
+  .uav-image-pair { max-width: 346px; margin: 0 auto; gap: 12px; }
+  .uav-figure-grid { gap: 0; }
+  h1, a { overflow-wrap: anywhere; }
+}

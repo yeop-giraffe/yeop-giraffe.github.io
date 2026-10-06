@@ -1,0 +1,137 @@
+{
+  "reviewed_presentations": [
+    {
+      "filename": "lsy_lab_meeting_01022025.pptx",
+      "sha256": "42b9d213b28cc2f4fc976154d915f54b1d77c292a538e76f75123884c5e4cb12",
+      "slides": 8
+    },
+    {
+      "filename": "lsy_lab_meeting_01102025.pptx",
+      "sha256": "c8a99c0baf00c71202214d24f6bde8c9eae40e534b1ecf9e20a89a2f614d1cd0",
+      "slides": 13
+    },
+    {
+      "filename": "lsy_lab_meeting_01172025.pptx",
+      "sha256": "3b287d65279f68cf88402afa8cff0bf39cf4de60693af09bdf7f260999a1cc69",
+      "slides": 17
+    },
+    {
+      "filename": "lsy_lab_meeting_01222025.pptx",
+      "sha256": "9d81ed1c7b077cfb8a3732d203dba92504df81d09285d8326c42a860c5162bb2",
+      "slides": 13
+    },
+    {
+      "filename": "lsy_lab_meeting_02042025.pptx",
+      "sha256": "ceb3a983ae8e934ad2adad233a12a687a4c93ffe9918ea5f6845e3bdd2235535",
+      "slides": 16
+    },
+    {
+      "filename": "lsy_lab_meeting_02132025.pptx",
+      "sha256": "54daff994da3fa8f3ef2f32597eb279f8495b6f491880615228ef130af015d80",
+      "slides": 16
+    },
+    {
+      "filename": "lsy_lab_meeting_02192025.pptx",
+      "sha256": "45c914d507fa2bad1ddde66ca5adeb8d9af159c3add6c3b10a986ffc22c9b25f",
+      "slides": 15
+    }
+  ],
+  "assets": [
+    {
+      "filename": "can-system-diagram.png",
+      "source_deck": "lsy_lab_meeting_02192025.pptx",
+      "source_slide": 3,
+      "method": "Native PowerPoint ShapeRange export of the English-labeled system diagram, excluding title and notes.",
+      "size": [
+        3011,
+        1343
+      ],
+      "sha256": "024fbe1cb0151ad1176c07574789ada8f833ad217b7a1bf0cbdbb14d910fd445"
+    },
+    {
+      "filename": "sensor-module.jpg",
+      "source_deck": "lsy_lab_meeting_02132025.pptx",
+      "source_slide": 11,
+      "method": "Native PowerPoint picture export at the displayed orientation and crop.",
+      "size": [
+        732,
+        684
+      ],
+      "sha256": "be6932d1dbfe49e550e55a7bdb786ead8b535ba67b29b78cb66baf49171eaab8"
+    },
+    {
+      "filename": "torque-1nm.png",
+      "source_deck": "lsy_lab_meeting_02132025.pptx",
+      "source_slide": 10,
+      "method": "Unchanged embedded ppt/media/image24.png.",
+      "size": [
+        2048,
+        1078
+      ],
+      "sha256": "bf414ac2488dac854442269b2159a4e3acca6563c9a975a682271184e4c768d9"
+    },
+    {
+      "filename": "imu-connected.png",
+      "source_deck": "lsy_lab_meeting_02192025.pptx",
+      "source_slide": 10,
+      "method": "Unchanged embedded ppt/media/image21.png.",
+      "size": [
+        2194,
+        1131
+      ],
+      "sha256": "bca2d1405b460817c1e2a9833b49754719875297a14dd635d75544c97652e275"
+    },
+    {
+      "filename": "imu-disconnected.png",
+      "source_deck": "lsy_lab_meeting_02192025.pptx",
+      "source_slide": 10,
+      "method": "Unchanged embedded ppt/media/image22.png.",
+      "size": [
+        2194,
+        1131
+      ],
+      "sha256": "6042af65a0a9a091a58fa6b6448cda457e4f2ec9e764e368852d07028be61c29"
+    },
+    {
+      "filename": "sensor-timing.png",
+      "source_deck": "lsy_lab_meeting_02042025.pptx",
+      "source_slide": 10,
+      "method": "Unchanged embedded ppt/media/image21.png.",
+      "size": [
+        1635,
+        715
+      ],
+      "sha256": "903606435871db9d88114e01f58eaec59b5069ffb433285f79d72a2412a12e48"
+    }
+  ],
+  "user_confirmed_scope": {
+    "contributions": [
+      "Jetson control program",
+      "sensor board module assembly",
+      "motor and sensor connection and control"
+    ],
+    "mechanical_hardware": "another student",
+    "result": "basic control pipeline; motor response delay observed",
+    "10_ms": "end-to-end time from sensor module to motor control command, distinct from physical motor response"
+  },
+  "code_review": {
+    "latest_control_file": "WRL_exo_suit/motor_control/motor_2ardusensor_thread_saving.py",
+    "latest_control_modified": "2025-03-14",
+    "implemented": [
+      "SocketCAN",
+      "two sensor-node decoding groups",
+      "MIT-format torque commands and motor feedback",
+      "queued background CSV logging"
+    ],
+    "experimental": [
+      "1 kHz scheduling setting",
+      "binary logger variant"
+    ],
+    "excluded": [
+      "external gait-tracking example metrics",
+      "binary logging completion claim",
+      "gait-adaptive assistance or wearer outcome claims"
+    ]
+  },
+  "display_policy": "Only project descriptions are shown on the website. Presentation provenance is retained here and omitted from captions."
+}

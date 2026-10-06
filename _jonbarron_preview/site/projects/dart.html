@@ -1,0 +1,463 @@
+<!doctype html>
+<!-- Standalone DART project page. Edit this file directly; migrate.py preserves it via standalone_html in content/projects/dart.md.
+     Figures: assets/pdf/ICRA27.pdf, Figures 1-5. Author names/contributions: reviewed content/projects/dart.md and content/cv.yml.
+     Template design/code adapted from Academic Project Page Template (Eliahu Horwitz) and Nerfies, CC BY-SA 4.0. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DART: From Attentive Reasoning to Intuitive Execution for Experience-Driven Robot Intelligence</title>
+    <meta name="description" content="DART reuses task-acquired scene-graph knowledge for object search and navigation on a robot vacuum, reducing repeated visual information acquisition in simulated and real-home evaluations." />
+    <meta name="author" content="Seungyeop Lee, Yeeun Kim, Sooho Park, Seong Oh Lee, Jong Jin Park" />
+    <link rel="canonical" href="https://yeop-giraffe.github.io/projects/dart.html" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="DART: From Attentive Reasoning to Intuitive Execution for Experience-Driven Robot Intelligence" />
+    <meta property="og:description" content="Experience-driven robot intelligence through persistent task memory and selective LLM/VLM reasoning. Manuscript under review at ICRA 2027." />
+    <style>
+      /* Colors, typography, buttons, section accents, and footer adapted from the original template. */
+      :root {
+        --primary-color: #2563eb;
+        --primary-hover: #1d4ed8;
+        --text-primary: #1e293b;
+        --text-secondary: #64748b;
+        --background-primary: #fff;
+        --background-secondary: #f8fafc;
+        --background-accent: #f1f5f9;
+        --border-color: #e2e8f0;
+        --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --border-radius: 12px;
+        --border-radius-lg: 16px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--text-primary);
+        background: var(--background-primary);
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--primary-color); text-underline-offset: 3px; }
+      a:hover { color: var(--primary-hover); }
+      button { font: inherit; cursor: pointer; }
+      :focus-visible { outline: 3px solid var(--primary-color); outline-offset: 5px; }
+      [hidden] { display: none !important; }
+      h1, h2, h3, p, figure { margin: 0; }
+      p + p { margin-top: 1rem; }
+      .container { width: min(960px, 100%); margin-inline: auto; }
+      .narrow { max-width: 780px; }
+      .skip-link { position: absolute; top: -100px; left: 1rem; z-index: 10; background: white; padding: 1rem; }
+      .skip-link:focus { top: 1rem; }
+      .topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.5rem; }
+      .home-link { font-size: .9rem; font-weight: 600; text-decoration: none; }
+      .more-works { position: relative; }
+      .more-works summary {
+        padding: .65rem 1rem; border: 1px solid var(--border-color); border-radius: var(--border-radius);
+        font-size: .9rem; font-weight: 600; cursor: pointer; background: white;
+      }
+      .works-list {
+        position: absolute; right: 0; top: calc(100% + .5rem); z-index: 5;
+        width: min(320px, calc(100vw - 3rem)); padding: 1.2rem;
+        background: white; border: 1px solid var(--border-color); border-radius: var(--border-radius);
+        box-shadow: 0 10px 25px rgb(0 0 0 / .1);
+      }
+      .works-list p { color: var(--text-secondary); font-size: .9rem; }
+      .works-list a { display: block; padding-block: .5rem; }
+      .publication-header { padding: 3rem 1.5rem 2.5rem; text-align: center; }
+      .publication-title { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.12; font-weight: 800; letter-spacing: -.035em; margin-bottom: 1.75rem; overflow-wrap: anywhere; }
+      .publication-authors { font-size: 1.15rem; font-weight: 500; margin-bottom: .7rem; }
+      .author-block { display: inline-block; color: var(--primary-color); }
+      .publication-affiliation { color: var(--text-secondary); }
+      .publication-venue { display: inline-block; margin-top: 1rem; padding: .4rem .85rem; font-size: .9rem; font-weight: 600; background: var(--background-accent); border-radius: var(--border-radius); }
+      .eql-cntrb { font-size: .8rem; color: var(--text-secondary); margin-top: .6rem; }
+      .publication-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-top: 1.75rem; }
+      .button {
+        display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+        padding: .65rem 1.2rem; border: 0; border-radius: var(--border-radius);
+        color: white; background: var(--text-primary); font-weight: 600; font-size: .95rem; text-decoration: none;
+        transition: background .2s, transform .2s;
+      }
+      .button[href]:hover { color: white; background: var(--primary-color); transform: translateY(-2px); }
+      .button[aria-disabled="true"] { opacity: .5; cursor: default; }
+      .button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+      .section { padding: 3.5rem 1.5rem; }
+      .is-light { background: var(--background-secondary); border-block: 1px solid var(--border-color); }
+      .section-title { position: relative; font-size: 1.9rem; line-height: 1.25; font-weight: 700; text-align: center; padding-bottom: 1.2rem; margin-bottom: 2rem; }
+      .section-title::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--gradient-accent); border-radius: 2px; }
+      .prose { color: var(--text-secondary); font-size: 1.06rem; line-height: 1.8; }
+      .prose h3 { color: var(--text-primary); font-size: 1.15rem; margin-block: 1.5rem .6rem; }
+      .prose h3:first-child { margin-top: 0; }
+      .teaser { padding: 1rem 1.5rem 3.5rem; }
+      .media-placeholder {
+        display: grid; place-content: center; gap: .5rem; aspect-ratio: 16 / 9; padding: 1.5rem; text-align: center;
+        color: var(--text-secondary); background: var(--background-accent);
+        border: 1px dashed #cbd5e1; border-radius: var(--border-radius-lg);
+      }
+      .media-placeholder svg { width: 48px; height: 48px; margin: 0 auto .5rem; fill: none; stroke: #94a3b8; stroke-width: 1.4; }
+      .media-placeholder strong { color: var(--text-primary); font-weight: 600; }
+      .media-placeholder span { font-size: .9rem; }
+      .media { display: block; width: 100%; height: auto; border-radius: var(--border-radius-lg); }
+      .video-frame { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: var(--border-radius-lg); }
+      .poster-frame { width: 100%; height: 650px; border: 1px solid var(--border-color); }
+      figcaption { font-size: .95rem; color: var(--text-secondary); text-align: center; margin-top: 1rem; }
+      .carousel-track { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+      .carousel-slide { flex: 0 0 100%; min-width: 0; padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); scroll-snap-align: start; }
+      .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.25rem; }
+      .carousel-controls button { border: 1px solid var(--border-color); border-radius: 50%; background: white; color: var(--text-primary); width: 42px; height: 42px; font-size: 1.25rem; }
+      .carousel-controls button:hover { border-color: var(--primary-color); color: var(--primary-color); }
+      .carousel-controls button:disabled { opacity: .35; cursor: default; }
+      .carousel-counter { color: var(--text-secondary); font-size: .9rem; min-width: 4rem; text-align: center; }
+      .results-table { width: 100%; border-collapse: collapse; color: var(--text-primary); font-size: .95rem; margin-top: 1.5rem; }
+      .results-table th, .results-table td { padding: .8rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+      .results-table th { background: var(--background-accent); }
+      .table-scroll { overflow-x: auto; }
+      .bibtex-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+      .bibtex-header h2 { font-size: 1.9rem; }
+      .copy-button { background: var(--primary-color); }
+      .copy-button:hover { background: var(--primary-hover); }
+      pre { margin: 0; padding: 1.5rem; font-size: .9rem; line-height: 1.7; overflow-x: auto; background: var(--background-accent); border: 1px solid var(--border-color); border-radius: var(--border-radius); }
+      code { font-family: "Cascadia Code", "SF Mono", Consolas, monospace; }
+      .copy-status { display: block; min-height: 1.6em; margin-top: .6rem; color: var(--text-secondary); font-size: .85rem; }
+      .footer { padding: 2.5rem 1.5rem; background: var(--background-secondary); border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: .85rem; text-align: center; }
+      .scroll-to-top { position: fixed; right: 1.5rem; bottom: 1.5rem; width: 46px; height: 46px; border: 0; border-radius: 50%; background: var(--primary-color); color: white; font-size: 1.4rem; box-shadow: 0 4px 12px rgb(0 0 0 / .12); }
+      @media (max-width: 600px) {
+        .publication-header { padding-top: 2rem; }
+        .section { padding: 2.5rem 1.25rem; }
+        .publication-authors { font-size: 1rem; }
+        .media-placeholder { padding: 1rem; }
+        .media-placeholder svg { width: 32px; height: 32px; }
+        .scroll-to-top { right: 1rem; bottom: 1rem; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        * { transition: none !important; }
+      }
+    
+      .publication-header { padding-top: 2.5rem; }
+      .publication-title { font-size: clamp(1.8rem, 3.4vw, 2.65rem); line-height: 1.2; letter-spacing: -.025em; margin-bottom: 1.75rem; }
+      .section-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.4rem; margin-top: 1.5rem; font-size: .9rem; }
+      .section-nav a { text-decoration: none; }
+      .highlights { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-block: 2rem 1rem; }
+      .highlight { padding: 1.3rem 1rem; border: 1px solid var(--border-color); border-radius: var(--border-radius); background: white; text-align: center; }
+      .highlight strong { display: block; color: var(--primary-color); font-size: clamp(1.8rem, 4vw, 2.4rem); line-height: 1.2; }
+      .highlight span { display: block; font-size: .9rem; color: var(--text-secondary); margin-top: .5rem; }
+      .note { color: var(--text-secondary); font-size: .88rem; line-height: 1.65; }
+      .mode-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; margin-top: 2rem; }
+      .mode-card { padding: 1.5rem; border: 1px solid var(--border-color); border-radius: var(--border-radius); background: var(--background-secondary); }
+      .mode-card h3 { margin-bottom: .6rem; color: var(--primary-color); font-size: 1.2rem; }
+      .mode-card p { color: var(--text-secondary); }
+      .method-figure { max-width: 740px; margin-inline: auto; }
+      .section-intro { margin-bottom: 2rem; }
+      .image-link { display: block; }
+      .image-link:hover { opacity: .95; }
+      .carousel-slide .media { height: 360px; object-fit: contain; background: white; }
+      .results-table caption { text-align: left; color: var(--text-secondary); margin-bottom: .6rem; }
+      .results-table td:not(:first-child), .results-table th:not(:first-child) { text-align: right; white-space: nowrap; }
+      .results-table .ours { color: var(--primary-color); font-weight: 700; }
+      .prose ul { padding-left: 1.3rem; margin-bottom: 0; }
+      .prose li + li { margin-top: .5rem; }
+      .stack { display: grid; grid-template-columns: 145px 1fr; gap: .65rem 1rem; margin: 0; color: var(--text-secondary); }
+      .stack dt { font-weight: 600; color: var(--text-primary); }
+      .stack dd { margin: 0; }
+      .bibtex-header small { color: var(--text-secondary); font-size: .8rem; font-weight: 400; }
+      @media (max-width: 600px) {
+        .highlights { gap: .5rem; }
+        .highlight { padding: 1rem .4rem; }
+        .highlight strong { font-size: clamp(1.35rem, 6vw, 2rem); }
+        .highlight span { font-size: .75rem; }
+        .mode-grid { grid-template-columns: 1fr; }
+        .carousel-slide .media { height: 240px; }
+        .stack { grid-template-columns: 1fr; gap: .2rem; }
+        .stack dd { margin-bottom: .8rem; }
+        .results-table th, .results-table td { padding: .75rem .5rem; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav class="topbar container" aria-label="Project navigation">
+      <a class="home-link" href="../index.html#research">← Personal Homepage</a>
+      <details class="more-works">
+        <summary>More Works</summary>
+        <div class="works-list">
+          <a href="hardware-in-the-loop.html">Hardware-in-the-Loop Simulation</a>
+          <a href="soft-exosuit-controller.html">Soft Exosuit Controller</a>
+          <a href="monocular-depth-estimation.html">Monocular Depth Estimation</a>
+          <a href="drone-control-assist.html">Indoor Drone Assistance</a>
+        </div>
+      </details>
+    </nav>
+    <main id="main-content">
+      <header class="publication-header">
+        <div class="container">
+          <h1 class="publication-title">DART: From Attentive Reasoning to Intuitive Execution for Experience-Driven Robot Intelligence</h1>
+          <p class="publication-authors">
+            <a class="author-block" href="../index.html">Seungyeop Lee<sup>*</sup></a>,
+            <span class="author-block">Yeeun Kim<sup>*</sup></span>,
+            <span class="author-block">Sooho Park</span>,
+            <span class="author-block">Seong Oh Lee</span>,
+            <span class="author-block">Jong Jin Park<sup>†</sup></span>
+          </p>
+          <p class="publication-affiliation">Samsung Electronics Co., Ltd., Suwon, Republic of Korea</p>
+          <p class="publication-venue">Submitted to ICRA 2027 · Under review</p>
+          <p class="eql-cntrb"><sup>*</sup> Equal contribution (co-first authors) · <sup>†</sup> Corresponding author</p>
+          <div class="publication-links" aria-label="Project resources">
+            <a class="button" href="../assets/pdf/ICRA27.pdf">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v5h4 M9 12h6 M9 16h6" /></svg>
+              Manuscript (PDF)
+            </a>
+            <a class="button" href="#video">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7z" /></svg>
+              Video Overview
+            </a>
+          </div>
+          <nav class="section-nav" aria-label="On this page">
+            <a href="#abstract">Abstract</a><a href="#video">Video</a><a href="#method">Method</a><a href="#experiments">Experiments</a><a href="#results">Results</a><a href="#contributions">My Contributions</a><a href="#discussion">Scope</a><a href="#bibtex">BibTeX</a>
+          </nav>
+        </div>
+      </header>
+      <section class="teaser" aria-label="DART framework overview">
+        <figure class="container">
+          <a class="image-link" href="../assets/dart/overview.png" aria-label="Open the full-size DART architecture figure"><img class="media" src="../assets/dart/overview.png" width="1362" height="482" alt="DART interaction layer parses a task; Intuitive Mode reuses stored knowledge; Attentive Mode acquires missing information and updates persistent scene-graph memory." /></a>
+          <figcaption>Intuitive Mode executes tasks using stored knowledge. When that knowledge is insufficient, Attentive Mode acquires the missing information and retains it in a persistent scene graph for future tasks.</figcaption>
+        </figure>
+      </section>
+      <section class="section is-light" id="abstract" aria-labelledby="abstract-title">
+        <div class="container narrow">
+          <h2 class="section-title" id="abstract-title">Abstract</h2>
+          <div class="prose">
+            <p>Humans rely on both intuitive and deliberate processing, as described by dual-process theories of cognition: novel tasks often require effortful reasoning, whereas accumulated experience allows similar tasks to be handled more automatically and with less cognitive effort. Motivated by this principle, we propose DART (Deliberation-Adaptive Reasoning from Task Experience), which applies the same principle to robots through two connected modes.</p>
+            <p>When the robot lacks sufficient task-relevant knowledge or prior experience, it operates in Attentive Mode, performing high-level reasoning and acquiring the additional knowledge needed for the task. The newly acquired knowledge is stored in a persistent scene graph and accumulated across tasks. As experience builds, the robot increasingly operates in Intuitive Mode, reusing this knowledge for later related tasks without repeated high-level reasoning.</p>
+            <p>We evaluate DART in simulated and real-world environments, including deployment on a resource-constrained platform, and show that as knowledge accumulates in the scene graph, the robot requires less high-level reasoning and less additional information gathering while maintaining task performance.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="video" aria-labelledby="video-title">
+        <div class="container">
+          <h2 class="section-title" id="video-title">Video Overview</h2>
+          <figure>
+            <video class="media" id="overview-video" controls playsinline preload="metadata" aria-label="DART overview video submitted with the ICRA 2027 manuscript">
+              <source src="../assets/dart/ICRA27_7491_VI_i.mp4" type="video/mp4" />
+              Your browser does not support this video. <a href="../assets/dart/ICRA27_7491_VI_i.mp4">Download the overview video</a>.
+            </video>
+            <figcaption>Overview of the DART system and its evaluation.</figcaption>
+          </figure>
+          <p class="note" style="margin-top: 1rem; text-align: center"><a href="../assets/dart/ICRA27_7491_VI_i.mp4" download>Download overview video (MP4)</a></p>
+        </div>
+      </section>
+      <section class="section" id="method" aria-labelledby="method-title">
+        <div class="container">
+          <h2 class="section-title" id="method-title">From Reasoning to Reuse</h2>
+          <div class="prose narrow container section-intro">
+            <p>A home robot repeatedly encounters related requests in the same environment. A map built beforehand can miss the knowledge a task needs, while repeated high-capacity model inference adds computational cost. DART acquires knowledge when it becomes necessary and retains it across tasks, without updating neural-network parameters during execution.</p>
+          </div>
+          <figure class="method-figure">
+            <a class="image-link" href="../assets/dart/scene-graph.png" aria-label="Open the full-size scene-graph figure"><img class="media" src="../assets/dart/scene-graph.png" width="688" height="510" loading="lazy" alt="Hierarchical scene graph linking geometric regions, semantic subspaces, mapped objects, and observation viewpoints to a 2D occupancy map." /></a>
+            <figcaption>The initial scene graph combines geometric regions, semantic subspaces, objects, and observation viewpoints.</figcaption>
+          </figure>
+          <div class="prose narrow container" style="margin-top: 2rem">
+            <h3>Lightweight Scene Construction</h3>
+            <p>A 2D LiDAR occupancy map and on-device, closed-vocabulary YOLOv8 detections provide the starting representation. Geometric region segmentation, object-based region classification, multi-view object mapping, and observation viewpoints selected for visibility and accessibility are assembled into a compact graph after mapping. Initial object mapping assumes floor-supported targets and estimates their 2D locations and planar extents from image contours and depth measurements.</p>
+            <h3>Interaction Layer</h3>
+            <p>An LLM parses natural-language instructions into task fields aligned with the graph hierarchy. This structured representation is passed to Intuitive Mode for knowledge retrieval and execution.</p>
+          </div>
+          <div class="mode-grid">
+            <article class="mode-card"><h3>Intuitive Mode</h3><p>Search the persistent graph for relevant spatial information, functional relations, and execution procedures. Execute directly when that knowledge is sufficient. This mode does not invoke an LLM; unresolved knowledge gaps are passed to Attentive Mode.</p></article>
+            <article class="mode-card"><h3>Attentive Mode</h3><p>Use LLM reasoning and targeted VLM observations from stored viewpoints to acquire missing task knowledge. Execute the task, then integrate the acquired descriptions, relations, and procedures into the graph for later reuse.</p></article>
+          </div>
+        </div>
+      </section>
+      <section class="section is-light" id="experiments" aria-labelledby="experiments-title">
+        <div class="container">
+          <h2 class="section-title" id="experiments-title">Experimental Setup</h2>
+          <figure class="method-figure">
+            <a class="image-link" href="../assets/dart/environments.png" aria-label="Open the full-size experimental environments figure"><img class="media" src="../assets/dart/environments.png" width="637" height="281" loading="lazy" alt="Sim-Home floor plan on the left and a photograph of the Real-Home living room and kitchen on the right." /></a>
+            <figcaption>Evaluation in a simulated residential environment (Sim-Home) and a real residential environment (Real-Home).</figcaption>
+          </figure>
+          <div class="prose narrow container" style="margin-top: 2rem">
+            <p>Each environment contains 20 object-search and navigation tasks. The full sequence is repeated for five iterations, retaining task-acquired knowledge across tasks and iterations. DART-Frozen is the comparison baseline: it also acquires information for the current task, but discards that information after execution.</p>
+            <p>Each task starts from the same pose in front of the docking station and is limited to 20 VLM calls. Task success is assessed from execution logs and final responses against the instruction. A separate single-task experiment repeats each of the 20 tasks ten times, retaining acquired knowledge within those ten repetitions and restoring the initial graph before moving to the next task.</p>
+          </div>
+          <dl class="stack narrow container" style="margin-top: 2rem">
+            <dt>Physical platform</dt><dd>Commercial robot vacuum cleaner with 2D LiDAR, an RGB camera, and a short-range depth camera; in-house SLAM and grid-based navigation.</dd>
+            <dt>Simulation</dt><dd>NVIDIA Isaac Sim 5.1.0, Cartographer, and ROS 2 Nav2.</dd>
+            <dt>Perception</dt><dd>YOLOv8 retrained for household objects observed near floor level.</dd>
+            <dt>Reasoning</dt><dd>Qwen3.5 for task parsing, text-based reasoning, and visual semantic acquisition; inference runs on an external server.</dd>
+            <dt>Memory</dt><dd>Persistent scene graph with geometric, semantic, and functional task knowledge.</dd>
+          </dl>
+        </div>
+      </section>
+      <section class="section" id="results" aria-labelledby="results-title">
+        <div class="container">
+          <h2 class="section-title" id="results-title">Results</h2>
+          <div class="highlights" aria-label="Real-Home evaluation highlights">
+            <div class="highlight"><strong>87.0%</strong><span>Task success<br />in Real-Home</span></div>
+            <div class="highlight"><strong>52.6%</strong><span>Fewer VLM tokens<br />in Real-Home</span></div>
+            <div class="highlight"><strong>49.3%</strong><span>Fewer VLM calls<br />in Real-Home</span></div>
+          </div>
+          <p class="note">Real-Home results for 20 tasks repeated over five iterations. DART-Frozen achieves 66.0% overall success. Token and call reductions are relative to DART-Frozen and count visual information acquisition and description generation, rather than all model inference.</p>
+          <div class="table-scroll">
+            <table class="results-table">
+              <caption>Task-sequence evaluation in both environments.</caption>
+              <thead><tr><th scope="col">Metric</th><th scope="col">Sim-Home</th><th scope="col">Real-Home</th></tr></thead>
+              <tbody>
+                <tr class="ours"><th scope="row">DART overall task success</th><td>58.0%</td><td>87.0%</td></tr>
+                <tr><th scope="row">DART-Frozen overall task success</th><td>55.0%</td><td>66.0%</td></tr>
+                <tr><th scope="row">DART first → final iteration success</th><td>50.0% → 60.0%</td><td>90.0% → 90.0%</td></tr>
+                <tr class="ours"><th scope="row">VLM token reduction vs. DART-Frozen</th><td>47.6%</td><td>52.6%</td></tr>
+                <tr class="ours"><th scope="row">VLM call reduction vs. DART-Frozen</th><td>56.2%</td><td>49.3%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note" style="margin-top: 1rem">Overall success covers all five iterations; first and final refer to iterations 1 and 5. VLM reductions are averaged over the five iterations.</p>
+          <div class="carousel-track" id="results-carousel" role="region" aria-label="Evaluation figures" tabindex="0" style="margin-top: 2rem">
+            <figure class="carousel-slide">
+              <a class="image-link" href="../assets/dart/knowledge-reuse.png" aria-label="Open the full-size knowledge-reuse plots"><img class="media" src="../assets/dart/knowledge-reuse.png" width="1406" height="368" loading="lazy" alt="Four plots show VLM tokens over ten single-task repetitions, mean VLM tokens and calls over five task-sequence iterations, and Intuitive Mode usage in Sim-Home and Real-Home." /></a>
+              <figcaption>Knowledge reuse reduces repeated visual information acquisition. Intuitive Mode usage increases from the first to the final task-sequence iteration.</figcaption>
+            </figure>
+            <figure class="carousel-slide">
+              <a class="image-link" href="../assets/dart/viewpoints.png" aria-label="Open the full-size stored-viewpoint observations"><img class="media" src="../assets/dart/viewpoints.png" width="686" height="395" loading="lazy" alt="Robot observations of living-kitchen spaces and a refrigerator in Sim-Home, and a kitchen and mat in Real-Home, captured from stored viewpoints." /></a>
+              <figcaption>Stored viewpoints support targeted re-observation. A human evaluator could identify the target space or object in 95.18% (237/249) of Sim-Home observations and 88.03% (103/117) of Real-Home observations. Only image–target pairs with definite success or failure judgments are counted.</figcaption>
+            </figure>
+          </div>
+          <div class="carousel-controls" hidden>
+            <button type="button" id="previous-slide" aria-label="Previous evaluation figure" aria-controls="results-carousel">←</button>
+            <span class="carousel-counter" id="slide-counter" aria-live="polite">1 / 2</span>
+            <button type="button" id="next-slide" aria-label="Next evaluation figure" aria-controls="results-carousel">→</button>
+          </div>
+        </div>
+      </section>
+      <section class="section is-light" id="contributions" aria-labelledby="contributions-title">
+        <div class="container narrow">
+          <h2 class="section-title" id="contributions-title">My Contributions</h2>
+          <div class="prose">
+            <p>As a co-first author, my contributions focused on the architecture, lightweight spatial perception, and system integration:</p>
+            <ul>
+              <li>Contributed to the dual-process architecture for task-knowledge reuse and incremental scene-graph enrichment.</li>
+              <li>Developed observation-viewpoint selection based on object visibility and viewpoint accessibility.</li>
+              <li>Developed room classification using object occurrence likelihoods and visual evidence accumulated during robot navigation.</li>
+              <li>Integrated VLM, perception, and navigation modules into the Spatial AI system and validated the system in NVIDIA Isaac Sim.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="discussion" aria-labelledby="discussion-title">
+        <div class="container narrow">
+          <h2 class="section-title" id="discussion-title">Scope &amp; Future Work</h2>
+          <div class="prose">
+            <p>This study considers repeated tasks in the same or slowly changing environment, using a resource-constrained mobile platform. Evaluation covers object search and navigation in two residential environments; it does not establish manipulation performance or long-term robustness across diverse homes.</p>
+            <p>Future work will extend the framework to platforms with manipulation capabilities, add temporal information to track changes in object states and spatial relations, and evaluate long-term deployment across more environments and users.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section is-light" id="bibtex" aria-labelledby="bibtex-title">
+        <div class="container">
+          <div class="bibtex-header"><h2 id="bibtex-title">BibTeX <small>Manuscript citation</small></h2><button type="button" class="button copy-button" id="copy-bibtex" hidden>Copy</button></div>
+          <pre><code id="bibtex-code">@misc{lee2026dart,
+  title  = {{DART}: From Attentive Reasoning to Intuitive Execution
+            for Experience-Driven Robot Intelligence},
+  author = {Lee, Seungyeop and Kim, Yeeun and Park, Sooho
+            and Lee, Seong Oh and Park, Jong Jin},
+  year   = {2026},
+  note   = {Manuscript submitted to ICRA 2027; under review}
+}</code></pre>
+          <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+          <p class="note">This citation describes the submitted manuscript, rather than a published conference paper.</p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container narrow">
+        <p><a href="../index.html#research">Back to Research &amp; Projects</a></p>
+        <p>Adapted from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a> by Eliahu Horwitz, based on <a href="https://nerfies.github.io/">Nerfies</a>.</p>
+        <p>Template design and code licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+      </div>
+    </footer>
+    <button type="button" class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top" hidden>↑</button>
+    <script>
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const scrollBehavior = () => reducedMotion.matches ? "instant" : "smooth";
+
+      // Native scroll-snap carousel: readable and swipeable even without JavaScript.
+      const track = document.getElementById("results-carousel");
+      if (track) {
+        const slides = Array.from(track.querySelectorAll(".carousel-slide"));
+        const previous = document.getElementById("previous-slide");
+        const next = document.getElementById("next-slide");
+        const counter = document.getElementById("slide-counter");
+        let currentSlide = 0;
+        function updateCarousel() {
+          if (!slides.length) return;
+          const trackLeft = track.getBoundingClientRect().left;
+          currentSlide = slides.reduce((closest, slide, index) => {
+            return Math.abs(slide.getBoundingClientRect().left - trackLeft) < Math.abs(slides[closest].getBoundingClientRect().left - trackLeft) ? index : closest;
+          }, 0);
+          counter.textContent = `${currentSlide + 1} / ${slides.length}`;
+          previous.disabled = currentSlide === 0;
+          next.disabled = currentSlide === slides.length - 1;
+        }
+        function showSlide(index) {
+          const slide = slides[Math.max(0, Math.min(index, slides.length - 1))];
+          if (!slide) return;
+          const left = track.scrollLeft + slide.getBoundingClientRect().left - track.getBoundingClientRect().left;
+          track.scrollTo({ left, behavior: scrollBehavior() });
+        }
+        document.querySelector(".carousel-controls").hidden = slides.length < 2;
+        previous.addEventListener("click", () => showSlide(currentSlide - 1));
+        next.addEventListener("click", () => showSlide(currentSlide + 1));
+        track.addEventListener("scroll", updateCarousel, { passive: true });
+        track.addEventListener("keydown", (event) => {
+          if (event.target !== track) return;
+          if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+            event.preventDefault();
+            showSlide(currentSlide + (event.key === "ArrowRight" ? 1 : -1));
+          }
+        });
+        window.addEventListener("resize", () => { showSlide(currentSlide); updateCarousel(); });
+        updateCarousel();
+      }
+
+      // Clipboard API on HTTPS/localhost; select text for manual copying if unavailable (e.g. file://).
+      const copyButton = document.getElementById("copy-bibtex");
+      if (copyButton) {
+        copyButton.hidden = false;
+        copyButton.addEventListener("click", async () => {
+          const code = document.getElementById("bibtex-code");
+          const status = document.getElementById("copy-status");
+          try {
+            await navigator.clipboard.writeText(code.textContent);
+            status.textContent = "Citation copied.";
+          } catch {
+            const range = document.createRange();
+            range.selectNodeContents(code);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            status.textContent = "Citation selected. Press Ctrl+C (or ⌘C) to copy.";
+          }
+        });
+      }
+
+      const topButton = document.getElementById("scroll-to-top");
+      function updateTopButton() { topButton.hidden = window.scrollY < 500; }
+      window.addEventListener("scroll", updateTopButton, { passive: true });
+      topButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: scrollBehavior() }));
+      updateTopButton();
+
+      const moreWorks = document.querySelector(".more-works");
+      if (moreWorks) {
+        document.addEventListener("click", (event) => { if (!moreWorks.contains(event.target)) moreWorks.open = false; });
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && moreWorks.open) {
+            moreWorks.open = false;
+            moreWorks.querySelector("summary").focus();
+          }
+        });
+      }
+        </script>
+  </body>
+</html>

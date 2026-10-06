@@ -1,0 +1,65 @@
+{
+  "source_file": "LAB_LSY_03042024.pptx",
+  "source_sha256": "e6dafb8e630b469ceaefc442992f11d06f2fba052388ba79a11499384eae2a68",
+  "presentation_date": "2024/03/04, explicitly printed on slide 1",
+  "reviewed_slides": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "relevant_slides": [
+    3,
+    4
+  ],
+  "extraction": "Raw embedded PNG media copied without alteration. Source presentation is not published.",
+  "assets": [
+    {
+      "filename": "competition-demo.png",
+      "source_media": "ppt/media/image1.png",
+      "slide": 3,
+      "description": "Embedded video poster showing the blue helium blimp in the indoor competition venue.",
+      "sha256": "6fdd53c39bd2bb470e03b89351c5d9a91a647ca6a4afd4031e4e216aeb7827b1"
+    },
+    {
+      "filename": "platform-original.png",
+      "source_media": "ppt/media/image2.png",
+      "slide": 4,
+      "description": "Original full platform photo; displayed with a 90-degree rotation and a crop in the slide.",
+      "sha256": "daaf833a0bbec0a9cb550a23fef382a786577f0c10280571c68101449bdc383b"
+    },
+    {
+      "filename": "electronics-original.png",
+      "source_media": "ppt/media/image3.png",
+      "slide": 4,
+      "description": "Original underside photo; displayed with a 90-degree rotation and a crop in the slide.",
+      "sha256": "19a5e434082ec7d5a9d312ca86622ddd1f4f62f1474907ed327d7b0a29f5ea7a"
+    },
+    {
+      "filename": "control-system.png",
+      "source_media": "ppt/media/image4.png",
+      "slide": 4,
+      "description": "Original transparent control diagram showing Raspberry Pi 4, ESP32, DC Motor * 4, and a laptop labeled YoloV5 + Tracker. View against a light background.",
+      "sha256": "708a18fbfe4ba0f9b9bc956a46b77ab1d716acdee0b5f05dabacba946a3e0b84"
+    }
+  ],
+  "evidence": {
+    "slide_3": [
+      "Defend the Republic – Light Drone Competition",
+      "헬륨 부력 포함 100g",
+      "Materials: helium balloons, balsa wood, carbon pipes, 3D printer",
+      "System: Raspberry Pi, ESP32"
+    ],
+    "slide_4": [
+      "Physical platform and underside photos; both source images rotate 90 degrees clockwise in the presentation.",
+      "Control diagram: Raspberry Pi 4 streams video to a laptop running YoloV5 + Tracker; laptop sends Motor Value commands to ESP32; ESP32 drives DC Motor * 4."
+    ]
+  },
+  "scope_notes": [
+    "Slide 3 reports 100 g considering helium buoyancy; it does not specify the measurement procedure.",
+    "STM32, PID, a sensor model, autonomous mission success, and performance rates are not specified in these slides. YOLOv5, Tracker, and a laptop inference host are explicitly labeled in the control diagram.",
+    "Source has no explicit future-work list or per-person task breakdown.",
+    "Existing visiting-research metadata (Sep. 2023 – Feb. 2024, Drexel IMAPLE Lab) is maintained as previously reviewed site context, not inferred from these slides."
+  ],
+  "visual_verification": "Native PowerPoint exports of slides 3 and 4 were inspected. Transparent control-system media contains black labels that require a light background for review."
+}

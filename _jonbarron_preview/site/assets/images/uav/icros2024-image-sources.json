@@ -1,0 +1,142 @@
+{
+  "source_pptx": "F:\\Desktop\\24-1\\ICROS학회\\ICROS2024\\ICROS_포스터_2024_LSY.pptx",
+  "source_pptx_sha256": "d6ee599e7426f851a31d11940f21e08cbf035a9beb2a77837cae7a4c730982df",
+  "source_paper": "F:/Desktop/grad_school/학회/ICROS2024_LSY.pdf",
+  "assets": [
+    {
+      "asset": "icros2024-grid-original.png",
+      "pptx_member": "ppt/media/image19.png",
+      "slide": 1,
+      "replaces": "icros2024-grid.jpg",
+      "old_dimensions": [
+        320,
+        240
+      ],
+      "new_dimensions": [
+        320,
+        240
+      ],
+      "extraction": "Original embedded bytes, no resizing or scientific content changes",
+      "comparison": "same pixel resolution; preserves original PNG without JPEG recompression",
+      "sha256": "c4049aa45fd402cadd84aeed3e9c154ea5202e0649fe64e2615319aef6a5f0db"
+    },
+    {
+      "asset": "icros2024-obstacles-original.png",
+      "pptx_member": "ppt/media/image18.png",
+      "slide": 1,
+      "replaces": "icros2024-obstacles.jpg",
+      "old_dimensions": [
+        768,
+        455
+      ],
+      "new_dimensions": [
+        939,
+        755
+      ],
+      "extraction": "Original embedded bytes, no resizing or scientific content changes",
+      "comparison": "higher-resolution screenshot of the same simulated obstacle scene, with a different framing",
+      "sha256": "e81192192e36d47b6bdde3d1cfa4dca2700bf30e836589faabf830a376700a17"
+    },
+    {
+      "asset": "icros2024-path-3d-original.png",
+      "pptx_member": "ppt/media/image21.png",
+      "slide": 1,
+      "replaces": "icros2024-path-3d.jpg",
+      "old_dimensions": [
+        346,
+        260
+      ],
+      "new_dimensions": [
+        570,
+        420
+      ],
+      "extraction": "Original embedded bytes, no resizing or scientific content changes",
+      "comparison": "higher-resolution original of the same 3D trajectory plot",
+      "sha256": "50c5c88724f3fbd634b1c3ac11c86717b0a95f339da8232b4dcfea625f6f53f1"
+    },
+    {
+      "asset": "icros2024-path-top-original.png",
+      "pptx_member": "ppt/media/image20.png",
+      "slide": 1,
+      "replaces": "icros2024-path-top.jpg",
+      "old_dimensions": [
+        346,
+        260
+      ],
+      "new_dimensions": [
+        560,
+        420
+      ],
+      "extraction": "Original embedded bytes, no resizing or scientific content changes",
+      "comparison": "higher-resolution original of the same top-view trajectory plot",
+      "sha256": "c34dd9bacfec8770567053fe2f845846b1c8f7dc5b8d575c1f4e5f81d24f4dfc"
+    },
+    {
+      "asset": "icros2024-pipeline-original.png",
+      "slide": 1,
+      "source_shapes": [
+        3,
+        9,
+        16,
+        20,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "replaces": "icros2024-pipeline.jpg",
+      "old_dimensions": [
+        982,
+        449
+      ],
+      "new_dimensions": [
+        2861,
+        1848
+      ],
+      "extraction": "Native Microsoft PowerPoint PNG export of original diagram shapes, preserved byte-for-byte with its transparent background; no cropping, resizing, or redrawing",
+      "comparison": "Original editable text and arrows rendered as pixels; embedded raster images retain their source detail. Diagram differs in styling from the paper figure.",
+      "sha256": "cdf251f797bfa7cea9235342364940706136db63db02ea65e6f2ec4e70a04610"
+    }
+  ],
+  "preserved_fallbacks": [
+    "icros2024-depth.jpg"
+  ],
+  "source_discrepancies": [
+    "Paper Section 2.2 describes a 4-by-5 (20-cell) grid; paper Figure 1 and poster illustrate a 5-by-3 (15-cell) grid.",
+    "Poster has an unrelated knee-muscle template text residue, excluded from the website."
+  ],
+  "confirmed_results": {
+    "depth_image_processing_fps": 41,
+    "forward_step_m": 0.5,
+    "takeoff_height_m": 1.5,
+    "flight_distance_m": 10,
+    "scope": "PX4/Gazebo simulation; no physical field-test result claimed"
+  },
+  "preserved_previous_images": [
+    "icros2024-grid.jpg",
+    "icros2024-obstacles.jpg",
+    "icros2024-path-3d.jpg",
+    "icros2024-path-top.jpg",
+    "icros2024-pipeline.jpg"
+  ]
+}

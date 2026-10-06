@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Seungyeop Lee">
+  <title>Vision-Based Indoor UAV Navigation | Seungyeop Lee</title>
+  <link rel="stylesheet" href="../stylesheet.css">
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<main><nav><a href="../index.html#research">← Publications &amp; Presentations</a></nav><h1>Vision-Based Indoor UAV Navigation</h1><p class="muted">Visual Odometry / Monocular Depth Estimation / UAVs</p><h2>Overview</h2>
+<p>At Korea University's Human-Machine Systems Lab, advised by Prof. Shinsuk Park, I studied vision-based navigation for indoor UAVs. These two ICROS papers address complementary challenges: estimating the UAV's position where GPS is unavailable, and selecting a flight direction to avoid obstacles using a single RGB camera.</p>
+<nav class="uav-section-nav" aria-label="Project sections"><a href="#visual-odometry">ICROS 2023 · Visual odometry</a><a href="#obstacle-avoidance">ICROS 2024 · Obstacle avoidance</a></nav>
+
+<h2 id="visual-odometry">ICROS 2023 — Visual Odometry for Indoor Flight</h2>
+
+<h3>Hardware Platform</h3>
+<p>I developed a ROS-based quadcopter platform integrating a <strong>Pixhawk 6C flight controller</strong>, <strong>NVIDIA Jetson Nano</strong>, and <strong>ZED 2i stereo camera</strong>. The camera's visual odometry estimates position and orientation for indoor localization without GPS.</p>
+<figure class="uav-figure uav-figure-medium">
+  <a href="../assets/images/uav/icros2023-platform.jpg" target="_blank" rel="noopener"><img src="../assets/images/uav/icros2023-platform.jpg" width="582" height="389" alt="Indoor quadcopter with a ZED 2i stereo camera mounted at the front and stacked onboard electronics." decoding="async"></a>
+  <figcaption><span>Quadcopter platform</span> Physical quadcopter platform integrating stereo vision, onboard computing, and flight control.</figcaption>
+</figure>
+
+<h3>From Visual Odometry to Flight Control</h3>
+<p>The ROS/MAVROS pipeline transforms the camera's pose into the flight controller's coordinate frame and sends it to PX4 for position-based offboard control. The work combined a physical hardware platform and pose visualization in RViz with flight-control evaluation in <strong>PX4/Gazebo simulation</strong>.</p>
+<div class="uav-figure-grid">
+  <figure class="uav-figure">
+    <a href="../assets/images/uav/icros2023-ros-graph.jpg" target="_blank" rel="noopener"><img src="../assets/images/uav/icros2023-ros-graph.jpg" width="517" height="291" alt="ROS rqt graph showing MAVROS topics and nodes connecting position commands to the flight controller." loading="lazy" decoding="async"></a>
+    <figcaption><span>ROS control pipeline</span> ROS node and topic connections for offboard flight control.</figcaption>
+  </figure>
+  <figure class="uav-figure">
+    <a href="../assets/images/uav/icros2023-rviz.jpg" target="_blank" rel="noopener"><img src="../assets/images/uav/icros2023-rviz.jpg" width="640" height="388" alt="RViz screenshot visualizing the position and orientation estimated by stereo visual odometry." loading="lazy" decoding="async"></a>
+    <figcaption><span>Pose visualization</span> Visual-odometry pose estimates displayed in RViz.</figcaption>
+  </figure>
+</div>
+
+<figure class="uav-figure uav-figure-medium">
+  <a href="../assets/images/uav/icros2023-gazebo.jpg" target="_blank" rel="noopener"><img src="../assets/images/uav/icros2023-gazebo.jpg" width="582" height="327" alt="PX4 quadcopter model in a Gazebo simulation used for evaluating flight control." loading="lazy" decoding="async"></a>
+  <figcaption><span>Flight-control simulation</span> PX4/Gazebo environment used to evaluate position-based flight control.</figcaption>
+</figure>
+
+<p>The paper reports a physical platform and a simulated flight demonstration. It does not quantify localization errors or report physical autonomous-flight success rates.</p>
+<h2 id="obstacle-avoidance">ICROS 2024 — Monocular Depth for Obstacle Avoidance</h2>
+
+<h3>Depth-Based Flight-Direction Selection</h3>
+<p>I explored a lightweight obstacle-avoidance approach using <strong>MiDaS</strong>, which estimates relative scene depth from a single RGB image. The system divides the depth map into a grid, compares the mean depth value of each cell, and selects a flight region with fewer obstacles. These are relative depth cues rather than measured metric distances.</p>
+<figure class="uav-figure">
+  <div class="uav-image-pair">
+    <a href="../assets/images/uav/icros2024-depth.jpg" target="_blank" rel="noopener"><img src="../assets/images/uav/icros2024-depth.jpg" width="320" height="240" alt="MiDaS relative depth map of pillar obstacles in the simulated UAV camera view." loading="lazy" decoding="async"></a>
+    <a href="../assets/images/uav/icros2024-grid-original.png" target="_blank" rel="noopener"><img src="../assets/images/uav/icros2024-grid-original.png" width="320" height="240" alt="Depth map divided into five columns and three rows, with cell mean values and a selected region outlined in yellow." loading="lazy" decoding="async"></a>
+  </div>
+  <figcaption><span>Depth-based direction selection</span> MiDaS relative depth map and grid-based flight-direction selection. The yellow outline marks the selected region.</figcaption>
+</figure>
+
+<p><strong>Grid configuration:</strong> The method description specifies a 4 × 5 grid (20 cells), while the illustrated grid has 5 × 3 cells (15 cells).</p>
+<p>The selected cell's horizontal position determines a yaw adjustment, followed by a <strong>0.5 m forward step</strong>. ROS/MAVROS sends the resulting position commands to PX4. New depth observations update the next target during flight.</p>
+<figure class="uav-figure uav-figure-medium">
+  <a href="../assets/images/uav/icros2024-pipeline-original.png" target="_blank" rel="noopener"><img src="../assets/images/uav/icros2024-pipeline-original.png" width="2861" height="1848" alt="Closed-loop system diagram connecting Gazebo RGB images, depth estimation, grid comparison, and PX4-Autopilot pose and position commands." loading="lazy" decoding="async"></a>
+  <figcaption><span>Perception-to-control pipeline</span> The perception-to-control loop connects RGB images, depth estimation, grid comparison, and PX4 flight commands.</figcaption>
+</figure>
+
+<h3>Simulation Demonstration</h3>
+<p>The PX4/Gazebo test environment placed <strong>six 1 × 1 × 3 m rectangular pillars</strong> within the forward <strong>10 m</strong> test area to evaluate obstacle avoidance.</p>
+<figure class="uav-figure uav-figure-medium">
+  <a href="../assets/images/uav/icros2024-obstacles-original.png" target="_blank" rel="noopener"><img src="../assets/images/uav/icros2024-obstacles-original.png" width="939" height="755" alt="Gazebo test scene containing rectangular pillar obstacles ahead of a small UAV." loading="lazy" decoding="async"></a>
+  <figcaption><span>Obstacle environment</span> Gazebo obstacle environment used for the flight demonstration.</figcaption>
+</figure>
+
+<p>Depth-map generation ran at <strong>41 FPS</strong>. After taking off to <strong>1.5 m</strong>, the reported trajectory completed a <strong>10 m flight without colliding with the placed obstacles</strong>. The 41 FPS result measures RGB-to-depth image processing. The plots below show the simulated trajectory in three dimensions and from above.</p>
+<figure class="uav-figure">
+  <div class="uav-image-pair">
+    <a href="../assets/images/uav/icros2024-path-3d-original.png" target="_blank" rel="noopener"><img src="../assets/images/uav/icros2024-path-3d-original.png" width="570" height="420" alt="Three-dimensional flight trajectory curving around rectangular obstacles in the simulation." loading="lazy" decoding="async"></a>
+    <a href="../assets/images/uav/icros2024-path-top-original.png" target="_blank" rel="noopener"><img src="../assets/images/uav/icros2024-path-top-original.png" width="560" height="420" alt="Top view of the simulated flight path passing between rectangular obstacles." loading="lazy" decoding="async"></a>
+  </div>
+  <figcaption><span>Obstacle-avoidance trajectory</span> Collision-free simulated trajectory shown in 3D and from above.</figcaption>
+</figure>
+
+<p>This is a simulation demonstration, with no reported repeated-trial success rate or baseline comparison. Physical flight tests and altitude-aware path planning were identified as future work.</p>
+<h2>Connecting the Two Studies</h2>
+<p>Both studies connect visual perception to flight control through ROS, MAVROS, and PX4. The 2023 work establishes a platform for indoor localization and position control with stereo visual odometry; the 2024 work investigates obstacle avoidance with monocular relative-depth cues. Together, they explore how camera-based perception can support indoor UAV navigation.</p>
+<h2>Skills</h2>
+<p><code>Visual Odometry</code> <code>Monocular Depth Estimation</code> <code>MiDaS</code> <code>ROS / MAVROS</code> <code>PX4</code> <code>Gazebo</code> <code>UAVs</code></p><section class="related-publications"><h2>Publications &amp; Presentations</h2><div class="publication-meta" data-publication-id="lee2024monocular"><h3 class="papertitle">“Micro UAV Autonomous Navigation System With Deep Learning based Monocular Vision Depth Estimation”</h3><p><strong>Seungyeop Lee</strong>, Shinsuk Park</p><p class="publication-affiliation">Department of Mechanical Engineering, Korea University</p><p class="publication-venue"><em>ICROS 2024</em> <span class="publication-note">Poster presentation.</span></p></div><div class="publication-meta" data-publication-id="lee2023visual"><h3 class="papertitle">“Development of ROS based indoor autonomous flight Quadcopter Platform using Visual Odometry”</h3><p><strong>Seungyeop Lee</strong>, Shinsuk Park</p><p class="publication-affiliation">Department of Mechanical Engineering, Korea University</p><p class="publication-venue"><em>ICROS 2023</em> <span class="publication-note">Poster presentation.</span></p></div></section></main>
+<footer>Website template by <a href="https://github.com/jonbarron/jonbarron.github.io">Jon Barron</a>.</footer>
+</body>
+</html>

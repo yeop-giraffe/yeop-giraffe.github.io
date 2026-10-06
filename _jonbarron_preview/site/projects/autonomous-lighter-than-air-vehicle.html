@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Seungyeop Lee">
+  <title>Lighter-Than-Air Robot for a Light Drone Competition | Seungyeop Lee</title>
+  <link rel="stylesheet" href="../stylesheet.css">
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<main><nav><a href="../index.html#projects">← Selected Projects</a></nav><h1>Lighter-Than-Air Robot for a Light Drone Competition</h1><p class="muted">Aerial Robotics / Embedded Systems / Visual Tracking</p><h2>Overview</h2>
+<p>During my visiting research at Drexel University's Intelligent Machine Perception and Learning (IMAPLE) Lab, I worked on a lighter-than-air robot for the <strong>Defend the Republic – Light Drone Competition</strong>. Helium balloons support a lightweight structure built from balsa wood, carbon pipes, and 3D-printed parts.</p>
+<figure class="uav-figure">
+  <a href="../assets/lighter-than-air/competition-demo.png" target="_blank" rel="noopener"><img src="../assets/lighter-than-air/competition-demo.png" width="1280" height="720" alt="Blue helium-supported blimp in an indoor competition venue, with a person standing beneath the platform." decoding="async"></a>
+  <figcaption><span>Prototype in the competition venue</span> The helium-supported robot operating in the indoor venue.</figcaption>
+</figure>
+
+<h2>Physical Platform</h2>
+<p>The design combines helium buoyancy with a lightweight frame carrying the control electronics and motors. Construction materials include:</p>
+<ul>
+<li>Helium balloons for buoyancy.</li>
+<li>Balsa wood and carbon pipes for the frame.</li>
+<li>3D-printed components.</li>
+</ul>
+<p>The prototype's reported mass is <strong>100 g considering helium buoyancy</strong>; the measurement procedure was not documented.</p>
+<div class="uav-figure-grid">
+  <figure class="uav-figure">
+    <a href="../assets/lighter-than-air/platform-original.png" target="_blank" rel="noopener" style="aspect-ratio:1;display:grid;place-items:center"><img src="../assets/lighter-than-air/platform-original.png" width="4032" height="3024" alt="Full prototype photo showing blue helium balloons suspended above a lightweight frame in the indoor venue." loading="lazy" decoding="async" style="width:100%;height:100%;min-height:0;object-fit:contain;transform:rotate(90deg)"></a>
+    <figcaption><span>Balloon-supported frame</span> Helium balloons support the lightweight structure.</figcaption>
+  </figure>
+  <figure class="uav-figure">
+    <a href="../assets/lighter-than-air/electronics-original.png" target="_blank" rel="noopener" style="aspect-ratio:1;display:grid;place-items:center"><img src="../assets/lighter-than-air/electronics-original.png" width="5712" height="4284" alt="Underside of the blimp showing a balsa frame, wiring, battery, and mounted electronics beneath the helium balloons." loading="lazy" decoding="async" style="width:100%;height:100%;min-height:0;object-fit:contain;transform:rotate(90deg)"></a>
+    <figcaption><span>Mounted electronics</span> Control electronics and wiring mounted beneath the balloons.</figcaption>
+  </figure>
+</div>
+
+<h2>Control Hardware and Data Flow</h2>
+<p>I integrated a <strong>Raspberry Pi 4</strong>, an <strong>ESP32</strong>, and <strong>four DC motors</strong> into the blimp's control system. The Raspberry Pi streams video to a <strong>laptop running YOLOv5 and a tracker</strong>. The laptop sends motor-value commands to the ESP32, which controls the motors.</p>
+<p>This places object detection and tracking on the laptop while the onboard hardware handles video streaming and motor commands.</p>
+<figure class="uav-figure">
+  <a href="../assets/lighter-than-air/control-system.png" target="_blank" rel="noopener"><img src="../assets/lighter-than-air/control-system.png" width="2643" height="1697" alt="Blimp control diagram showing Raspberry Pi 4 streaming video to a laptop running YOLOv5 and a tracker, laptop motor commands entering ESP32, and ESP32 driving four DC motors." loading="lazy" decoding="async"></a>
+  <figcaption><span>Video streaming and motor-command flow</span> Video flows from the Raspberry Pi 4 to the laptop, and motor-value commands flow from the laptop to the ESP32.</figcaption>
+</figure>
+
+<h2>Demonstration Scope</h2>
+<p>The prototype was demonstrated in an indoor competition venue, combining helium-supported flight with video streaming and motor control.</p>
+<h2>Research Context</h2>
+<p>My visiting appointment ran from <strong>September 2023 to February 2024</strong> under Prof. David Han.</p>
+<h2>Skills</h2>
+<p><code>Lighter-Than-Air Robotics</code> <code>Raspberry Pi</code> <code>ESP32</code> <code>YOLOv5</code> <code>Visual Tracking</code> <code>Embedded Systems</code></p></main>
+<footer>Website template by <a href="https://github.com/jonbarron/jonbarron.github.io">Jon Barron</a>.</footer>
+</body>
+</html>

@@ -1,0 +1,233 @@
+# Content transcribed from Seungyeop_Lee_CV_v3.docx.
+cv:
+  name: Seungyeop Lee
+  label: Software Engineer, Samsung Electronics
+  email: yeoplee0906@gmail.com
+  phone: "+82 (0)10-9132-4163"
+  location: Suwon, Republic of Korea
+  download: assets/documents/Seungyeop_Lee_CV_v3.docx
+  sections:
+    Research Interests:
+      - name: Lower-limb wearable robots, vision-based perception, and human-robot interaction
+    Education:
+      - institution: Korea University
+        location: Seoul, Republic of Korea
+        studyType: M.S.
+        area: Mechanical Engineering; Integrated Major in Intelligent Mobility
+        start_date: Sep. 2022
+        end_date: Feb. 2025
+        score: "GPA: 4.45/4.5"
+        highlights:
+          - "Research Lab: Human-Machine Systems Lab (Prof. Shinsuk Park)."
+          - "Thesis: A Development of Intuitive Controller and Monocular Vision based Interface for Disaster Response UAV."
+      - institution: Korea University
+        location: Seoul, Republic of Korea
+        studyType: B.S.
+        area: Mechanical Engineering
+        start_date: Mar. 2016
+        end_date: Aug. 2022
+        score: "GPA: 3.45/4.5"
+        highlights:
+          - Absence from Oct. 2017 to Jun. 2019 due to military service.
+    Research Experience:
+      - company: Robot Vacuum Cleaner SW Lab – Perception Team, Samsung Electronics
+        position: Software Engineer, Spatial AI Development
+        location: Suwon, South Korea
+        start_date: May 2026
+        end_date: Present
+        summary: Spatial AI for Resource-Constrained Robot Vacuum Cleaners
+        highlights:
+          - Developed a dual-process robot intelligence architecture inspired by human cognition combining task knowledge reuse and incremental scene-graph enrichment to reduce repeated reasoning on resource-constrained robots.
+          - Developed a viewpoint selection algorithm that selects navigation coordinates for robots to acquire object information based on visibility and accessibility.
+          - Developed room classification using object occurrence likelihoods and spatially accumulated visual evidence from observations collected during navigation.
+          - Integrated VLM, perception, and navigation into a unified Spatial AI system and validated in NVIDIA Isaac Sim.
+      - company: Seoul National University, Wearable Robotics Laboratory
+        position: Research Intern
+        advisor: Prof. Jinsoo Kim
+        location: Seoul, South Korea
+        start_date: Dec. 2024
+        end_date: Feb. 2025
+        summary: Embedded Controller and Sensor Integration for a Soft Exosuit
+        highlights:
+          - Developed a real-time onboard controller for a tendon-driven soft exosuit.
+          - Built a tendon-driven soft exosuit pipeline with 10-ms end-to-end processing from sensor measurements to motor commands using multithreaded CAN communication.
+          - Designed a sensor integration module connecting wearable sensors, actuators, and the controller.
+      - company: Korea University, Human-Machine Systems Lab
+        position: Graduate Researcher
+        advisor: Prof. Shinsuk Park
+        location: Seoul, South Korea
+        start_date: Sep. 2022
+        end_date: Dec. 2024
+        summary: Monocular Vision-Based Assistance Interface for Indoor Drones
+        highlights:
+          - Developed a monocular vision-based pilot assistance interface to reduce human error during indoor UAV operation.
+          - Applied monocular depth estimation for obstacle perception using a single RGB camera on a lightweight UAV.
+          - "Evaluated the interface with six participants in simulation: NASA-TLX mental demand decreased by approximately 43%, and mean System Usability Scale scores increased from 62.5 to 80 versus the RGB interface."
+      - company: Drexel University, Intelligent Machine Perception and Learning (IMAPLE) Lab
+        position: Visiting Researcher
+        advisor: Prof. David Han
+        location: Philadelphia, PA, USA
+        start_date: Sep. 2023
+        end_date: Feb. 2024
+        highlights:
+          - Applied CycleGAN-based domain transfer to generate realistic training data from synthetic images for sim-to-real monocular depth estimation.
+          - Improved monocular depth estimation using mixed real and domain-transferred synthetic data.
+          - Developed a helium-supported aerial robot with Raspberry Pi–ESP32 hardware and laptop-based YOLOv5 tracking for video streaming and motor commands.
+    Industry Experience:
+      - company: Samsung Electronics, Robot Vacuum Cleaner Development Lab
+        position: Software Engineer, Robot Software Development
+        location: Suwon, South Korea
+        start_date: May 2026
+        end_date: Present
+        summary: Hardware-in-the-Loop Simulation and Validation
+        highlights:
+          - Built an Isaac Sim-based HIL test system with Samsung R&D Institute-Delhi, integrating a physical controller board and production control software with simulated robot sensors.
+      - company: Samsung Electronics, Robot Vacuum Cleaner Development Lab
+        position: Mechanical Engineer, Robot Product Development
+        location: Suwon, South Korea
+        start_date: Feb. 2025
+        end_date: Apr. 2026
+        summary: Robot Vacuum Cleaner Mechanism Development and Mass Production
+        highlights:
+          - Designed and validated mop actuation mechanisms for robot vacuum cleaners, including durability improvement.
+          - Supported mass production and quality validation, including performance testing and vision-based inspection.
+    Publications & Presentations:
+      - id: dart2027
+        title: "DART: From Attentive Reasoning to Intuitive Execution for Experience-Driven Robot Intelligence"
+        authors: [Seungyeop Lee*, Yeeun Kim*, Sooho Park, Seong Oh Lee, Jong Jin Park†]
+        affiliation: Samsung Electronics Co., Ltd., Suwon, Republic of Korea
+        publisher: Submitted to the 2027 IEEE International Conference on Robotics and Automation (ICRA)
+        status: Under review
+        short_venue: ICRA 2027
+        pdf: assets/pdf/ICRA27.pdf
+      - id: lee2025domain
+        title: Domain-Transferred Synthetic Data Generation for Improving Monocular Depth Estimation
+        authors: [Knut Peterson*†, Seungyeop Lee*, Solmaz Arezoomandan, David Han]
+        affiliation: Drexel University · Korea University
+        publisher: 2025 25th International Conference on Control, Automation and Systems (ICCAS)
+        releaseDate: 2025
+        short_venue: ICCAS 2025
+        pdf: assets/monocular-depth-estimation/paper.pdf
+      - id: lee2025thesis
+        title: A Development of Intuitive Controller and Monocular Vision based Interface for Disaster Response UAV
+        authors: [Seungyeop Lee]
+        affiliation: Department of Mechanical Engineering, Korea University
+        advisor: Prof. Shinsuk Park
+        publisher: Master's thesis, Department of Mechanical Engineering, Korea University
+        releaseDate: Feb. 2025
+        short_venue: THESIS · Korea University, 2025
+        pdf: assets/masters-thesis/paper.pdf
+      - id: lee2024monocular
+        title: Micro UAV Autonomous Navigation System With Deep Learning based Monocular Vision Depth Estimation
+        authors: [Seungyeop Lee, Shinsuk Park]
+        affiliation: Department of Mechanical Engineering, Korea University
+        publisher: Institute of Control, Robotics and Systems Conference (ICROS)
+        releaseDate: 2024
+        short_venue: ICROS 2024
+        pdf: assets/pdf/ICROS2024_LSY.pdf
+        note: Poster presentation.
+      - id: lee2023visual
+        title: Development of ROS based indoor autonomous flight Quadcopter Platform using Visual Odometry
+        authors: [Seungyeop Lee, Shinsuk Park]
+        affiliation: Department of Mechanical Engineering, Korea University
+        publisher: Institute of Control, Robotics and Systems Conference (ICROS)
+        releaseDate: 2023
+        short_venue: ICROS 2023
+        pdf: assets/pdf/ICROS2023_LSY.pdf
+        note: Poster presentation.
+    Selected Projects & Leadership:
+      - name: Horang-Nabi Model Aircraft Club Foundation
+        company: Korea University
+        position: Founder & President
+        location: South Korea
+        start_date: Aug. 2019
+        end_date: Dec. 2021
+        highlights:
+          - Founded Korea University's first model aircraft club and led UAV projects, operations, and undergraduate study activities.
+      - name: Korea Robot Aircraft Competition
+        company: Korea Aerospace Industries Association
+        position: Computer Vision Development
+        location: South Korea
+        start_date: Apr. 2021
+        end_date: Sep. 2021
+        highlights:
+          - Developed a pedestrian-tracking UAV for a safe-walk companion service, combining autonomous user tracking with onboard perception and flight control.
+      - name: National University Student Model Aircraft Competition
+        company: Gyeongsang National University
+        position: Team Leader
+        location: South Korea
+        start_date: Nov. 2019
+        end_date: Nov. 2020
+        highlights:
+          - Led a team to design and build a scale aircraft for the 21st national university model aircraft competition.
+      - name: Social Economy Engineering Ideas Competition
+        company: University of Seoul
+        position: Mechanical Design
+        location: South Korea
+        start_date: Sep. 2020
+        end_date: Oct. 2020
+        highlights:
+          - Proposed a foldable stair-climbing mobility aid to improve subway accessibility for elderly and mobility-limited users.
+      - name: Pi Village Start-up Team – DRONEDU
+        company: Korea University
+        position: Founder
+        location: South Korea
+        start_date: Jan. 2020
+        end_date: Oct. 2020
+        highlights:
+          - Developed a drone education program for high school and university students as a campus start-up initiative.
+    Awards and Honors:
+      - title: Intelligent Robotics Overseas Research Fellowship
+        start_date: Sep. 2023
+        end_date: Feb. 2024
+        summary: Funded by the South Korean government through the Ministry of Trade, Industry and Energy (MOTIE).
+      - title: Excellence Award, Future Automobile Industry-University Assignment Project Competition
+        awarder: Inter-university Alliance for Future Vehicular Technology (I4FT), South Korea
+        date: Jan. 2023
+      - title: Third Prize, National University Student Model Aircraft Competition
+        awarder: Gyeongsang National University, South Korea
+        date: Nov. 2020
+      - title: Third Prize, Social Economy Engineering Idea Competition
+        awarder: University of Seoul, South Korea
+        date: Oct. 2020
+      - title: Third Prize, Creative Comprehensive Design Competition
+        awarder: Innovation Center for Engineering Education, Korea University, South Korea
+        date: Sep. 2020
+      - title: First Prize, 22nd Pi Village Start-up Team – DRONEDU
+        awarder: Korea University, South Korea
+        date: Jun. 2020
+    Skills and Techniques:
+      - name: Hardware
+        keywords: ["3D CAD (NX, Fusion 360)", Rapid prototyping, Laser cutting, 3D printing]
+      - name: Programming
+        keywords: [Python, C++, ROS, MATLAB, "Microprocessors (Jetson, Arduino, Raspberry Pi)"]
+    Teaching and Mentoring:
+      - title: Teaching Assistant, Dynamics
+        start_date: Sep. 2024
+        end_date: Nov. 2024
+        highlights:
+          - Taught two-link manipulator modeling using Adams simulation.
+      - title: Teaching Assistant, Robotics
+        dates: Mar. 2023 – Jun. 2023; Mar. 2024 – Jun. 2024
+        highlights:
+          - Taught Adams simulation, Raspberry Pi, and PID-based DC motor control.
+      - title: Robotics Career Mentor, Sector Council (SC) Mentoring Program
+        date: Mar. 2026
+        highlights:
+          - Led group mentoring sessions for engineering students on robotics industry careers and research pathways.
+    References:
+      - name: Dr. Shinsuk Park
+        position: Professor, Department of Mechanical Engineering
+        institution: Korea University
+        email: drsspark@korea.ac.kr
+        phone: "+82-2-3290-3373"
+      - name: Dr. David Han
+        position: Professor, Department of Electrical and Computer Engineering
+        institution: Drexel University
+        email: dkh42@drexel.edu
+        phone: "+1-410-570-3720"
+      - name: Dr. Jinsoo Kim
+        position: Assistant Professor, Department of Electrical and Computer Engineering
+        institution: Seoul National University
+        email: jinskim@snu.ac.kr
+        phone: "+82-2-880-1823"

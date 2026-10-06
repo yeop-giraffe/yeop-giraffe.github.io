@@ -1,0 +1,379 @@
+<!doctype html>
+<!-- Standalone master's-thesis page. Source: supplied Korea University thesis, February 2025.
+     migrate.py preserves this page via standalone_html in content/projects/masters-thesis.md.
+     Figures use original raster media from the thesis defense and original thesis embeddings; see assets/masters-thesis/sources.txt.
+     Template design/code adapted from Academic Project Page Template and Nerfies, CC BY-SA 4.0. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A Development of Intuitive Controller and Monocular Vision based Interface for Disaster Response UAV</title>
+    <meta name="description" content="Seungyeop Lee's master's thesis at Korea University: intuitive UAV control, monocular vision assistance, and simulation studies with six novice participants in each evaluation." />
+    <meta name="author" content="Seungyeop Lee" />
+    <link rel="canonical" href="https://yeop-giraffe.github.io/projects/masters-thesis.html" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="A Development of Intuitive Controller and Monocular Vision based Interface for Disaster Response UAV" />
+    <meta property="og:description" content="Master's thesis, Korea University, February 2025. Human-centered control and vision assistance for indoor disaster-response UAVs." />
+    <style>
+      /* Colors, typography, buttons, section accents, and footer adapted from the original template. */
+      :root {
+        --primary-color: #2563eb;
+        --primary-hover: #1d4ed8;
+        --text-primary: #1e293b;
+        --text-secondary: #64748b;
+        --background-primary: #fff;
+        --background-secondary: #f8fafc;
+        --background-accent: #f1f5f9;
+        --border-color: #e2e8f0;
+        --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --border-radius: 12px;
+        --border-radius-lg: 16px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--text-primary);
+        background: var(--background-primary);
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--primary-color); text-underline-offset: 3px; }
+      a:hover { color: var(--primary-hover); }
+      button { font: inherit; cursor: pointer; }
+      :focus-visible { outline: 3px solid var(--primary-color); outline-offset: 5px; }
+      [hidden] { display: none !important; }
+      h1, h2, h3, p, figure { margin: 0; }
+      p + p { margin-top: 1rem; }
+      .container { width: min(960px, 100%); margin-inline: auto; }
+      .narrow { max-width: 780px; }
+      .skip-link { position: absolute; top: -100px; left: 1rem; z-index: 10; background: white; padding: 1rem; }
+      .skip-link:focus { top: 1rem; }
+      .topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.5rem; }
+      .home-link { font-size: .9rem; font-weight: 600; text-decoration: none; }
+      .more-works { position: relative; }
+      .more-works summary {
+        padding: .65rem 1rem; border: 1px solid var(--border-color); border-radius: var(--border-radius);
+        font-size: .9rem; font-weight: 600; cursor: pointer; background: white;
+      }
+      .works-list {
+        position: absolute; right: 0; top: calc(100% + .5rem); z-index: 5;
+        width: min(320px, calc(100vw - 3rem)); padding: 1.2rem;
+        background: white; border: 1px solid var(--border-color); border-radius: var(--border-radius);
+        box-shadow: 0 10px 25px rgb(0 0 0 / .1);
+      }
+      .works-list p { color: var(--text-secondary); font-size: .9rem; }
+      .works-list a { display: block; padding-block: .5rem; }
+      .publication-header { padding: 3rem 1.5rem 2.5rem; text-align: center; }
+      .publication-title { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.12; font-weight: 800; letter-spacing: -.035em; margin-bottom: 1.75rem; overflow-wrap: anywhere; }
+      .publication-authors { font-size: 1.15rem; font-weight: 500; margin-bottom: .7rem; }
+      .author-block { display: inline-block; color: var(--primary-color); }
+      .publication-affiliation { color: var(--text-secondary); }
+      .publication-venue { display: inline-block; margin-top: 1rem; padding: .4rem .85rem; font-size: .9rem; font-weight: 600; background: var(--background-accent); border-radius: var(--border-radius); }
+      .eql-cntrb { font-size: .8rem; color: var(--text-secondary); margin-top: .6rem; }
+      .publication-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-top: 1.75rem; }
+      .button {
+        display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+        padding: .65rem 1.2rem; border: 0; border-radius: var(--border-radius);
+        color: white; background: var(--text-primary); font-weight: 600; font-size: .95rem; text-decoration: none;
+        transition: background .2s, transform .2s;
+      }
+      .button[href]:hover { color: white; background: var(--primary-color); transform: translateY(-2px); }
+      .button[aria-disabled="true"] { opacity: .5; cursor: default; }
+      .button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+      .section { padding: 3.5rem 1.5rem; }
+      .is-light { background: var(--background-secondary); border-block: 1px solid var(--border-color); }
+      .section-title { position: relative; font-size: 1.9rem; line-height: 1.25; font-weight: 700; text-align: center; padding-bottom: 1.2rem; margin-bottom: 2rem; }
+      .section-title::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--gradient-accent); border-radius: 2px; }
+      .prose { color: var(--text-secondary); font-size: 1.06rem; line-height: 1.8; }
+      .prose h3 { color: var(--text-primary); font-size: 1.15rem; margin-block: 1.5rem .6rem; }
+      .prose h3:first-child { margin-top: 0; }
+      .teaser { padding: 1rem 1.5rem 3.5rem; }
+      .media-placeholder {
+        display: grid; place-content: center; gap: .5rem; aspect-ratio: 16 / 9; padding: 1.5rem; text-align: center;
+        color: var(--text-secondary); background: var(--background-accent);
+        border: 1px dashed #cbd5e1; border-radius: var(--border-radius-lg);
+      }
+      .media-placeholder svg { width: 48px; height: 48px; margin: 0 auto .5rem; fill: none; stroke: #94a3b8; stroke-width: 1.4; }
+      .media-placeholder strong { color: var(--text-primary); font-weight: 600; }
+      .media-placeholder span { font-size: .9rem; }
+      .media { display: block; width: 100%; height: auto; border-radius: var(--border-radius-lg); }
+      .video-frame { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: var(--border-radius-lg); }
+      .poster-frame { width: 100%; height: 650px; border: 1px solid var(--border-color); }
+      figcaption { font-size: .95rem; color: var(--text-secondary); text-align: center; margin-top: 1rem; }
+      .carousel-track { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+      .carousel-slide { flex: 0 0 100%; min-width: 0; padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); scroll-snap-align: start; }
+      .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.25rem; }
+      .carousel-controls button { border: 1px solid var(--border-color); border-radius: 50%; background: white; color: var(--text-primary); width: 42px; height: 42px; font-size: 1.25rem; }
+      .carousel-controls button:hover { border-color: var(--primary-color); color: var(--primary-color); }
+      .carousel-controls button:disabled { opacity: .35; cursor: default; }
+      .carousel-counter { color: var(--text-secondary); font-size: .9rem; min-width: 4rem; text-align: center; }
+      .results-table { width: 100%; border-collapse: collapse; color: var(--text-primary); font-size: .95rem; margin-top: 1.5rem; }
+      .results-table th, .results-table td { padding: .8rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+      .results-table th { background: var(--background-accent); }
+      .table-scroll { overflow-x: auto; }
+      .bibtex-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+      .bibtex-header h2 { font-size: 1.9rem; }
+      .copy-button { background: var(--primary-color); }
+      .copy-button:hover { background: var(--primary-hover); }
+      pre { margin: 0; padding: 1.5rem; font-size: .9rem; line-height: 1.7; overflow-x: auto; background: var(--background-accent); border: 1px solid var(--border-color); border-radius: var(--border-radius); }
+      code { font-family: "Cascadia Code", "SF Mono", Consolas, monospace; }
+      .copy-status { display: block; min-height: 1.6em; margin-top: .6rem; color: var(--text-secondary); font-size: .85rem; }
+      .footer { padding: 2.5rem 1.5rem; background: var(--background-secondary); border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: .85rem; text-align: center; }
+      .scroll-to-top { position: fixed; right: 1.5rem; bottom: 1.5rem; width: 46px; height: 46px; border: 0; border-radius: 50%; background: var(--primary-color); color: white; font-size: 1.4rem; box-shadow: 0 4px 12px rgb(0 0 0 / .12); }
+      @media (max-width: 600px) {
+        .publication-header { padding-top: 2rem; }
+        .section { padding: 2.5rem 1.25rem; }
+        .publication-authors { font-size: 1rem; }
+        .media-placeholder { padding: 1rem; }
+        .media-placeholder svg { width: 32px; height: 32px; }
+        .scroll-to-top { right: 1rem; bottom: 1rem; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        * { transition: none !important; }
+      }
+    
+      .publication-header { padding-top: 2.5rem; }
+      .publication-title { font-size: clamp(1.8rem, 3.4vw, 2.65rem); line-height: 1.2; letter-spacing: -.025em; margin-bottom: 1.75rem; }
+      .section-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.4rem; margin-top: 1.5rem; font-size: .9rem; }
+      .section-nav a { text-decoration: none; }
+      .highlights { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-block: 2rem 1rem; }
+      .highlight { padding: 1.3rem 1rem; border: 1px solid var(--border-color); border-radius: var(--border-radius); background: white; text-align: center; }
+      .highlight strong { display: block; color: var(--primary-color); font-size: clamp(1.8rem, 4vw, 2.4rem); line-height: 1.2; }
+      .highlight span { display: block; font-size: .9rem; color: var(--text-secondary); margin-top: .5rem; }
+      .note { color: var(--text-secondary); font-size: .88rem; line-height: 1.65; }
+      .mode-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; margin-top: 2rem; }
+      .mode-card { padding: 1.5rem; border: 1px solid var(--border-color); border-radius: var(--border-radius); background: var(--background-secondary); }
+      .mode-card h3 { margin-bottom: .6rem; color: var(--primary-color); font-size: 1.2rem; }
+      .mode-card p { color: var(--text-secondary); }
+      .method-figure { max-width: 740px; margin-inline: auto; }
+      .hardware-overview { margin-top: 2rem; }
+      .hardware-layout { display: grid; grid-template-columns: .85fr 2fr; gap: 1.5rem; align-items: center; }
+      .hardware-layout .media { border-radius: 0; }
+      @media (max-width: 760px) {
+        .hardware-layout { grid-template-columns: 1fr; gap: 1rem; }
+        .hardware-layout .prototype-photo { max-width: 440px; margin-inline: auto; }
+      }
+      .section-intro { margin-bottom: 2rem; }
+      .image-link { display: block; }
+      .image-link:hover { opacity: .95; }
+      .carousel-slide .media { height: 360px; object-fit: contain; background: white; }
+      .results-table caption { text-align: left; color: var(--text-secondary); margin-bottom: .6rem; }
+      .results-table td:not(:first-child), .results-table th:not(:first-child) { text-align: right; white-space: nowrap; }
+      .results-table .ours { color: var(--primary-color); font-weight: 700; }
+      .prose ul { padding-left: 1.3rem; margin-bottom: 0; }
+      .prose li + li { margin-top: .5rem; }
+      .stack { display: grid; grid-template-columns: 145px 1fr; gap: .65rem 1rem; margin: 0; color: var(--text-secondary); }
+      .stack dt { font-weight: 600; color: var(--text-primary); }
+      .stack dd { margin: 0; }
+      .bibtex-header small { color: var(--text-secondary); font-size: .8rem; font-weight: 400; }
+      @media (max-width: 600px) {
+        .highlights { gap: .5rem; }
+        .highlight { padding: 1rem .4rem; }
+        .highlight strong { font-size: clamp(1.35rem, 6vw, 2rem); }
+        .highlight span { font-size: .75rem; }
+        .mode-grid { grid-template-columns: 1fr; }
+        .carousel-slide .media { height: 240px; }
+        .stack { grid-template-columns: 1fr; gap: .2rem; }
+        .stack dd { margin-bottom: .8rem; }
+        .results-table th, .results-table td { padding: .75rem .5rem; }
+      }
+    
+      .figure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; align-items: start; }
+      .figure-grid .media { background: white; }
+      .flight-path-figures > figure > .image-link { aspect-ratio: 4 / 3; }
+      .flight-path-figures > figure > .image-link > .media { height: 100%; object-fit: contain; }
+      .figure-grid figcaption { text-align: left; }
+      .section-figure { margin-top: 2rem; }
+      .results-table { min-width: 570px; }
+      .results-table th:first-child { min-width: 210px; }
+      .table-scroll:focus-visible { outline-offset: 3px; }
+      .table-hint { margin-top: .5rem; font-size: .8rem; color: var(--text-secondary); }
+      .bibtex-code { white-space: pre-wrap; overflow-wrap: anywhere; }
+      .highlights { margin-top: 0; }
+      @media(max-width:600px) { .figure-grid { grid-template-columns: 1fr; } }
+</style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav class="topbar container" aria-label="Project navigation">
+      <a class="home-link" href="../index.html#research">← Personal Homepage</a>
+      <details class="more-works"><summary>More Works</summary><div class="works-list">
+        <a href="dart.html">DART</a>
+        <a href="monocular-depth-estimation.html">Domain-Transferred Synthetic Data</a>
+        <a href="drone-control-assist.html">ICROS Indoor UAV Navigation</a>
+      </div></details>
+    </nav>
+    <main id="main-content">
+      <header class="publication-header"><div class="container">
+        <h1 class="publication-title">A Development of Intuitive Controller and Monocular Vision based Interface for Disaster Response UAV</h1>
+        <p class="publication-authors"><a class="author-block" href="../index.html">Seungyeop Lee</a></p>
+        <p class="publication-affiliation">Department of Mechanical Engineering, Korea University</p>
+        <p class="publication-affiliation">Advisor: Prof. Shinsuk Park</p>
+        <p class="publication-venue">THESIS · Master's Thesis · February 2025</p>
+        <div class="publication-links" aria-label="Thesis resources">
+          <a class="button" href="../assets/masters-thesis/paper.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v5h4 M9 12h6 M9 16h6" /></svg>Read Thesis (PDF)</a>
+          <a class="button" href="#bibtex">Citation</a>
+        </div>
+        <nav class="section-nav" aria-label="On this page"><a href="#abstract">Overview</a><a href="#controller">Controller</a><a href="#vision">Vision Interface</a><a href="#hardware">Hardware</a><a href="#evaluation">Evaluation</a><a href="#results">Results</a><a href="#scope">Scope</a></nav>
+      </div></header>
+      <section class="teaser" aria-label="Thesis system overview"><div class="container"><figure><a class="image-link" href="../assets/masters-thesis/overview.png" aria-label="Open full-size overview figure"><img class="media" src="../assets/masters-thesis/overview.png" width="1857" height="752" fetchpriority="high" decoding="async" alt="Ground control station with a joystick and monocular-vision interface connected wirelessly to a UAV exploring an indoor disaster site." /></a><figcaption>An intuitive controller and a vision interface connect the operator to an indoor UAV.</figcaption></figure></div></section>
+      <section class="section is-light" id="abstract" aria-labelledby="abstract-title"><div class="container narrow">
+        <h2 class="section-title" id="abstract-title">Overview</h2>
+        <div class="prose">
+          <p>Indoor disaster-response UAVs must operate in spaces where people cannot safely enter and where narrow passages and dense obstacles make remote flight difficult. Operators depend on a limited camera view, while conventional gamepad controls require practice to translate two-dimensional hand inputs into three-dimensional vehicle motion.</p>
+          <p>This master's thesis investigates both sides of that interaction: an intuitive controller mapping and a monocular-vision interface that supports spatial awareness. The interface combines three-dimensional scene reconstruction, nearby-obstacle highlighting, and predicted flight-path visualization. A physical prototype checks system integration, while separate Gazebo studies evaluate the controller and interface with novice operators.</p>
+          <p>Related work is presented in the <a href="drone-control-assist.html">ICROS indoor UAV navigation papers</a>. This thesis focuses on controller design, the integrated display, and user evaluation.</p>
+        </div>
+      </div></section>
+      <section class="section" id="controller" aria-labelledby="controller-title"><div class="container">
+        <h2 class="section-title" id="controller-title">Intuitive Flight Control</h2>
+        <div class="prose narrow container">
+          <p>The controller design takes inspiration from helicopter controls, separating horizontal motion, altitude, and heading. A Logitech Extreme 3D joystick uses forward/backward and lateral hand movement for horizontal flight, a lever for altitude, and wrist rotation for yaw. A button triggers image capture, and a dead zone suppresses unintended commands around the neutral position.</p>
+          <p>Commands are interpreted relative to the UAV's forward direction using its current attitude. This keeps the operator's input aligned with the view transmitted by the forward-facing camera.</p>
+        </div>
+        <div class="method-figure section-figure"><figure><a class="image-link" href="../assets/masters-thesis/controller.png" aria-label="Open full-size controller figure"><img class="media" src="../assets/masters-thesis/controller.png" width="1210" height="507" loading="lazy" decoding="async" alt="Logitech Extreme 3D joystick with handle tilt, wrist rotation, an altitude lever, and action buttons." /></a><figcaption>The controller maps hand motions to translation and wrist rotation to yaw.</figcaption></figure></div>
+        <div class="method-figure section-figure"><figure><a class="image-link" href="../assets/masters-thesis/control-mapping.png" aria-label="Open full-size control mapping image"><img class="media" src="../assets/masters-thesis/control-mapping.png" width="1004" height="411" loading="lazy" decoding="async" alt="Joystick and quadcopter diagrams share matching colored arrows for horizontal movement, altitude, and yaw." /></a><figcaption>Joystick motions are mapped to UAV translation and yaw.</figcaption></figure></div>
+      </div></section>
+      <section class="section is-light" id="vision" aria-labelledby="vision-title"><div class="container">
+        <h2 class="section-title" id="vision-title">From a Camera View to Spatial Awareness</h2>
+        <div class="prose narrow container">
+          <h3>Reconstructing the Surrounding Space</h3>
+          <p>MiDaS v3.1 DPT Swin2-L 384 estimates relative depth from the forward RGB image, while ORB-SLAM3 provides sparse feature points and camera motion. Least-squares fitting aligns the predicted depth with SLAM feature depths. A second calibration compares SLAM motion with visual-inertial position estimates to recover metric scale, smoothing the scale estimate with a moving average. The calibrated points are combined in a shared coordinate frame to reconstruct the scene.</p>
+          <p>The forward-view reconstruction uses a monocular RGB camera. A separate visual-inertial tracking camera provides vehicle position and scale information; the physical prototype does not rely on the forward camera alone for every navigation signal.</p>
+        </div>
+        <div class="method-figure section-figure"><figure><a class="image-link" href="../assets/masters-thesis/reconstruction-pipeline.png" aria-label="Open full-size reconstruction pipeline figure"><img class="media" src="../assets/masters-thesis/reconstruction-pipeline.png" width="3769" height="1861" loading="lazy" decoding="async" alt="RGB images feed ORB-SLAM3 and monocular depth estimation; depth conversion and metric-scale calibration produce a reconstructed three-dimensional scene." /></a><figcaption>Monocular depth, visual SLAM, and motion-based scale calibration work together to reconstruct the scene.</figcaption></figure></div>
+        <div class="figure-grid"><figure><a class="image-link" href="../assets/masters-thesis/metric-reconstruction.png" aria-label="Open full-size metric reconstruction figure"><img class="media" src="../assets/masters-thesis/metric-reconstruction.png" width="2373" height="806" loading="lazy" decoding="async" alt="Feature-point depth values align monocular depth with SLAM, followed by metric-scale calibration using the UAV position estimates." /></a><figcaption>Two calibration stages align relative depth with SLAM and convert the reconstruction into a metric scale.</figcaption></figure> <figure><a class="image-link" href="../assets/masters-thesis/obstacle-filtering.png" aria-label="Open full-size obstacle filtering figure"><img class="media" src="../assets/masters-thesis/obstacle-filtering.png" width="2484" height="756" loading="lazy" decoding="async" alt="Depth-image segmentation compared with metric-depth filtering that highlights only nearby obstacles in red." /></a><figcaption>Distance-aware filtering highlights nearby obstacles instead of marking every object.</figcaption></figure></div>
+        <div class="prose narrow container" style="margin-top:2rem">
+          <h3>Highlighting Nearby Obstacles</h3>
+          <p>U- and V-disparity histograms distinguish obstacles from the floor. Morphological closing cleans the segmentation, and an operator-selected metric-depth threshold filters the display to nearby obstacles. The operator sees the relevant obstacle regions overlaid in red on the original camera stream.</p>
+          <h3>Showing the Intended Flight Path</h3>
+          <p>Controller input, vehicle position, and attitude are used to predict and display the flight direction. A perspective path overlay changes with forward motion and turns. The final interface adds a 3D scene inset and vehicle-position readout to the camera view, helping the operator interpret the scene and the commanded motion together.</p>
+        </div>
+        <div class="figure-grid flight-path-figures"><figure><a class="image-link" href="../assets/masters-thesis/integrated-interface-annotated.svg" aria-label="Open full-size annotated integrated interface figure"><img class="media" src="../assets/masters-thesis/integrated-interface-annotated.svg" width="1320" height="1042" loading="lazy" decoding="async" alt="Annotated UAV interface labels the 3D reconstructed scene in purple, predicted flight path in blue, segmented obstacle in red, and current position in teal." /></a><figcaption>Integrated display: 3D scene (purple), predicted path (blue), segmented obstacle (red), and position (teal).</figcaption></figure> <figure><a class="image-link" href="../assets/masters-thesis/predicted-path.png" aria-label="Open full-size predicted path figure"><img class="media" src="../assets/masters-thesis/predicted-path.png" width="2084" height="1746" loading="lazy" decoding="async" alt="Four camera views illustrate predicted flight-path overlays for short distance, long distance, left turn, and right turn." /></a><figcaption>Controller and vehicle-state data drive a perspective flight-path overlay.</figcaption></figure></div>
+      </div></section>
+      <section class="section" id="hardware" aria-labelledby="hardware-title"><div class="container">
+        <h2 class="section-title" id="hardware-title">Physical Prototype &amp; Integration Checks</h2>
+        <div class="prose narrow container">
+          <p>The remotely operated UAV carries a monocular RGB camera and an NVIDIA Jetson Nano embedded computer. ROS-based communication supports remote control and data exchange with the operator station.</p>
+          <p>Indoor tests checked positioning, joystick-based remote flight, video transmission, and the generated assistance display. Across eight repeated positioning tests, the thesis reports distance errors of 5.25% in the x direction and 3.21% in the y direction relative to the start position. These checks establish prototype operation; the participant comparisons below were performed in simulation.</p>
+        </div>
+        <figure class="hardware-overview">
+          <div class="hardware-layout">
+            <a class="image-link prototype-photo" href="../assets/masters-thesis/hardware.png" aria-label="Open full-size UAV prototype photograph"><img class="media" src="../assets/masters-thesis/hardware.png" width="2741" height="1969" loading="lazy" decoding="async" alt="Physical indoor quadcopter prototype with onboard computing, RGB and tracking cameras, a flight controller, and four motors." /></a>
+            <a class="image-link" href="../assets/masters-thesis/hardware-components-en.svg" aria-label="Open full-size hardware component diagram in English"><img class="media" src="../assets/masters-thesis/hardware-components-en.svg" width="3640" height="1411" loading="lazy" decoding="async" alt="English hardware component diagram showing the Logitech C922 RGB camera, Intel RealSense T265, Jetson Nano, power distribution board and battery, Pixhawk 6C with built-in IMU, electronic speed controllers, and four brushless motors." /></a>
+          </div>
+          <figcaption>Indoor UAV prototype and hardware components. The monocular RGB camera is a Logitech C922 operating at 720p/60fps.</figcaption>
+        </figure>
+        <div class="method-figure section-figure"><figure><a class="image-link" href="../assets/masters-thesis/hardware-validation-annotated.png" aria-label="Open full-size hardware validation figure"><img class="media" src="../assets/masters-thesis/hardware-validation-annotated.png" width="1299" height="422" loading="lazy" decoding="async" alt="Indoor flight-test scene labels the obstacle in red and the UAV in yellow; the camera interface highlights the obstacle in red and shows a 3D reconstruction inset." /></a><figcaption>Indoor flight test with the obstacle and UAV marked (left), and the live camera interface with obstacle highlighting and a 3D reconstruction inset (right).</figcaption></figure></div>
+      </div></section>
+      <section class="section is-light" id="evaluation" aria-labelledby="evaluation-title"><div class="container">
+        <h2 class="section-title" id="evaluation-title">Two Separate User Evaluations</h2>
+        <div class="prose narrow container"><p>Each evaluation involved six adults in their twenties with no prior drone-control experience (four men and two women). Both were conducted in Gazebo. The controller study held the interface constant; the interface study held the controller constant.</p></div>
+        <div class="mode-grid">
+          <article class="mode-card"><h3>Controller Comparison</h3><p>Participants flew a seven-gate course in a 25 × 25 m area using the proposed joystick mapping and a gamepad. The 1.4 × 1.4 m gates spanned 3 m in altitude. After one minute of practice, each participant completed one run per controller with the same RGB display. Recorded trajectories were compared for path smoothness and distance to gate centers.</p></article>
+          <article class="mode-card"><h3>Interface Comparison</h3><p>Participants searched for four people in a simulated factory using the assisted interface and RGB video alone. Each completed one flight per interface with the same controller. Post-flight questionnaires measured usability with the System Usability Scale (SUS) and perceived workload with six NASA-TLX subscales.</p></article>
+        </div>
+        <div class="figure-grid"><figure><a class="image-link" href="../assets/masters-thesis/controller-scenario.png" aria-label="Open full-size controller scenario image"><img class="media" src="../assets/masters-thesis/controller-scenario.png" width="1051" height="765" loading="lazy" decoding="async" alt="Gazebo course contains seven numbered rectangular gates with a blue counterclockwise route." /></a><details class="figure-detail"><summary>RGB view used for both controllers</summary><a class="image-link" href="../assets/masters-thesis/controller-rgb-interface.png" aria-label="Open full-size controller rgb interface image"><img class="media" src="../assets/masters-thesis/controller-rgb-interface.png" width="505" height="378" loading="lazy" decoding="async" alt="RGB camera view of the gate course with a central blue aiming marker and gate numbers." /></a></details><figcaption>Controller comparison: seven-gate flight course with the same RGB display for both input devices.</figcaption></figure> <figure><a class="image-link" href="../assets/masters-thesis/search-scenario.png" aria-label="Open full-size search scenario image"><img class="media" src="../assets/masters-thesis/search-scenario.png" width="1543" height="853" loading="lazy" decoding="async" alt="Gazebo factory interior contains shelves, boxes, a drone, and search targets." /></a><details class="figure-detail"><summary>View the search target positions</summary><div class="target-map"><a class="image-link" href="../assets/masters-thesis/search-map.png" aria-label="Open full-size search map image"><img class="media" src="../assets/masters-thesis/search-map.png" width="493" height="894" loading="lazy" decoding="async" alt="Top-down map of the simulated factory with four search targets circled in red and the UAV route highlighted in yellow." /></a></div></details><figcaption>Interface comparison: search for four people in a simulated factory using the same controller.</figcaption></figure></div>
+      </div></section>
+      <section class="section" id="results" aria-labelledby="results-title"><div class="container">
+        <h2 class="section-title" id="results-title">Results</h2>
+        <div class="highlights" aria-label="Interface study highlights">
+          <div class="highlight"><strong>80</strong><span>SUS score<br />vs. 62.5 for RGB</span></div>
+          <div class="highlight"><strong>≈43%</strong><span>Lower mental demand<br />NASA-TLX MD only</span></div>
+          <div class="highlight"><strong>6</strong><span>Novice participants<br />in each evaluation</span></div>
+        </div>
+        <div class="prose narrow container"><h3>Controller: Smoother, More Centered Flight</h3><p>The proposed mapping produced a lower path-smoothness score, which represents less unnecessary motion, and a smaller distance to gate centers. These metrics describe the recorded simulated trajectories, rather than a measured disaster-mission success rate.</p></div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Controller results table; scroll horizontally on narrow screens">
+          <table class="results-table"><caption>Controller comparison. Lower mean values indicate smoother paths and closer passage to gate centers.</caption><thead><tr><th scope="col">Metric</th><th scope="col">Gamepad</th><th scope="col">Proposed controller</th></tr></thead><tbody>
+            <tr><th scope="row">Path smoothness (mean)</th><td>1.2712</td><td class="ours">0.358</td></tr>
+            <tr><th scope="row">Path smoothness (SD)</th><td>0.54762</td><td>0.20001</td></tr>
+            <tr><th scope="row">Minimum distance to gate centers (mean, m)</th><td>0.24</td><td class="ours">0.18</td></tr>
+          </tbody></table>
+        </div>
+        <p class="table-hint">Tables can be scrolled horizontally on small screens.</p>
+<div class="figure-grid"><figure><a class="image-link" href="../assets/masters-thesis/controller-smoothness.jpg" aria-label="Open full-size controller smoothness image"><img class="media" src="../assets/masters-thesis/controller-smoothness.jpg" width="980" height="735" loading="lazy" decoding="async" alt="Bar chart comparing path smoothness: proposed controller has a lower mean than the gamepad, with error bars." /></a><figcaption>Path smoothness: lower scores indicate less unnecessary motion.</figcaption></figure> <figure><a class="image-link" href="../assets/masters-thesis/controller-gate-distance.jpg" aria-label="Open full-size controller gate distance image"><img class="media" src="../assets/masters-thesis/controller-gate-distance.jpg" width="980" height="735" loading="lazy" decoding="async" alt="Bar chart comparing minimum distance from gate centers: proposed controller has a lower mean than the gamepad, with error bars." /></a><figcaption>Minimum distance from gate centers: 0.18 m for the proposed controller versus 0.24 m for the gamepad.</figcaption></figure></div>
+        <div class="prose narrow container" style="margin-top:2rem"><h3>Interface: Higher Usability, Lower Reported Workload</h3><p>SUS increased by 17.5 points, from 62.5 to 80. NASA-TLX mental demand fell from 57.5 to 32.5, approximately 43% lower. The other five subscales also decreased; the 43% figure refers specifically to mental demand.</p></div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Interface results table; scroll horizontally on narrow screens">
+          <table class="results-table"><caption>Interface questionnaire scores. SUS: higher is better. NASA-TLX: lower is better.</caption><thead><tr><th scope="col">Measure</th><th scope="col">RGB interface</th><th scope="col">Proposed interface</th></tr></thead><tbody>
+            <tr><th scope="row">SUS usability</th><td>62.5</td><td class="ours">80</td></tr>
+            <tr><th scope="row">Mental demand (MD)</th><td>57.5</td><td class="ours">32.5</td></tr>
+            <tr><th scope="row">Physical demand (PD)</th><td>40</td><td class="ours">25</td></tr>
+            <tr><th scope="row">Temporal demand (TD)</th><td>46.7</td><td class="ours">26.7</td></tr>
+            <tr><th scope="row">Performance (PE)</th><td>38.3</td><td class="ours">13.3</td></tr>
+            <tr><th scope="row">Effort (EF)</th><td>45</td><td class="ours">23.3</td></tr>
+            <tr><th scope="row">Frustration (FR)</th><td>44.17</td><td class="ours">20.8</td></tr>
+          </tbody></table>
+        </div>
+        <div class="method-figure section-figure"><figure><a class="image-link" href="../assets/masters-thesis/interface-results.png" aria-label="Open full-size interface results figure"><img class="media" src="../assets/masters-thesis/interface-results.png" width="993" height="397" loading="lazy" decoding="async" alt="NASA-TLX subscale bar plots are lower for the proposed interface; the SUS plot is higher for the proposed interface than for RGB video alone." /></a><figcaption>User-interface questionnaire results comparing RGB video with the proposed interface.</figcaption></figure></div>
+        <p class="note" style="margin-top:1.5rem">Questionnaire values are scores, not percentages. The mental-demand reduction is relative to the RGB baseline. Each evaluation used six participants and one run per condition.</p>
+      </div></section>
+      <section class="section is-light" id="scope" aria-labelledby="scope-title"><div class="container narrow">
+        <h2 class="section-title" id="scope-title">Scope &amp; Limitations</h2>
+        <div class="prose">
+          <p>These results describe two Gazebo tasks, each with six novice participants and one run per condition. The thesis reports descriptive comparisons, without inferential statistical tests. The findings do not establish performance with experienced pilots, long-term learning effects, or reliability during disaster response.</p>
+          <p>Indoor hardware checks demonstrate prototype operation and integration. Larger studies, repeated trials, and operational testing would be needed to assess how broadly the observed benefits carry over.</p>
+        </div>
+      </div></section>
+      <section class="section" id="bibtex" aria-labelledby="bibtex-title"><div class="container">
+        <div class="bibtex-header"><h2 id="bibtex-title">BibTeX <small>Master's thesis</small></h2><button type="button" class="button copy-button" id="copy-bibtex" hidden>Copy</button></div>
+        <pre class="bibtex-code"><code id="bibtex-code">@mastersthesis{lee2025thesis,
+  title  = {A Development of Intuitive Controller and Monocular
+            Vision based Interface for Disaster Response {UAV}},
+  author = {Lee, Seungyeop},
+  school = {Korea University},
+  type   = {Master's thesis},
+  year   = {2025},
+  month  = feb,
+  note   = {Department of Mechanical Engineering}
+}</code></pre>
+        <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+        <p class="note">The degree date on the cover is February 2025. The thesis was submitted in October 2024 and examined in December 2024.</p>
+      </div></section>
+    </main>
+    <footer class="footer"><div class="container narrow">
+      <p><a href="../index.html#research">Back to Research &amp; Projects</a> · <a href="../assets/masters-thesis/paper.pdf" download>Download Thesis (PDF)</a></p>
+      <p>Adapted from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a> by Eliahu Horwitz, based on <a href="https://nerfies.github.io/">Nerfies</a>.</p>
+      <p>Template design and code licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+    </div></footer>
+    <button type="button" class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top" hidden>↑</button>
+    <script>
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const scrollBehavior = () => reducedMotion.matches ? "instant" : "smooth";
+      const copyButton = document.getElementById("copy-bibtex");
+      copyButton.hidden = false;
+      copyButton.addEventListener("click", async () => {
+        const code = document.getElementById("bibtex-code");
+        const status = document.getElementById("copy-status");
+        try {
+          await navigator.clipboard.writeText(code.textContent);
+          status.textContent = "Citation copied.";
+        } catch {
+          const range = document.createRange();
+          range.selectNodeContents(code);
+          const selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+          status.textContent = "Citation selected. Press Ctrl+C (or ⌘C) to copy.";
+        }
+      });
+      const topButton = document.getElementById("scroll-to-top");
+      function updateTopButton() { topButton.hidden = window.scrollY < 500; }
+      window.addEventListener("scroll", updateTopButton, { passive: true });
+      topButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: scrollBehavior() }));
+      updateTopButton();
+      const moreWorks = document.querySelector(".more-works");
+      document.addEventListener("click", (event) => { if (!moreWorks.contains(event.target)) moreWorks.open = false; });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && moreWorks.open) {
+          moreWorks.open = false;
+          moreWorks.querySelector("summary").focus();
+        }
+      });
+    </script>
+  </body>
+</html>

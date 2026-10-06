@@ -1,0 +1,623 @@
+{
+  "thesis": {
+    "source": "고려대학교_석사학위논문_이승엽.pdf",
+    "author": "Seungyeop Lee",
+    "institution": "Korea University",
+    "department": "Mechanical Engineering",
+    "degree_date": "February 2025",
+    "pdf": "paper.pdf",
+    "note": "Unchanged supplied final thesis; authoritative for all numerical results."
+  },
+  "presentation": {
+    "source": "디펜스_이승엽_Final.pptx",
+    "slides": 30,
+    "note": "Source deck was read only. Original raster media were extracted without recompression; composite diagrams were exported by native PowerPoint and cropped without resizing. No videos or full deck added to the site."
+  },
+  "records": [
+    {
+      "file": "integrated-interface.png",
+      "source": "Defense presentation",
+      "part": "ppt/media/image57.png",
+      "slide": 15,
+      "size": [
+        1440,
+        1080
+      ],
+      "sha256": "29868be5c491183a3cc608de227279ab4cdb4bc354e712e79e1f2d06678708cd",
+      "operation": "Unchanged original raster media bytes"
+    },
+    {
+      "file": "hardware.png",
+      "source": "Defense presentation",
+      "part": "ppt/media/image11.png",
+      "slide": 18,
+      "size": [
+        2741,
+        1969
+      ],
+      "sha256": "30b0a67c2e92fb711eb13e5edd92c97a68dbc660de136e046aa3eb379356b545",
+      "operation": "Unchanged original raster media bytes"
+    },
+    {
+      "file": "controller-scenario.png",
+      "source": "Defense presentation",
+      "part": "ppt/media/image75.png",
+      "slide": 21,
+      "size": [
+        1051,
+        765
+      ],
+      "sha256": "71b2a2acefb87a5dd2d5a45287310e877930b4d1dfd083c4669d899e51b2550f",
+      "operation": "Unchanged original raster media bytes"
+    },
+    {
+      "file": "controller-rgb-interface.png",
+      "source": "Defense presentation",
+      "part": "ppt/media/image76.png",
+      "slide": 21,
+      "size": [
+        505,
+        378
+      ],
+      "sha256": "7f007dc70bff00cd0a185bee146edfdd6ffba9b81bb157da86fce87124b7a6ff",
+      "operation": "Unchanged original raster media bytes"
+    },
+    {
+      "file": "search-scenario.png",
+      "source": "Defense presentation",
+      "part": "ppt/media/image82.png",
+      "slide": 23,
+      "size": [
+        1543,
+        853
+      ],
+      "sha256": "2ff59174deb170ab4d84d3449d5b8a6f4f7bb64ffd79060f78de9824e0207ba3",
+      "operation": "Unchanged original raster media bytes"
+    },
+    {
+      "file": "search-map.png",
+      "source": "Defense presentation",
+      "part": "ppt/media/image59.png",
+      "slide": 23,
+      "size": [
+        493,
+        894
+      ],
+      "sha256": "ae48ea0d072233ea3fb69b487ffc4a9f493379e05652b04af87eaca4bd6dbe04",
+      "operation": "Unchanged original raster media bytes"
+    },
+    {
+      "file": "controller-smoothness.jpg",
+      "source": "Defense presentation",
+      "part": "ppt/media/image78.jpg",
+      "slide": 22,
+      "size": [
+        980,
+        735
+      ],
+      "sha256": "53aa231d7b749aba4889e21ddd96160a3df44914a284682274b1752aff5c5979",
+      "operation": "Unchanged original raster media bytes"
+    },
+    {
+      "file": "controller-gate-distance.jpg",
+      "source": "Defense presentation",
+      "part": "ppt/media/image81.jpg",
+      "slide": 22,
+      "size": [
+        980,
+        735
+      ],
+      "sha256": "b4d5f7be22f97f1803b5d1a904b4f4ec0873c49ec25163e8db859c7e1dfa63c5",
+      "operation": "Unchanged original raster media bytes"
+    },
+    {
+      "file": "control-mapping.png",
+      "source": "Defense presentation",
+      "part": "ppt/media/image20.png",
+      "slide": 5,
+      "size": [
+        1004,
+        411
+      ],
+      "sha256": "5045fdcbe2e2386e66c3d1edcd2cbf45c25c02cf94b33ee632b6b566cf623fc9",
+      "operation": "Unchanged original raster media bytes"
+    },
+    {
+      "file": "overview.png",
+      "source": "Final thesis",
+      "figure": "1.6",
+      "pdf_page": 19,
+      "size": [
+        1857,
+        752
+      ],
+      "sha256": "08b32eab78052ac3262ede4efb91091862e856a360a363f5b0d849a1f50d50e3",
+      "operation": "Extracted original embedded image; no rendering, resampling, or upscaling"
+    },
+    {
+      "file": "controller.png",
+      "source": "Final thesis",
+      "figure": "2.4",
+      "pdf_page": 23,
+      "size": [
+        1210,
+        507
+      ],
+      "sha256": "edaff9c64b0231350d82ade451fc9f284de8e8d2ec35ad1b778fc7d221c8b2bd",
+      "operation": "Extracted original embedded image; no rendering, resampling, or upscaling"
+    },
+    {
+      "file": "metric-reconstruction.png",
+      "source": "Final thesis",
+      "figure": "3.5",
+      "pdf_page": 30,
+      "size": [
+        2373,
+        806
+      ],
+      "sha256": "f2f36658e8b530f9b05511b56a3859400311a5d03456a814b671a9831a34adcc",
+      "operation": "Extracted original embedded image; no rendering, resampling, or upscaling"
+    },
+    {
+      "file": "interface-results.png",
+      "source": "Final thesis",
+      "figure": "4.11",
+      "pdf_page": 52,
+      "size": [
+        993,
+        397
+      ],
+      "sha256": "1d0fe79a0d3d87b516f55a78ea62a010e5b7f5404cf3e4db73f24537b5616f00",
+      "operation": "Extracted original embedded image; no rendering, resampling, or upscaling"
+    },
+    {
+      "file": "reconstruction-pipeline.png",
+      "source": "Defense presentation",
+      "slide": 8,
+      "size": [
+        3769,
+        1861
+      ],
+      "operation": "Cropped original PowerPoint native 4800x2700 export, no resampling or redrawing",
+      "crop_in_inches": [
+        1.42,
+        1.22,
+        10.47,
+        5.17
+      ],
+      "sha256": "ad7a9b91245e639fc1a254de3e7f34fb67038222676c6e718b22f1d8c5d5d9e7"
+    },
+    {
+      "file": "obstacle-filtering.png",
+      "source": "Defense presentation",
+      "slide": 13,
+      "size": [
+        2484,
+        756
+      ],
+      "operation": "Cropped original PowerPoint native 4800x2700 export, no resampling or redrawing",
+      "crop_in_inches": [
+        6.21,
+        1.28,
+        6.9,
+        2.1
+      ],
+      "sha256": "b7b73caf85ac0d86256056cc824a4652cd1b50ea9638edc2d3cb313af7fed523"
+    },
+    {
+      "file": "predicted-path.png",
+      "source": "Defense presentation",
+      "slide": 14,
+      "size": [
+        2084,
+        1746
+      ],
+      "operation": "Cropped original PowerPoint native 4800x2700 export, no resampling or redrawing",
+      "crop_in_inches": [
+        6.86,
+        1.61,
+        5.79,
+        4.85
+      ],
+      "sha256": "b18e728c4192182bc54c6184e579a16ce24d2b2f5c26a513eff4506d983cdb52"
+    },
+    {
+      "file": "hardware-validation.png",
+      "source": "Defense presentation",
+      "slide": 20,
+      "size": [
+        4388,
+        1219
+      ],
+      "operation": "Cropped original PowerPoint native 4800x2700 export, no resampling or redrawing",
+      "crop_in_inches": [
+        0.655,
+        1.775,
+        12.19,
+        3.385
+      ],
+      "sha256": "21dbe98a6c8d861bbb06e9f8829cbccb34ea8be8c7c46f243ec7034b103af265"
+    },
+    {
+      "file": "hardware-components-en.svg",
+      "source": "Defense presentation",
+      "part": "ppt/media/image64.png",
+      "slide": 18,
+      "size": [
+        3640,
+        1411
+      ],
+      "source_sha256": "42b3e2626a05796ebd04b4430a650d07c8c9333c8e01cf772a6e21cfc86c3d57",
+      "sha256": "d6d964e2ea5828f1bc8e7fbb9bf3416a8686ebdbd9f72be6758784bf65fa838e",
+      "operation": "Original component diagram embedded unchanged in an SVG, with text overlays translating 내장 IMU and 분배보드. Camera spelling and model follow final-thesis Logitech C922; the defense raster labels Logitec C920. No other component specifications or connections changed. Camera resolution overlay follows final-thesis Table 4.4 (720p/60fps), replacing the defense diagram 1080p label. This is the table specification, not an assertion of actual capture settings."
+    },
+    {
+      "file": "hardware-validation-annotated.png",
+      "source": "User-supplied annotated image",
+      "source_file": "codex-clipboard-556f1e5a-6163-408d-aedc-4d6003d2e745.png",
+      "size": [
+        1299,
+        422
+      ],
+      "sha256": "b6a5dc26760777d83510e43f46de758a8a65a6e8ea76e7023b70677e081d8d68",
+      "operation": "Unchanged original attachment bytes; replaces the displayed slide-20 static frame composite. Previous asset hardware-validation.png retained."
+    },
+    {
+      "file": "integrated-interface-annotated.svg",
+      "source": "Defense presentation",
+      "part": "ppt/media/image86.png",
+      "slide": 23,
+      "source_size": [
+        1914,
+        1042
+      ],
+      "crop_bounds": [
+        294,
+        0,
+        1614,
+        1042
+      ],
+      "size": [
+        1320,
+        1042
+      ],
+      "source_sha256": "5ad85e5e4e85c9a863b0379a775eb7df0899adab150bbdffb7e830107970ea62",
+      "embedded_png_sha256": "ff01d79895b101fdc3e7ae25611f467a18170ec3a0be04488adc1b82f6d64a77",
+      "sha256": "9a2e88b6fbd5feb8d6f4790be62d82d6996898a78291bf1d03513afeb71cdc77",
+      "reference_attachment": "codex-clipboard-8da9ea82-fa2f-4e45-a974-f64bb891bf99.png",
+      "operation": "Same simulation frame as the user reference, cropped without resizing. Original screen pixels preserved in a self-contained SVG with four added English labels in purple, blue, red, and teal. No reconstructed photo, data, segmentation, path, or readout. Raw integrated-interface.png and homepage thumbnail unchanged."
+    }
+  ],
+  "comparison": [
+    {
+      "file": "overview.png",
+      "previous_web_size": [
+        1340,
+        543
+      ],
+      "previous_thesis_embedding": [
+        1857,
+        752
+      ],
+      "current_size": [
+        1857,
+        752
+      ],
+      "current_web_files": [
+        "overview.png"
+      ],
+      "current_web_sizes": [
+        [
+          1857,
+          752
+        ]
+      ]
+    },
+    {
+      "file": "controller.png",
+      "previous_web_size": [
+        1206,
+        505
+      ],
+      "previous_thesis_embedding": [
+        1210,
+        507
+      ],
+      "current_size": [
+        1210,
+        507
+      ],
+      "current_web_files": [
+        "controller.png"
+      ],
+      "current_web_sizes": [
+        [
+          1210,
+          507
+        ]
+      ]
+    },
+    {
+      "file": "reconstruction-pipeline.png",
+      "previous_web_size": [
+        1340,
+        669
+      ],
+      "previous_thesis_embedding": [
+        507,
+        253
+      ],
+      "current_size": [
+        3769,
+        1861
+      ],
+      "current_web_files": [
+        "reconstruction-pipeline.png"
+      ],
+      "current_web_sizes": [
+        [
+          3769,
+          1861
+        ]
+      ]
+    },
+    {
+      "file": "metric-reconstruction.png",
+      "previous_web_size": [
+        1340,
+        455
+      ],
+      "previous_thesis_embedding": [
+        2373,
+        806
+      ],
+      "current_size": [
+        2373,
+        806
+      ],
+      "current_web_files": [
+        "metric-reconstruction.png"
+      ],
+      "current_web_sizes": [
+        [
+          2373,
+          806
+        ]
+      ]
+    },
+    {
+      "file": "obstacle-filtering.png",
+      "previous_web_size": [
+        1340,
+        398
+      ],
+      "previous_thesis_embedding": [
+        1034,
+        307
+      ],
+      "current_size": [
+        2484,
+        756
+      ],
+      "current_web_files": [
+        "obstacle-filtering.png"
+      ],
+      "current_web_sizes": [
+        [
+          2484,
+          756
+        ]
+      ]
+    },
+    {
+      "file": "predicted-path.png",
+      "previous_web_size": [
+        1340,
+        1062
+      ],
+      "previous_thesis_embedding": [
+        845,
+        670
+      ],
+      "current_size": [
+        2084,
+        1746
+      ],
+      "current_web_files": [
+        "predicted-path.png"
+      ],
+      "current_web_sizes": [
+        [
+          2084,
+          1746
+        ]
+      ]
+    },
+    {
+      "file": "integrated-interface.png",
+      "previous_web_size": [
+        1340,
+        1004
+      ],
+      "previous_thesis_embedding": [
+        699,
+        524
+      ],
+      "current_size": [
+        1440,
+        1080
+      ],
+      "current_web_files": [
+        "integrated-interface.png"
+      ],
+      "current_web_sizes": [
+        [
+          1440,
+          1080
+        ]
+      ]
+    },
+    {
+      "file": "hardware.png",
+      "previous_web_size": [
+        1340,
+        362
+      ],
+      "previous_thesis_embedding": [
+        1802,
+        487
+      ],
+      "current_size": [
+        2741,
+        1969
+      ],
+      "current_web_files": [
+        "hardware.png"
+      ],
+      "current_web_sizes": [
+        [
+          2741,
+          1969
+        ]
+      ]
+    },
+    {
+      "file": "hardware-validation.png",
+      "previous_web_size": [
+        1340,
+        783
+      ],
+      "previous_thesis_embedding": [
+        1450,
+        848
+      ],
+      "current_size": [
+        1299,
+        422
+      ],
+      "current_web_files": [
+        "hardware-validation-annotated.png"
+      ],
+      "current_web_sizes": [
+        [
+          1299,
+          422
+        ]
+      ]
+    },
+    {
+      "file": "controller-scenario.png",
+      "previous_web_size": [
+        1340,
+        564
+      ],
+      "previous_thesis_embedding": [
+        1229,
+        517
+      ],
+      "current_size": [
+        1051,
+        765
+      ],
+      "current_web_files": [
+        "controller-scenario.png"
+      ],
+      "current_web_sizes": [
+        [
+          1051,
+          765
+        ]
+      ]
+    },
+    {
+      "file": "controller-results.png",
+      "previous_web_size": [
+        1340,
+        517
+      ],
+      "previous_thesis_embedding": [
+        1215,
+        469
+      ],
+      "current_size": [
+        1340,
+        517
+      ],
+      "legacy_asset_retained": true,
+      "current_web_files": [
+        "controller-smoothness.jpg",
+        "controller-gate-distance.jpg"
+      ],
+      "current_web_sizes": [
+        [
+          980,
+          735
+        ],
+        [
+          980,
+          735
+        ]
+      ]
+    },
+    {
+      "file": "search-scenario.png",
+      "previous_web_size": [
+        1340,
+        666
+      ],
+      "previous_thesis_embedding": [
+        1512,
+        752
+      ],
+      "current_size": [
+        1543,
+        853
+      ],
+      "current_web_files": [
+        "search-scenario.png"
+      ],
+      "current_web_sizes": [
+        [
+          1543,
+          853
+        ]
+      ]
+    },
+    {
+      "file": "interface-results.png",
+      "previous_web_size": [
+        1340,
+        536
+      ],
+      "previous_thesis_embedding": [
+        993,
+        397
+      ],
+      "current_size": [
+        993,
+        397
+      ],
+      "current_web_files": [
+        "interface-results.png"
+      ],
+      "current_web_sizes": [
+        [
+          993,
+          397
+        ]
+      ]
+    }
+  ],
+  "preservation": {
+    "results": "n=6 for each study; SUS 62.5 vs 80; NASA-TLX MD 57.5 vs 32.5; other NASA-TLX values and controller results unchanged.",
+    "not_replaced_with_presentation": [
+      "overview.png",
+      "controller.png",
+      "metric-reconstruction.png",
+      "interface-results.png"
+    ],
+    "reason": "The original final-thesis figure is clearer or the corresponding presentation media offer no additional source resolution; native embedded thesis images replace the earlier rendered crops.",
+    "camera_model": "The defense raster labels C920; the English hardware-components-en.svg and component list use C922 as specified in the final thesis, with the source distinction stated in the figure caption.",
+    "additional_method_note": "Moving-average scale smoothing is described in defense slides 8 and 10 and the final thesis reconstruction method. Backup-slide depth filtering variations are not represented as additional evaluated results."
+  }
+}

@@ -1,0 +1,5 @@
+.deps/
+__pycache__/
+*.log
+/preview.jpg
+.pdf-review/

@@ -1,0 +1,420 @@
+<!doctype html>
+<!--
+  Standalone adaptation of Academic Project Page Template by Eliahu Horwitz,
+  itself adapted from Nerfies. Template design/code: CC BY-SA 4.0.
+  https://github.com/eliahuhorwitz/Academic-project-page-template
+  All CSS and JavaScript are inline. No Jekyll, build step, or CDN is needed.
+  Search for TODO before publishing. Keep the attribution in the footer.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- TODO: Update the title, description, author, and social preview metadata. -->
+    <title>Project Title | Project Page</title>
+    <meta name="description" content="A short description of your project." />
+    <meta name="author" content="First Author, Second Author" />
+    <!-- TODO: Remove noindex when this page is ready to publish. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Project Title" />
+    <meta property="og:description" content="A short description of your project." />
+    <!-- TODO: Uncomment and fill in the final absolute URLs for sharing previews.
+    <link rel="canonical" href="https://your-domain.com/projects/project-name.html" />
+    <meta property="og:url" content="https://your-domain.com/projects/project-name.html" />
+    <meta property="og:image" content="https://your-domain.com/assets/project-name/preview.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    -->
+    <style>
+      /* Colors, typography, buttons, section accents, and footer adapted from the original template. */
+      :root {
+        --primary-color: #2563eb;
+        --primary-hover: #1d4ed8;
+        --text-primary: #1e293b;
+        --text-secondary: #64748b;
+        --background-primary: #fff;
+        --background-secondary: #f8fafc;
+        --background-accent: #f1f5f9;
+        --border-color: #e2e8f0;
+        --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --border-radius: 12px;
+        --border-radius-lg: 16px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--text-primary);
+        background: var(--background-primary);
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--primary-color); text-underline-offset: 3px; }
+      a:hover { color: var(--primary-hover); }
+      button { font: inherit; cursor: pointer; }
+      :focus-visible { outline: 3px solid var(--primary-color); outline-offset: 5px; }
+      [hidden] { display: none !important; }
+      h1, h2, h3, p, figure { margin: 0; }
+      p + p { margin-top: 1rem; }
+      .container { width: min(960px, 100%); margin-inline: auto; }
+      .narrow { max-width: 780px; }
+      .skip-link { position: absolute; top: -100px; left: 1rem; z-index: 10; background: white; padding: 1rem; }
+      .skip-link:focus { top: 1rem; }
+      .topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.5rem; }
+      .home-link { font-size: .9rem; font-weight: 600; text-decoration: none; }
+      .more-works { position: relative; }
+      .more-works summary {
+        padding: .65rem 1rem; border: 1px solid var(--border-color); border-radius: var(--border-radius);
+        font-size: .9rem; font-weight: 600; cursor: pointer; background: white;
+      }
+      .works-list {
+        position: absolute; right: 0; top: calc(100% + .5rem); z-index: 5;
+        width: min(320px, calc(100vw - 3rem)); padding: 1.2rem;
+        background: white; border: 1px solid var(--border-color); border-radius: var(--border-radius);
+        box-shadow: 0 10px 25px rgb(0 0 0 / .1);
+      }
+      .works-list p { color: var(--text-secondary); font-size: .9rem; }
+      .works-list a { display: block; padding-block: .5rem; }
+      .publication-header { padding: 3rem 1.5rem 2.5rem; text-align: center; }
+      .publication-title { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.12; font-weight: 800; letter-spacing: -.035em; margin-bottom: 1.75rem; overflow-wrap: anywhere; }
+      .publication-subtitle { color: var(--text-secondary); font-size: clamp(1.05rem, 2vw, 1.35rem); margin-bottom: 1.75rem; }
+      .publication-authors { font-size: 1.15rem; font-weight: 500; margin-bottom: .7rem; }
+      .author-block { display: inline-block; color: var(--primary-color); }
+      .publication-affiliation { color: var(--text-secondary); }
+      .publication-venue { display: inline-block; margin-top: 1rem; padding: .4rem .85rem; font-size: .9rem; font-weight: 600; background: var(--background-accent); border-radius: var(--border-radius); }
+      .eql-cntrb { font-size: .8rem; color: var(--text-secondary); margin-top: .6rem; }
+      .publication-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-top: 1.75rem; }
+      .button {
+        display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+        padding: .65rem 1.2rem; border: 0; border-radius: var(--border-radius);
+        color: white; background: var(--text-primary); font-weight: 600; font-size: .95rem; text-decoration: none;
+        transition: background .2s, transform .2s;
+      }
+      .button[href]:hover { color: white; background: var(--primary-color); transform: translateY(-2px); }
+      .button[aria-disabled="true"] { opacity: .5; cursor: default; }
+      .button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+      .section { padding: 3.5rem 1.5rem; }
+      .is-light { background: var(--background-secondary); border-block: 1px solid var(--border-color); }
+      .section-title { position: relative; font-size: 1.9rem; line-height: 1.25; font-weight: 700; text-align: center; padding-bottom: 1.2rem; margin-bottom: 2rem; }
+      .section-title::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--gradient-accent); border-radius: 2px; }
+      .prose { color: var(--text-secondary); font-size: 1.06rem; line-height: 1.8; }
+      .prose h3 { color: var(--text-primary); font-size: 1.15rem; margin-block: 1.5rem .6rem; }
+      .prose h3:first-child { margin-top: 0; }
+      .teaser { padding: 1rem 1.5rem 3.5rem; }
+      .media-placeholder {
+        display: grid; place-content: center; gap: .5rem; aspect-ratio: 16 / 9; padding: 1.5rem; text-align: center;
+        color: var(--text-secondary); background: var(--background-accent);
+        border: 1px dashed #cbd5e1; border-radius: var(--border-radius-lg);
+      }
+      .media-placeholder svg { width: 48px; height: 48px; margin: 0 auto .5rem; fill: none; stroke: #94a3b8; stroke-width: 1.4; }
+      .media-placeholder strong { color: var(--text-primary); font-weight: 600; }
+      .media-placeholder span { font-size: .9rem; }
+      .media { display: block; width: 100%; height: auto; border-radius: var(--border-radius-lg); }
+      .video-frame { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: var(--border-radius-lg); }
+      .poster-frame { width: 100%; height: 650px; border: 1px solid var(--border-color); }
+      figcaption { font-size: .95rem; color: var(--text-secondary); text-align: center; margin-top: 1rem; }
+      .carousel-track { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+      .carousel-slide { flex: 0 0 100%; min-width: 0; padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); scroll-snap-align: start; }
+      .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.25rem; }
+      .carousel-controls button { border: 1px solid var(--border-color); border-radius: 50%; background: white; color: var(--text-primary); width: 42px; height: 42px; font-size: 1.25rem; }
+      .carousel-controls button:hover { border-color: var(--primary-color); color: var(--primary-color); }
+      .carousel-controls button:disabled { opacity: .35; cursor: default; }
+      .carousel-counter { color: var(--text-secondary); font-size: .9rem; min-width: 4rem; text-align: center; }
+      .results-table { width: 100%; border-collapse: collapse; color: var(--text-primary); font-size: .95rem; margin-top: 1.5rem; }
+      .results-table th, .results-table td { padding: .8rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+      .results-table th { background: var(--background-accent); }
+      .table-scroll { overflow-x: auto; }
+      .bibtex-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+      .bibtex-header h2 { font-size: 1.9rem; }
+      .copy-button { background: var(--primary-color); }
+      .copy-button:hover { background: var(--primary-hover); }
+      pre { margin: 0; padding: 1.5rem; font-size: .9rem; line-height: 1.7; overflow-x: auto; background: var(--background-accent); border: 1px solid var(--border-color); border-radius: var(--border-radius); }
+      code { font-family: "Cascadia Code", "SF Mono", Consolas, monospace; }
+      .copy-status { display: block; min-height: 1.6em; margin-top: .6rem; color: var(--text-secondary); font-size: .85rem; }
+      .footer { padding: 2.5rem 1.5rem; background: var(--background-secondary); border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: .85rem; text-align: center; }
+      .scroll-to-top { position: fixed; right: 1.5rem; bottom: 1.5rem; width: 46px; height: 46px; border: 0; border-radius: 50%; background: var(--primary-color); color: white; font-size: 1.4rem; box-shadow: 0 4px 12px rgb(0 0 0 / .12); }
+      @media (max-width: 600px) {
+        .publication-header { padding-top: 2rem; }
+        .section { padding: 2.5rem 1.25rem; }
+        .publication-authors { font-size: 1rem; }
+        .media-placeholder { padding: 1rem; }
+        .media-placeholder svg { width: 32px; height: 32px; }
+        .scroll-to-top { right: 1rem; bottom: 1rem; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        * { transition: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav class="topbar container" aria-label="Project navigation">
+      <!-- TODO: Set this to your homepage, e.g. ../index.html when placed in site/projects/. -->
+      <a class="home-link" href="https://yeop-giraffe.github.io/">← Personal Homepage</a>
+      <!-- TODO: Add related project links below, or remove this details element. -->
+      <details class="more-works">
+        <summary>More Works</summary>
+        <div class="works-list">
+          <p>Related projects will appear here.</p>
+          <!-- <a href="another-project.html">Another Project Title</a> -->
+        </div>
+      </details>
+    </nav>
+
+    <main id="main-content">
+      <header class="publication-header">
+        <div class="container">
+          <!-- TODO: Replace title/subtitle. Remove the subtitle if not needed. -->
+          <h1 class="publication-title">Project Title</h1>
+          <p class="publication-subtitle">A concise subtitle describing your project</p>
+          <!-- TODO: Replace author names; wrap names in links if author URLs are available. -->
+          <p class="publication-authors">
+            <span class="author-block">First Author<sup>*</sup></span>,
+            <span class="author-block">Second Author<sup>*</sup></span>,
+            <span class="author-block">Third Author</span>
+          </p>
+          <p class="publication-affiliation">Institution / Lab Name</p>
+          <!-- TODO: Use verified venue/status or project period. Do not imply acceptance for a submission. -->
+          <p class="publication-venue">Venue / Project Period</p>
+          <!-- TODO: Remove this and the author asterisks if there is no equal contribution. -->
+          <p class="eql-cntrb"><sup>*</sup> Equal contribution</p>
+          <div class="publication-links" aria-label="Project resources">
+            <!-- TODO: Add href="../assets/project-name/paper.pdf" and REMOVE aria-disabled="true".
+                 These are intentionally inactive until real resources are available.
+                 Delete any unused resource buttons. -->
+            <a class="button" aria-disabled="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v5h4 M9 12h6 M9 16h6" /></svg>
+              Paper
+            </a>
+            <!-- TODO: Add a real repository href and remove aria-disabled. -->
+            <a class="button" aria-disabled="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6 M16 6l6 6-6 6 M14 3l-4 18" /></svg>
+              Code
+            </a>
+            <!-- TODO: Add a real arXiv href and remove aria-disabled. -->
+            <a class="button" aria-disabled="true">arXiv</a>
+            <!-- TODO: Add a real supplementary-material href and remove aria-disabled. -->
+            <a class="button" aria-disabled="true">Supplementary</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="teaser" aria-label="Project teaser">
+        <figure class="container">
+          <!-- TODO: Replace this placeholder with an image OR video from the snippets below. -->
+          <div class="media-placeholder">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="7" width="38" height="34" rx="4" /><circle cx="16" cy="18" r="4" /><path d="m6 35 12-11 8 7 7-9 10 13" /></svg>
+            <strong>Teaser Image / Video</strong>
+            <span>A visual overview of your project</span>
+          </div>
+          <!-- Image example:
+          <img class="media" src="../assets/project-name/teaser.jpg" alt="Describe the system or finding shown here" width="1600" height="900" />
+          -->
+          <!-- Video example:
+          <video class="media" controls muted loop playsinline preload="metadata" poster="../assets/project-name/teaser.jpg">
+            <source src="../assets/project-name/teaser.mp4" type="video/mp4" />
+            Your browser does not support this video. <a href="../assets/project-name/teaser.mp4">Download video</a>.
+          </video>
+          -->
+          <figcaption><!-- TODO: Replace caption. -->One or two sentences explaining the main idea shown above.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section is-light" id="abstract" aria-labelledby="abstract-title">
+        <div class="container narrow">
+          <h2 class="section-title" id="abstract-title">Abstract</h2>
+          <div class="prose">
+            <!-- TODO: Paste the paper abstract, or rename this section to Overview for a non-paper project. -->
+            <p>Describe the problem, your approach, and the main contribution of this project.</p>
+            <p>Summarize the results or outcome using only verified information.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="method" aria-labelledby="method-title">
+        <div class="container">
+          <h2 class="section-title" id="method-title">Method</h2>
+          <figure>
+            <!-- TODO: Replace with an architecture/overview figure, or delete this figure. -->
+            <div class="media-placeholder"><strong>System / Method Overview</strong><span>Architecture, pipeline, or mechanism diagram</span></div>
+            <figcaption><!-- TODO: Replace caption. -->Explain the components and how they work together.</figcaption>
+          </figure>
+          <div class="prose narrow container" style="margin-top: 2rem">
+            <!-- TODO: Edit, duplicate, or remove these subsections. -->
+            <h3>Key Idea</h3>
+            <p>Explain the central idea behind your approach.</p>
+            <h3>Implementation</h3>
+            <p>Describe the system, tools, and your contribution to the project.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section is-light" id="results" aria-labelledby="results-title">
+        <div class="container">
+          <h2 class="section-title" id="results-title">Results</h2>
+          <div class="carousel-track" id="results-carousel" role="region" aria-label="Project result figures" tabindex="0">
+            <!-- TODO: Replace these two placeholders with images or videos. Duplicate figures for more slides. -->
+            <figure class="carousel-slide">
+              <div class="media-placeholder"><strong>Result Figure 1</strong><span>Experiment, comparison, or demonstration</span></div>
+              <figcaption>Describe the first result and its significance.</figcaption>
+            </figure>
+            <figure class="carousel-slide">
+              <div class="media-placeholder"><strong>Result Figure 2</strong><span>Experiment, comparison, or demonstration</span></div>
+              <figcaption>Describe the second result and its significance.</figcaption>
+            </figure>
+          </div>
+          <div class="carousel-controls" hidden>
+            <button type="button" id="previous-slide" aria-label="Previous result" aria-controls="results-carousel">←</button>
+            <span class="carousel-counter" id="slide-counter" aria-live="polite">1 / 2</span>
+            <button type="button" id="next-slide" aria-label="Next result" aria-controls="results-carousel">→</button>
+          </div>
+          <!-- TODO: Optional results table. Uncomment and replace all cells with actual measurements.
+          <div class="table-scroll">
+            <table class="results-table">
+              <caption>Evaluation results (specify units and evaluation conditions)</caption>
+              <thead><tr><th scope="col">Method</th><th scope="col">Metric 1</th><th scope="col">Metric 2</th></tr></thead>
+              <tbody><tr><th scope="row">Baseline</th><td>VALUE</td><td>VALUE</td></tr><tr><th scope="row">Our Method</th><td>VALUE</td><td>VALUE</td></tr></tbody>
+            </table>
+          </div>
+          -->
+        </div>
+      </section>
+
+      <section class="section" id="video" aria-labelledby="video-title">
+        <div class="container">
+          <h2 class="section-title" id="video-title">Video Presentation</h2>
+          <!-- TODO: Replace this placeholder with your video, or remove this section. -->
+          <div class="media-placeholder"><strong>Project Video</strong><span>Demo or presentation</span></div>
+          <!-- YouTube example: replace VIDEO_ID with your actual ID before uncommenting.
+          <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Project video presentation" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          -->
+        </div>
+      </section>
+
+      <!-- TODO: Optional poster. Uncomment ONLY after adding your poster PDF.
+      <section class="section is-light" id="poster" aria-labelledby="poster-title">
+        <div class="container">
+          <h2 class="section-title" id="poster-title">Poster</h2>
+          <iframe class="poster-frame" src="../assets/project-name/poster.pdf" title="Project poster" loading="lazy"></iframe>
+          <p><a href="../assets/project-name/poster.pdf">Open or download poster (PDF)</a></p>
+        </div>
+      </section>
+      -->
+
+      <!-- TODO: Replace with the actual citation, or REMOVE this section for a non-paper project. -->
+      <section class="section" id="bibtex" aria-labelledby="bibtex-title">
+        <div class="container">
+          <div class="bibtex-header">
+            <h2 id="bibtex-title">BibTeX</h2>
+            <button type="button" class="button copy-button" id="copy-bibtex" hidden>Copy</button>
+          </div>
+          <pre><code id="bibtex-code">@misc{PROJECT_KEY,
+  title  = {PROJECT_TITLE},
+  author = {AUTHOR_NAMES},
+  year   = {YEAR},
+  url    = {PROJECT_URL}
+}</code></pre>
+          <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+    </main>
+
+    <!-- Keep template attribution and license when reusing this design. -->
+    <footer class="footer">
+      <div class="container narrow">
+        <p>
+          Adapted from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>
+          by Eliahu Horwitz, based on <a href="https://nerfies.github.io/">Nerfies</a>.
+        </p>
+        <p>Template design and code licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+      </div>
+    </footer>
+    <button type="button" class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top" hidden>↑</button>
+
+    <script>
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const scrollBehavior = () => reducedMotion.matches ? "instant" : "smooth";
+
+      // Native scroll-snap carousel: readable and swipeable even without JavaScript.
+      const track = document.getElementById("results-carousel");
+      if (track) {
+        const slides = Array.from(track.querySelectorAll(".carousel-slide"));
+        const previous = document.getElementById("previous-slide");
+        const next = document.getElementById("next-slide");
+        const counter = document.getElementById("slide-counter");
+        let currentSlide = 0;
+        function updateCarousel() {
+          if (!slides.length) return;
+          const trackLeft = track.getBoundingClientRect().left;
+          currentSlide = slides.reduce((closest, slide, index) => {
+            return Math.abs(slide.getBoundingClientRect().left - trackLeft) < Math.abs(slides[closest].getBoundingClientRect().left - trackLeft) ? index : closest;
+          }, 0);
+          counter.textContent = `${currentSlide + 1} / ${slides.length}`;
+          previous.disabled = currentSlide === 0;
+          next.disabled = currentSlide === slides.length - 1;
+        }
+        function showSlide(index) {
+          const slide = slides[Math.max(0, Math.min(index, slides.length - 1))];
+          if (!slide) return;
+          const left = track.scrollLeft + slide.getBoundingClientRect().left - track.getBoundingClientRect().left;
+          track.scrollTo({ left, behavior: scrollBehavior() });
+        }
+        document.querySelector(".carousel-controls").hidden = slides.length < 2;
+        previous.addEventListener("click", () => showSlide(currentSlide - 1));
+        next.addEventListener("click", () => showSlide(currentSlide + 1));
+        track.addEventListener("scroll", updateCarousel, { passive: true });
+        track.addEventListener("keydown", (event) => {
+          if (event.target !== track) return;
+          if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+            event.preventDefault();
+            showSlide(currentSlide + (event.key === "ArrowRight" ? 1 : -1));
+          }
+        });
+        window.addEventListener("resize", () => { showSlide(currentSlide); updateCarousel(); });
+        updateCarousel();
+      }
+
+      // Clipboard API on HTTPS/localhost; select text for manual copying if unavailable (e.g. file://).
+      const copyButton = document.getElementById("copy-bibtex");
+      if (copyButton) {
+        copyButton.hidden = false;
+        copyButton.addEventListener("click", async () => {
+          const code = document.getElementById("bibtex-code");
+          const status = document.getElementById("copy-status");
+          try {
+            await navigator.clipboard.writeText(code.textContent);
+            status.textContent = "Citation copied.";
+          } catch {
+            const range = document.createRange();
+            range.selectNodeContents(code);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            status.textContent = "Citation selected. Press Ctrl+C (or ⌘C) to copy.";
+          }
+        });
+      }
+
+      const topButton = document.getElementById("scroll-to-top");
+      function updateTopButton() { topButton.hidden = window.scrollY < 500; }
+      window.addEventListener("scroll", updateTopButton, { passive: true });
+      topButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: scrollBehavior() }));
+      updateTopButton();
+
+      const moreWorks = document.querySelector(".more-works");
+      if (moreWorks) {
+        document.addEventListener("click", (event) => { if (!moreWorks.contains(event.target)) moreWorks.open = false; });
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && moreWorks.open) {
+            moreWorks.open = false;
+            moreWorks.querySelector("summary").focus();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

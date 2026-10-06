@@ -1,56 +1,24 @@
-# Agent Guidelines for al-folio (v1.x)
+# Personal Website Agent Guidelines
 
-`al-folio` is the **starter repo** for the pluginized v1 architecture.
+This repository contains Seungyeop Lee's standalone static personal website. The former al-folio starter was removed at the user's request.
 
-## Read This First
+## Ownership and Editing
 
-- Start with `.github/copilot-instructions.md` for architecture, ownership boundaries, and CI expectations.
-- Use `docs/BOUNDARIES.md` as the source of truth for starter-vs-plugin ownership.
-- Use `.agents/skills/al-folio-bootstrap/SKILL.md` for new-site setup tasks.
-- Use `.agents/skills/al-folio-v1-migration/SKILL.md` for customized fork migrations.
-- `.codex/skills` and `.claude/skills` are symlinks to `.agents/skills` for agent-specific discovery.
+- Live local files: `_jonbarron_preview/site/`.
+- Content sources: `_jonbarron_preview/content/`.
+- Generator: `_jonbarron_preview/migrate.py`; preview: `_jonbarron_preview/preview.mjs`.
+- Edit generated home, CV, and ordinary project pages through their source files.
+- DART, monocular-depth-estimation, and masters-thesis have `standalone_html: true`; edit their HTML directly and preserve them when regenerating.
+- Preserve original user PDFs, presentation files, profile photo, and development code. Include only selected website assets.
+- Keep image provenance in asset source manifests; do not show image source, slide numbers, or uploaded-material narration in project copy.
+- Use `docs/personal-page-workflow.md` and `_jonbarron_preview/README.md` for site decisions and editing details.
+- Do not publish, push, or change hosting settings without a user request.
+- Delegate parallel tasks only when authorized, and assign separate file ownership.
 
-## What This Repo Owns
+## Verification
 
-- Starter wiring (`Gemfile`, `_config.yml`)
-- Starter content and documentation
-- Cross-plugin integration tests
-- Visual regression tests
+Run the content generator when editing its sources, then check affected pages and local links at http://127.0.0.1:4173/. Check desktop and narrow mobile layouts when visual content changes. Verify standalone pages survive regeneration.
 
-Runtime/component logic belongs in owning plugin repos (`al_folio_core`, `al_folio_distill`, `al_search`, `al_icons`, `al_cookie`, and other `al-*` gems).
-Long-form documentation lives in `docs/`; keep this root file as the short discovery entry point for coding agents.
-
-## Validated Local Command Set
-
-Run from repo root:
-
-```bash
-npm ci
-npm run lint:prettier
-npm run lint:style-contract
-bundle exec jekyll build --baseurl /al-folio
-bash test/integration_comments.sh
-bash test/integration_plugin_toggles.sh
-bash test/integration_distill.sh
-bash test/integration_bootstrap_compat.sh
-bash test/integration_upgrade_cli.sh
-npx playwright install chromium webkit
-npm run test:visual
-bundle exec al-folio upgrade audit
-bundle exec al-folio upgrade overrides audit
-bundle exec al-folio upgrade report
-docker compose up -d
-curl -fsS http://127.0.0.1:8080/al-folio/ >/dev/null
-docker compose logs --tail=80
-docker compose down
-```
-
-Docker note: v1 uses `/srv/jekyll/bin/entry_point.sh` and serves from container-local `/tmp/_site` to avoid host bind-mount write deadlocks.
-
-## Agent Routing Rules
-
-- If change is starter wiring/docs/integration/visual testing: edit here.
-- If change is runtime feature behavior: route to owning plugin repo.
-- Do not add starter-local npm build scripts for theme/runtime assets.
-- Keep docs aligned with pluginized v1 ownership.
-- If you create or keep local overrides of plugin-owned files, run `bundle exec al-folio upgrade overrides audit` and commit `.al-folio-overrides.yml` after review.
+Preview command from repository root: `node _jonbarron_preview/preview.mjs`.
+Generator command from repository root: `python _jonbarron_preview/migrate.py`.
+No Jekyll, Ruby, Docker, or theme plugins are required.

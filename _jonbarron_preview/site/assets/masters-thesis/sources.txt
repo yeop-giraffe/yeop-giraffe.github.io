@@ -1,0 +1,37 @@
+Sources for masters-thesis project-page images
+
+Final thesis: 고려대학교_석사학위논문_이승엽.pdf. Seungyeop Lee, Department of Mechanical Engineering, Korea University. February 2025.
+Defense presentation: 디펜스_이승엽_Final.pptx (30 slides). Original supplied deck was not edited.
+paper.pdf is an unchanged copy of the final thesis. Results remain based on that final thesis.
+
+Image extraction: Original PPTX raster bytes are copied unchanged. Four composite diagrams are cropped from native PowerPoint exports at 4800 x 2700; no resampling, artificial upscaling, redrawing, or AI generation was performed.
+For original media paths, export bounds, SHA256 hashes, and before/after resolutions, see image-provenance.json.
+
+integrated-interface.png: defense slide 15, ppt/media/image57.png; unchanged original raster. Native delivered size 1440 x 1080.
+hardware.png: defense slide 18, ppt/media/image11.png; unchanged original raster. Native delivered size 2741 x 1969.
+controller-scenario.png: defense slide 21, ppt/media/image75.png; unchanged original raster. Native delivered size 1051 x 765.
+controller-rgb-interface.png: defense slide 21, ppt/media/image76.png; unchanged original raster. Native delivered size 505 x 378.
+search-scenario.png: defense slide 23, ppt/media/image82.png; unchanged original raster. Native delivered size 1543 x 853.
+search-map.png: defense slide 23, ppt/media/image59.png; unchanged original raster. Native delivered size 493 x 894.
+controller-smoothness.jpg: defense slide 22, ppt/media/image78.jpg; unchanged original raster. Native delivered size 980 x 735.
+controller-gate-distance.jpg: defense slide 22, ppt/media/image81.jpg; unchanged original raster. Native delivered size 980 x 735.
+control-mapping.png: defense slide 5, ppt/media/image20.png; unchanged original raster. Native delivered size 1004 x 411.
+overview.png: thesis Figure 1.6, PDF page 19; original embedded image. Native delivered size 1857 x 752.
+controller.png: thesis Figure 2.4, PDF page 23; original embedded image. Native delivered size 1210 x 507.
+metric-reconstruction.png: thesis Figure 3.5, PDF page 30; original embedded image. Native delivered size 2373 x 806.
+interface-results.png: thesis Figure 4.11, PDF page 52; original embedded image. Native delivered size 993 x 397.
+reconstruction-pipeline.png: defense slide 8; native PowerPoint export cropped to the original figure content. Native delivered size 3769 x 1861.
+obstacle-filtering.png: defense slide 13; native PowerPoint export cropped to the original figure content. Native delivered size 2484 x 756.
+predicted-path.png: defense slide 14; native PowerPoint export cropped to the original figure content. Native delivered size 2084 x 1746.
+hardware-validation.png: defense slide 20; native PowerPoint export cropped to the original figure content. Native delivered size 4388 x 1219.
+
+overview/controller/metric-reconstruction/interface-results retain the final-thesis compositions because they are more suitable or the presentation has no higher-resolution equivalent.
+controller-results.png (legacy combined plot) and interface-comparison.png (unused legacy comparison) remain available from the original thesis but are not shown on the current page. Their original mappings were Figure 4.6/PDF page 46 and Figure 4.7/PDF page 48, respectively.
+The controller plot on the page now uses the two unchanged JPEG originals from defense slide 22.
+hardware-components-en.svg: defense slide 18, ppt/media/image64.png; original component raster embedded with English text overlays. Final size 3640 x 1411. 내장 IMU is translated as Built-in IMU, and 분배보드 as Power Distribution Board. The source spelling/model Logitec C920 is displayed as Logitech C922 to match the final thesis. Component photographs and connections retain the original source. The final-thesis Table 4.4 resolution specification (720p/60fps) replaces the defense diagram HD1080p text using an SVG overlay; the underlying original raster is unchanged.
+The defense hardware diagram labels C920, while the final thesis text specifies C922; the English web diagram uses C922 and state that the model follows the final thesis.
+No additional results are inferred from backup slides.
+
+hardware-validation-annotated.png: user-supplied annotated attachment codex-clipboard-556f1e5a-6163-408d-aedc-4d6003d2e745.png; unchanged original bytes, 1299 x 422. This is the displayed indoor validation figure; the previous defense slide-20 crop hardware-validation.png is retained but no longer displayed.
+
+integrated-interface-annotated.svg: defense slide 23, ppt/media/image86.png (1914 x 1042), same simulation frame as the user annotated reference attachment codex-clipboard-8da9ea82-fa2f-4e45-a974-f64bb891bf99.png. Crop bounds (294, 0, 1614, 1042) preserve the viewport, reconstruction inset, and readout at native resolution (1320 x 1042). Self-contained original raster with added SVG labels: 3D reconstructed scene (purple), Predicted flight path (blue), Segmented obstacle (red), Current position (teal). The raw original integrated-interface.png used by the homepage is unchanged.

@@ -1,0 +1,3 @@
+- Lower-limb wearable robotics and adaptive assistance
+- Vision-based environmental perception and multimodal wearable sensing
+- Personalized assistance through user-state estimation and feedback
