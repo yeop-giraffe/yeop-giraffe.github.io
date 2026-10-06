@@ -3,3 +3,4 @@ __pycache__/
 *.log
 /preview.jpg
 .pdf-review/
+.source-documents/

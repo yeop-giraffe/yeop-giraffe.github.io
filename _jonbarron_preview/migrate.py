@@ -186,7 +186,7 @@ for data, body, slug in projects:
             raise FileNotFoundError(f'Project thumbnail missing: {SITE / image_path}')
         visual_class += ' project-thumbnail'
         visual_html = f'<img src="{esc(image_path)}" alt="{esc(image_alt)}" width="160" height="160" loading="lazy" decoding="async">'
-    card = f'''<article class="project{' highlighted' if slug == 'dart' else ''}" data-project="{esc(slug)}">
+    card = f'''<article class="project" data-project="{esc(slug)}">
   <a class="{visual_class}" href="{link}" aria-label="{esc(data['title'])}">{visual_html}</a>
   <div>{heading_html}
   {publication_metadata}

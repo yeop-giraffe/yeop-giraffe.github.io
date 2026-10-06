@@ -7,5 +7,6 @@ __pycache__/
 .DS_Store
 .idea/
 output/playwright/
+output/pdf/
 test-results/
 tmp/
