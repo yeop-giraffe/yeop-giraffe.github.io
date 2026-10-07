@@ -175,6 +175,7 @@
         .results-table th, .results-table td { padding: .75rem .5rem; }
       }
     </style>
+    <link rel="stylesheet" href="../project-reading.css" />
   </head>
   <body>
 
@@ -187,7 +188,8 @@
           <a href="hardware-in-the-loop.html">Hardware-in-the-Loop Simulation</a>
           <a href="soft-exosuit-controller.html">Soft Exosuit Controller</a>
           <a href="monocular-depth-estimation.html">Monocular Depth Estimation</a>
-          <a href="drone-control-assist.html">Indoor Drone Assistance</a>
+          <a href="masters-thesis.html">UAV Teleoperation (Master's Thesis)</a>
+          <a href="drone-control-assist.html">Indoor UAV Navigation</a>
         </div>
       </details>
     </nav>
@@ -216,11 +218,12 @@
             </a>
           </div>
           <nav class="section-nav" aria-label="On this page">
-            <a href="#abstract">Abstract</a><a href="#video">Video</a><a href="#method">Method</a><a href="#experiments">Experiments</a><a href="#results">Results</a><a href="#contributions">My Contributions</a><a href="#discussion">Scope</a><a href="#bibtex">BibTeX</a>
+            <a href="#summary">Summary</a><a href="#abstract">Overview</a><a href="#video">Video</a><a href="#method">Method</a><a href="#experiments">Experiments</a><a href="#results">Results</a><a href="#contributions">My Contributions</a><a href="#discussion">Scope</a><a href="#bibtex">BibTeX</a>
           </nav>
         </div>
       </header>
-      <section class="teaser" aria-label="DART framework overview">
+      <section class="project-summary" id="summary" aria-labelledby="summary-title"><div class="container"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Research question</dt><dd>How can a home robot reuse what it learns from earlier tasks?</dd><dt>My contribution</dt><dd>Contributed to the architecture; developed viewpoint selection and room classification; integrated perception, VLM and navigation in Isaac Sim.</dd><dt>Key result</dt><dd>Real-Home task success: 87% vs. 66% for DART-Frozen, with 49.3% fewer VLM acquisition/description calls.</dd><dt>Evaluation</dt><dd>20 tasks × five iterations in each of two homes (one simulated, one real). Language-model inference runs on an external server.</dd></dl></div></section>
+<section class="teaser" aria-label="DART framework overview">
         <figure class="container">
           <a class="image-link" href="../assets/dart/overview.png" aria-label="Open the full-size DART architecture figure"><img class="media" src="../assets/dart/overview.png" width="1362" height="482" alt="DART interaction layer parses a task; Intuitive Mode reuses stored knowledge; Attentive Mode acquires missing information and updates persistent scene-graph memory." /></a>
           <figcaption>Intuitive Mode executes tasks using stored knowledge. When that knowledge is insufficient, Attentive Mode acquires the missing information and retains it in a persistent scene graph for future tasks.</figcaption>
@@ -228,11 +231,10 @@
       </section>
       <section class="section is-light" id="abstract" aria-labelledby="abstract-title">
         <div class="container narrow">
-          <h2 class="section-title" id="abstract-title">Abstract</h2>
+          <h2 class="section-title" id="abstract-title">Overview</h2>
           <div class="prose">
-            <p>Humans rely on both intuitive and deliberate processing, as described by dual-process theories of cognition: novel tasks often require effortful reasoning, whereas accumulated experience allows similar tasks to be handled more automatically and with less cognitive effort. Motivated by this principle, we propose DART (Deliberation-Adaptive Reasoning from Task Experience), which applies the same principle to robots through two connected modes.</p>
-            <p>When the robot lacks sufficient task-relevant knowledge or prior experience, it operates in Attentive Mode, performing high-level reasoning and acquiring the additional knowledge needed for the task. The newly acquired knowledge is stored in a persistent scene graph and accumulated across tasks. As experience builds, the robot increasingly operates in Intuitive Mode, reusing this knowledge for later related tasks without repeated high-level reasoning.</p>
-            <p>We evaluate DART in simulated and real-world environments, including deployment on a resource-constrained platform, and show that as knowledge accumulates in the scene graph, the robot requires less high-level reasoning and less additional information gathering while maintaining task performance.</p>
+            <p>DART asks how a home robot can reuse task-acquired knowledge instead of repeatedly obtaining the same information. It switches between scene-graph retrieval (Intuitive Mode) and LLM/VLM-assisted knowledge acquisition (Attentive Mode), retaining new descriptions, relations and procedures for later tasks.</p>
+            <p>An LLM first parses each instruction. Intuitive Mode then executes from stored knowledge without invoking an LLM; missing knowledge triggers Attentive Mode. Lightweight perception runs on the robot vacuum, while Qwen3.5 inference runs on an external server. The evaluation measures knowledge reuse across repeated object-search and navigation tasks.</p>
           </div>
         </div>
       </section>

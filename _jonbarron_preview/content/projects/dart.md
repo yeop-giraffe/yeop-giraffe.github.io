@@ -6,7 +6,15 @@ standalone_html: true
 publications: [dart2027]
 display_category: Spatial AI / Scene Graphs / LLM & VLM
 period: May 2026 – Present
-summary: DART retains task-acquired knowledge in a scene graph for later object-search and navigation tasks. In the Real-Home evaluation (20 tasks repeated over five iterations), it achieved 87.0% overall task success versus 66.0% for DART-Frozen, with 49.3% fewer VLM calls for visual acquisition and description generation.
+summary: "Retains task-acquired scene-graph knowledge for repeated object search and navigation. Real-Home success was 87% versus 66% for a baseline that discards acquired knowledge, with 49.3% fewer VLM calls for visual acquisition and description generation (20 tasks × five iterations)."
+role_summary: "Viewpoint selection, room classification, architecture and system integration."
+project_brief:
+  Research question: How can a home robot reuse what it learns from earlier tasks?
+  My contribution: Contributed to the architecture; developed viewpoint selection and room classification; integrated perception,
+    VLM and navigation in Isaac Sim.
+  Key result: 'Real-Home task success: 87% vs. 66% for DART-Frozen, with 49.3% fewer VLM acquisition/description calls.'
+  Evaluation: 20 tasks × five iterations in each of two homes (one simulated, one real). Language-model inference runs on
+    an external server.
 ---
 
 ## Overview

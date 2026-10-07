@@ -4,12 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Seungyeop Lee">
+  <meta name="description" content="A Jetson-based pipeline connecting wearable sensor modules to motor commands and feedback.">
   <title>Embedded Controller for a Tendon-Driven Soft Exosuit | Seungyeop Lee</title>
+  <link rel="canonical" href="https://yeop-giraffe.github.io/projects/soft-exosuit-controller.html">
   <link rel="stylesheet" href="../stylesheet.css">
   <link rel="stylesheet" href="../site.css">
 </head>
-<body>
-<main><nav><a href="../index.html#projects">← Selected Projects</a></nav><h1>Embedded Controller for a Tendon-Driven Soft Exosuit</h1><p class="muted">Wearable Robotics / Embedded Control / Sensor Integration</p><h2>Overview</h2>
+<body class="project-page">
+<main><nav><a href="../index.html#projects">← Selected Projects</a></nav><h1>Embedded Controller for a Tendon-Driven Soft Exosuit</h1><p class="muted">Wearable Robotics / Embedded Control / Sensor Integration</p><p class="project-context">Seoul National University, Wearable Robotics Laboratory · Dec. 2024 – Feb. 2025</p><section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Research question</dt><dd>How can wearable sensors and a motor share an embedded control and logging pipeline?</dd><dt>My contribution</dt><dd>Developed the Jetson program, assembled sensor modules, and connected and controlled the sensors and motor.</dd><dt>Key result</dt><dd>Established the basic pipeline with 10-ms sensor-to-command processing; observed motor-response delay with concurrent sensor communication.</dd><dt>Evaluation</dt><dd>Torque-profile bench tests and sensor timing checks. Walking assistance was outside the completed work; mechanical hardware was developed by another student.</dd></dl></section><h2>Overview</h2>
 <p>At Seoul National University's Wearable Robotics Laboratory, I worked with Prof. Jinsoo Kim on the embedded control infrastructure for a lower-limb, tendon-driven soft exosuit. I established a basic pipeline connecting wearable sensor modules to motor commands, feedback, and data logging on an <strong>NVIDIA Jetson Orin Nano</strong>.</p>
 <p>The pipeline had a <strong>10-ms end-to-end processing time</strong> from the sensor module through motor-command generation. Motor response was evaluated separately through feedback measurements, which revealed delays during concurrent sensor communication.</p>
 <figure class="uav-figure">

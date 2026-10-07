@@ -4,12 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Seungyeop Lee">
+  <meta name="description" content="A helium-supported robot with Raspberry Pi video streaming, YOLOv5 and tracking on a laptop, and ESP32 motor commands.">
   <title>Lighter-Than-Air Robot for a Light Drone Competition | Seungyeop Lee</title>
+  <link rel="canonical" href="https://yeop-giraffe.github.io/projects/autonomous-lighter-than-air-vehicle.html">
   <link rel="stylesheet" href="../stylesheet.css">
   <link rel="stylesheet" href="../site.css">
 </head>
-<body>
-<main><nav><a href="../index.html#projects">← Selected Projects</a></nav><h1>Lighter-Than-Air Robot for a Light Drone Competition</h1><p class="muted">Aerial Robotics / Embedded Systems / Visual Tracking</p><h2>Overview</h2>
+<body class="project-page">
+<main><nav><a href="../index.html#projects">← Selected Projects</a></nav><h1>Lighter-Than-Air Robot for a Light Drone Competition</h1><p class="muted">Aerial Robotics / Embedded Systems / Visual Tracking</p><p class="project-context">Drexel University, IMAPLE Lab · Sep. 2023 – Feb. 2024 (visiting research)</p><section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Engineering goal</dt><dd>Connect video-based tracking to motor commands on a helium-supported competition robot.</dd><dt>My contribution</dt><dd>Integrated Raspberry Pi video streaming, laptop-based detection/tracking, and ESP32 motor control.</dd><dt>Outcome</dt><dd>A physical prototype combining helium-supported flight, video streaming and motor commands in an indoor venue.</dd></dl></section><h2>Overview</h2>
 <p>During my visiting research at Drexel University's Intelligent Machine Perception and Learning (IMAPLE) Lab, I worked on a lighter-than-air robot for the <strong>Defend the Republic – Light Drone Competition</strong>. Helium balloons support a lightweight structure built from balsa wood, carbon pipes, and 3D-printed parts.</p>
 <figure class="uav-figure">
   <a href="../assets/lighter-than-air/competition-demo.png" target="_blank" rel="noopener"><img src="../assets/lighter-than-air/competition-demo.png" width="1280" height="720" alt="Blue helium-supported blimp in an indoor competition venue, with a person standing beneath the platform." decoding="async"></a>
@@ -17,13 +19,7 @@
 </figure>
 
 <h2>Physical Platform</h2>
-<p>The design combines helium buoyancy with a lightweight frame carrying the control electronics and motors. Construction materials include:</p>
-<ul>
-<li>Helium balloons for buoyancy.</li>
-<li>Balsa wood and carbon pipes for the frame.</li>
-<li>3D-printed components.</li>
-</ul>
-<p>The prototype's reported mass is <strong>100 g considering helium buoyancy</strong>; the measurement procedure was not documented.</p>
+<p>Helium buoyancy supports the lightweight frame, control electronics and motors.</p>
 <div class="uav-figure-grid">
   <figure class="uav-figure">
     <a href="../assets/lighter-than-air/platform-original.png" target="_blank" rel="noopener" style="aspect-ratio:1;display:grid;place-items:center"><img src="../assets/lighter-than-air/platform-original.png" width="4032" height="3024" alt="Full prototype photo showing blue helium balloons suspended above a lightweight frame in the indoor venue." loading="lazy" decoding="async" style="width:100%;height:100%;min-height:0;object-fit:contain;transform:rotate(90deg)"></a>

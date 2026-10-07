@@ -22,18 +22,20 @@ def author_html(author, highlight=False):
     return label + (f'<sup>{esc(markers)}</sup>' if markers else '')
 
 
-def page(title, content, prefix=''):
+def page(title, content, prefix='', description='', body_class='', canonical_path=''):
     return f'''<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Seungyeop Lee">
+  <meta name="description" content="{esc(description)}">
   <title>{esc(title)}</title>
+  <link rel="canonical" href="https://yeop-giraffe.github.io/{esc(canonical_path)}">
   <link rel="stylesheet" href="{prefix}stylesheet.css">
   <link rel="stylesheet" href="{prefix}site.css">
 </head>
-<body>
+<body class="{esc(body_class)}">
 <main>{content}</main>
 <footer>Website template by <a href="https://github.com/jonbarron/jonbarron.github.io">Jon Barron</a>.</footer>
 </body>
@@ -50,14 +52,17 @@ cv = yaml.safe_load((CONTENT / 'cv.yml').read_text(encoding='utf-8'))['cv']
 intro = markdown.markdown((CONTENT / 'about.md').read_text(encoding='utf-8'))
 research = markdown.markdown((CONTENT / 'research.md').read_text(encoding='utf-8'))
 download = cv['download']
-if not (SITE / download).is_file():
-    raise FileNotFoundError(f'Latest CV download missing: {SITE / download}')
+source_download = cv.get('source_download', download)
+if not (SITE / source_download).is_file():
+    raise FileNotFoundError(f'Original CV document missing: {SITE / source_download}')
 
 (SITE / 'assets/pdf').mkdir(parents=True, exist_ok=True)
 
-cv_content = f'<nav><a href="index.html">← Home</a> / <a href="{esc(download)}" download>Download CV (DOCX)</a></nav><h1>{esc(cv["name"])}</h1><p>{esc(cv["label"])}<br><a href="mailto:{esc(cv["email"])}">{esc(cv["email"])}</a> · {esc(cv["phone"])}<br>{esc(cv["location"])}</p>'
+cv_content = f'<nav><a href="index.html">← Home</a> / <a href="{esc(download)}" download>Download CV (PDF)</a></nav><h1>{esc(cv["name"])}</h1><p>{esc(cv["label"])}<br><a href="mailto:{esc(cv["email"])}">{esc(cv["email"])}</a> · {esc(cv["phone"])}<br>{esc(cv["location"])}</p>'
+cv_anchors = {section: re.sub(r'[^a-z0-9]+', '-', section.lower()).strip('-') for section in cv['sections']}
+cv_content += '<nav class="page-nav" aria-label="CV sections">' + ''.join(f'<a href="#{cv_anchors[section]}">{esc(section)}</a>' for section in cv['sections']) + '</nav>'
 for section, items in cv['sections'].items():
-    cv_content += f'<section class="cv-section"><h2>{esc(section)}</h2>'
+    cv_content += f'<section class="cv-section" id="{cv_anchors[section]}"><h2>{esc(section)}</h2>'
     for item in items:
         heading = item.get('title') or item.get('name') or item.get('position') or f'{item.get("studyType", "")}, {item.get("area", "")}'
         metadata = [item.get(k) for k in ['company', 'institution', 'publisher', 'awarder', 'location'] if item.get(k)]
@@ -68,7 +73,7 @@ for section, items in cv['sections'].items():
         if item.get('start_date'):
             metadata.append(f'{item["start_date"]} – {item.get("end_date", "Present")}')
         metadata += [item[k] for k in ['date', 'dates', 'releaseDate', 'score', 'status'] if item.get(k)]
-        heading_text = f'“{esc(heading)}”' if section == 'Publications & Presentations' else esc(heading)
+        heading_text = esc(heading)
         cv_content += f'<article class="cv-entry"><h3>{heading_text}</h3>'
         if item.get('authors'):
             cv_content += '<p>' + ', '.join(author_html(author, author.rstrip('*†') == cv['name']) for author in item['authors']) + '</p>'
@@ -82,7 +87,9 @@ for section, items in cv['sections'].items():
         if item.get('note') and not metadata:
             cv_content += f'<p>{esc(item["note"])}</p>'
         if item.get('pdf'):
-            cv_content += f'<p><a href="{esc(item["pdf"])}">Manuscript (PDF)</a></p>'
+            resource_label = 'Manuscript' if item.get('status') else 'Thesis' if item.get('id') == 'lee2025thesis' else 'Paper'
+            poster = f' / <a href="{esc(item["poster_pdf"])}">Poster (PDF)</a>' if item.get('poster_pdf') else ''
+            cv_content += f'<p><a href="{esc(item["pdf"])}">{resource_label} (PDF)</a>{poster}</p>'
         if item.get('email'):
             cv_content += f'<p><a href="mailto:{esc(item["email"])}">{esc(item["email"])}</a> · {esc(item.get("phone", ""))}</p>'
         details = item.get('highlights') or item.get('keywords')
@@ -90,7 +97,7 @@ for section, items in cv['sections'].items():
             cv_content += '<ul>' + ''.join(f'<li>{esc(x)}</li>' for x in details) + '</ul>'
         cv_content += '</article>'
     cv_content += '</section>'
-(SITE / 'cv.html').write_text(page('CV | Seungyeop Lee', cv_content), encoding='utf-8')
+(SITE / 'cv.html').write_text(page('CV | Seungyeop Lee', cv_content, description='Education, research, publications and engineering experience of Seungyeop Lee.', body_class='cv-page', canonical_path='cv.html'), encoding='utf-8')
 
 projects = [(*frontmatter(p), p.stem) for p in (CONTENT / 'projects').glob('*.md')]
 projects.sort(key=lambda x: x[0].get('importance', 99))
@@ -105,8 +112,8 @@ if set(used_publications) != set(publication_by_id):
     raise ValueError('Associate every publication with its project before generating the homepage.')
 
 
-def publication_html(item, show_title=True, project_link=None, description=None, show_affiliation=True, category=None):
-    title_text = f'“{esc(item["title"])}”'
+def publication_html(item, show_title=True, project_link=None, description=None, show_affiliation=True, category=None, contribution=None):
+    title_text = esc(item['title'])
     if project_link:
         title_text = f'<a class="papertitle" href="{esc(project_link)}">{title_text}</a>'
     title = f'<h3 class="papertitle">{title_text}</h3>' if show_title else ''
@@ -117,6 +124,7 @@ def publication_html(item, show_title=True, project_link=None, description=None,
     status = ' · ' + esc(item['status']) if item.get('status') else ''
     note = f' <span class="publication-note">{esc(item["note"])}</span>' if item.get('note') else ''
     description_html = f'<p class="publication-description">{esc(description)}</p>' if description else ''
+    contribution_html = f'<p class="project-contribution"><strong>My contribution:</strong> {esc(contribution)}</p>' if contribution else ''
     category_html = ''
     pdf_link = ''
     if category is not None:
@@ -129,7 +137,12 @@ def publication_html(item, show_title=True, project_link=None, description=None,
                 raise FileNotFoundError(f'Publication poster PDF missing: {item["poster_pdf"]}')
             pdf_link += f' / <a class="publication-poster" href="{esc(item["poster_pdf"])}" target="_blank" rel="noopener">Poster</a>'
         category_html = f'<p class="project-meta">{esc(category)}</p>'
-    return f'<div class="publication-meta" data-publication-id="{esc(item["id"])}">{title}<p>{authors}</p>{affiliation}{advisor}<p class="publication-venue"><em>{esc(venue)}</em>{status}{note}{pdf_link}</p>{category_html}{description_html}</div>'
+    return f'<div class="publication-meta" data-publication-id="{esc(item["id"])}">{title}<p>{authors}</p>{affiliation}{advisor}<p class="publication-venue"><em>{esc(venue)}</em>{status}{note}{pdf_link}</p>{category_html}{description_html}{contribution_html}</div>'
+
+
+def project_brief_html(fields):
+    entries = ''.join(f'<dt>{esc(label)}</dt><dd>{esc(value)}</dd>' for label, value in fields.items())
+    return f'<section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts">{entries}</dl></section>'
 
 
 (SITE / 'projects').mkdir(exist_ok=True)
@@ -152,6 +165,11 @@ for data, body, slug in projects:
     group_anchor = 'research' if related else 'projects'
     group_title = 'Publications & Presentations' if related else 'Selected Projects'
     detail = f'<nav><a href="../index.html#{group_anchor}">← {esc(group_title)}</a></nav><h1>{esc(data["title"])}</h1><p class="muted">{esc(data.get("display_category", ""))}</p>'
+    context = ' · '.join(data[key] for key in ('affiliation', 'period') if data.get(key))
+    if context:
+        detail += f'<p class="project-context">{esc(context)}</p>'
+    if data.get('project_brief'):
+        detail += project_brief_html(data['project_brief'])
     detail += markdown.markdown(body, extensions=['tables', 'fenced_code'])
     if related:
         detail += '<section class="related-publications"><h2>Publications &amp; Presentations</h2>'
@@ -162,16 +180,18 @@ for data, body, slug in projects:
         if not target.is_file():
             raise FileNotFoundError(f'Standalone project page missing: {target}')
     else:
-        target.write_text(page(data['title'] + ' | Seungyeop Lee', detail, '../'), encoding='utf-8')
+        target.write_text(page(data['title'] + ' | Seungyeop Lee', detail, '../', data.get('description', ''), 'project-page', f'projects/{slug}.html'), encoding='utf-8')
     link = f'projects/{slug}.html'
     heading = related[0]['title'] if len(related) == 1 else data['title']
-    heading_text = f'“{esc(heading)}”' if len(related) == 1 else esc(heading)
+    heading_text = esc(heading)
     heading_html = f'<a class="papertitle" href="{link}">{heading_text}</a>' if len(related) <= 1 else ''
     descriptions = data.get('publication_descriptions', {})
     categories = data.get('publication_categories', {})
+    contributions = data.get('publication_contributions', {})
     publication_metadata = ''.join(publication_html(item, show_title=len(related) > 1, project_link=link,
         description=descriptions.get(item['id'], data.get('summary', data.get('description', ''))),
-        show_affiliation=False, category=categories.get(item['id'], data.get('display_category', ''))) for item in related)
+        show_affiliation=False, category=categories.get(item['id'], data.get('display_category', '')),
+        contribution=contributions.get(item['id'], data.get('role_summary'))) for item in related)
     affiliation_html = ''
     if not related:
         affiliation = data.get('affiliation', '')
@@ -222,14 +242,15 @@ teaching_html = ''.join(activity_html(item) for item in cv['sections']['Teaching
 
 content = f'''<section class="intro">
   <div><h1 class="name">{esc(cv['name'])}</h1>{intro}
-  <nav class="contact"><a href="mailto:{esc(cv['email'])}">Email</a> / <a href="cv.html">CV</a> / <a href="{esc(download)}" download>DOCX</a> / <a href="https://github.com/yeop-giraffe">GitHub</a></nav></div>
+  <nav class="contact" aria-label="Contact and CV"><a href="mailto:{esc(cv['email'])}">Email</a> / <a href="cv.html">CV</a> / <a href="{esc(download)}" download>CV PDF</a> / <a href="https://github.com/yeop-giraffe">GitHub</a></nav></div>
   <div class="profile"><img class="profile-photo" src="assets/images/lsy-profile.jpg" width="800" height="800" alt="Portrait of Seungyeop Lee by the sea" fetchpriority="high" decoding="async"></div>
 </section>
 <section class="research-interests"><h2>Research Interests</h2>{research}</section>
+<nav class="page-nav" aria-label="Homepage sections"><a href="#research">Publications</a><a href="#projects">Projects</a><a href="#leadership">Leadership</a><a href="#teaching">Teaching &amp; Mentoring</a></nav>
 <section id="research"><h2>Publications &amp; Presentations</h2>{publication_rows}</section>
 <section id="projects"><h2>Selected Projects</h2>{project_rows}</section>
 <section id="leadership" class="activities"><h2>Leadership</h2>{leadership_html}</section>
 <section id="teaching" class="activities"><h2>Teaching &amp; Mentoring</h2>{teaching_html}</section>'''
-(SITE / 'index.html').write_text(page('Seungyeop Lee', content), encoding='utf-8')
+(SITE / 'index.html').write_text(page('Seungyeop Lee | Robotics Research', content, description='Seungyeop Lee: robot perception, embedded control and human-robot interaction, with research interests in adaptive wearable assistance.'), encoding='utf-8')
 (SITE / '.nojekyll').touch()
 print(f'Imported {len(projects)} projects and complete CV into {SITE}')

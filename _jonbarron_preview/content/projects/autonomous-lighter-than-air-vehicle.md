@@ -5,7 +5,11 @@ importance: 6
 display_category: Aerial Robotics / Embedded Systems / Visual Tracking
 period: Sep. 2023 – Feb. 2024 (visiting research)
 affiliation: Drexel University, IMAPLE Lab
-summary: Worked on a helium-supported robot for the Defend the Republic light drone competition. Raspberry Pi video feeds a laptop running YOLOv5 and tracking, which sends motor commands to an ESP32 controlling four DC motors.
+summary: "Integrated Raspberry Pi video streaming and ESP32 motor commands for a helium-supported competition robot. A laptop runs YOLOv5 and visual tracking; the onboard controller drives four DC motors."
+project_brief:
+  Engineering goal: Connect video-based tracking to motor commands on a helium-supported competition robot.
+  My contribution: Integrated Raspberry Pi video streaming, laptop-based detection/tracking, and ESP32 motor control.
+  Outcome: A physical prototype combining helium-supported flight, video streaming and motor commands in an indoor venue.
 ---
 
 ## Overview
@@ -19,13 +23,7 @@ During my visiting research at Drexel University's Intelligent Machine Perceptio
 
 ## Physical Platform
 
-The design combines helium buoyancy with a lightweight frame carrying the control electronics and motors. Construction materials include:
-
-- Helium balloons for buoyancy.
-- Balsa wood and carbon pipes for the frame.
-- 3D-printed components.
-
-The prototype's reported mass is **100 g considering helium buoyancy**; the measurement procedure was not documented.
+Helium buoyancy supports the lightweight frame, control electronics and motors.
 
 <div class="uav-figure-grid">
   <figure class="uav-figure">

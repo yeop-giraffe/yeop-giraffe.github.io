@@ -12,6 +12,16 @@ publication_descriptions:
 publication_categories:
   lee2024monocular: Monocular Depth Estimation / Obstacle Avoidance / UAVs
   lee2023visual: Visual Odometry / ROS / UAVs
+affiliation: "Korea University, Human-Machine Systems Lab"
+publication_contributions:
+  lee2024monocular: Relative-depth processing and ROS/PX4 obstacle-avoidance integration.
+  lee2023visual: Quadcopter platform and visual-odometry-to-flight-control integration.
+project_brief:
+  Research question: How can camera-based perception support indoor UAV flight where GPS is unavailable?
+  My contribution: Built the ROS-based visual-odometry platform and explored monocular-depth-based flight-direction selection.
+  Key result: '2023: integrated localization/control platform. 2024: 41-FPS depth processing and a collision-free 10-m simulated
+    flight.'
+  Evaluation: Physical platform integration and PX4/Gazebo demonstrations; the two studies use different camera configurations.
 ---
 
 ## Overview

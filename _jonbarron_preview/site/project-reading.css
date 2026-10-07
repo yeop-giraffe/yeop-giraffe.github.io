@@ -1,0 +1,23 @@
+/* Shared reading layout for the three standalone research pages. */
+.publication-header { padding: 1.25rem 1.5rem 1.5rem; }
+.publication-title { max-width: 900px; margin-inline: auto; font-size: clamp(1.65rem, 3vw, 2.5rem); margin-bottom: 1.1rem; }
+.publication-links { margin-top: 1rem; }
+.topbar { padding-block: 1rem; }
+.section { padding-block: 2.5rem; }
+.section-title { margin-bottom: 1.5rem; padding-bottom: .9rem; }
+.section-title::after { background: var(--primary-color); }
+.prose { color: #475569; font-size: 1rem; line-height: 1.75; }
+.project-summary { padding: 0 1.5rem 1.75rem; }
+.project-summary > div { max-width: 780px; }
+.project-summary h2 { font-size: 1.1rem; margin-bottom: .85rem; }
+.summary-facts { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: .7rem 1.25rem; padding-block: 1rem; margin: 0; border-block: 1px solid var(--border-color); font-size: .93rem; line-height: 1.6; }
+.summary-facts dt { font-weight: 650; }
+.summary-facts dd { margin: 0; color: #475569; }
+.teaser { padding-bottom: 2rem; }
+@media (max-width: 600px) {
+  .publication-header { padding-top: .75rem; }
+  .summary-facts { grid-template-columns: 1fr; gap: .25rem; }
+  .summary-facts dd { margin-bottom: .65rem; }
+  .project-summary { padding-inline: 1.25rem; }
+  .section { padding-block: 2rem; }
+}

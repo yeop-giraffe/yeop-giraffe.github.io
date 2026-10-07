@@ -6,7 +6,15 @@ standalone_html: true
 publications: [lee2025domain]
 display_category: Monocular Depth Estimation / CycleGAN / Synthetic Data
 period: Sep. 2023 – Feb. 2024 (visiting research)
-summary: Compared original and CycleGAN-translated synthetic training data across three depth models on NYU-Depth V2. AbsRel improved slightly; other metrics were mixed. CycleGAN training included NYU test RGB images.
+summary: "Translated 10,000 synthetic RGB images with CycleGAN and paired them with simulated depth labels. Across three depth models, AbsRel improved modestly; other metrics were mixed. Translation training included NYU test images."
+role_summary: "CycleGAN domain transfer and monocular depth model training."
+project_brief:
+  Research question: Does translating synthetic training images improve depth estimation on real indoor images?
+  My contribution: Worked on CycleGAN-based synthetic image translation and monocular depth model training during visiting
+    research at Drexel.
+  Key result: AbsRel decreased modestly for all three models; other metrics showed mixed changes.
+  Evaluation: 10,000 paired scenes; three depth architectures; NYU-Depth V2 test evaluation. CycleGAN training included NYU
+    test RGB images.
 ---
 
 ## Overview

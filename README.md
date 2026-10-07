@@ -40,6 +40,8 @@ python _jonbarron_preview/migrate.py
 
 DART·Depth·석사논문 상세는 독립 HTML로 편집하며, 재생성해도 보존됩니다. 홈 요약은 각 프로젝트 Markdown에서 관리합니다.
 
+홈과 프로젝트 상단에는 연구 방향, 본인의 기여와 평가 조건을 구분해 표시합니다. 프로젝트 요약은 Markdown의 `project_brief`, 논문 목록의 기여 설명은 `role_summary`·`publication_contributions`에서 관리합니다. 웹 CV와 다운로드용 CV PDF는 같은 `content/cv.yml`을 사용합니다. PDF 생성 방법은 상세 README에 있습니다.
+
 ## 공개 배포
 
 공개 주소는 https://yeop-giraffe.github.io/ 입니다. `.github/workflows/deploy.yml`이 `main`의 사이트 변경을 GitHub Pages에 배포합니다. 게시되는 파일은 `_jonbarron_preview/site/`의 내용이며, 저장소의 Pages 게시 방식은 GitHub Actions입니다.

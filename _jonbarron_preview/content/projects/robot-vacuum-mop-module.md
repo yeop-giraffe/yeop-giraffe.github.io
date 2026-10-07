@@ -6,16 +6,11 @@ display_category: Mechanism Design / Product Development / Quality Validation
 period: Feb. 2025 – Apr. 2026
 affiliation: Samsung Electronics, Robot Vacuum Cleaner Development Lab
 summary: Designed and validated robot vacuum mop actuation mechanisms, improved durability, and supported mass production through performance testing and vision-based inspection.
+project_brief:
+  Engineering goal: Develop and validate mop actuation mechanisms for robot vacuum cleaners.
+  My contribution: Mechanism design, durability improvement, performance testing and vision-based inspection.
+  Outcome: Supported mechanism validation, mass production and product quality checks.
 ---
-
-## Overview
-
-As a mechanical engineer in Samsung Electronics' Robot Vacuum Cleaner Development Lab, I worked on mop actuation mechanisms and product validation from February 2025 to April 2026.
-
-## My Contributions
-
-- Designed and validated mop actuation mechanisms, including durability improvements.
-- Supported mass production and quality validation through performance testing and vision-based inspection.
 
 ## What Shaped My Research
 

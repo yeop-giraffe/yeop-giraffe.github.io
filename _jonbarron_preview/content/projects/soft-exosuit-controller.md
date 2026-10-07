@@ -5,7 +5,14 @@ importance: 1
 display_category: Wearable Robotics / Embedded Control / Sensor Integration
 period: Dec. 2024 – Feb. 2025
 affiliation: Seoul National University, Wearable Robotics Laboratory
-summary: Built a Jetson-based control pipeline and sensor modules for a tendon-driven soft exosuit, with a 10-ms end-to-end sensor-to-motor-command processing time. Bench tests examined torque feedback and motor response delay during concurrent sensor communication.
+summary: "Built sensor modules and a Jetson CAN pipeline for motor commands, feedback and logging. Sensor-to-command processing took 10 ms; bench tests identified motor-response delay during concurrent sensor communication."
+project_brief:
+  Research question: How can wearable sensors and a motor share an embedded control and logging pipeline?
+  My contribution: Developed the Jetson program, assembled sensor modules, and connected and controlled the sensors and motor.
+  Key result: Established the basic pipeline with 10-ms sensor-to-command processing; observed motor-response delay with concurrent
+    sensor communication.
+  Evaluation: Torque-profile bench tests and sensor timing checks. Walking assistance was outside the completed work; mechanical
+    hardware was developed by another student.
 ---
 
 ## Overview

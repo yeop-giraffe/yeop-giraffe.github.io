@@ -1,11 +1,12 @@
-# Content transcribed from Seungyeop_Lee_CV_v3.docx.
+# Based on the supplied CV, with source-checked project revisions.
 cv:
   name: Seungyeop Lee
   label: Software Engineer, Samsung Electronics
   email: yeoplee0906@gmail.com
   phone: "+82 (0)10-9132-4163"
   location: Suwon, Republic of Korea
-  download: assets/documents/Seungyeop_Lee_CV_v3.docx
+  download: assets/documents/Seungyeop_Lee_CV.pdf
+  source_download: assets/documents/Seungyeop_Lee_CV_v3.docx
   sections:
     Research Interests:
       - name: Lower-limb wearable robots, vision-based perception, and human-robot interaction
@@ -37,7 +38,7 @@ cv:
         end_date: Present
         summary: Spatial AI for Resource-Constrained Robot Vacuum Cleaners
         highlights:
-          - Developed a dual-process robot intelligence architecture inspired by human cognition combining task knowledge reuse and incremental scene-graph enrichment to reduce repeated reasoning on resource-constrained robots.
+          - Contributed to a dual-process robot intelligence architecture combining task knowledge reuse and incremental scene-graph enrichment to reduce repeated reasoning on resource-constrained robots.
           - Developed a viewpoint selection algorithm that selects navigation coordinates for robots to acquire object information based on visibility and accessibility.
           - Developed room classification using object occurrence likelihoods and spatially accumulated visual evidence from observations collected during navigation.
           - Integrated VLM, perception, and navigation into a unified Spatial AI system and validated in NVIDIA Isaac Sim.
@@ -49,9 +50,9 @@ cv:
         end_date: Feb. 2025
         summary: Embedded Controller and Sensor Integration for a Soft Exosuit
         highlights:
-          - Developed a real-time onboard controller for a tendon-driven soft exosuit.
+          - Developed the Jetson control program for a tendon-driven soft exosuit, including sensor reception, motor commands and feedback handling.
           - Built a tendon-driven soft exosuit pipeline with 10-ms end-to-end processing from sensor measurements to motor commands using multithreaded CAN communication.
-          - Designed a sensor integration module connecting wearable sensors, actuators, and the controller.
+          - Assembled sensor board modules and connected the load cells, IMUs and motor to the control pipeline; observed motor-response delay during concurrent sensor communication.
       - company: Korea University, Human-Machine Systems Lab
         position: Graduate Researcher
         advisor: Prof. Shinsuk Park
@@ -70,8 +71,8 @@ cv:
         start_date: Sep. 2023
         end_date: Feb. 2024
         highlights:
-          - Applied CycleGAN-based domain transfer to generate realistic training data from synthetic images for sim-to-real monocular depth estimation.
-          - Improved monocular depth estimation using mixed real and domain-transferred synthetic data.
+          - Applied CycleGAN-based domain transfer to synthetic indoor RGB images for monocular depth model training.
+          - Compared original and domain-transferred synthetic training data across three depth models; observed modest AbsRel improvements with mixed changes in other metrics. Translation training included NYU test RGB images.
           - Developed a helium-supported aerial robot with Raspberry Pi–ESP32 hardware and laptop-based YOLOv5 tracking for video streaming and motor commands.
     Industry Experience:
       - company: Samsung Electronics, Robot Vacuum Cleaner Development Lab

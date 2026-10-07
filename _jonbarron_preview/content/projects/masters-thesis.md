@@ -6,7 +6,14 @@ standalone_html: true
 publications: [lee2025thesis]
 display_category: UAV Teleoperation / Human-Robot Interaction / Monocular Vision
 period: Sep. 2022 – Feb. 2025
-summary: Designed an intuitive UAV controller and a monocular-vision interface integrating 3D reconstruction, obstacle highlighting, and predicted flight paths. In a six-participant simulation study, interface usability increased from 62.5 to 80 on SUS and NASA-TLX mental demand decreased from 57.5 to 32.5.
+summary: "Designed UAV controller mapping and a monocular-vision display with 3D reconstruction, obstacle highlighting and predicted paths. In a six-participant Gazebo interface study, SUS increased from 62.5 to 80 and NASA-TLX mental demand decreased from 57.5 to 32.5 versus RGB video alone."
+role_summary: "Controller mapping, vision interface, prototype integration and user evaluation."
+project_brief:
+  Research question: Can control mapping and visual assistance make indoor UAV teleoperation easier for novice operators?
+  My contribution: Designed the controller mapping and vision interface, integrated the prototype, and evaluated the controller
+    and display in separate studies.
+  Key result: 'Interface SUS: 62.5 → 80; NASA-TLX mental demand: 57.5 → 32.5 compared with RGB video alone.'
+  Evaluation: Two Gazebo studies, each with six novice participants and one run per condition; separate indoor hardware checks.
 ---
 
 ## Overview
