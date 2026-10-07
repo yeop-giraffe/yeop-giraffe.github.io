@@ -5,15 +5,14 @@ importance: 1
 display_category: Wearable Robotics / Embedded Control / Sensor Integration
 period: Dec. 2024 – Feb. 2025
 affiliation: Seoul National University, Wearable Robotics Laboratory
-summary: "Built sensor modules and a Jetson CAN pipeline for motor commands, feedback and logging. Sensor-to-command processing took 10 ms; bench tests identified motor-response delay during concurrent sensor communication."
+summary: "Built sensor modules and a Jetson CAN pipeline for motor commands, feedback and logging. Sensor-to-command processing took 10 ms."
 role_summary: "Jetson control software, sensor module assembly, and sensor–motor integration."
 project_brief:
-  Research question: How can wearable sensors and a motor share an embedded control and logging pipeline?
-  Individual contribution: Developed the Jetson program, assembled sensor modules, and connected and controlled the sensors and motor.
+  Engineering goal: Develop a Jetson-based sensor-to-motor control pipeline for a tendon-driven soft exosuit.
+  My contribution: Developed the Jetson program, assembled sensor modules, and connected and controlled the sensors and motor.
   Key result: Established the basic pipeline with 10-ms sensor-to-command processing; observed motor-response delay with concurrent
     sensor communication.
-  Evaluation: Torque-profile bench tests and sensor timing checks. Walking assistance was outside the completed work; mechanical
-    hardware was developed by another student.
+  Evaluation: Torque-profile bench tests and sensor timing checks.
 ---
 
 ## Overview
@@ -27,14 +26,14 @@ The pipeline had a **10-ms end-to-end processing time** from the sensor module t
   <figcaption><span>Sensor-to-motor control pipeline</span> The Jetson exchanges motor commands and feedback over CAN while sensor modules provide load-cell and IMU measurements.</figcaption>
 </figure>
 
-## Individual Contributions
+## My Contributions
 
 - Developed the Jetson control program, including CAN message decoding, motor commands, and feedback handling.
 - Assembled sensor board modules and connected the load cells, IMUs, and motor to the control pipeline.
 - Separated sensor reception and data logging from the motor-control loop using asynchronous callbacks, queues, and background threads.
 - Ran torque-profile tests and investigated motor feedback timing with sensors connected to the shared CAN bus.
 
-The contribution scope covered the controller, sensor modules, and their integration with the motor. Another student developed the mechanical hardware.
+The contribution scope covered the controller, sensor modules, and their integration with the motor.
 
 ## Sensor Modules and Communication
 

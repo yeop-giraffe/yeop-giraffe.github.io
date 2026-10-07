@@ -7,20 +7,19 @@ display_category: Visual Odometry / Monocular Depth Estimation / UAVs
 period: Sep. 2022 – Dec. 2024
 summary: Two studies on vision-based indoor UAV navigation, covering a ROS-based visual-odometry platform and monocular-depth-based obstacle avoidance.
 publication_descriptions:
-  lee2024monocular: Used MiDaS relative-depth maps and grid-based direction selection for UAV obstacle avoidance. In PX4/Gazebo simulation, depth-map generation ran at 41 FPS and the reported 10 m flight avoided the placed obstacles.
-  lee2023visual: Built a ROS/MAVROS platform that feeds ZED 2i stereo visual odometry to PX4 for indoor localization without GPS. Integrated the physical hardware and demonstrated position-command flight in Gazebo simulation.
+  lee2024monocular: Developed monocular-depth processing for grid-based flight-direction selection and UAV obstacle avoidance, and demonstrated a collision-free 10-m flight in PX4/Gazebo simulation.
+  lee2023visual: Built a ROS/MAVROS platform that feeds stereo visual odometry estimates to PX4 for indoor localization without GPS. Integrated the physical hardware and demonstrated position-command flight in Gazebo simulation.
 publication_categories:
   lee2024monocular: Monocular Depth Estimation / Obstacle Avoidance / UAVs
   lee2023visual: Visual Odometry / ROS / UAVs
 affiliation: "Korea University, Human-Machine Systems Lab"
 publication_contributions:
   lee2024monocular: Relative-depth processing and ROS/PX4 obstacle-avoidance integration.
-  lee2023visual: Quadcopter platform and visual-odometry-to-flight-control integration.
+  lee2023visual: Quadcopter construction and integration of stereo visual odometry with flight control.
 project_brief:
   Research question: How can camera-based perception support indoor UAV flight where GPS is unavailable?
-  Individual contribution: Built the ROS-based visual-odometry platform and explored monocular-depth-based flight-direction selection.
-  Key result: '2023: integrated localization/control platform. 2024: 41-FPS depth processing and a collision-free 10-m simulated
-    flight.'
+  My contribution: Constructed the quadcopter, integrated stereo visual odometry with ROS/PX4 flight control, and developed monocular-depth processing for flight-direction selection.
+  Key result: Integrated an indoor localization and flight-control platform; developed depth processing for flight-direction selection and demonstrated a collision-free 10-m flight in simulation.
   Evaluation: Physical platform integration and PX4/Gazebo demonstrations; the two studies use different camera configurations.
 ---
 
@@ -108,8 +107,6 @@ Depth-map generation ran at **41 FPS**. After taking off to **1.5 m**, the repor
   </div>
   <figcaption><span>Obstacle-avoidance trajectory</span> Collision-free simulated trajectory shown in 3D and from above.</figcaption>
 </figure>
-
-This is a simulation demonstration, with no reported repeated-trial success rate or baseline comparison. Physical flight tests and altitude-aware path planning were identified as future work.
 
 ## Connecting the Two Studies
 

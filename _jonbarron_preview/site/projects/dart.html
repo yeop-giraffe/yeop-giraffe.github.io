@@ -218,11 +218,11 @@
             </a>
           </div>
           <nav class="section-nav" aria-label="On this page">
-            <a href="#summary">Summary</a><a href="#abstract">Overview</a><a href="#video">Video</a><a href="#method">Method</a><a href="#experiments">Experiments</a><a href="#results">Results</a><a href="#contributions">Individual Contributions</a><a href="#discussion">Scope</a><a href="#bibtex">BibTeX</a>
+            <a href="#summary">Summary</a><a href="#abstract">Abstract</a><a href="#video">Video</a><a href="#method">Method</a><a href="#experiments">Experiments</a><a href="#results">Results</a><a href="#contributions">My Contributions</a><a href="#discussion">Scope</a><a href="#bibtex">BibTeX</a>
           </nav>
         </div>
       </header>
-      <section class="project-summary" id="summary" aria-labelledby="summary-title"><div class="container"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Research question</dt><dd>How can a home robot reuse what it learns from earlier tasks?</dd><dt>Individual contribution</dt><dd>Contributed to the architecture; developed viewpoint selection and room classification; integrated perception, VLM and navigation in Isaac Sim.</dd><dt>Key result</dt><dd>Real-Home task success: 87% vs. 66% for DART-Frozen, with 49.3% fewer VLM acquisition/description calls.</dd><dt>Evaluation</dt><dd>20 tasks × five iterations in each of two homes (one simulated, one real). Language-model inference runs on an external server.</dd></dl></div></section>
+      <section class="project-summary" id="summary" aria-labelledby="summary-title"><div class="container"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Research question</dt><dd>How can a home robot reuse what it learns from earlier tasks to develop personalized, spatially adaptive robot intelligence?</dd><dt>My contribution</dt><dd>Developed system architecture; developed viewpoint selection and room type classification; integrated perception, VLM and navigation in Isaac Sim.</dd><dt>Key result</dt><dd>Real-Home task success: 87% vs. 66% for DART-Frozen, with 49.3% fewer VLM acquisition/description calls.</dd><dt>Evaluation</dt><dd>20 tasks × five iterations in each of two homes (one simulated, one real). Language-model inference runs on an external server.</dd></dl></div></section>
 <section class="teaser" aria-label="DART framework overview">
         <figure class="container">
           <a class="image-link" href="../assets/dart/overview.png" aria-label="Open the full-size DART architecture figure"><img class="media" src="../assets/dart/overview.png" width="1362" height="482" alt="DART interaction layer parses a task; Intuitive Mode reuses stored knowledge; Attentive Mode acquires missing information and updates persistent scene-graph memory." /></a>
@@ -231,10 +231,9 @@
       </section>
       <section class="section is-light" id="abstract" aria-labelledby="abstract-title">
         <div class="container narrow">
-          <h2 class="section-title" id="abstract-title">Overview</h2>
+          <h2 class="section-title" id="abstract-title">Abstract</h2>
           <div class="prose">
-            <p>DART asks how a home robot can reuse task-acquired knowledge instead of repeatedly obtaining the same information. It switches between scene-graph retrieval (Intuitive Mode) and LLM/VLM-assisted knowledge acquisition (Attentive Mode), retaining new descriptions, relations and procedures for later tasks.</p>
-            <p>An LLM first parses each instruction. Intuitive Mode then executes from stored knowledge without invoking an LLM; missing knowledge triggers Attentive Mode. Lightweight perception runs on the robot vacuum, while Qwen3.5 inference runs on an external server. The evaluation measures knowledge reuse across repeated object-search and navigation tasks.</p>
+            <p>Humans rely on both intuitive and deliberate processing, as described by dual-process theories of cognition: novel tasks often require effortful reasoning, whereas accumulated experience allows similar tasks to be handled more automatically and with less cognitive effort. Motivated by this principle, we propose DART (Deliberation-Adaptive Reasoning from Task Experience), which applies the same principle to robots through two connected modes. When the robot lacks sufficient task-relevant knowledge or prior experience, it operates in Attentive Mode, performing high-level reasoning and acquiring the additional knowledge needed for the task. The newly acquired knowledge is stored in a persistent scene graph and accumulated across tasks. As experience builds, the robot increasingly operates in Intuitive Mode, reusing this knowledge for later related tasks without repeated high-level reasoning. We evaluate DART in simulated and real-world environments, including deployment on a resource-constrained platform, and show that as knowledge accumulates in the scene graph, the robot requires less high-level reasoning and less additional information gathering while maintaining task performance.</p>
           </div>
         </div>
       </section>
@@ -254,7 +253,7 @@
         <div class="container">
           <h2 class="section-title" id="method-title">From Reasoning to Reuse</h2>
           <div class="prose narrow container section-intro">
-            <p>A home robot repeatedly encounters related requests in the same environment. A map built beforehand can miss the knowledge a task needs, while repeated high-capacity model inference adds computational cost. DART acquires knowledge when it becomes necessary and retains it across tasks, without updating neural-network parameters during execution.</p>
+            <p>A home robot repeatedly encounters related requests in the same environment. A map built beforehand can miss the knowledge a task needs, while repeated high-capacity model inference adds computational cost. DART acquires knowledge when it becomes necessary and retains it across tasks, without updating neural-network parameters during execution. To support this process, DART uses a scene-graph data structure to organize spatial and task knowledge, retrieve information needed for execution, and incrementally add newly acquired information for subsequent tasks.</p>
           </div>
           <figure class="method-figure">
             <a class="image-link" href="../assets/dart/scene-graph.png" aria-label="Open the full-size scene-graph figure"><img class="media" src="../assets/dart/scene-graph.png" width="688" height="510" loading="lazy" alt="Hierarchical scene graph linking geometric regions, semantic subspaces, mapped objects, and observation viewpoints to a 2D occupancy map." /></a>
@@ -265,10 +264,16 @@
             <p>A 2D LiDAR occupancy map and on-device, closed-vocabulary YOLOv8 detections provide the starting representation. Geometric region segmentation, object-based region classification, multi-view object mapping, and observation viewpoints selected for visibility and accessibility are assembled into a compact graph after mapping. Initial object mapping assumes floor-supported targets and estimates their 2D locations and planar extents from image contours and depth measurements.</p>
             <h3>Interaction Layer</h3>
             <p>An LLM parses natural-language instructions into task fields aligned with the graph hierarchy. This structured representation is passed to Intuitive Mode for knowledge retrieval and execution.</p>
+            <h3>Execution Modes</h3>
+            <p>DART first attempts to execute a task using knowledge retrieved from the scene graph. When the available knowledge is insufficient, it switches to reasoning and targeted observation to acquire the missing information. This separates execution using retained knowledge from the more computationally demanding process of acquiring new knowledge.</p>
           </div>
           <div class="mode-grid">
             <article class="mode-card"><h3>Intuitive Mode</h3><p>Search the persistent graph for relevant spatial information, functional relations, and execution procedures. Execute directly when that knowledge is sufficient. This mode does not invoke an LLM; unresolved knowledge gaps are passed to Attentive Mode.</p></article>
             <article class="mode-card"><h3>Attentive Mode</h3><p>Use LLM reasoning and targeted VLM observations from stored viewpoints to acquire missing task knowledge. Execute the task, then integrate the acquired descriptions, relations, and procedures into the graph for later reuse.</p></article>
+          </div>
+          <div class="prose narrow container" style="margin-top: 2rem">
+            <h3>Persistent Memory</h3>
+            <p>The scene graph serves as persistent memory shared by both execution modes. It links geometric regions, semantic subspaces, mapped objects, and observation viewpoints with task-acquired descriptions, functional relations, and execution procedures. Newly acquired knowledge is added to this structure and retained across tasks, allowing later requests to reuse relevant information instead of repeating the same observations and reasoning.</p>
           </div>
         </div>
       </section>
@@ -285,10 +290,9 @@
           </div>
           <dl class="stack narrow container" style="margin-top: 2rem">
             <dt>Physical platform</dt><dd>Commercial robot vacuum cleaner with 2D LiDAR, an RGB camera, and a short-range depth camera; in-house SLAM and grid-based navigation.</dd>
-            <dt>Simulation</dt><dd>NVIDIA Isaac Sim 5.1.0, Cartographer, and ROS 2 Nav2.</dd>
+            <dt>Simulation</dt><dd>NVIDIA Isaac Sim 5.1.0 and ROS 2 Nav2.</dd>
             <dt>Perception</dt><dd>YOLOv8 retrained for household objects observed near floor level.</dd>
             <dt>Reasoning</dt><dd>Qwen3.5 for task parsing, text-based reasoning, and visual semantic acquisition; inference runs on an external server.</dd>
-            <dt>Memory</dt><dd>Persistent scene graph with geometric, semantic, and functional task knowledge.</dd>
           </dl>
         </div>
       </section>
@@ -334,13 +338,12 @@
       </section>
       <section class="section is-light" id="contributions" aria-labelledby="contributions-title">
         <div class="container narrow">
-          <h2 class="section-title" id="contributions-title">Individual Contributions</h2>
+          <h2 class="section-title" id="contributions-title">My Contributions</h2>
           <div class="prose">
-            <p>Seungyeop Lee's contributions as a co-first author covered architecture development, lightweight spatial perception, and system integration:</p>
             <ul>
-              <li>Contributed to the dual-process architecture for task-knowledge reuse and incremental scene-graph enrichment.</li>
+              <li>Developed the system architecture for task-knowledge reuse and incremental scene-graph enrichment.</li>
               <li>Developed observation-viewpoint selection based on object visibility and viewpoint accessibility.</li>
-              <li>Developed room classification using object occurrence likelihoods and visual evidence accumulated during robot navigation.</li>
+              <li>Developed room type classification using object occurrence likelihoods and visual evidence accumulated during robot navigation.</li>
               <li>Integrated VLM, perception, and navigation modules into the Spatial AI system and validated the system in NVIDIA Isaac Sim.</li>
             </ul>
           </div>

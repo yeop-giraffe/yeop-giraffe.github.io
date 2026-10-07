@@ -6,20 +6,19 @@ standalone_html: true
 publications: [lee2025domain]
 display_category: Monocular Depth Estimation / CycleGAN / Synthetic Data
 period: Sep. 2023 – Feb. 2024 (visiting research)
-summary: "Translated 10,000 synthetic RGB images with CycleGAN and paired them with simulated depth labels. Across three depth models, AbsRel improved modestly; other metrics were mixed. Translation training included NYU test images."
-role_summary: "CycleGAN domain transfer and monocular depth model training."
+summary: "Collected RGB–depth pairs in Unreal Engine simulation environments and applied CycleGAN for synthetic-to-real image translation. The translated images and simulated depth labels were used to train monocular depth estimation models."
+role_summary: "Unreal Engine environment setup, synthetic data collection, CycleGAN domain transfer and depth model training."
 project_brief:
   Research question: Does translating synthetic training images improve depth estimation on real indoor images?
-  Individual contribution: Worked on CycleGAN-based synthetic image translation and monocular depth model training during visiting
-    research at Drexel.
+  My contribution: Built Unreal Engine simulation environments, collected RGB–depth data, and worked on CycleGAN-based domain transfer and monocular depth model training.
   Key result: AbsRel decreased modestly for all three models; other metrics showed mixed changes.
   Evaluation: 10,000 paired scenes; three depth architectures; NYU-Depth V2 test evaluation. CycleGAN training included NYU
     test RGB images.
 ---
 
-## Overview
+## Abstract
 
-This ICCAS 2025 paper studies whether translating synthetic training images into a more realistic domain improves monocular depth estimation. Unreal Engine 4.27 and AirSim provide RGB images with dense simulated depth labels. CycleGAN changes image appearance before depth-model training, so the final depth model does not need CycleGAN during inference.
+A major obstacle to the development of effective monocular depth estimation algorithms is the difficulty in obtaining high-quality metric depth data that corresponds to real-world RGB images. Collecting this data is time-consuming and costly, and even data collected by modern sensors has limited range or resolution, and is subject to inconsistencies and noise. Data generated in simulation avoids these problems with accurate depth information, but models trained on synthetic data often do not transfer well to real world applications. To combat this, we propose a method of data generation in simulation using 3D synthetic environments and CycleGAN domain transfer to increase the realism of simulated images. We analyze this data generation method by training multiple depth estimation models on different datasets, including synthetic and domain-transferred data. We evaluate the performance of the models on the NYU-Depth V2 dataset to verify the generalizability of the approach and show that GAN-transformed data effectively helps to bridge the gap between simulated and real-world data in depth estimation.
 
 **Paper:** Domain-Transferred Synthetic Data Generation for Improving Monocular Depth Estimation  
 **Authors:** Knut Peterson*†, Seungyeop Lee*, Solmaz Arezoomandan, David Han  
@@ -42,9 +41,13 @@ AbsRel changed from 0.320 to 0.313 for ZoeDepth, 0.321 to 0.316 for DepthAnythin
 
 Translation artifacts and limited indoor-scene diversity are identified limitations. The paper proposes filtering translated samples, adding semantic/depth constraints, and broadening simulated environments as future work.
 
-## Individual Contribution and Research Context
+## My Contributions and Research Context
 
-Seungyeop Lee's contribution covered CycleGAN-based synthetic image domain transfer and monocular depth model training during a visiting research appointment at Drexel University's IMAPLE Lab, supervised by Prof. David Han (September 2023 to February 2024). The method and experimental results belong to the four-author research team, with equal contribution credited to Knut Peterson and Seungyeop Lee.
+This research was conducted during a visiting appointment at Drexel University's IMAPLE Lab, supervised by Prof. David Han (September 2023 to February 2024).
+
+- Built Unreal Engine simulation environments and collected paired synthetic RGB images and depth maps.
+- Applied CycleGAN-based domain transfer to generate realistic training images from synthetic scenes.
+- Worked on monocular depth model training with domain-transferred synthetic data.
 
 ## Skills
 

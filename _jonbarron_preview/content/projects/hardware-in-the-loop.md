@@ -9,7 +9,7 @@ summary: Built an Isaac Sim-based HIL test system with Samsung R&D Institute-Del
 role_summary: "Controller board and production software integration with Isaac Sim sensor inputs."
 project_brief:
   Engineering goal: Connect production robot control hardware and software to a simulated sensor environment.
-  Individual contribution: Integrated the controller board, production control software and Isaac Sim sensor inputs with Samsung R&D
+  My contribution: Integrated the controller board, production control software and Isaac Sim sensor inputs with Samsung R&D
     Institute-Delhi.
   Outcome: An integrated hardware-in-the-loop test system for robot vacuum cleaners.
 ---
@@ -28,7 +28,7 @@ The setup keeps the physical controller and production control software in the t
 | Production control software | Integrates the robot-control software used in the product. |
 | NVIDIA Isaac Sim | Provides simulated robot sensor inputs. |
 
-## Individual Contribution
+## My Contribution
 
 Integration responsibilities covered the physical controller board, production control software and Isaac Sim sensor inputs. System setup was carried out in collaboration with Samsung R&D Institute-Delhi.
 

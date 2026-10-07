@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>A Development of Intuitive Controller and Monocular Vision based Interface for Disaster Response UAV</title>
-    <meta name="description" content="Seungyeop Lee's master's thesis at Korea University: intuitive UAV control, monocular vision assistance, and simulation studies with six novice participants in each evaluation." />
+    <meta name="description" content="My master's thesis at Korea University: intuitive UAV control, monocular vision assistance, and simulation studies with six novice participants in each evaluation." />
     <meta name="author" content="Seungyeop Lee" />
     <link rel="canonical" href="https://yeop-giraffe.github.io/projects/masters-thesis.html" />
     <meta name="theme-color" content="#2563eb" />
@@ -141,7 +141,7 @@
       .publication-title { font-size: clamp(1.8rem, 3.4vw, 2.65rem); line-height: 1.2; letter-spacing: -.025em; margin-bottom: 1.75rem; }
       .section-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.4rem; margin-top: 1.5rem; font-size: .9rem; }
       .section-nav a { text-decoration: none; }
-      .highlights { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-block: 2rem 1rem; }
+      .highlights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-block: 2rem 1rem; }
       .highlight { padding: 1.3rem 1rem; border: 1px solid var(--border-color); border-radius: var(--border-radius); background: white; text-align: center; }
       .highlight strong { display: block; color: var(--primary-color); font-size: clamp(1.8rem, 4vw, 2.4rem); line-height: 1.2; }
       .highlight span { display: block; font-size: .9rem; color: var(--text-secondary); margin-top: .5rem; }
@@ -220,9 +220,9 @@
           <a class="button" href="../assets/masters-thesis/paper.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v5h4 M9 12h6 M9 16h6" /></svg>Read Thesis (PDF)</a>
           <a class="button" href="#bibtex">Citation</a>
         </div>
-        <nav class="section-nav" aria-label="On this page"><a href="#summary">Summary</a><a href="#abstract">Overview</a><a href="#controller">Controller</a><a href="#vision">Vision Interface</a><a href="#hardware">Hardware</a><a href="#evaluation">Evaluation</a><a href="#results">Results</a><a href="#scope">Scope</a></nav>
+        <nav class="section-nav" aria-label="On this page"><a href="#summary">Summary</a><a href="#abstract">Overview</a><a href="#controller">Controller</a><a href="#vision">Vision Interface</a><a href="#hardware">Hardware</a><a href="#evaluation">Evaluation</a><a href="#results">Results</a></nav>
       </div></header>
-      <section class="project-summary" id="summary" aria-labelledby="summary-title"><div class="container"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Research question</dt><dd>Can control mapping and visual assistance make indoor UAV teleoperation easier for novice operators?</dd><dt>Individual contribution</dt><dd>Designed the controller mapping and vision interface, integrated the prototype, and evaluated the controller and display in separate studies.</dd><dt>Key result</dt><dd>SUS increased by 28%; NASA-TLX mental demand decreased by approximately 43% compared with RGB video alone.</dd><dt>Evaluation</dt><dd>Two Gazebo studies, each with six novice participants and one run per condition; separate indoor hardware checks.</dd></dl></div></section>
+      <section class="project-summary" id="summary" aria-labelledby="summary-title"><div class="container"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Research question</dt><dd>Can control mapping and visual assistance make indoor UAV teleoperation easier for novice operators?</dd><dt>My contribution</dt><dd>Designed the controller mapping and vision interface, integrated the prototype, and evaluated the controller and display in separate studies.</dd><dt>Key result</dt><dd>SUS increased by 28%; NASA-TLX mental demand decreased by approximately 43% compared with RGB video alone.</dd><dt>Evaluation</dt><dd>Two Gazebo studies, each with six novice participants and one run per condition; separate indoor hardware checks.</dd></dl></div></section>
 <section class="teaser" aria-label="Thesis system overview"><div class="container"><figure><a class="image-link" href="../assets/masters-thesis/overview.png" aria-label="Open full-size overview figure"><img class="media" src="../assets/masters-thesis/overview.png" width="1857" height="752" fetchpriority="high" decoding="async" alt="Ground control station with a joystick and monocular-vision interface connected wirelessly to a UAV exploring an indoor disaster site." /></a><figcaption>An intuitive controller and a vision interface connect the operator to an indoor UAV.</figcaption></figure></div></section>
       <section class="section is-light" id="abstract" aria-labelledby="abstract-title"><div class="container narrow">
         <h2 class="section-title" id="abstract-title">Overview</h2>
@@ -245,8 +245,8 @@
         <h2 class="section-title" id="vision-title">From a Camera View to Spatial Awareness</h2>
         <div class="prose narrow container">
           <h3>Reconstructing the Surrounding Space</h3>
-          <p>MiDaS v3.1 DPT Swin2-L 384 estimates relative depth from the forward RGB image, while ORB-SLAM3 provides sparse feature points and camera motion. Least-squares fitting aligns the predicted depth with SLAM feature depths. A second calibration compares SLAM motion with visual-inertial position estimates to recover metric scale, smoothing the scale estimate with a moving average. The calibrated points are combined in a shared coordinate frame to reconstruct the scene.</p>
-          <p>The forward-view reconstruction uses a monocular RGB camera. A separate visual-inertial tracking camera provides vehicle position and scale information; the physical prototype does not rely on the forward camera alone for every navigation signal.</p>
+          <p>Monocular depth estimation predicts relative depth from the forward RGB image, while ORB-SLAM3 provides sparse feature points and camera motion. Least-squares fitting aligns the predicted depth with SLAM feature depths. A second calibration compares SLAM motion with visual-inertial position estimates to recover metric scale, smoothing the scale estimate with a moving average. The calibrated points are combined in a shared coordinate frame to reconstruct the scene.</p>
+          <p>The forward-view reconstruction uses a monocular RGB camera. A separate visual-inertial tracking camera provides vehicle position and scale information.</p>
         </div>
         <div class="method-figure section-figure"><figure><a class="image-link" href="../assets/masters-thesis/reconstruction-pipeline.png" aria-label="Open full-size reconstruction pipeline figure"><img class="media" src="../assets/masters-thesis/reconstruction-pipeline.png" width="3769" height="1861" loading="lazy" decoding="async" alt="RGB images feed ORB-SLAM3 and monocular depth estimation; depth conversion and metric-scale calibration produce a reconstructed three-dimensional scene." /></a><figcaption>Monocular depth, visual SLAM, and motion-based scale calibration work together to reconstruct the scene.</figcaption></figure></div>
         <div class="figure-grid"><figure><a class="image-link" href="../assets/masters-thesis/metric-reconstruction.png" aria-label="Open full-size metric reconstruction figure"><img class="media" src="../assets/masters-thesis/metric-reconstruction.png" width="2373" height="806" loading="lazy" decoding="async" alt="Feature-point depth values align monocular depth with SLAM, followed by metric-scale calibration using the UAV position estimates." /></a><figcaption>Two calibration stages align relative depth with SLAM and convert the reconstruction into a metric scale.</figcaption></figure> <figure><a class="image-link" href="../assets/masters-thesis/obstacle-filtering.png" aria-label="Open full-size obstacle filtering figure"><img class="media" src="../assets/masters-thesis/obstacle-filtering.png" width="2484" height="756" loading="lazy" decoding="async" alt="Depth-image segmentation compared with metric-depth filtering that highlights only nearby obstacles in red." /></a><figcaption>Distance-aware filtering highlights nearby obstacles instead of marking every object.</figcaption></figure></div>
@@ -285,21 +285,10 @@
       <section class="section" id="results" aria-labelledby="results-title"><div class="container">
         <h2 class="section-title" id="results-title">Results</h2>
         <div class="highlights" aria-label="Interface study highlights">
-          <div class="highlight"><strong>80</strong><span>SUS score<br />vs. 62.5 for RGB</span></div>
-          <div class="highlight"><strong>≈43%</strong><span>Lower mental demand<br />NASA-TLX MD only</span></div>
-          <div class="highlight"><strong>6</strong><span>Novice participants<br />in each evaluation</span></div>
+          <div class="highlight"><strong>28%</strong><span>Usability improvement<br />System Usability Scale</span></div>
+          <div class="highlight"><strong>43%</strong><span>Reduced mental demand<br />NASA-TLX</span></div>
         </div>
-        <div class="prose narrow container"><h3>Controller: Smoother, More Centered Flight</h3><p>The proposed mapping produced a lower path-smoothness score, which represents less unnecessary motion, and a smaller distance to gate centers. These metrics describe the recorded simulated trajectories, rather than a measured disaster-mission success rate.</p></div>
-        <div class="table-scroll" tabindex="0" role="region" aria-label="Controller results table; scroll horizontally on narrow screens">
-          <table class="results-table"><caption>Controller comparison. Lower mean values indicate smoother paths and closer passage to gate centers.</caption><thead><tr><th scope="col">Metric</th><th scope="col">Gamepad</th><th scope="col">Proposed controller</th></tr></thead><tbody>
-            <tr><th scope="row">Path smoothness (mean)</th><td>1.2712</td><td class="ours">0.358</td></tr>
-            <tr><th scope="row">Path smoothness (SD)</th><td>0.54762</td><td>0.20001</td></tr>
-            <tr><th scope="row">Minimum distance to gate centers (mean, m)</th><td>0.24</td><td class="ours">0.18</td></tr>
-          </tbody></table>
-        </div>
-        <p class="table-hint">Tables can be scrolled horizontally on small screens.</p>
-<div class="figure-grid"><figure><a class="image-link" href="../assets/masters-thesis/controller-smoothness.jpg" aria-label="Open full-size controller smoothness image"><img class="media" src="../assets/masters-thesis/controller-smoothness.jpg" width="980" height="735" loading="lazy" decoding="async" alt="Bar chart comparing path smoothness: proposed controller has a lower mean than the gamepad, with error bars." /></a><figcaption>Path smoothness: lower scores indicate less unnecessary motion.</figcaption></figure> <figure><a class="image-link" href="../assets/masters-thesis/controller-gate-distance.jpg" aria-label="Open full-size controller gate distance image"><img class="media" src="../assets/masters-thesis/controller-gate-distance.jpg" width="980" height="735" loading="lazy" decoding="async" alt="Bar chart comparing minimum distance from gate centers: proposed controller has a lower mean than the gamepad, with error bars." /></a><figcaption>Minimum distance from gate centers: 0.18 m for the proposed controller versus 0.24 m for the gamepad.</figcaption></figure></div>
-        <div class="prose narrow container" style="margin-top:2rem"><h3>Interface: Higher Usability, Lower Reported Workload</h3><p>SUS increased by 17.5 points, from 62.5 to 80. NASA-TLX mental demand fell from 57.5 to 32.5, approximately 43% lower. The other five subscales also decreased; the 43% figure refers specifically to mental demand.</p></div>
+        <div class="prose narrow container"><h3>Interface: Higher Usability, Lower Reported Workload</h3><p>System Usability Scale (SUS) scores improved by 28%, from 62.5 to 80. NASA-TLX mental demand decreased by 43%, from 57.5 to 32.5. The other five subscales also decreased; the 43% figure refers specifically to mental demand.</p></div>
         <div class="table-scroll" tabindex="0" role="region" aria-label="Interface results table; scroll horizontally on narrow screens">
           <table class="results-table"><caption>Interface questionnaire scores. SUS: higher is better. NASA-TLX: lower is better.</caption><thead><tr><th scope="col">Measure</th><th scope="col">RGB interface</th><th scope="col">Proposed interface</th></tr></thead><tbody>
             <tr><th scope="row">SUS usability</th><td>62.5</td><td class="ours">80</td></tr>
@@ -312,14 +301,17 @@
           </tbody></table>
         </div>
         <div class="method-figure section-figure"><figure><a class="image-link" href="../assets/masters-thesis/interface-results.png" aria-label="Open full-size interface results figure"><img class="media" src="../assets/masters-thesis/interface-results.png" width="993" height="397" loading="lazy" decoding="async" alt="NASA-TLX subscale bar plots are lower for the proposed interface; the SUS plot is higher for the proposed interface than for RGB video alone." /></a><figcaption>User-interface questionnaire results comparing RGB video with the proposed interface.</figcaption></figure></div>
-        <p class="note" style="margin-top:1.5rem">Questionnaire values are scores, not percentages. The mental-demand reduction is relative to the RGB baseline. Each evaluation used six participants and one run per condition.</p>
-      </div></section>
-      <section class="section is-light" id="scope" aria-labelledby="scope-title"><div class="container narrow">
-        <h2 class="section-title" id="scope-title">Scope &amp; Limitations</h2>
-        <div class="prose">
-          <p>These results describe two Gazebo tasks, each with six novice participants and one run per condition. The thesis reports descriptive comparisons, without inferential statistical tests. The findings do not establish performance with experienced pilots, long-term learning effects, or reliability during disaster response.</p>
-          <p>Indoor hardware checks demonstrate prototype operation and integration. Larger studies, repeated trials, and operational testing would be needed to assess how broadly the observed benefits carry over.</p>
+        <div class="prose narrow container" style="margin-top:2rem"><h3>Controller: Smoother, More Centered Flight</h3><p>The proposed mapping produced a lower path-smoothness score, which represents less unnecessary motion, and a smaller distance to gate centers. These metrics describe the recorded simulated trajectories, rather than a measured disaster-mission success rate.</p></div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Controller results table; scroll horizontally on narrow screens">
+          <table class="results-table"><caption>Controller comparison. Lower mean values indicate smoother paths and closer passage to gate centers.</caption><thead><tr><th scope="col">Metric</th><th scope="col">Gamepad</th><th scope="col">Proposed controller</th></tr></thead><tbody>
+            <tr><th scope="row">Path smoothness (mean)</th><td>1.2712</td><td class="ours">0.358</td></tr>
+            <tr><th scope="row">Path smoothness (SD)</th><td>0.54762</td><td>0.20001</td></tr>
+            <tr><th scope="row">Minimum distance to gate centers (mean, m)</th><td>0.24</td><td class="ours">0.18</td></tr>
+          </tbody></table>
         </div>
+        <p class="table-hint">Tables can be scrolled horizontally on small screens.</p>
+<div class="figure-grid"><figure><a class="image-link" href="../assets/masters-thesis/controller-smoothness.jpg" aria-label="Open full-size controller smoothness image"><img class="media" src="../assets/masters-thesis/controller-smoothness.jpg" width="980" height="735" loading="lazy" decoding="async" alt="Bar chart comparing path smoothness: proposed controller has a lower mean than the gamepad, with error bars." /></a><figcaption>Path smoothness: lower scores indicate less unnecessary motion.</figcaption></figure> <figure><a class="image-link" href="../assets/masters-thesis/controller-gate-distance.jpg" aria-label="Open full-size controller gate distance image"><img class="media" src="../assets/masters-thesis/controller-gate-distance.jpg" width="980" height="735" loading="lazy" decoding="async" alt="Bar chart comparing minimum distance from gate centers: proposed controller has a lower mean than the gamepad, with error bars." /></a><figcaption>Minimum distance from gate centers: 0.18 m for the proposed controller versus 0.24 m for the gamepad.</figcaption></figure></div>
+        <p class="note" style="margin-top:1.5rem">Percentage improvements are relative to the RGB baseline and rounded to whole numbers. The interface table reports raw questionnaire scores.</p>
       </div></section>
       <section class="section" id="bibtex" aria-labelledby="bibtex-title"><div class="container">
         <div class="bibtex-header"><h2 id="bibtex-title">BibTeX <small>Master's thesis</small></h2><button type="button" class="button copy-button" id="copy-bibtex" hidden>Copy</button></div>

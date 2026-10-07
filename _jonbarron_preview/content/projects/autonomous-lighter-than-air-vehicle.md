@@ -9,7 +9,7 @@ summary: "Integrated Raspberry Pi video streaming and ESP32 motor commands for a
 role_summary: "Video streaming, visual tracking on a laptop, and ESP32 motor control."
 project_brief:
   Engineering goal: Connect video-based tracking to motor commands on a helium-supported competition robot.
-  Individual contribution: Integrated Raspberry Pi video streaming, laptop-based detection/tracking, and ESP32 motor control.
+  My contribution: Integrated Raspberry Pi video streaming, laptop-based detection/tracking, and ESP32 motor control.
   Outcome: A physical prototype combining helium-supported flight, video streaming and motor commands in an indoor venue.
 ---
 

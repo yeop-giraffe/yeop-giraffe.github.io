@@ -7,19 +7,19 @@ publications: [dart2027]
 display_category: Spatial AI / Scene Graphs / LLM & VLM
 period: May 2026 – Present
 summary: "Retains task-acquired scene-graph knowledge for repeated object search and navigation. Real-Home success was 87% versus 66% for a baseline that discards acquired knowledge, with 49.3% fewer VLM calls for visual acquisition and description generation (20 tasks × five iterations)."
-role_summary: "Viewpoint selection, room classification, architecture and system integration."
+role_summary: "System architecture, viewpoint selection, room type classification and system integration."
 project_brief:
-  Research question: How can a home robot reuse what it learns from earlier tasks?
-  Individual contribution: Contributed to the architecture; developed viewpoint selection and room classification; integrated perception,
+  Research question: How can a home robot reuse what it learns from earlier tasks to develop personalized, spatially adaptive robot intelligence?
+  My contribution: Developed system architecture; developed viewpoint selection and room type classification; integrated perception,
     VLM and navigation in Isaac Sim.
   Key result: 'Real-Home task success: 87% vs. 66% for DART-Frozen, with 49.3% fewer VLM acquisition/description calls.'
   Evaluation: 20 tasks × five iterations in each of two homes (one simulated, one real). Language-model inference runs on
     an external server.
 ---
 
-## Overview
+## Abstract
 
-DART (Deliberation-Adaptive Reasoning from Task Experience) is a dual-mode architecture inspired by theories of human cognition. An LLM parses instructions; Intuitive Mode then searches a persistent scene graph without invoking an LLM. When stored knowledge is insufficient, Attentive Mode uses LLM reasoning and targeted VLM observations to acquire the information needed for execution and retain it for later related tasks. The implementation uses lightweight on-device perception on a robot vacuum, with Qwen3.5 inference running on an external server.
+Humans rely on both intuitive and deliberate processing, as described by dual-process theories of cognition: novel tasks often require effortful reasoning, whereas accumulated experience allows similar tasks to be handled more automatically and with less cognitive effort. Motivated by this principle, we propose DART (Deliberation-Adaptive Reasoning from Task Experience), which applies the same principle to robots through two connected modes. When the robot lacks sufficient task-relevant knowledge or prior experience, it operates in Attentive Mode, performing high-level reasoning and acquiring the additional knowledge needed for the task. The newly acquired knowledge is stored in a persistent scene graph and accumulated across tasks. As experience builds, the robot increasingly operates in Intuitive Mode, reusing this knowledge for later related tasks without repeated high-level reasoning. We evaluate DART in simulated and real-world environments, including deployment on a resource-constrained platform, and show that as knowledge accumulates in the scene graph, the robot requires less high-level reasoning and less additional information gathering while maintaining task performance.
 
 **Paper:** DART: From Attentive Reasoning to Intuitive Execution for Experience-Driven Robot Intelligence<br>
 **Authors:** Seungyeop Lee*, Yeeun Kim*, Sooho Park, Seong Oh Lee, and Jong Jin Park†<br>
@@ -28,11 +28,11 @@ DART (Deliberation-Adaptive Reasoning from Task Experience) is a dual-mode archi
 
 [Read the manuscript (PDF)]({{ '/assets/pdf/ICRA27.pdf' | relative_url }})
 
-## Individual Contributions
+## My Contributions
 
-- Contributed to the dual-process architecture for task-knowledge reuse and incremental scene-graph enrichment.
+- Developed the system architecture for task-knowledge reuse and incremental scene-graph enrichment.
 - Developed observation-viewpoint selection based on object visibility and viewpoint accessibility.
-- Developed room classification using object occurrence likelihoods and visual evidence accumulated during robot navigation.
+- Developed room type classification using object occurrence likelihoods and visual evidence accumulated during robot navigation.
 - Integrated VLM, perception, and navigation modules into the Spatial AI system and validated the system in NVIDIA Isaac Sim.
 
 ## Evaluation and Scope

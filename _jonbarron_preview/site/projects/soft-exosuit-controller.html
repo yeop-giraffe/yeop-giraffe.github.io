@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../site.css">
 </head>
 <body class="project-page">
-<main><nav><a href="../index.html#projects">← Selected Projects</a></nav><h1>Embedded Controller for a Tendon-Driven Soft Exosuit</h1><p class="muted">Wearable Robotics / Embedded Control / Sensor Integration</p><p class="project-context">Seoul National University, Wearable Robotics Laboratory · Dec. 2024 – Feb. 2025</p><section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Research question</dt><dd>How can wearable sensors and a motor share an embedded control and logging pipeline?</dd><dt>Individual contribution</dt><dd>Developed the Jetson program, assembled sensor modules, and connected and controlled the sensors and motor.</dd><dt>Key result</dt><dd>Established the basic pipeline with 10-ms sensor-to-command processing; observed motor-response delay with concurrent sensor communication.</dd><dt>Evaluation</dt><dd>Torque-profile bench tests and sensor timing checks. Walking assistance was outside the completed work; mechanical hardware was developed by another student.</dd></dl></section><h2>Overview</h2>
+<main><nav><a href="../index.html#projects">← Selected Projects</a></nav><h1>Embedded Controller for a Tendon-Driven Soft Exosuit</h1><p class="muted">Wearable Robotics / Embedded Control / Sensor Integration</p><p class="project-context">Seoul National University, Wearable Robotics Laboratory · Dec. 2024 – Feb. 2025</p><section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Engineering goal</dt><dd>Develop a Jetson-based sensor-to-motor control pipeline for a tendon-driven soft exosuit.</dd><dt>My contribution</dt><dd>Developed the Jetson program, assembled sensor modules, and connected and controlled the sensors and motor.</dd><dt>Key result</dt><dd>Established the basic pipeline with 10-ms sensor-to-command processing; observed motor-response delay with concurrent sensor communication.</dd><dt>Evaluation</dt><dd>Torque-profile bench tests and sensor timing checks.</dd></dl></section><h2>Overview</h2>
 <p>This project established embedded control infrastructure for a lower-limb, tendon-driven soft exosuit at Seoul National University's Wearable Robotics Laboratory, supervised by Prof. Jinsoo Kim. A basic pipeline connects wearable sensor modules to motor commands, feedback, and data logging on an <strong>NVIDIA Jetson Orin Nano</strong>.</p>
 <p>The pipeline had a <strong>10-ms end-to-end processing time</strong> from the sensor module through motor-command generation. Motor response was evaluated separately through feedback measurements, which revealed delays during concurrent sensor communication.</p>
 <figure class="uav-figure">
@@ -19,14 +19,14 @@
   <figcaption><span>Sensor-to-motor control pipeline</span> The Jetson exchanges motor commands and feedback over CAN while sensor modules provide load-cell and IMU measurements.</figcaption>
 </figure>
 
-<h2>Individual Contributions</h2>
+<h2>My Contributions</h2>
 <ul>
 <li>Developed the Jetson control program, including CAN message decoding, motor commands, and feedback handling.</li>
 <li>Assembled sensor board modules and connected the load cells, IMUs, and motor to the control pipeline.</li>
 <li>Separated sensor reception and data logging from the motor-control loop using asynchronous callbacks, queues, and background threads.</li>
 <li>Ran torque-profile tests and investigated motor feedback timing with sensors connected to the shared CAN bus.</li>
 </ul>
-<p>The contribution scope covered the controller, sensor modules, and their integration with the motor. Another student developed the mechanical hardware.</p>
+<p>The contribution scope covered the controller, sensor modules, and their integration with the motor.</p>
 <h2>Sensor Modules and Communication</h2>
 <p>Initial communication tests used a bidirectional Jetson–Teensy connection over Micro-ROS and UART. A direct Jetson CAN interface was then developed for sensor acquisition and motor control. <strong>Feather M4 CAN</strong> boards handle the sensor interfaces, while the Jetson runs the application and motor-command logic.</p>
 <p>The sensor receiver supports two node groups. It decodes load-cell values, orientation quaternions, angular velocity, and acceleration into a shared latest-data state. Distinct CAN identifiers separate the sensor channels and motor feedback.</p>

@@ -9,7 +9,7 @@ summary: Designed and validated mop actuation mechanisms for robot vacuum cleane
 role_summary: "Mop mechanism design, durability improvement, performance testing and vision-based inspection."
 project_brief:
   Engineering goal: Develop and validate mop actuation mechanisms for robot vacuum cleaners.
-  Individual contribution: Designed and validated mop actuation mechanisms, worked on durability improvements, and supported production quality checks.
+  My contribution: Designed and validated mop actuation mechanisms, worked on durability improvements, and supported production quality checks.
   Outcome: Supported mechanism validation, mass production and product quality checks.
 ---
 

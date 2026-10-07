@@ -6,11 +6,11 @@ standalone_html: true
 publications: [lee2025thesis]
 display_category: UAV Teleoperation / Human-Robot Interaction / Monocular Vision
 period: Sep. 2022 – Feb. 2025
-summary: "Designed UAV controller mapping and a monocular-vision display with 3D reconstruction, obstacle highlighting and predicted paths. In a six-participant Gazebo interface study, SUS increased by 28% and NASA-TLX mental demand decreased by approximately 43% versus RGB video alone."
-role_summary: "Controller mapping, vision interface, prototype integration and user evaluation."
+summary: "Designed a UAV controller and a monocular-vision display with 3D reconstruction, obstacle highlighting and predicted paths. In a six-participant Gazebo interface study, System Usability Scale (SUS) scores increased by 28% and NASA-TLX mental demand decreased by approximately 43% versus RGB video alone."
+role_summary: "Controller design, vision interface, prototype integration and user evaluation."
 project_brief:
   Research question: Can control mapping and visual assistance make indoor UAV teleoperation easier for novice operators?
-  Individual contribution: Designed the controller mapping and vision interface, integrated the prototype, and evaluated the controller
+  My contribution: Designed the controller mapping and vision interface, integrated the prototype, and evaluated the controller
     and display in separate studies.
   Key result: 'SUS increased by 28%; NASA-TLX mental demand decreased by approximately 43% compared with RGB video alone.'
   Evaluation: Two Gazebo studies, each with six novice participants and one run per condition; separate indoor hardware checks.
@@ -31,10 +31,9 @@ The thesis includes hardware integration and indoor flight checks, a gamepad-ver
 
 ## Results
 
+- Interface study: six participants with no drone-control experience; System Usability Scale (SUS) scores improved by 28%, from 62.5 to 80, and NASA-TLX mental demand decreased by 43%, from 57.5 to 32.5, compared with RGB video alone. Percentages are rounded to whole numbers.
 - Controller study: six participants with no drone-control experience; mean path-smoothness score decreased from 1.2712 to 0.358 and mean minimum distance to gate centers from 0.24 m to 0.18 m compared with a gamepad.
-- Interface study: six participants with no drone-control experience; SUS increased from 62.5 to 80 and NASA-TLX mental demand decreased from 57.5 to 32.5 compared with RGB video alone.
-- These are small Gazebo simulation studies. Indoor physical-drone checks demonstrate operation and integration. The thesis reports descriptive comparisons without inferential statistical tests or disaster-site validation.
 
 ## Skills
 
-`UAV Teleoperation` `Human-Robot Interaction` `User Studies` `MiDaS` `ORB-SLAM3` `Visual-Inertial Odometry` `ROS / PX4` `Gazebo`
+`UAV Teleoperation` `Human-Robot Interaction` `User Studies` `Monocular Depth Estimation` `ORB-SLAM3` `Visual-Inertial Odometry` `ROS / PX4` `Gazebo`

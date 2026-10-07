@@ -11,6 +11,7 @@
 
 ## 현재 상태
 
+- 2026-10-07 사용자 요청에 따라 수정은 로컬에서 진행하고, 명시적인 푸시 요청이 있을 때 모아서 커밋·푸시·공개 배포한다. 이번에는 로컬에 모아 둔 DART·Thesis·ICROS·Depth·Exosuit 설명과 전체 프로젝트 개인 역할 표기를 푸시하도록 요청받았다. 이후 변경도 별도 푸시 요청 전까지는 로컬에서 확인한다.
 - 현재 웹사이트는 `_jonbarron_preview/`의 Jon Barron 기반 정적 사이트다. 사용자 요청으로 이전 al-folio 파일·자료·Jekyll/Docker 설정·관련 워크플로를 제거했다. GitHub Pages 공개 주소는 `https://yeop-giraffe.github.io/`이며 `main`의 사이트 변경을 자동 배포한다.
 - 로컬 미리보기 주소: `http://127.0.0.1:4173/`. 실행 방법과 생성 방법은 `_jonbarron_preview/README.md`에 있다.
 - 프로젝트 8개의 내용이 준비되어 있다. DART·Depth·석사논문은 Academic Project Page Template 기반 독립 HTML이며, 나머지는 생성기가 만드는 페이지다.
@@ -50,7 +51,9 @@
 ### 프로젝트 상세
 
 - 모든 프로젝트의 화면 캡션은 이미지 내용만 설명한다. 원본 사진·슬라이드·논문 그림 번호와 첨부 자료를 소개하는 문구는 표시하지 않는다. 자료 출처 기록은 내부의 `sources.txt`·`sources.json`에 보존한다.
-- 프로젝트 상세는 공식적인 문체를 사용하며 I·my·we·our 등의 1인칭을 쓰지 않는다. 담당 역할은 Individual contribution으로 표시하고, 공동연구 결과와 개인 기여의 구분을 유지한다.
+- 프로젝트 상세는 공식적인 문체를 유지하되, 2026-10-07의 후속 사용자 요청에 따라 모든 프로젝트의 개인 역할은 My contribution / My Contributions로 표시한다. 개인 역할을 소개하는 문장에서도 Seungyeop Lee's 대신 My를 사용한다. 저자 목록·소속·인용에서는 실제 이름을 유지하며, 공동연구 결과와 개인 기여의 구분도 유지한다.
+- DART의 시스템 아키텍처 개발과 room type classification 담당은 사용자가 직접 정정한 표현을 반영한다. Abstract 제목, scene graph의 정보 조회·추가 방식, Execution Modes와 Persistent Memory 설명을 유지한다. Experimental Setup에서는 Cartographer와 Memory 항목을 생략한다.
+- DART Abstract 본문은 제출 논문의 실제 Abstract 전문으로 표시하며, 논문 원문의 we 표현도 유지한다. My Contributions 아래의 개인 역할 소개 문단은 생략하고 담당 업무 불릿만 표시한다.
 - 삼성전자 HIL·기구 개발 상세는 원본 CV와 현재 CV의 Industry Experience를 기준으로 작성한다. HIL은 실제 제어 보드·양산 제어 소프트웨어·Isaac Sim 센서의 통합과 Samsung R&D Institute-Delhi 협업을 설명한다. 기구 개발은 물걸레 구동 기구 설계·검증·내구성 개선·양산 및 품질 검증 지원을 구분하며, 공개 자료에 없는 성능 수치나 시험 방법을 추가하지 않는다.
 - DART는 전체 논문 제목을 유지한다. DART만 별도 최상단 제목으로 표시하지 않는다.
 - DART에서 “Acquire missing knowledge. Retain it. Reuse it for the next task.”와 “Robot Intelligence · Spatial AI · Persistent Task Memory” 문구는 제거했다.
@@ -58,15 +61,19 @@
 - DART 교신저자는 사용자 지정에 따라 Jong Jin Park이다. Depth 교신저자는 Knut Peterson이다. PDF의 기호를 바꾸지 않고 웹만 지정 기호로 통일했다.
 - DART 상태는 **ICRA 2027 투고·심사 중**이다. 논문 그림 5개와 제출 오버뷰 영상 `site/assets/dart/ICRA27_7491_VI_i.mp4`가 포함되어 있다.
 - ICROS 2023·2024는 각각의 논문 Description을 작성했고, 하나의 `drone-control-assist.html` 상세 페이지에서 연결한다. 2024 포스터에서 원본 PNG 4개와 네이티브 구성도를 저장해 연결했다. 2023 그림은 유지한다.
+- ICROS 홈 요약은 MiDaS 대신 monocular depth estimation, ZED 2i 대신 stereo visual odometry로 표현하며, 2023 Role에는 쿼드콥터 제작과 비행 제어 통합을 포함한다. 드론 상세 Key result는 연도를 생략하고 비행 방향 결정을 위한 깊이 처리 개발과 10 m 시뮬레이션 비행 결과를 설명한다. 반복 시험·기준 비교 부재와 향후 물리 비행·고도 경로 계획을 설명하던 문단은 사용자 요청으로 생략했다.
 - ICROS 2024 영문 제목은 실제 논문의 `Micro UAV Autonomous Navigation System With Deep Learning based Monocular Vision Depth Estimation`으로 정정했다. 41 FPS는 깊이 영상 처리 속도다. 격자 수는 논문 본문 20셀과 논문 그림·포스터 15셀이 달라 상세의 출처 설명에서 구분한다.
 - ICROS 내용에서 종전의 NASA-TLX 43% / SUS 62.5→80 평가 문구를 다시 사용하지 않는다. 현재 두 논문에 맞춘 설명을 유지한다.
 - Depth는 제공된 ICCAS 논문 본문·그림 4개·전체 결과표에 기반한 독립 상세 페이지다. 저자 순서는 Knut Peterson, Seungyeop Lee, Solmaz Arezoomandan, David Han이며 Peterson 철자를 원문 기준으로 정정했다.
+- Depth 홈 요약은 Unreal Engine에서 RGB–depth 쌍 수집 → CycleGAN으로 synthetic-to-real 이미지 변환 → 변환 이미지와 시뮬레이션 깊이로 단안 깊이 모델 학습의 흐름을 설명한다. 상단·하단 My Contribution과 홈 Role에는 사용자가 확인한 Unreal Engine 환경 구축 및 데이터 수집 역할을 포함한다. 상세 Abstract는 논문 원문 전문으로 표시한다. My Contributions and Research Context의 공동 기여·공동 성과 설명 문단은 사용자 요청으로 생략한다.
 - 석사논문은 별도 `masters-thesis.html` 상세와 THESIS 목록 항목으로 추가했다. 단독저자 Seungyeop Lee, Korea University Mechanical Engineering, 2025년 2월 학위다. 사용자평가는 6명이며 SUS 62.5→80, NASA-TLX 정신적 부하 57.5→32.5다. 웹 CV의 기존 5명 표기도 정정했다. 다운로드용 원본 DOCX는 수정하지 않았다.
+- 석사논문 홈 요약은 controller mapping 대신 controller로 표현하고 System Usability Scale (SUS)을 풀어 쓴다. 상세는 특정 MiDaS 모델명 대신 monocular depth estimation을 사용한다. Results 강조값은 사용성 28% 향상과 정신적 부하 43% 감소이며, 정수 반올림한 RGB 기준 상대 변화다. 참가자 수 강조 카드는 생략하고 Interface 결과를 Controller 결과보다 먼저 배치한다. 상세의 Scope & Limitations 섹션과 해당 바로가기는 사용자 요청으로 제거했다.
 - 석사 발표자료의 원본 이미지와 PowerPoint 네이티브 도표로 상세 및 홈 대표 이미지의 화질을 개선했다. 출처·슬라이드·크기는 `site/assets/masters-thesis/sources.txt`에 기록한다. 18페이지의 구성도를 `hardware-components-en.svg`로 영어화해 드론 사진 옆에 표시하며 모바일에서는 세로로 배치한다. 내장 IMU·분배보드 표기를 번역하고, 카메라는 최종 논문의 C922, 720p/60fps로 통일했다. 구성요소별 본문 목록은 제거하고 단안 RGB 카메라·NVIDIA Jetson Nano·원격통신 중심으로 설명한다. 발표자료에 더 좋은 대응 이미지가 없는 그림은 최종 논문 원본을 유지한다.
 - 석사논문의 실내 검증 그림은 사용자가 첨부한 장애물·UAV 주석 이미지 `hardware-validation-annotated.png`로 교체했다. 원본 바이트를 보존하고 캡션·대체 텍스트를 갱신했다. Showing the Intended Flight Path의 두 이미지는 4:3 표시 영역에서 contain으로 높이를 맞추며, 자르거나 원본을 변형하지 않는다.
 - 경로 표시 섹션의 왼쪽은 네 기능의 영어 색상 태그를 추가한 `integrated-interface-annotated.svg`, 오른쪽은 경로 예측 그림이다. 통합 화면은 디펜스 슬라이드 23의 원본 프레임을 사용하며 홈 대표 이미지는 원본을 유지한다.
 - LTA는 제공된 2024-03-04 연구실 발표자료의 원본 사진과 제어도를 사용한다. Raspberry Pi 4 영상 → 노트북 YOLOv5·Tracker → ESP32 명령 → DC 모터 4개 흐름을 설명한다. 100 g은 헬륨 부력 조건과 함께 표기한다. 출처는 `site/assets/lighter-than-air/sources.json`이며 제공 자료에 없는 STM32·PID·자율비행 성공률은 추가하지 않는다.
 - Exosuit는 7개 WRL 랩미팅 자료와 개발 백업을 확인해 기초 제어 파이프라인 중심으로 구성했다. 사용자가 Jetson 프로그램·센서 모듈 제작·센서와 모터 연결을 본인 역할로 확인했고 기구 제작은 다른 학생이 담당했다. 10 ms는 센서 모듈부터 모터 명령까지의 end-to-end 처리 시간이며 반복 주기나 기계적 응답 시간으로 해석하지 않는다. 최신 CSV 제어 코드의 1 kHz 목표 설정과 구분한다. 센서 모듈·CAN 구성도·1 Nm 및 5 Nm 시험·IMU 연결 여부에 따른 지연 비교·측정 그림을 포함했다. 모터 응답 지연은 확인했으나 보행 보조까지 완료한 것으로 쓰지 않는다. 바이너리 기록과 외부 gait-tracking 예제 성능은 완료 성과에 포함하지 않는다. 자료 기록은 `site/assets/soft-exosuit/sources.json`에 있다.
+- Exosuit 홈 요약에서는 모터 응답 지연 문장을 생략하고, 상세 상단은 Engineering goal로 Jetson 기반 tendon-driven soft exosuit의 센서–모터 제어 파이프라인 개발을 설명한다. Evaluation에는 토크 벤치 시험·센서 타이밍 확인만 표시하고, 다른 학생의 기구 제작 역할을 설명하던 문장은 My Contributions에서도 생략한다. 내부 사실 기록은 유지한다.
 
 ## 편집과 통합 규칙
 
