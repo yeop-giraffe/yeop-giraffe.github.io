@@ -6,6 +6,7 @@ display_category: System Integration / HIL / NVIDIA Isaac Sim
 period: May 2026 – Present
 affiliation: Samsung Electronics, Robot Vacuum Cleaner Development Lab
 summary: Built an Isaac Sim-based HIL test system with Samsung R&D Institute-Delhi, integrating a physical controller board and production control software with simulated robot sensors.
+role_summary: "Controller board and production software integration with Isaac Sim sensor inputs."
 project_brief:
   Engineering goal: Connect production robot control hardware and software to a simulated sensor environment.
   Individual contribution: Integrated the controller board, production control software and Isaac Sim sensor inputs with Samsung R&D

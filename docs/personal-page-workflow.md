@@ -36,7 +36,8 @@
 - 소개는 “I'm a software engineer at Samsung Electronics, where …”로 시작하고, 고려대학교 Human-Machine Systems Lab과 Shinsuk Park 교수님 정보를 포함한다. 삼성전자·고려대학교·연구실에는 링크가 있다.
 - Research Interests는 짧은 불릿으로 표현한다.
 - 논문·발표가 있는 프로젝트는 **Publications & Presentations**, 나머지는 **Selected Projects**로 분리한다.
-- Selected Projects는 **제목 → 소속·기간 → 카테고리 → Description** 순서다.
+- Selected Projects는 **제목 → 소속·기간 → 카테고리 → Description → Role** 순서다.
+- 홈 Publications & Presentations와 Selected Projects에는 본인의 담당 범위를 **Role**로 표시한다. 논문 자체의 학술적 기여와 혼동될 수 있는 My contribution / Contribution 표현은 홈에서 사용하지 않는다. 공통 역할은 프로젝트의 `role_summary`, 논문별 역할은 `publication_contributions`에서 관리한다.
 - 논문 서지 정보는 `content/cv.yml`에서 관리하고 프로젝트의 `publications` ID로 연결한다. CV에는 전체 목록을 유지한다.
 - 논문 제목은 CV 레코드에서 관리하며, 제공된 논문 원문과 다르면 원문 표기로 정정한다. 제목에서 상세 페이지로 이동하므로 중복 Project details 링크는 두지 않는다.
 - UAV 목록의 이전 묶음 제목과 중복 Paper / Paper (PDF) 링크는 제거했다.

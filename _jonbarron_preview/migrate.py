@@ -124,7 +124,7 @@ def publication_html(item, show_title=True, project_link=None, description=None,
     status = ' · ' + esc(item['status']) if item.get('status') else ''
     note = f' <span class="publication-note">{esc(item["note"])}</span>' if item.get('note') else ''
     description_html = f'<p class="publication-description">{esc(description)}</p>' if description else ''
-    contribution_html = f'<p class="project-contribution"><strong>My contribution:</strong> {esc(contribution)}</p>' if contribution else ''
+    contribution_html = f'<p class="project-contribution"><strong>Role:</strong> {esc(contribution)}</p>' if contribution else ''
     category_html = ''
     pdf_link = ''
     if category is not None:
@@ -201,6 +201,8 @@ for data, body, slug in projects:
     summary_html = ''
     if not related:
         summary_html = f'<p class="project-meta">{esc(data.get("display_category", ""))}</p><p>{esc(data.get("summary", data.get("description", "")))}</p>'
+        if data.get('role_summary'):
+            summary_html += f'<p class="project-contribution"><strong>Role:</strong> {esc(data["role_summary"])}</p>'
     thumbnail = thumbnails.get(slug)
     visual_class = 'project-label'
     visual_html = esc(labels.get(slug, 'Project'))

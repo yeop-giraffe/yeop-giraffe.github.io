@@ -6,6 +6,7 @@ display_category: Aerial Robotics / Embedded Systems / Visual Tracking
 period: Sep. 2023 – Feb. 2024 (visiting research)
 affiliation: Drexel University, IMAPLE Lab
 summary: "Integrated Raspberry Pi video streaming and ESP32 motor commands for a helium-supported competition robot. A laptop runs YOLOv5 and visual tracking; the onboard controller drives four DC motors."
+role_summary: "Video streaming, visual tracking on a laptop, and ESP32 motor control."
 project_brief:
   Engineering goal: Connect video-based tracking to motor commands on a helium-supported competition robot.
   Individual contribution: Integrated Raspberry Pi video streaming, laptop-based detection/tracking, and ESP32 motor control.

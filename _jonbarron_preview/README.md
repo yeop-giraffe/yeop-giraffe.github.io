@@ -44,7 +44,7 @@ python _jonbarron_preview/migrate.py
 
 DART·Depth·석사논문은 독립 HTML로 보존됩니다. 홈 대표 이미지 경로와 대체 텍스트는 `migrate.py`의 `thumbnails`에 있습니다.
 
-모든 프로젝트의 상단 요약은 연구 질문/목표, 본인의 기여, 결과와 평가 조건을 짧게 정리합니다. 일반 페이지는 프로젝트 Markdown의 `project_brief`를 사용하고, 독립 페이지는 해당 HTML에도 같은 내용을 반영합니다. 홈 논문 목록의 개인 기여는 `role_summary` 또는 논문별 `publication_contributions`에서 관리합니다. 독립 페이지의 읽기 스타일은 `site/project-reading.css`에서 관리합니다. 홈페이지와 웹 CV에는 섹션 바로가기 링크가 있습니다.
+모든 프로젝트의 상단 요약은 연구 질문/목표, 본인의 기여, 결과와 평가 조건을 짧게 정리합니다. 일반 페이지는 프로젝트 Markdown의 `project_brief`를 사용하고, 독립 페이지는 해당 HTML에도 같은 내용을 반영합니다. 홈 Publications & Presentations와 Selected Projects의 담당 범위는 **Role**로 표시합니다. 공통 역할은 프로젝트의 `role_summary`, 논문별 역할은 `publication_contributions`에서 관리합니다. 독립 페이지의 읽기 스타일은 `site/project-reading.css`에서 관리합니다. 홈페이지와 웹 CV에는 섹션 바로가기 링크가 있습니다.
 
 프로젝트 화면에는 사진·그림의 내용 설명만 표시합니다. 슬라이드 번호·이미지 출처·첨부 자료 소개 문구는 생략하고, 출처 기록은 각 이미지 폴더의 `sources.txt`·`sources.json`에 보존합니다.
 

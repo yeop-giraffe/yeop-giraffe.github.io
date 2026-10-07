@@ -6,6 +6,7 @@ display_category: Wearable Robotics / Embedded Control / Sensor Integration
 period: Dec. 2024 – Feb. 2025
 affiliation: Seoul National University, Wearable Robotics Laboratory
 summary: "Built sensor modules and a Jetson CAN pipeline for motor commands, feedback and logging. Sensor-to-command processing took 10 ms; bench tests identified motor-response delay during concurrent sensor communication."
+role_summary: "Jetson control software, sensor module assembly, and sensor–motor integration."
 project_brief:
   Research question: How can wearable sensors and a motor share an embedded control and logging pipeline?
   Individual contribution: Developed the Jetson program, assembled sensor modules, and connected and controlled the sensors and motor.
