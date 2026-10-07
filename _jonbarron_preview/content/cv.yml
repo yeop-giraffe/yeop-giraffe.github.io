@@ -205,19 +205,17 @@ cv:
         keywords: [Python, C++, ROS, MATLAB, "Microprocessors (Jetson, Arduino, Raspberry Pi)"]
     Teaching and Mentoring:
       - title: Teaching Assistant, Dynamics
-        start_date: Sep. 2024
-        end_date: Nov. 2024
+        date: Fall 2024
         highlights:
           - Taught two-link manipulator modeling using Adams simulation.
       - title: Teaching Assistant, Robotics
-        dates: Mar. 2023 – Jun. 2023; Mar. 2024 – Jun. 2024
+        dates: Spring 2023, Spring 2024
         highlights:
           - Taught Adams simulation, Raspberry Pi, and PID-based DC motor control.
-      - title: Robotics Career Mentor
-        company: Samsung Electronics
+      - title: Robotics Career Mentor, SC Joint Career Consulting
         date: Mar. 17, 2026
         highlights:
-          - Participated as a mentor at a government-supported career event.
+          - Participated in a government-supported career mentoring event as a Samsung Electronics engineer.
     References:
       - name: Dr. Shinsuk Park
         position: Professor, Department of Mechanical Engineering
