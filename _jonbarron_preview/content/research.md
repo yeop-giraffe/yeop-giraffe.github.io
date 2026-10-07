@@ -1,3 +1,5 @@
-- Lower-limb wearable robots and adaptive assistance
-- Vision-based environmental perception and wearable sensor integration
-- User-state estimation and feedback for personalized assistance
+I am interested in lower-limb wearable robots that help people move more freely and comfortably in everyday life.
+
+- Vision-based terrain recognition for terrain-adaptive locomotion assistance
+- Gait-state estimation and data-driven personalization using prior interaction data
+- Explainable human–robot interaction to support user understanding of assistive behavior
