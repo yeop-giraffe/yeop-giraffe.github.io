@@ -8,13 +8,13 @@ affiliation: Drexel University, IMAPLE Lab
 summary: "Integrated Raspberry Pi video streaming and ESP32 motor commands for a helium-supported competition robot. A laptop runs YOLOv5 and visual tracking; the onboard controller drives four DC motors."
 project_brief:
   Engineering goal: Connect video-based tracking to motor commands on a helium-supported competition robot.
-  My contribution: Integrated Raspberry Pi video streaming, laptop-based detection/tracking, and ESP32 motor control.
+  Individual contribution: Integrated Raspberry Pi video streaming, laptop-based detection/tracking, and ESP32 motor control.
   Outcome: A physical prototype combining helium-supported flight, video streaming and motor commands in an indoor venue.
 ---
 
 ## Overview
 
-During my visiting research at Drexel University's Intelligent Machine Perception and Learning (IMAPLE) Lab, I worked on a lighter-than-air robot for the **Defend the Republic – Light Drone Competition**. Helium balloons support a lightweight structure built from balsa wood, carbon pipes, and 3D-printed parts.
+This lighter-than-air robot was developed for the **Defend the Republic – Light Drone Competition** during visiting research at Drexel University's Intelligent Machine Perception and Learning (IMAPLE) Lab. Helium balloons support a lightweight structure built from balsa wood, carbon pipes, and 3D-printed parts.
 
 <figure class="uav-figure">
   <a href="../assets/lighter-than-air/competition-demo.png" target="_blank" rel="noopener"><img src="../assets/lighter-than-air/competition-demo.png" width="1280" height="720" alt="Blue helium-supported blimp in an indoor competition venue, with a person standing beneath the platform." decoding="async"></a>
@@ -38,7 +38,7 @@ Helium buoyancy supports the lightweight frame, control electronics and motors.
 
 ## Control Hardware and Data Flow
 
-I integrated a **Raspberry Pi 4**, an **ESP32**, and **four DC motors** into the blimp's control system. The Raspberry Pi streams video to a **laptop running YOLOv5 and a tracker**. The laptop sends motor-value commands to the ESP32, which controls the motors.
+The blimp's control system integrates a **Raspberry Pi 4**, an **ESP32**, and **four DC motors**. The Raspberry Pi streams video to a **laptop running YOLOv5 and a tracker**. The laptop sends motor-value commands to the ESP32, which controls the motors.
 
 This places object detection and tracking on the laptop while the onboard hardware handles video streaming and motor commands.
 
@@ -53,7 +53,7 @@ The prototype was demonstrated in an indoor competition venue, combining helium-
 
 ## Research Context
 
-My visiting appointment ran from **September 2023 to February 2024** under Prof. David Han.
+The visiting research appointment at Drexel University's IMAPLE Lab ran from **September 2023 to February 2024**, supervised by Prof. David Han.
 
 ## Skills
 

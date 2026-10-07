@@ -10,7 +10,7 @@ summary: "Designed UAV controller mapping and a monocular-vision display with 3D
 role_summary: "Controller mapping, vision interface, prototype integration and user evaluation."
 project_brief:
   Research question: Can control mapping and visual assistance make indoor UAV teleoperation easier for novice operators?
-  My contribution: Designed the controller mapping and vision interface, integrated the prototype, and evaluated the controller
+  Individual contribution: Designed the controller mapping and vision interface, integrated the prototype, and evaluated the controller
     and display in separate studies.
   Key result: 'SUS increased by 28%; NASA-TLX mental demand decreased by approximately 43% compared with RGB video alone.'
   Evaluation: Two Gazebo studies, each with six novice participants and one run per condition; separate indoor hardware checks.

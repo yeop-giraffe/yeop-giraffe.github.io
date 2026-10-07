@@ -37,7 +37,7 @@ p { margin: 12px 0; }
 .project-page h2 { font-size: 21px; margin-top: 32px; }
 .project-summary { margin: 24px 0 32px; padding: 20px 0; border-top: 1px solid #e5e8eb; border-bottom: 1px solid #e5e8eb; }
 .project-summary h2 { font-size: 18px; margin: 0 0 14px; }
-.summary-facts { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 10px 20px; margin: 0; font-size: 14px; line-height: 1.6; }
+.summary-facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 10px 20px; margin: 0; font-size: 14px; line-height: 1.6; }
 .summary-facts dt { font-weight: 700; white-space: nowrap; }
 .summary-facts dd { margin: 0; }
 .cv-section, .project-summary, #research, #projects, #leadership, #teaching { scroll-margin-top: 24px; }

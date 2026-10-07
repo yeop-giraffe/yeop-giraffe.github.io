@@ -1,21 +1,35 @@
 ---
 title: Hardware-in-the-Loop Simulation for Robot Vacuum Cleaners
-description: Integrating production robot software and a physical controller with simulated sensors.
+description: Hardware-in-the-loop integration of a physical controller, production robot software and Isaac Sim sensors at Samsung Electronics.
 importance: 4
 display_category: System Integration / HIL / NVIDIA Isaac Sim
 period: May 2026 – Present
 affiliation: Samsung Electronics, Robot Vacuum Cleaner Development Lab
 summary: Built an Isaac Sim-based HIL test system with Samsung R&D Institute-Delhi, integrating a physical controller board and production control software with simulated robot sensors.
 project_brief:
-  Engineering goal: Test robot software with a physical controller and simulated sensors.
-  My contribution: Integrated the controller board, production control software and Isaac Sim sensor inputs with Samsung R&D
+  Engineering goal: Connect production robot control hardware and software to a simulated sensor environment.
+  Individual contribution: Integrated the controller board, production control software and Isaac Sim sensor inputs with Samsung R&D
     Institute-Delhi.
   Outcome: An integrated hardware-in-the-loop test system for robot vacuum cleaners.
 ---
 
-## Integration Setup
+## Overview
 
-I integrated the physical controller board and production control software with simulated robot sensors in NVIDIA Isaac Sim. The setup keeps the controller and control software in the loop while replacing physical sensor inputs with simulated observations.
+Developed at Samsung Electronics in collaboration with **Samsung R&D Institute-Delhi**, this **NVIDIA Isaac Sim-based hardware-in-the-loop (HIL) test system** connects physical control hardware and production control software to simulated robot sensors.
+
+## Test System
+
+The setup keeps the physical controller and production control software in the test loop, while Isaac Sim supplies simulated sensor observations.
+
+| Component | Role in the HIL setup |
+| --- | --- |
+| Physical controller board | Connects the robot's control hardware to the test system. |
+| Production control software | Integrates the robot-control software used in the product. |
+| NVIDIA Isaac Sim | Provides simulated robot sensor inputs. |
+
+## Individual Contribution
+
+Integration responsibilities covered the physical controller board, production control software and Isaac Sim sensor inputs. System setup was carried out in collaboration with Samsung R&D Institute-Delhi.
 
 ## Skills
 

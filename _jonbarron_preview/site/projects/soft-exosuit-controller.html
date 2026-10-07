@@ -11,24 +11,24 @@
   <link rel="stylesheet" href="../site.css">
 </head>
 <body class="project-page">
-<main><nav><a href="../index.html#projects">← Selected Projects</a></nav><h1>Embedded Controller for a Tendon-Driven Soft Exosuit</h1><p class="muted">Wearable Robotics / Embedded Control / Sensor Integration</p><p class="project-context">Seoul National University, Wearable Robotics Laboratory · Dec. 2024 – Feb. 2025</p><section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Research question</dt><dd>How can wearable sensors and a motor share an embedded control and logging pipeline?</dd><dt>My contribution</dt><dd>Developed the Jetson program, assembled sensor modules, and connected and controlled the sensors and motor.</dd><dt>Key result</dt><dd>Established the basic pipeline with 10-ms sensor-to-command processing; observed motor-response delay with concurrent sensor communication.</dd><dt>Evaluation</dt><dd>Torque-profile bench tests and sensor timing checks. Walking assistance was outside the completed work; mechanical hardware was developed by another student.</dd></dl></section><h2>Overview</h2>
-<p>At Seoul National University's Wearable Robotics Laboratory, I worked with Prof. Jinsoo Kim on the embedded control infrastructure for a lower-limb, tendon-driven soft exosuit. I established a basic pipeline connecting wearable sensor modules to motor commands, feedback, and data logging on an <strong>NVIDIA Jetson Orin Nano</strong>.</p>
+<main><nav><a href="../index.html#projects">← Selected Projects</a></nav><h1>Embedded Controller for a Tendon-Driven Soft Exosuit</h1><p class="muted">Wearable Robotics / Embedded Control / Sensor Integration</p><p class="project-context">Seoul National University, Wearable Robotics Laboratory · Dec. 2024 – Feb. 2025</p><section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Research question</dt><dd>How can wearable sensors and a motor share an embedded control and logging pipeline?</dd><dt>Individual contribution</dt><dd>Developed the Jetson program, assembled sensor modules, and connected and controlled the sensors and motor.</dd><dt>Key result</dt><dd>Established the basic pipeline with 10-ms sensor-to-command processing; observed motor-response delay with concurrent sensor communication.</dd><dt>Evaluation</dt><dd>Torque-profile bench tests and sensor timing checks. Walking assistance was outside the completed work; mechanical hardware was developed by another student.</dd></dl></section><h2>Overview</h2>
+<p>This project established embedded control infrastructure for a lower-limb, tendon-driven soft exosuit at Seoul National University's Wearable Robotics Laboratory, supervised by Prof. Jinsoo Kim. A basic pipeline connects wearable sensor modules to motor commands, feedback, and data logging on an <strong>NVIDIA Jetson Orin Nano</strong>.</p>
 <p>The pipeline had a <strong>10-ms end-to-end processing time</strong> from the sensor module through motor-command generation. Motor response was evaluated separately through feedback measurements, which revealed delays during concurrent sensor communication.</p>
 <figure class="uav-figure">
   <a href="../assets/soft-exosuit/can-system-diagram.png" target="_blank" rel="noopener"><img src="../assets/soft-exosuit/can-system-diagram.png" width="3011" height="1343" alt="Jetson Orin Nano connected through a CAN transceiver to a T-Motor and a Feather M4 CAN board interfacing with a load cell and an IMU." decoding="async"></a>
   <figcaption><span>Sensor-to-motor control pipeline</span> The Jetson exchanges motor commands and feedback over CAN while sensor modules provide load-cell and IMU measurements.</figcaption>
 </figure>
 
-<h2>My Contributions</h2>
+<h2>Individual Contributions</h2>
 <ul>
 <li>Developed the Jetson control program, including CAN message decoding, motor commands, and feedback handling.</li>
 <li>Assembled sensor board modules and connected the load cells, IMUs, and motor to the control pipeline.</li>
 <li>Separated sensor reception and data logging from the motor-control loop using asynchronous callbacks, queues, and background threads.</li>
 <li>Ran torque-profile tests and investigated motor feedback timing with sensors connected to the shared CAN bus.</li>
 </ul>
-<p>Another student developed the mechanical hardware. My work focused on the controller, sensor modules, and their integration with the motor.</p>
+<p>The contribution scope covered the controller, sensor modules, and their integration with the motor. Another student developed the mechanical hardware.</p>
 <h2>Sensor Modules and Communication</h2>
-<p>I first tested bidirectional Jetson–Teensy communication using Micro-ROS and UART, then developed a direct Jetson CAN interface for sensor acquisition and motor control. <strong>Feather M4 CAN</strong> boards handle the sensor interfaces, while the Jetson runs the application and motor-command logic.</p>
+<p>Initial communication tests used a bidirectional Jetson–Teensy connection over Micro-ROS and UART. A direct Jetson CAN interface was then developed for sensor acquisition and motor control. <strong>Feather M4 CAN</strong> boards handle the sensor interfaces, while the Jetson runs the application and motor-command logic.</p>
 <p>The sensor receiver supports two node groups. It decodes load-cell values, orientation quaternions, angular velocity, and acceleration into a shared latest-data state. Distinct CAN identifiers separate the sensor channels and motor feedback.</p>
 <figure class="uav-figure uav-figure-medium">
   <a href="../assets/soft-exosuit/sensor-module.jpg" target="_blank" rel="noopener"><img src="../assets/soft-exosuit/sensor-module.jpg" width="732" height="684" alt="Assembled sensor module with a Feather M4 CAN board, IMU, load-cell interface, and power module mounted on a perforated board." loading="lazy" decoding="async"></a>
@@ -40,13 +40,13 @@
 <p>Separate queues feed sensor and motor records to background CSV writers. This lets the control program enqueue timestamped records without writing each row directly in the motor loop. The logs retain the commanded torque alongside the received motor state for comparison.</p>
 <p>The motor experiments also used a <strong>1-kHz scheduling target</strong>. This setting is distinct from the 10-ms end-to-end sensor-to-command processing time and does not establish the physical motor's response time.</p>
 <h2>Torque-Profile Bench Tests</h2>
-<p>I used periodic torque commands to test the basic motor-control pipeline. An initial test applied a sinusoidal pulse during the first 40% of each one-second cycle, followed by zero commanded torque. The peak command was <strong>1 Nm</strong>, and the run lasted <strong>3 seconds</strong>.</p>
+<p>Periodic torque commands tested the basic motor-control pipeline. An initial test applied a sinusoidal pulse during the first 40% of each one-second cycle, followed by zero commanded torque. The peak command was <strong>1 Nm</strong>, and the run lasted <strong>3 seconds</strong>.</p>
 <figure class="uav-figure">
   <a href="../assets/soft-exosuit/torque-1nm.png" target="_blank" rel="noopener"><img src="../assets/soft-exosuit/torque-1nm.png" width="2048" height="1078" alt="Commanded and measured torque over a three-second bench test with three periodic pulses reaching approximately one newton meter." loading="lazy" decoding="async"></a>
   <figcaption><span>Periodic torque command and feedback</span> Three one-second cycles compare the 1-Nm target profile with measured motor torque.</figcaption>
 </figure>
 
-<p>Later tests used <strong>5-Nm peak commands</strong>, a <strong>5-second cycle</strong>, and a <strong>10-second run</strong>. I compared feedback with the IMU connected and disconnected while disabling data saving in the control program. This helped separate the effect of sensor traffic from file-writing work.</p>
+<p>Later tests used <strong>5-Nm peak commands</strong>, a <strong>5-second cycle</strong>, and a <strong>10-second run</strong>. Feedback was compared with the IMU connected and disconnected while data saving was disabled in the control program. This helped separate the effect of sensor traffic from file-writing work.</p>
 <figure class="uav-figure">
   <a href="../assets/soft-exosuit/imu-connected.png" target="_blank" rel="noopener"><img src="../assets/soft-exosuit/imu-connected.png" width="2194" height="1131" alt="Torque, position, and velocity during a ten-second motor test with the IMU connected; measured torque appears later than the commanded pulses." loading="lazy" decoding="async"></a>
   <figcaption><span>IMU connected</span> Torque feedback shows a delay relative to the target pulses. Position and velocity are recorded below the torque plot.</figcaption>

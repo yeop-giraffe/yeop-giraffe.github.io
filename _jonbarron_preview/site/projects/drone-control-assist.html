@@ -11,15 +11,15 @@
   <link rel="stylesheet" href="../site.css">
 </head>
 <body class="project-page">
-<main><nav><a href="../index.html#research">← Publications &amp; Presentations</a></nav><h1>Vision-Based Indoor UAV Navigation</h1><p class="muted">Visual Odometry / Monocular Depth Estimation / UAVs</p><p class="project-context">Korea University, Human-Machine Systems Lab · Sep. 2022 – Dec. 2024</p><section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Research question</dt><dd>How can camera-based perception support indoor UAV flight where GPS is unavailable?</dd><dt>My contribution</dt><dd>Built the ROS-based visual-odometry platform and explored monocular-depth-based flight-direction selection.</dd><dt>Key result</dt><dd>2023: integrated localization/control platform. 2024: 41-FPS depth processing and a collision-free 10-m simulated flight.</dd><dt>Evaluation</dt><dd>Physical platform integration and PX4/Gazebo demonstrations; the two studies use different camera configurations.</dd></dl></section><h2>Overview</h2>
-<p>At Korea University's Human-Machine Systems Lab, advised by Prof. Shinsuk Park, I studied vision-based navigation for indoor UAVs. These two ICROS papers address complementary challenges: estimating the UAV's position where GPS is unavailable, and selecting a flight direction to avoid obstacles using a single RGB camera.</p>
+<main><nav><a href="../index.html#research">← Publications &amp; Presentations</a></nav><h1>Vision-Based Indoor UAV Navigation</h1><p class="muted">Visual Odometry / Monocular Depth Estimation / UAVs</p><p class="project-context">Korea University, Human-Machine Systems Lab · Sep. 2022 – Dec. 2024</p><section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Research question</dt><dd>How can camera-based perception support indoor UAV flight where GPS is unavailable?</dd><dt>Individual contribution</dt><dd>Built the ROS-based visual-odometry platform and explored monocular-depth-based flight-direction selection.</dd><dt>Key result</dt><dd>2023: integrated localization/control platform. 2024: 41-FPS depth processing and a collision-free 10-m simulated flight.</dd><dt>Evaluation</dt><dd>Physical platform integration and PX4/Gazebo demonstrations; the two studies use different camera configurations.</dd></dl></section><h2>Overview</h2>
+<p>These two ICROS studies were conducted at Korea University's Human-Machine Systems Lab under the supervision of Prof. Shinsuk Park. They address complementary challenges: estimating the UAV's position where GPS is unavailable, and selecting a flight direction to avoid obstacles using a single RGB camera.</p>
 <nav class="uav-section-nav" aria-label="Project sections"><a href="#visual-odometry">ICROS 2023 · Visual odometry</a><a href="#obstacle-avoidance">ICROS 2024 · Obstacle avoidance</a></nav>
 
 <h2 id="visual-odometry">ICROS 2023 — Visual Odometry for Indoor Flight</h2>
 
 <p><a href="../assets/pdf/ICROS2023_LSY.pdf">Paper (PDF)</a></p>
 <h3>Hardware Platform</h3>
-<p>I developed a ROS-based quadcopter platform integrating a <strong>Pixhawk 6C flight controller</strong>, <strong>NVIDIA Jetson Nano</strong>, and <strong>ZED 2i stereo camera</strong>. The camera's visual odometry estimates position and orientation for indoor localization without GPS.</p>
+<p>The ROS-based quadcopter platform integrates a <strong>Pixhawk 6C flight controller</strong>, <strong>NVIDIA Jetson Nano</strong>, and <strong>ZED 2i stereo camera</strong>. The camera's visual odometry estimates position and orientation for indoor localization without GPS.</p>
 <figure class="uav-figure uav-figure-medium">
   <a href="../assets/images/uav/icros2023-platform.jpg" target="_blank" rel="noopener"><img src="../assets/images/uav/icros2023-platform.jpg" width="582" height="389" alt="Indoor quadcopter with a ZED 2i stereo camera mounted at the front and stacked onboard electronics." decoding="async"></a>
   <figcaption><span>Quadcopter platform</span> Physical quadcopter platform integrating stereo vision, onboard computing, and flight control.</figcaption>
@@ -48,7 +48,7 @@
 
 <p><a href="../assets/pdf/ICROS2024_LSY.pdf">Paper (PDF)</a> / <a href="../assets/pdf/ICROS2024-poster-en.pdf">Poster (PDF)</a></p>
 <h3>Depth-Based Flight-Direction Selection</h3>
-<p>I explored a lightweight obstacle-avoidance approach using <strong>MiDaS</strong>, which estimates relative scene depth from a single RGB image. The system divides the depth map into a grid, compares the mean depth value of each cell, and selects a flight region with fewer obstacles. These are relative depth cues rather than measured metric distances.</p>
+<p>The obstacle-avoidance approach uses <strong>MiDaS</strong>, which estimates relative scene depth from a single RGB image. The system divides the depth map into a grid, compares the mean depth value of each cell, and selects a flight region with fewer obstacles. These are relative depth cues rather than measured metric distances.</p>
 <figure class="uav-figure">
   <div class="uav-image-pair">
     <a href="../assets/images/uav/icros2024-depth.jpg" target="_blank" rel="noopener"><img src="../assets/images/uav/icros2024-depth.jpg" width="320" height="240" alt="MiDaS relative depth map of pillar obstacles in the simulated UAV camera view." loading="lazy" decoding="async"></a>

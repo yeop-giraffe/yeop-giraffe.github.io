@@ -10,7 +10,7 @@ summary: "Translated 10,000 synthetic RGB images with CycleGAN and paired them w
 role_summary: "CycleGAN domain transfer and monocular depth model training."
 project_brief:
   Research question: Does translating synthetic training images improve depth estimation on real indoor images?
-  My contribution: Worked on CycleGAN-based synthetic image translation and monocular depth model training during visiting
+  Individual contribution: Worked on CycleGAN-based synthetic image translation and monocular depth model training during visiting
     research at Drexel.
   Key result: AbsRel decreased modestly for all three models; other metrics showed mixed changes.
   Evaluation: 10,000 paired scenes; three depth architectures; NYU-Depth V2 test evaluation. CycleGAN training included NYU
@@ -42,9 +42,9 @@ AbsRel changed from 0.320 to 0.313 for ZoeDepth, 0.321 to 0.316 for DepthAnythin
 
 Translation artifacts and limited indoor-scene diversity are identified limitations. The paper proposes filtering translated samples, adding semantic/depth constraints, and broadening simulated environments as future work.
 
-## My Role
+## Individual Contribution and Research Context
 
-I worked on CycleGAN-based synthetic image domain transfer and monocular depth model training during my visiting research at Drexel University's IMAPLE Lab, advised by Prof. David Han (September 2023 to February 2024). The method and experimental results belong to the four-author research team, with equal contribution credited to Knut Peterson and Seungyeop Lee.
+Seungyeop Lee's contribution covered CycleGAN-based synthetic image domain transfer and monocular depth model training during a visiting research appointment at Drexel University's IMAPLE Lab, supervised by Prof. David Han (September 2023 to February 2024). The method and experimental results belong to the four-author research team, with equal contribution credited to Knut Peterson and Seungyeop Lee.
 
 ## Skills
 

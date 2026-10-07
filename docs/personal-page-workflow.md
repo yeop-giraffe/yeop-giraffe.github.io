@@ -49,6 +49,8 @@
 ### 프로젝트 상세
 
 - 모든 프로젝트의 화면 캡션은 이미지 내용만 설명한다. 원본 사진·슬라이드·논문 그림 번호와 첨부 자료를 소개하는 문구는 표시하지 않는다. 자료 출처 기록은 내부의 `sources.txt`·`sources.json`에 보존한다.
+- 프로젝트 상세는 공식적인 문체를 사용하며 I·my·we·our 등의 1인칭을 쓰지 않는다. 담당 역할은 Individual contribution으로 표시하고, 공동연구 결과와 개인 기여의 구분을 유지한다.
+- 삼성전자 HIL·기구 개발 상세는 원본 CV와 현재 CV의 Industry Experience를 기준으로 작성한다. HIL은 실제 제어 보드·양산 제어 소프트웨어·Isaac Sim 센서의 통합과 Samsung R&D Institute-Delhi 협업을 설명한다. 기구 개발은 물걸레 구동 기구 설계·검증·내구성 개선·양산 및 품질 검증 지원을 구분하며, 공개 자료에 없는 성능 수치나 시험 방법을 추가하지 않는다.
 - DART는 전체 논문 제목을 유지한다. DART만 별도 최상단 제목으로 표시하지 않는다.
 - DART에서 “Acquire missing knowledge. Retain it. Reuse it for the next task.”와 “Robot Intelligence · Spatial AI · Persistent Task Memory” 문구는 제거했다.
 - DART의 모든 저자는 공통 소속 **Samsung Electronics Co., Ltd., Suwon, Republic of Korea**를 한 줄로 표시한다. 부서는 넣지 않는다.

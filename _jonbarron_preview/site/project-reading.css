@@ -10,7 +10,7 @@
 .project-summary { padding: 0 1.5rem 1.75rem; }
 .project-summary > div { max-width: 960px; }
 .project-summary h2 { font-size: 1.1rem; margin-bottom: .85rem; }
-.summary-facts { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: .7rem 1.25rem; padding-block: 1rem; margin: 0; border-block: 1px solid var(--border-color); font-size: .93rem; line-height: 1.6; }
+.summary-facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .7rem 1.25rem; padding-block: 1rem; margin: 0; border-block: 1px solid var(--border-color); font-size: .93rem; line-height: 1.6; }
 .summary-facts dt { font-weight: 650; white-space: nowrap; }
 .summary-facts dd { margin: 0; color: #475569; }
 .teaser { padding-bottom: 2rem; }

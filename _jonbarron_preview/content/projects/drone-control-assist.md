@@ -18,7 +18,7 @@ publication_contributions:
   lee2023visual: Quadcopter platform and visual-odometry-to-flight-control integration.
 project_brief:
   Research question: How can camera-based perception support indoor UAV flight where GPS is unavailable?
-  My contribution: Built the ROS-based visual-odometry platform and explored monocular-depth-based flight-direction selection.
+  Individual contribution: Built the ROS-based visual-odometry platform and explored monocular-depth-based flight-direction selection.
   Key result: '2023: integrated localization/control platform. 2024: 41-FPS depth processing and a collision-free 10-m simulated
     flight.'
   Evaluation: Physical platform integration and PX4/Gazebo demonstrations; the two studies use different camera configurations.
@@ -26,7 +26,7 @@ project_brief:
 
 ## Overview
 
-At Korea University's Human-Machine Systems Lab, advised by Prof. Shinsuk Park, I studied vision-based navigation for indoor UAVs. These two ICROS papers address complementary challenges: estimating the UAV's position where GPS is unavailable, and selecting a flight direction to avoid obstacles using a single RGB camera.
+These two ICROS studies were conducted at Korea University's Human-Machine Systems Lab under the supervision of Prof. Shinsuk Park. They address complementary challenges: estimating the UAV's position where GPS is unavailable, and selecting a flight direction to avoid obstacles using a single RGB camera.
 
 <nav class="uav-section-nav" aria-label="Project sections"><a href="#visual-odometry">ICROS 2023 · Visual odometry</a><a href="#obstacle-avoidance">ICROS 2024 · Obstacle avoidance</a></nav>
 
@@ -36,7 +36,7 @@ At Korea University's Human-Machine Systems Lab, advised by Prof. Shinsuk Park, 
 
 ### Hardware Platform
 
-I developed a ROS-based quadcopter platform integrating a **Pixhawk 6C flight controller**, **NVIDIA Jetson Nano**, and **ZED 2i stereo camera**. The camera's visual odometry estimates position and orientation for indoor localization without GPS.
+The ROS-based quadcopter platform integrates a **Pixhawk 6C flight controller**, **NVIDIA Jetson Nano**, and **ZED 2i stereo camera**. The camera's visual odometry estimates position and orientation for indoor localization without GPS.
 
 <figure class="uav-figure uav-figure-medium">
   <a href="../assets/images/uav/icros2023-platform.jpg" target="_blank" rel="noopener"><img src="../assets/images/uav/icros2023-platform.jpg" width="582" height="389" alt="Indoor quadcopter with a ZED 2i stereo camera mounted at the front and stacked onboard electronics." decoding="async"></a>
@@ -71,7 +71,7 @@ The paper reports a physical platform and a simulated flight demonstration. It d
 
 ### Depth-Based Flight-Direction Selection
 
-I explored a lightweight obstacle-avoidance approach using **MiDaS**, which estimates relative scene depth from a single RGB image. The system divides the depth map into a grid, compares the mean depth value of each cell, and selects a flight region with fewer obstacles. These are relative depth cues rather than measured metric distances.
+The obstacle-avoidance approach uses **MiDaS**, which estimates relative scene depth from a single RGB image. The system divides the depth map into a grid, compares the mean depth value of each cell, and selects a flight region with fewer obstacles. These are relative depth cues rather than measured metric distances.
 
 <figure class="uav-figure">
   <div class="uav-image-pair">

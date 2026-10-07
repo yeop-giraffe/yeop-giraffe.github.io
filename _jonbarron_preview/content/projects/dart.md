@@ -10,7 +10,7 @@ summary: "Retains task-acquired scene-graph knowledge for repeated object search
 role_summary: "Viewpoint selection, room classification, architecture and system integration."
 project_brief:
   Research question: How can a home robot reuse what it learns from earlier tasks?
-  My contribution: Contributed to the architecture; developed viewpoint selection and room classification; integrated perception,
+  Individual contribution: Contributed to the architecture; developed viewpoint selection and room classification; integrated perception,
     VLM and navigation in Isaac Sim.
   Key result: 'Real-Home task success: 87% vs. 66% for DART-Frozen, with 49.3% fewer VLM acquisition/description calls.'
   Evaluation: 20 tasks × five iterations in each of two homes (one simulated, one real). Language-model inference runs on
@@ -28,7 +28,7 @@ DART (Deliberation-Adaptive Reasoning from Task Experience) is a dual-mode archi
 
 [Read the manuscript (PDF)]({{ '/assets/pdf/ICRA27.pdf' | relative_url }})
 
-## My Contributions
+## Individual Contributions
 
 - Contributed to the dual-process architecture for task-knowledge reuse and incremental scene-graph enrichment.
 - Developed observation-viewpoint selection based on object visibility and viewpoint accessibility.
