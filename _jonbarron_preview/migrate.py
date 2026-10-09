@@ -24,6 +24,7 @@ def author_html(author, highlight=False):
 
 def page(title, content, prefix='', description='', body_class='', canonical_path=''):
     reading_css = f'\n  <link rel="stylesheet" href="{prefix}project-reading.css">' if body_class in ('home-page', 'project-page') else ''
+    social_title = f'\n  <meta property="og:title" content="{esc(title)}">\n  <meta name="twitter:title" content="{esc(title)}">' if body_class == 'home-page' else ''
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -32,7 +33,7 @@ def page(title, content, prefix='', description='', body_class='', canonical_pat
   <meta name="author" content="Seungyeop Lee">
   <meta name="description" content="{esc(description)}">
   <link rel="icon" type="image/png" sizes="64x64" href="{prefix}assets/images/profile-favicon.png">
-  <title>{esc(title)}</title>
+  <title>{esc(title)}</title>{social_title}
   <link rel="canonical" href="https://yeop-giraffe.github.io/{esc(canonical_path)}">
   <link rel="stylesheet" href="{prefix}stylesheet.css">
   <link rel="stylesheet" href="{prefix}site.css">{reading_css}
@@ -296,6 +297,6 @@ content = f'''<section class="intro">
 <section id="projects"><h2>Selected Projects</h2>{project_rows}</section>
 <section id="leadership" class="activities"><h2>Leadership</h2>{leadership_html}</section>
 <section id="teaching" class="activities"><h2>Teaching &amp; Mentoring</h2>{teaching_html}</section>'''
-(SITE / 'index.html').write_text(page('Seungyeop Lee | Robotics Research', content, description='Seungyeop Lee: robot perception, embedded control and human-robot interaction, with research interests in adaptive wearable assistance.', body_class='home-page'), encoding='utf-8')
+(SITE / 'index.html').write_text(page('Seungyeop Lee | Robotics Researcher', content, description='Seungyeop Lee: robot perception, embedded control and human-robot interaction, with research interests in adaptive wearable assistance.', body_class='home-page'), encoding='utf-8')
 (SITE / '.nojekyll').touch()
 print(f'Imported {len(projects)} projects and complete CV into {SITE}')
