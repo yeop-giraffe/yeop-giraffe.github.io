@@ -5,20 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Seungyeop Lee">
   <meta name="description" content="A helium-supported robot with Raspberry Pi video streaming, YOLOv5 and tracking on a laptop, and ESP32 motor commands.">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/images/profile-favicon.png">
   <title>Lighter-Than-Air Robot for a Light Drone Competition | Seungyeop Lee</title>
   <link rel="canonical" href="https://yeop-giraffe.github.io/projects/autonomous-lighter-than-air-vehicle.html">
   <link rel="stylesheet" href="../stylesheet.css">
   <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../project-reading.css">
 </head>
 <body class="project-page">
-<main><nav><a href="../index.html#projects">← Selected Projects</a></nav><h1>Lighter-Than-Air Robot for a Light Drone Competition</h1><p class="muted">Aerial Robotics / Embedded Systems / Visual Tracking</p><p class="project-context">Drexel University, IMAPLE Lab · Sep. 2023 – Feb. 2024 (visiting research)</p><section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Engineering goal</dt><dd>Connect video-based tracking to motor commands on a helium-supported competition robot.</dd><dt>My contribution</dt><dd>Integrated Raspberry Pi video streaming, laptop-based detection/tracking, and ESP32 motor control.</dd><dt>Outcome</dt><dd>A physical prototype combining helium-supported flight, video streaming and motor commands in an indoor venue.</dd></dl></section><h2>Overview</h2>
+<main><nav><a href="../index.html#projects">← Selected Projects</a></nav><h1>Lighter-Than-Air Robot for a Light Drone Competition</h1><p class="muted">Aerial Robotics / Embedded Systems / Visual Tracking</p><p class="project-context">Drexel University, IMAPLE Lab · Sep. 2023 – Feb. 2024 (visiting research)</p><section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Engineering goal</dt><dd>Connect video-based tracking to motor commands on a helium-supported competition robot.</dd><dt>My contribution</dt><dd>Integrated Raspberry Pi video streaming, laptop-based detection/tracking, and ESP32 motor control.</dd><dt>Outcome</dt><dd>A physical prototype combining helium-supported flight, video streaming and motor commands in an indoor venue.</dd></dl></section><nav class="section-nav" aria-label="On this page"><a href="#summary">Summary</a><a href="#overview">Overview</a><a href="#physical-platform">Physical Platform</a><a href="#control-hardware-and-data-flow">Control Hardware and Data Flow</a><a href="#demonstration-scope">Demonstration Scope</a><a href="#research-context">Research Context</a><a href="#skills">Skills</a></nav><h2 id="overview">Overview</h2>
 <p>This lighter-than-air robot was developed for the <strong>Defend the Republic – Light Drone Competition</strong> during visiting research at Drexel University's Intelligent Machine Perception and Learning (IMAPLE) Lab. Helium balloons support a lightweight structure built from balsa wood, carbon pipes, and 3D-printed parts.</p>
 <figure class="uav-figure">
   <a href="../assets/lighter-than-air/competition-demo.png" target="_blank" rel="noopener"><img src="../assets/lighter-than-air/competition-demo.png" width="1280" height="720" alt="Blue helium-supported blimp in an indoor competition venue, with a person standing beneath the platform." decoding="async"></a>
   <figcaption><span>Prototype in the competition venue</span> The helium-supported robot operating in the indoor venue.</figcaption>
 </figure>
 
-<h2>Physical Platform</h2>
+<h2 id="physical-platform">Physical Platform</h2>
 <p>Helium buoyancy supports the lightweight frame, control electronics and motors.</p>
 <div class="uav-figure-grid">
   <figure class="uav-figure">
@@ -31,7 +33,7 @@
   </figure>
 </div>
 
-<h2>Control Hardware and Data Flow</h2>
+<h2 id="control-hardware-and-data-flow">Control Hardware and Data Flow</h2>
 <p>The blimp's control system integrates a <strong>Raspberry Pi 4</strong>, an <strong>ESP32</strong>, and <strong>four DC motors</strong>. The Raspberry Pi streams video to a <strong>laptop running YOLOv5 and a tracker</strong>. The laptop sends motor-value commands to the ESP32, which controls the motors.</p>
 <p>This places object detection and tracking on the laptop while the onboard hardware handles video streaming and motor commands.</p>
 <figure class="uav-figure">
@@ -39,11 +41,11 @@
   <figcaption><span>Video streaming and motor-command flow</span> Video flows from the Raspberry Pi 4 to the laptop, and motor-value commands flow from the laptop to the ESP32.</figcaption>
 </figure>
 
-<h2>Demonstration Scope</h2>
+<h2 id="demonstration-scope">Demonstration Scope</h2>
 <p>The prototype was demonstrated in an indoor competition venue, combining helium-supported flight with video streaming and motor control.</p>
-<h2>Research Context</h2>
+<h2 id="research-context">Research Context</h2>
 <p>The visiting research appointment at Drexel University's IMAPLE Lab ran from <strong>September 2023 to February 2024</strong>, supervised by Prof. David Han.</p>
-<h2>Skills</h2>
+<h2 id="skills">Skills</h2>
 <p><code>Lighter-Than-Air Robotics</code> <code>Raspberry Pi</code> <code>ESP32</code> <code>YOLOv5</code> <code>Visual Tracking</code> <code>Embedded Systems</code></p></main>
 <footer>Website template by <a href="https://github.com/jonbarron/jonbarron.github.io">Jon Barron</a>.</footer>
 </body>

@@ -34,6 +34,15 @@
       "filename": "lsy_lab_meeting_02192025.pptx",
       "sha256": "45c914d507fa2bad1ddde66ca5adeb8d9af159c3add6c3b10a986ffc22c9b25f",
       "slides": 15
+    },
+    {
+      "filename": "Seungyeop_Lee_Research_Overview.pptx",
+      "sha256": "26e43ef06a7e6473b2fc0e45b110ec955943a316107b2e6691bb511b71cacc90",
+      "slides": 11,
+      "reviewed_slides": [
+        2,
+        7
+      ]
     }
   ],
   "assets": [
@@ -102,6 +111,27 @@
         715
       ],
       "sha256": "903606435871db9d88114e01f58eaec59b5069ffb433285f79d72a2412a12e48"
+    },
+    {
+      "filename": "exosuit-control-sensing-overview.png",
+      "source_deck": "Seungyeop_Lee_Research_Overview.pptx",
+      "source_slide": 7,
+      "source_media": [
+        "ppt/media/image5.png",
+        "ppt/media/image18.png",
+        "ppt/media/image19.png",
+        "ppt/media/image20.png",
+        "ppt/media/image21.png"
+      ],
+      "method": "Built-in image_gen compositing preview selected by the user. Square layout with the wearable exosuit, Jetson, motor, and sensor board; labels added and sensor-to-Jetson arrow routed around the motor. Existing original images are preserved. This is a system illustration, not a photograph of a tested complete prototype.",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "7a41f43032f6614e7ccf36ee701b4a437501c8fc2aad7b6209ae70c04dc4774c",
+      "user_approved": "2026-10-09",
+      "usage": "Selected Projects representative image and left-hand Overview illustration on the soft-exosuit project page",
+      "edit_prompt_summary": "Keep the original exosuit and components; compose on white square background; add Jetson, Motor, Sensors and Load cell · IMU labels; direct sensor data to Jetson, command to motor, and feedback to Jetson."
     }
   ],
   "user_confirmed_scope": {

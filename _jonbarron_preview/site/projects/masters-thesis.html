@@ -7,6 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="64x64" href="../assets/images/profile-favicon.png" />
     <title>A Development of Intuitive Controller and Monocular Vision based Interface for Disaster Response UAV</title>
     <meta name="description" content="My master's thesis at Korea University: intuitive UAV control, monocular vision assistance, and simulation studies with six novice participants in each evaluation." />
     <meta name="author" content="Seungyeop Lee" />
@@ -136,7 +137,6 @@
         html { scroll-behavior: auto; }
         * { transition: none !important; }
       }
-    
       .publication-header { padding-top: 2.5rem; }
       .publication-title { font-size: clamp(1.8rem, 3.4vw, 2.65rem); line-height: 1.2; letter-spacing: -.025em; margin-bottom: 1.75rem; }
       .section-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.4rem; margin-top: 1.5rem; font-size: .9rem; }
@@ -182,7 +182,7 @@
         .stack dd { margin-bottom: .8rem; }
         .results-table th, .results-table td { padding: .75rem .5rem; }
       }
-    
+
       .figure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; align-items: start; }
       .figure-grid .media { background: white; }
       .flight-path-figures > figure > .image-link { aspect-ratio: 4 / 3; }
@@ -220,9 +220,10 @@
           <a class="button" href="../assets/masters-thesis/paper.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v5h4 M9 12h6 M9 16h6" /></svg>Read Thesis (PDF)</a>
           <a class="button" href="#bibtex">Citation</a>
         </div>
-        <nav class="section-nav" aria-label="On this page"><a href="#summary">Summary</a><a href="#abstract">Overview</a><a href="#controller">Controller</a><a href="#vision">Vision Interface</a><a href="#hardware">Hardware</a><a href="#evaluation">Evaluation</a><a href="#results">Results</a></nav>
+
       </div></header>
       <section class="project-summary" id="summary" aria-labelledby="summary-title"><div class="container"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Research question</dt><dd>Can control mapping and visual assistance make indoor UAV teleoperation easier for novice operators?</dd><dt>My contribution</dt><dd>Designed the controller mapping and vision interface, integrated the prototype, and evaluated the controller and display in separate studies.</dd><dt>Key result</dt><dd>SUS increased by 28%; NASA-TLX mental demand decreased by approximately 43% compared with RGB video alone.</dd><dt>Evaluation</dt><dd>Two Gazebo studies, each with six novice participants and one run per condition; separate indoor hardware checks.</dd></dl></div></section>
+<nav class="section-nav" aria-label="On this page"><a href="#summary">Summary</a><a href="#abstract">Overview</a><a href="#controller">Controller</a><a href="#vision">Vision Interface</a><a href="#hardware">Hardware</a><a href="#evaluation">Evaluation</a><a href="#results">Results</a><a href="#bibtex">BibTeX</a></nav>
 <section class="teaser" aria-label="Thesis system overview"><div class="container"><figure><a class="image-link" href="../assets/masters-thesis/overview.png" aria-label="Open full-size overview figure"><img class="media" src="../assets/masters-thesis/overview.png" width="1857" height="752" fetchpriority="high" decoding="async" alt="Ground control station with a joystick and monocular-vision interface connected wirelessly to a UAV exploring an indoor disaster site." /></a><figcaption>An intuitive controller and a vision interface connect the operator to an indoor UAV.</figcaption></figure></div></section>
       <section class="section is-light" id="abstract" aria-labelledby="abstract-title"><div class="container narrow">
         <h2 class="section-title" id="abstract-title">Overview</h2>

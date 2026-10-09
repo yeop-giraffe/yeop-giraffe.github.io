@@ -23,6 +23,7 @@ def author_html(author, highlight=False):
 
 
 def page(title, content, prefix='', description='', body_class='', canonical_path=''):
+    reading_css = f'\n  <link rel="stylesheet" href="{prefix}project-reading.css">' if body_class in ('home-page', 'project-page') else ''
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -30,10 +31,11 @@ def page(title, content, prefix='', description='', body_class='', canonical_pat
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Seungyeop Lee">
   <meta name="description" content="{esc(description)}">
+  <link rel="icon" type="image/png" sizes="64x64" href="{prefix}assets/images/profile-favicon.png">
   <title>{esc(title)}</title>
   <link rel="canonical" href="https://yeop-giraffe.github.io/{esc(canonical_path)}">
   <link rel="stylesheet" href="{prefix}stylesheet.css">
-  <link rel="stylesheet" href="{prefix}site.css">
+  <link rel="stylesheet" href="{prefix}site.css">{reading_css}
 </head>
 <body class="{esc(body_class)}">
 <main>{content}</main>
@@ -145,19 +147,54 @@ def project_brief_html(fields):
     return f'<section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts">{entries}</dl></section>'
 
 
+def project_sections(body_html):
+    """Give generated pages the same summary-first navigation as research pages."""
+    links = [('summary', 'Summary')]
+    used_ids = set(re.findall(r'\bid="([^"]+)"', body_html)) | {'summary', 'summary-title'}
+    # Fold the existing UAV study shortcuts into the page-wide navigation.
+    study_labels = dict(re.findall(r'<a href="#([^"]+)">([^<]+)</a>', body_html))
+    body_html = re.sub(r'<nav class="uav-section-nav".*?</nav>', '', body_html, flags=re.S)
+
+    def heading(match):
+        attrs, title = match.groups()
+        text = html.unescape(re.sub(r'<[^>]+>', '', title)).strip()
+        existing = re.search(r'\bid="([^"]+)"', attrs)
+        if existing:
+            anchor = existing[1]
+        else:
+            base = re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-') or 'section'
+            anchor = base
+            suffix = 2
+            while anchor in used_ids:
+                anchor = f'{base}-{suffix}'
+                suffix += 1
+            used_ids.add(anchor)
+            attrs += f' id="{anchor}"'
+        links.append((anchor, html.unescape(study_labels.get(anchor, text))))
+        return f'<h2{attrs}>{title}</h2>'
+
+    body_html = re.sub(r'<h2([^>]*)>(.*?)</h2>', heading, body_html, flags=re.S)
+    navigation = '<nav class="section-nav" aria-label="On this page">' + ''.join(
+        f'<a href="#{anchor}">{esc(label)}</a>' for anchor, label in links) + '</nav>'
+    return navigation + body_html
+
+
 (SITE / 'projects').mkdir(exist_ok=True)
 publication_rows = ''
 project_rows = ''
-labels = {'dart': 'DART', 'drone-control-assist': 'UAV', 'soft-exosuit-controller': 'Exosuit', 'monocular-depth-estimation': 'Depth', 'hardware-in-the-loop': 'HIL', 'robot-vacuum-mop-module': 'Robotics', 'autonomous-lighter-than-air-vehicle': 'Airship'}
-# Use figures from each project's own paper; projects without verified images keep their labels.
+labels = {'dart': 'DART', 'drone-control-assist': 'UAV', 'soft-exosuit-controller': 'Exosuit', 'monocular-depth-estimation': 'Depth', 'hardware-in-the-loop': 'Samsung SW', 'robot-vacuum-mop-module': 'Samsung HW', 'autonomous-lighter-than-air-vehicle': 'Airship'}
+# Use project figures or user-provided representative images.
 thumbnails = {
     'dart': ('assets/dart/scene-graph.png', 'DART scene graph connecting indoor regions, objects, and observation viewpoints.'),
     'masters-thesis': ('assets/masters-thesis/integrated-interface.png', 'Monocular vision-based drone interface showing spatial reconstruction, obstacles, and predicted flight paths.'),
     'drone-control-assist': ('assets/images/uav/icros2023-platform.jpg', 'Indoor quadcopter with a stereo camera and onboard flight-control electronics.'),
     'monocular-depth-estimation': ('assets/monocular-depth-estimation/pipeline.png', 'CycleGAN synthetic-to-real data generation and monocular depth model training pipeline.'),
     'autonomous-lighter-than-air-vehicle': ('assets/lighter-than-air/competition-demo.png', 'Helium-supported competition robot with its lightweight frame and onboard control hardware.'),
-    'soft-exosuit-controller': ('assets/soft-exosuit/sensor-module.jpg', 'Assembled soft-exosuit sensor module with a Feather M4 CAN board, IMU, load-cell interface, and power components.'),
+    'soft-exosuit-controller': ('assets/soft-exosuit/exosuit-control-sensing-overview.png', 'Tendon-driven lower-limb soft exosuit alongside a Jetson controller, motor, and load-cell and IMU sensor interfaces.'),
+    'hardware-in-the-loop': ('assets/samsung/samsung-wordmark-blue.png', 'Samsung'),
+    'robot-vacuum-mop-module': ('assets/samsung/samsung-wordmark-blue.png', 'Samsung'),
 }
+company_project_labels = {'hardware-in-the-loop': 'SW', 'robot-vacuum-mop-module': 'HW'}
 for data, body, slug in projects:
     related = [publication_by_id[publication_id] for publication_id in data.get('publications', [])]
     # Resolve the existing Jekyll PDF helper into a standalone relative link.
@@ -170,10 +207,11 @@ for data, body, slug in projects:
         detail += f'<p class="project-context">{esc(context)}</p>'
     if data.get('project_brief'):
         detail += project_brief_html(data['project_brief'])
-    detail += markdown.markdown(body, extensions=['tables', 'fenced_code'])
+    body_html = markdown.markdown(body, extensions=['tables', 'fenced_code'])
     if related:
-        detail += '<section class="related-publications"><h2>Publications &amp; Presentations</h2>'
-        detail += ''.join(publication_html(item) for item in related) + '</section>'
+        body_html += '<section class="related-publications"><h2>Publications &amp; Presentations</h2>'
+        body_html += ''.join(publication_html(item) for item in related) + '</section>'
+    detail += project_sections(body_html)
     target = SITE / 'projects' / f'{slug}.html'
     if data.get('standalone_html'):
         # Academic project pages are edited directly and must survive regeneration.
@@ -212,6 +250,9 @@ for data, body, slug in projects:
             raise FileNotFoundError(f'Project thumbnail missing: {SITE / image_path}')
         visual_class += ' project-thumbnail'
         visual_html = f'<img src="{esc(image_path)}" alt="{esc(image_alt)}" width="160" height="160" loading="lazy" decoding="async">'
+        if slug in company_project_labels:
+            visual_class += ' company-thumbnail'
+            visual_html = f'<img src="{esc(image_path)}" alt="{esc(image_alt)}" width="1600" height="425" loading="lazy" decoding="async"><span class="company-project-label">{esc(company_project_labels[slug])}</span>'
     card = f'''<article class="project" data-project="{esc(slug)}">
   <a class="{visual_class}" href="{link}" aria-label="{esc(data['title'])}">{visual_html}</a>
   <div>{heading_html}
@@ -244,7 +285,7 @@ teaching_html = ''.join(activity_html(item) for item in cv['sections']['Teaching
 
 content = f'''<section class="intro">
   <div><h1 class="name">{esc(cv['name'])}</h1>{intro}
-  <nav class="contact" aria-label="Contact and CV"><a href="mailto:{esc(cv['email'])}">Email</a> / <a href="cv.html">CV</a> / <a href="{esc(download)}" download>CV PDF</a> / <a href="https://github.com/yeop-giraffe">GitHub</a></nav></div>
+  <nav class="contact" aria-label="Contact and CV"><a href="mailto:{esc(cv['email'])}">Email</a> / <a href="cv.html">CV</a> / <a href="{esc(download)}" download>CV PDF</a></nav></div>
   <div class="profile"><img class="profile-photo" src="assets/images/lsy-profile.jpg" width="800" height="800" alt="Portrait of Seungyeop Lee by the sea" fetchpriority="high" decoding="async"></div>
 </section>
 <section class="research-interests"><h2>Research Interests</h2>{research}</section>
@@ -253,6 +294,6 @@ content = f'''<section class="intro">
 <section id="projects"><h2>Selected Projects</h2>{project_rows}</section>
 <section id="leadership" class="activities"><h2>Leadership</h2>{leadership_html}</section>
 <section id="teaching" class="activities"><h2>Teaching &amp; Mentoring</h2>{teaching_html}</section>'''
-(SITE / 'index.html').write_text(page('Seungyeop Lee | Robotics Research', content, description='Seungyeop Lee: robot perception, embedded control and human-robot interaction, with research interests in adaptive wearable assistance.'), encoding='utf-8')
+(SITE / 'index.html').write_text(page('Seungyeop Lee | Robotics Research', content, description='Seungyeop Lee: robot perception, embedded control and human-robot interaction, with research interests in adaptive wearable assistance.', body_class='home-page'), encoding='utf-8')
 (SITE / '.nojekyll').touch()
 print(f'Imported {len(projects)} projects and complete CV into {SITE}')

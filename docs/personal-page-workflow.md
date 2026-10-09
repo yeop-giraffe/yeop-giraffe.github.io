@@ -11,6 +11,13 @@
 
 ## 현재 상태
 
+- 2026-10-09 공개 반영 요청: 사용자가 누적 로컬 변경을 푸시하도록 명시적으로 요청했다. 이번 대상은 공통 요약·본문·바로가기 서식, Exosuit 대표 이미지·설명·최종 배치, 삼성 HW·SW 로고, 프로필 탭 아이콘, Skills 태그 및 홈 GitHub 링크 제거다. 아래의 로컬 상태 기록은 각 작업 당시 상태이며 이번 요청으로 함께 공개한다. 이후 새 수정도 별도 푸시 요청 전까지는 로컬에서 진행한다.
+- 2026-10-09 Skills 서식: 일반 프로젝트 5개의 Skills를 본문과 같은 글꼴·16px 크기로 맞추고, 각 스킬에 옅은 배경·테두리와 8px 간격을 적용했다. 좁은 화면에서 태그는 줄바꿈되며, Skills 텍스트·기존 HTML·논문 상세 페이지와 본문 코드 표기는 유지한다. 로컬에서 확인하고 푸시는 하지 않는다.
+- 2026-10-09 Exosuit 상세 이미지 최종 배치: Overview는 대표 이미지 왼쪽·기존 설명 오른쪽으로 배치한다. Sensor-to-motor control pipeline은 Sensor Modules and Communication으로 옮겨 센서 모듈 사진 왼쪽에 배치하고 두 이미지 높이를 맞춘다. 800px 이하에서는 각 묶음을 세로로 배치한다. 원본 확대 링크를 유지하고 이미지 파일·기존 본문은 보존했다. 로컬 작업이다.
+- 2026-10-09 프로필 탭 아이콘: 원본 `lsy-profile.jpg` 전체 이미지를 64×64 PNG로 축소한 `profile-favicon.png`를 홈·CV·모든 프로젝트에 연결했다. 원본 프로필 사진은 변경하지 않고 출처는 `site/assets/images/favicon-sources.json`에 기록했다. 일반 페이지는 생성기에서, 독립 HTML 3개는 직접 아이콘 링크를 관리한다. 공개 웹 반영은 다음 명시적 푸시 요청 때 수행한다.
+- 2026-10-09 삼성 대표 이미지: 사용자가 첨부한 `Samsung_Orig_Wordmark_BLUE_RGB.png` 원본을 `site/assets/samsung/samsung-wordmark-blue.png`로 그대로 보존해 삼성 HIL(SW)·기구 개발(HW) 두 홈 항목에 사용한다. 로고 비율·색상은 유지하고 HW·SW는 별도의 HTML 텍스트로 표시한다. 이미지 출처·해시는 같은 폴더의 `sources.json`에 기록했다. 프로젝트 설명과 상세 내용은 변경하지 않았으며 로컬에만 반영했다.
+- 2026-10-09 후속 승인: Exosuit 홈 대표 이미지를 승인된 정사각형 제어·센싱 구성 시안으로 교체했다. 홈 요약과 상세 Overview는 하지 보조용 soft exosuit의 목적 및 load cell·IMU 측정과 Jetson 기반 모터 제어의 연결을 먼저 설명한다. Project Summary는 개인 담당 업무와 10 ms end-to-end 명령 처리 결과를 강조하고, 모터 응답 지연 비교와 시험 그래프는 기존 후반 설명에 유지했다. 원본 센서 모듈 사진·CAN 구성도·시험 자료는 보존하며, 이미지 출처·AI 편집 기록은 `site/assets/soft-exosuit/sources.json`에 있다. 로컬 반영만 수행했다.
+- 2026-10-09: 내용 변경 없이 홈·프로젝트 본문 16px, 요약 15px 및 데스크톱 960px 폭, 요약 다음의 섹션 바로가기를 통일했다. 홈 개인 GitHub 링크를 제거하고 삼성 글자 표시는 Samsung SW / Samsung HW로 변경했다. 로컬 작업이며 푸시는 하지 않았다. Research Overview PPTX의 2페이지 Exosuit 내용과 7페이지 시스템 그림은 개선 제안용으로 검토했으며, Exosuit 본문과 대표 이미지는 변경하지 않았다.
 - 2026-10-07 사용자 요청에 따라 수정은 로컬에서 진행하고, 명시적인 푸시 요청이 있을 때 모아서 커밋·푸시·공개 배포한다. 이번에는 로컬에 모아 둔 DART·Thesis·ICROS·Depth·Exosuit 설명과 전체 프로젝트 개인 역할 표기를 푸시하도록 요청받았다. 이후 변경도 별도 푸시 요청 전까지는 로컬에서 확인한다.
 - 현재 웹사이트는 `_jonbarron_preview/`의 Jon Barron 기반 정적 사이트다. 사용자 요청으로 이전 al-folio 파일·자료·Jekyll/Docker 설정·관련 워크플로를 제거했다. GitHub Pages 공개 주소는 `https://yeop-giraffe.github.io/`이며 `main`의 사이트 변경을 자동 배포한다.
 - 로컬 미리보기 주소: `http://127.0.0.1:4173/`. 실행 방법과 생성 방법은 `_jonbarron_preview/README.md`에 있다.
@@ -46,7 +53,7 @@
 - 홈과 웹 CV에서는 저자 옆 기호만 표시하고 공동 기여·교신저자 설명 문구를 생략한다. 상세 페이지의 기호 설명에서는 “Corresponding author” 뒤에 이름이나 이메일 링크를 붙이지 않는다.
 - 석사논문 상세의 상단 제목은 영문만 표시한다. 한글 제목 부제는 사용자 요청에 따라 제거했다.
 - THESIS 항목과 상세에 지도교수 Prof. Shinsuk Park을 표시한다. 개인 연락 이메일은 `yeoplee0906@gmail.com`이다.
-- 프로필은 사용자가 제공한 `lsy_profile.jpg` 원본을 사용한다. 홈 대표 이미지는 DART scene graph, 석사논문 통합 UI, ICROS 기체 사진, Depth 데이터 생성 파이프라인, LTA 경쟁 장면, Exosuit 센서 모듈이다. 나머지 Selected Projects 2개는 글자 표시를 유지한다.
+- 프로필은 사용자가 제공한 `lsy_profile.jpg` 원본을 사용한다. 홈 대표 이미지는 DART scene graph, 석사논문 통합 UI, ICROS 기체 사진, Depth 데이터 생성 파이프라인, LTA 경쟁 장면, Exosuit 제어·센싱 구성도다. 삼성의 Selected Projects 2개는 제공된 파란색 Samsung 로고와 HW·SW 표기로 구분한다.
 
 ### 프로젝트 상세
 

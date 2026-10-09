@@ -1,4 +1,38 @@
-/* Shared reading layout for the three standalone research pages. */
+/* Shared reading layout for home, generated projects, and research pages. */
+.home-page, .project-page { font-size: 16px; line-height: 1.75; }
+.home-page :is(p, a, li, strong),
+.project-page :is(p, a, li, strong, td, th) { font-size: inherit; }
+.home-page .papertitle { font-size: 16px; line-height: 1.5; }
+.home-page .project-contribution { font-size: 15px; line-height: 1.65; }
+.home-page .activity-entry h3 { font-size: 16px; }
+.home-page .activity-entry .activity-date { font-size: 13px; }
+.home-page .activity-meta { font-size: 15px; }
+.home-page .project-label { text-align: center; padding: 12px; line-height: 1.35; }
+.home-page .project-thumbnail { padding: 0; }
+.home-page .company-thumbnail { display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; }
+.company-thumbnail img { width: 100%; height: auto; }
+.company-project-label { color: #475569; font-size: 15px; font-weight: 600; line-height: 1.4; letter-spacing: .04em; }
+.project-page main { max-width: 1008px; padding: 24px; }
+.project-page main > h1 { max-width: 900px; margin-inline: auto; text-align: center; font-size: clamp(1.65rem, 3vw, 2.5rem); }
+.project-page main > h1 + .muted,
+.project-page .project-context { max-width: 900px; margin-inline: auto; text-align: center; font-size: 15px; }
+.project-page main > :is(p, ul, ol, h2, h3, table),
+.project-page :is(.uav-figure, .uav-figure-grid, .uav-image-pair, .related-publications) { max-width: 780px; margin-inline: auto; }
+.project-page .uav-figure-medium { max-width: 582px; }
+.project-page main > h2 { margin-top: 40px; margin-bottom: 16px; font-size: 24px; line-height: 1.3; }
+.project-page h3 { font-size: 18px; line-height: 1.4; }
+.project-page p, .project-page li { line-height: 1.75; }
+.project-page .uav-figure figcaption { font-size: 15px; line-height: 1.65; }
+.exosuit-overview-layout, .exosuit-sensor-media { display: grid; gap: 24px; align-items: start; max-width: 960px; margin: 24px auto 32px; }
+.exosuit-overview-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 2.242fr); }
+.exosuit-sensor-media { grid-template-columns: minmax(0, 2.096fr) minmax(0, 1fr); }
+.project-page :is(.exosuit-overview-layout, .exosuit-sensor-media) .uav-figure { max-width: none; margin: 0; }
+.exosuit-overview-copy p:first-child { margin-top: 0; }
+.project-page table { font-size: 15px; }
+.project-page code { font-size: .9em; }
+.project-page #skills + p { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; }
+.project-page #skills + p code { display: inline-block; max-width: 100%; padding: 4px 10px; border: 1px solid #e2e8f0; border-radius: 6px; background: #f8fafc; color: #334155; font-family: inherit; font-size: inherit; line-height: 1.5; overflow-wrap: anywhere; }
+.project-page main > h2[id] { scroll-margin-top: 24px; }
 .publication-header { padding: 1.25rem 1.5rem 1.5rem; }
 .publication-title { max-width: 900px; margin-inline: auto; font-size: clamp(1.65rem, 3vw, 2.5rem); margin-bottom: 1.1rem; }
 .publication-links { margin-top: 1rem; }
@@ -7,17 +41,36 @@
 .section-title { margin-bottom: 1.5rem; padding-bottom: .9rem; }
 .section-title::after { background: var(--primary-color); }
 .prose { color: #475569; font-size: 1rem; line-height: 1.75; }
-.project-summary { padding: 0 1.5rem 1.75rem; }
-.project-summary > div { max-width: 960px; }
-.project-summary h2 { font-size: 1.1rem; margin-bottom: .85rem; }
-.summary-facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .7rem 1.25rem; padding-block: 1rem; margin: 0; border-block: 1px solid var(--border-color); font-size: .93rem; line-height: 1.6; }
+.project-summary { width: min(960px, calc(100% - 48px)); margin: 0 auto 20px; padding: 20px 24px; border: 1px solid #e2e8f0; border-radius: 8px; background: #f8fafc; scroll-margin-top: 24px; }
+.project-page .project-summary { width: 100%; margin-top: 24px; }
+.project-summary > div { max-width: none; }
+.project-summary h2 { font-size: 18px; line-height: 1.4; margin: 0 0 8px; }
+.summary-facts { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 0 20px; padding: 0; margin: 0; border: 0; font-size: 15px; line-height: 1.65; }
+.summary-facts dt, .summary-facts dd { padding: 10px 0; }
 .summary-facts dt { font-weight: 650; white-space: nowrap; }
 .summary-facts dd { margin: 0; color: #475569; }
+.summary-facts > :nth-child(n + 3) { border-top: 1px solid #e2e8f0; }
+.section-nav, .home-page .page-nav { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px 20px; padding-block: 14px; border-block: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6; }
+.section-nav { width: min(960px, calc(100% - 48px)); margin: 0 auto 32px; }
+.project-page .section-nav { width: 100%; }
+.section-nav a { font-size: inherit; text-decoration: none; }
 .teaser { padding-bottom: 2rem; }
+@media (max-width: 800px) {
+  .exosuit-overview-layout, .exosuit-sensor-media { grid-template-columns: minmax(0, 1fr); }
+  .project-page :is(.exosuit-overview-layout .exosuit-representative, .exosuit-sensor-media .exosuit-sensor-module) { width: 100%; max-width: 360px; margin-inline: auto; }
+}
 @media (max-width: 600px) {
   .publication-header { padding-top: .75rem; }
-  .summary-facts { grid-template-columns: 1fr; gap: .25rem; }
-  .summary-facts dd { margin-bottom: .65rem; }
-  .project-summary { padding-inline: 1.25rem; }
+  .project-page main { padding: 24px 16px; }
+  .home-page .project-label { padding: 4px; }
+  .home-page .project-thumbnail { padding: 0; }
+  .home-page .company-thumbnail { padding: 6px; gap: 6px; }
+  .company-project-label { font-size: 12px; }
+  .project-summary { width: calc(100% - 32px); padding: 16px; }
+  .summary-facts { grid-template-columns: 1fr; gap: 0; }
+  .summary-facts dt { padding: 10px 0 2px; }
+  .summary-facts dd { padding: 0 0 10px; }
+  .summary-facts > dd:nth-child(n + 3) { border-top: 0; }
+  .section-nav { width: calc(100% - 32px); gap: 8px 16px; }
   .section { padding-block: 2rem; }
 }

@@ -6,6 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="64x64" href="../assets/images/profile-favicon.png" />
     <title>DART: From Attentive Reasoning to Intuitive Execution for Experience-Driven Robot Intelligence</title>
     <meta name="description" content="DART reuses task-acquired scene-graph knowledge for object search and navigation on a robot vacuum, reducing repeated visual information acquisition in simulated and real-home evaluations." />
     <meta name="author" content="Seungyeop Lee, Yeeun Kim, Sooho Park, Seong Oh Lee, Jong Jin Park" />
@@ -135,7 +136,6 @@
         html { scroll-behavior: auto; }
         * { transition: none !important; }
       }
-    
       .publication-header { padding-top: 2.5rem; }
       .publication-title { font-size: clamp(1.8rem, 3.4vw, 2.65rem); line-height: 1.2; letter-spacing: -.025em; margin-bottom: 1.75rem; }
       .section-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.4rem; margin-top: 1.5rem; font-size: .9rem; }
@@ -217,12 +217,13 @@
               Video Overview
             </a>
           </div>
-          <nav class="section-nav" aria-label="On this page">
-            <a href="#summary">Summary</a><a href="#abstract">Abstract</a><a href="#video">Video</a><a href="#method">Method</a><a href="#experiments">Experiments</a><a href="#results">Results</a><a href="#contributions">My Contributions</a><a href="#discussion">Scope</a><a href="#bibtex">BibTeX</a>
-          </nav>
+
         </div>
       </header>
       <section class="project-summary" id="summary" aria-labelledby="summary-title"><div class="container"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Research question</dt><dd>How can a home robot reuse what it learns from earlier tasks to develop personalized, spatially adaptive robot intelligence?</dd><dt>My contribution</dt><dd>Developed system architecture; developed viewpoint selection and room type classification; integrated perception, VLM and navigation in Isaac Sim.</dd><dt>Key result</dt><dd>Real-Home task success: 87% vs. 66% for DART-Frozen, with 49.3% fewer VLM acquisition/description calls.</dd><dt>Evaluation</dt><dd>20 tasks × five iterations in each of two homes (one simulated, one real). Language-model inference runs on an external server.</dd></dl></div></section>
+<nav class="section-nav" aria-label="On this page">
+            <a href="#summary">Summary</a><a href="#abstract">Abstract</a><a href="#video">Video</a><a href="#method">Method</a><a href="#experiments">Experiments</a><a href="#results">Results</a><a href="#contributions">My Contributions</a><a href="#discussion">Scope</a><a href="#bibtex">BibTeX</a>
+          </nav>
 <section class="teaser" aria-label="DART framework overview">
         <figure class="container">
           <a class="image-link" href="../assets/dart/overview.png" aria-label="Open the full-size DART architecture figure"><img class="media" src="../assets/dart/overview.png" width="1362" height="482" alt="DART interaction layer parses a task; Intuitive Mode reuses stored knowledge; Attentive Mode acquires missing information and updates persistent scene-graph memory." /></a>

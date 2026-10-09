@@ -5,26 +5,28 @@ importance: 1
 display_category: Wearable Robotics / Embedded Control / Sensor Integration
 period: Dec. 2024 – Feb. 2025
 affiliation: Seoul National University, Wearable Robotics Laboratory
-summary: "Built sensor modules and a Jetson CAN pipeline for motor commands, feedback and logging. Sensor-to-command processing took 10 ms."
-role_summary: "Jetson control software, sensor module assembly, and sensor–motor integration."
+summary: "Developed a Jetson-based control and sensing pipeline for a tendon-driven lower-limb soft exosuit, integrating load-cell and IMU measurements with CAN-based motor commands, feedback, and logging. Sensor-to-motor command processing took 10 ms."
+role_summary: "Jetson control software, load-cell and IMU sensor modules, and sensor–motor integration."
 project_brief:
-  Engineering goal: Develop a Jetson-based sensor-to-motor control pipeline for a tendon-driven soft exosuit.
-  My contribution: Developed the Jetson program, assembled sensor modules, and connected and controlled the sensors and motor.
-  Key result: Established the basic pipeline with 10-ms sensor-to-command processing; observed motor-response delay with concurrent
-    sensor communication.
+  Engineering goal: Develop onboard sensing and motor-control infrastructure for a tendon-driven lower-limb soft exosuit.
+  My contribution: Developed Jetson control software, assembled load-cell and IMU sensor modules, and integrated CAN-based motor commands, feedback, and logging.
+  Key result: Established the basic sensor-to-motor control pipeline with 10-ms end-to-end command processing.
   Evaluation: Torque-profile bench tests and sensor timing checks.
 ---
 
 ## Overview
 
-This project established embedded control infrastructure for a lower-limb, tendon-driven soft exosuit at Seoul National University's Wearable Robotics Laboratory, supervised by Prof. Jinsoo Kim. A basic pipeline connects wearable sensor modules to motor commands, feedback, and data logging on an **NVIDIA Jetson Orin Nano**.
-
-The pipeline had a **10-ms end-to-end processing time** from the sensor module through motor-command generation. Motor response was evaluated separately through feedback measurements, which revealed delays during concurrent sensor communication.
-
-<figure class="uav-figure">
-  <a href="../assets/soft-exosuit/can-system-diagram.png" target="_blank" rel="noopener"><img src="../assets/soft-exosuit/can-system-diagram.png" width="3011" height="1343" alt="Jetson Orin Nano connected through a CAN transceiver to a T-Motor and a Feather M4 CAN board interfacing with a load cell and an IMU." decoding="async"></a>
-  <figcaption><span>Sensor-to-motor control pipeline</span> The Jetson exchanges motor commands and feedback over CAN while sensor modules provide load-cell and IMU measurements.</figcaption>
+<div class="exosuit-overview-layout">
+<figure class="uav-figure exosuit-representative">
+  <a href="../assets/soft-exosuit/exosuit-control-sensing-overview.png" target="_blank" rel="noopener" aria-label="Open the full-size soft exosuit illustration"><img src="../assets/soft-exosuit/exosuit-control-sensing-overview.png" width="1254" height="1254" alt="Tendon-driven lower-limb soft exosuit alongside a Jetson controller, motor, and load-cell and IMU sensor interfaces." loading="lazy" decoding="async"></a>
+  <figcaption><span>Soft exosuit and control hardware</span></figcaption>
 </figure>
+<div class="exosuit-overview-copy">
+  <p>This project established a <strong>sensor-to-motor control pipeline</strong> for a tendon-driven soft exosuit intended for <strong>lower-limb assistance</strong>. The system integrates <strong>load-cell and IMU measurements</strong> with CAN-based motor commands, feedback, and data logging on an <strong>NVIDIA Jetson Orin Nano</strong>.</p>
+  <p>The pipeline had a <strong>10-ms end-to-end processing time</strong>, measured from the sensor module through motor-command generation. Physical motor response was evaluated separately in the bench tests below.</p>
+  <p>The work was conducted at Seoul National University's Wearable Robotics Laboratory, supervised by Prof. Jinsoo Kim.</p>
+</div>
+</div>
 
 ## My Contributions
 
@@ -41,10 +43,16 @@ Initial communication tests used a bidirectional Jetson–Teensy connection over
 
 The sensor receiver supports two node groups. It decodes load-cell values, orientation quaternions, angular velocity, and acceleration into a shared latest-data state. Distinct CAN identifiers separate the sensor channels and motor feedback.
 
-<figure class="uav-figure uav-figure-medium">
+<div class="exosuit-sensor-media">
+<figure class="uav-figure">
+  <a href="../assets/soft-exosuit/can-system-diagram.png" target="_blank" rel="noopener"><img src="../assets/soft-exosuit/can-system-diagram.png" width="3011" height="1343" alt="Jetson Orin Nano connected through a CAN transceiver to a T-Motor and a Feather M4 CAN board interfacing with a load cell and an IMU." loading="lazy" decoding="async"></a>
+  <figcaption><span>Sensor-to-motor control pipeline</span> The Jetson exchanges motor commands and feedback over CAN while sensor modules provide load-cell and IMU measurements.</figcaption>
+</figure>
+<figure class="uav-figure exosuit-sensor-module">
   <a href="../assets/soft-exosuit/sensor-module.jpg" target="_blank" rel="noopener"><img src="../assets/soft-exosuit/sensor-module.jpg" width="732" height="684" alt="Assembled sensor module with a Feather M4 CAN board, IMU, load-cell interface, and power module mounted on a perforated board." loading="lazy" decoding="async"></a>
   <figcaption><span>Assembled sensor module</span> Sensor interfaces and power components mounted together for CAN communication with the Jetson.</figcaption>
 </figure>
+</div>
 
 ## Control Software and Data Logging
 

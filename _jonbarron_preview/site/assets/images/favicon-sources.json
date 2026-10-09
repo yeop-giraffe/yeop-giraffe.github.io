@@ -1,0 +1,16 @@
+{
+  "assets": [
+    {
+      "filename": "profile-favicon.png",
+      "source_filename": "lsy-profile.jpg",
+      "source_sha256": "366bc3ec3e90e19ec81fa916071a3db250ffaca218d72b4df54a3fdc999c7e5b",
+      "size": [
+        64,
+        64
+      ],
+      "method": "Native image downsampling to PNG for a browser tab icon. Full original portrait composition preserved; no generated content or recoloring.",
+      "sha256": "abfa58f52dcea6245b8f622c6de715bf7d825ea4124e9e69dc9c76ae53fa8bb8",
+      "usage": "Favicon on home, CV, and all project pages"
+    }
+  ]
+}

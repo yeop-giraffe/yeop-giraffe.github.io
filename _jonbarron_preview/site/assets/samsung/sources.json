@@ -1,0 +1,18 @@
+{
+  "assets": [
+    {
+      "filename": "samsung-wordmark-blue.png",
+      "source_filename": "Samsung_Orig_Wordmark_BLUE_RGB.png",
+      "method": "Unchanged user-provided PNG; wordmark aspect ratio and original colors preserved. HW/SW labels are separate HTML text.",
+      "size": [
+        1600,
+        425
+      ],
+      "sha256": "c4bd9477e460a2f924329aef53ff66e4d47b775a7d30f363dd73559586bb7a1c",
+      "usage": [
+        "Selected Projects: Hardware-in-the-Loop Simulation for Robot Vacuum Cleaners (SW)",
+        "Selected Projects: Robot Vacuum Cleaner Mechanism Development and Mass Production (HW)"
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 원본: https://github.com/jonbarron/jonbarron.github.io
 
-원본 `stylesheet.css`와 800px 폭의 소개/프로젝트 배치를 사용합니다. 프로필에는 제공한 `lsy_profile.jpg`를 사용합니다. 홈 목록의 DART·석사논문·UAV·Depth·LTA·Exosuit에는 원본 자료에서 가져온 대표 이미지를 사용하며, 나머지 Selected Projects는 글자 표시를 유지합니다.
+원본 `stylesheet.css`와 800px 폭의 소개/프로젝트 배치를 사용합니다. 프로필에는 제공한 `lsy_profile.jpg`를 사용합니다. 홈 목록의 DART·석사논문·UAV·Depth·LTA·Exosuit에는 프로젝트 대표 이미지를 사용합니다. 삼성의 HW·SW 두 프로젝트는 사용자가 제공한 Samsung 파란색 워드마크 원본과 별도의 HW·SW 텍스트를 조합합니다. 로고와 출처 기록은 `site/assets/samsung/`에 있습니다.
 
 ## 로컬 미리보기
 
@@ -18,7 +18,13 @@ http://127.0.0.1:4173 에서 확인합니다. `site/` 안의 HTML과 CSS를 저�
 
 홈페이지: `site/index.html` / 추가 스타일: `site/site.css` / CV: `site/cv.html` / 프로젝트: `site/projects/`
 
+브라우저 탭 아이콘은 원본 프로필 사진 전체를 64×64 PNG로 축소한 `site/assets/images/profile-favicon.png`입니다. 홈·CV·일반 프로젝트에는 생성기가 아이콘 링크를 추가하며, 독립 HTML 3개는 각각 직접 연결합니다. 원본 사진은 변경하지 않았고 출처는 `site/assets/images/favicon-sources.json`에 기록합니다.
+
+메인과 프로젝트의 공통 읽기 스타일은 `site/project-reading.css`에서 관리합니다. 본문은 16px, 프로젝트 요약은 15px이며, 상세 요약은 데스크톱에서 960px 폭, 모바일에서 한 열로 표시합니다. 모든 상세 페이지는 요약 다음에 섹션 바로가기를 배치합니다. 일반 프로젝트의 바로가기와 제목 앵커는 생성기가 만들고, 독립 HTML의 바로가기는 해당 페이지에서 관리합니다. 홈의 개인 GitHub 링크는 제거했으며, 삼성 프로젝트 대표 이미지는 Samsung 로고 아래 SW / HW 표기로 구분합니다. 템플릿 출처 링크는 유지합니다.
+
 ## 내용 수정 및 페이지 다시 생성하기
+
+일반 프로젝트 5개의 Skills는 본문 글꼴과 16px 크기를 사용하고, 각 항목을 테두리·배경·간격이 있는 태그로 구분합니다. 스타일은 `site/project-reading.css`의 `.project-page #skills + p` 규칙에서 관리하며 좁은 화면에서는 자동으로 줄을 바꿉니다. Skills 원문과 본문 내 코드 표기는 유지합니다.
 
 홈페이지 상단의 현재 커리어와 학력을 정리한 소개 문단은 `content/about.md`에서 수정합니다. 불릿으로 정리한 연구 관심 분야는 `content/research.md`, CV는 `content/cv.yml`, 프로젝트는 `content/projects/`에서 수정합니다. SOP의 학교별 지원 문구는 홈페이지에 포함하지 않습니다. 연구 관심과 앞으로의 목표는 완료한 성과와 구분해서 표현합니다.
 
@@ -84,9 +90,11 @@ Showing the Intended Flight Path는 왼쪽의 `integrated-interface-annotated.sv
 
 ## Soft Exosuit 프로젝트
 
-`content/projects/soft-exosuit-controller.md`에서 상세와 홈 요약을 관리합니다. WRL 랩미팅 자료 7개와 개발 백업의 최신 CSV 제어 프로그램을 확인해 Jetson Orin Nano·Feather M4 CAN 센서 모듈·SocketCAN·모터 명령과 피드백·비동기 CSV 기록을 설명합니다. 그림 6개와 내부 출처 기록은 `site/assets/soft-exosuit/`에 있습니다. 센서 모듈 사진을 홈 대표 이미지로도 사용합니다.
+`content/projects/soft-exosuit-controller.md`에서 상세와 홈 요약을 관리합니다. WRL 랩미팅 자료 7개와 개발 백업의 최신 CSV 제어 프로그램을 확인해 Jetson Orin Nano·Feather M4 CAN 센서 모듈·SocketCAN·모터 명령과 피드백·비동기 CSV 기록을 설명합니다. 상세 그림 6개와 내부 출처 기록은 `site/assets/soft-exosuit/`에 있습니다. 홈 대표 이미지는 Research Overview 7페이지 구성에 기반해 사용자가 승인한 `exosuit-control-sensing-overview.png`이며, AI 편집 방법과 원본 구성요소는 `sources.json`에 기록합니다. 상세의 원본 센서 모듈 사진과 CAN 구성도는 유지합니다. 홈 요약·상세 Overview는 하지 보조용 soft exosuit의 목적과 load cell·IMU → Jetson → 모터 제어 흐름을 먼저 설명하고, 상단 요약은 담당 업무와 10 ms 처리 결과를 강조합니다. 시험 그래프는 기존 후반 섹션에 유지합니다.
 
 사용자가 확인한 10 ms는 센서 모듈에서 모터 명령까지의 처리 시간입니다. 코드의 1 kHz 목표 설정이나 실제 모터 응답 시간과 구분하며, 모터 응답 지연을 관찰한 기초 파이프라인 구축까지를 성과로 기술합니다. 원본 코드·실험 로그·랩미팅 자료는 웹에 복사하지 않습니다.
+
+상세 Overview의 `exosuit-overview-layout`는 왼쪽 대표 이미지와 오른쪽 기존 설명을 약 30:70 폭으로 배치합니다. CAN 파이프라인은 Sensor Modules and Communication의 `exosuit-sensor-media`로 옮겨 왼쪽에, 기존 센서 모듈 사진은 오른쪽에 배치하고 두 이미지 높이를 맞춥니다. 800px 이하에서는 각 묶음을 세로로 배치하며, 이미지 클릭 시 원본 크기로 열립니다. 본문과 원본 이미지 파일은 유지합니다.
 
 ## 영어 PDF
 
