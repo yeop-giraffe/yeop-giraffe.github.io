@@ -7,6 +7,7 @@
 .home-page .activity-entry h3 { font-size: 16px; }
 .home-page .activity-entry .activity-date { font-size: 13px; }
 .home-page .activity-meta { font-size: 15px; }
+.home-page .activity-entry .activity-links { display: inline-block; font-size: 14px; white-space: nowrap; }
 .home-page .project-label { text-align: center; padding: 12px; line-height: 1.35; }
 .home-page .project-thumbnail { padding: 0; }
 .home-page .company-thumbnail { display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; }

@@ -144,6 +144,9 @@ cv:
         location: South Korea
         start_date: Aug. 2019
         end_date: Dec. 2021
+        homepage_links:
+          - label: Club Instagram
+            url: https://www.instagram.com/horangnabi_ku/
         highlights:
           - Founded Korea University's first model aircraft club and led UAV projects, operations, and undergraduate study activities.
       - name: Korea Robot Aircraft Competition
