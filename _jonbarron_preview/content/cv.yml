@@ -139,6 +139,7 @@ cv:
         note: Poster presentation.
     Selected Projects & Leadership:
       - name: Horang-Nabi Model Aircraft Club Foundation
+        homepage_title: Founding Korea University’s First Model Aircraft Club
         company: Korea University
         position: Founder & President
         location: South Korea
@@ -163,6 +164,8 @@ cv:
         location: South Korea
         start_date: Nov. 2019
         end_date: Nov. 2020
+        homepage_highlights:
+          - Led a team to design and build a scale aircraft for the 21st national university model aircraft competition. Received Third Prize (Nov. 2020).
         highlights:
           - Led a team to design and build a scale aircraft for the 21st national university model aircraft competition.
       - name: Social Economy Engineering Ideas Competition
@@ -179,6 +182,8 @@ cv:
         location: South Korea
         start_date: Jan. 2020
         end_date: Oct. 2020
+        homepage_highlights:
+          - Developed a drone education program for high school and university students as a campus start-up initiative. Received First Prize (Jun. 2020).
         highlights:
           - Developed a drone education program for high school and university students as a campus start-up initiative.
     Awards and Honors:

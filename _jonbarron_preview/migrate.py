@@ -267,10 +267,10 @@ for data, body, slug in projects:
         project_rows += card
 
 def activity_html(item):
-    title = item.get('name', item.get('title', ''))
+    title = item.get('homepage_title', item.get('name', item.get('title', '')))
     dates = item.get('dates') or item.get('date') or ' – '.join(str(item[key]) for key in ('start_date', 'end_date') if item.get(key))
     context = ' · '.join(str(item[key]) for key in ('position', 'company') if item.get(key))
-    details = ''.join(f'<p>{esc(detail)}</p>' for detail in item.get('highlights', []))
+    details = ''.join(f'<p>{esc(detail)}</p>' for detail in item.get('homepage_highlights', item.get('highlights', [])))
     links = ' / '.join(f'<a href="{esc(link["url"])}" target="_blank" rel="noopener noreferrer">{esc(link["label"])}</a>' for link in item.get('homepage_links', []))
     links_html = f' <span class="activity-links">· {links}</span>' if links and context else f'<span class="activity-links">{links}</span>' if links else ''
     context_html = f'<p class="activity-meta">{esc(context)}{links_html}</p>' if context or links else ''
