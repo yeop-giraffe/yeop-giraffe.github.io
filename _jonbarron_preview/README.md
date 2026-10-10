@@ -28,14 +28,9 @@ http://127.0.0.1:4173 에서 확인합니다. `site/` 안의 HTML과 CSS를 저�
 
 홈페이지 상단의 현재 커리어와 학력을 정리한 소개 문단은 `content/about.md`에서 수정합니다. 불릿으로 정리한 연구 관심 분야는 `content/research.md`, CV는 `content/cv.yml`, 프로젝트는 `content/projects/`에서 수정합니다. SOP의 학교별 지원 문구는 홈페이지에 포함하지 않습니다. 연구 관심과 앞으로의 목표는 완료한 성과와 구분해서 표현합니다.
 
-웹 CV와 다운로드용 CV PDF는 `content/cv.yml`에서 관리합니다. 홈페이지와 CV 페이지의 다운로드 링크는 `site/assets/documents/Seungyeop_Lee_CV.pdf`입니다. 제공한 DOCX 원본은 `site/assets/documents/Seungyeop_Lee_CV_v3.docx`에 보존하며 수정하지 않습니다.
+메인의 연락처 링크는 Email / CV / LinkedIn입니다. `CV`는 사용자가 2026-10-11 제공한 `site/assets/documents/CV_SeungyeopLee.pdf` 원본을 새 탭에서 열며, 별도의 `CV PDF` 링크는 제거했습니다. PDF와 LinkedIn 주소는 `content/cv.yml`의 `download`·`source_download`·`linkedin`에서 관리합니다. 새 CV를 받을 때는 원본 PDF를 해당 경로에 복사하고 재생성합니다. 제공된 PDF를 `build_cv.py`로 다시 만들거나 덮어쓰지 않습니다.
 
-CV 내용을 갱신할 때는 아래 명령으로 PDF도 다시 생성하고 공개 폴더에 복사합니다. `requirements.txt`에는 PDF 생성용 ReportLab이 포함되어 있습니다.
-
-```powershell
-python _jonbarron_preview/build_cv.py
-Copy-Item output/pdf/Seungyeop_Lee_CV.pdf _jonbarron_preview/site/assets/documents/Seungyeop_Lee_CV.pdf
-```
+기존 웹 CV(`site/cv.html`)는 이전처럼 `content/cv.yml`에서 생성하고 다운로드 링크는 최신 제공 PDF로 연결합니다. 이전 DOCX와 생성 PDF는 보존합니다. `build_cv.py`는 이전 CV 생성 도구이며, 현재 메인에서 연결하는 제공 PDF의 편집 도구가 아닙니다.
 
 홈페이지는 논문·발표가 연결된 프로젝트를 `Publications & Presentations`에, 논문이 없는 프로젝트를 `Selected Projects`에 나누어 표시합니다. 논문과 발표는 관련 프로젝트 안에 통합해 한 번씩 표시합니다. 제목·저자·학회·심사 상태는 `content/cv.yml`의 논문 목록에서 관리하고, 프로젝트 앞부분의 `publications`에 해당 논문의 `id`를 지정합니다. CV 페이지에는 전체 논문 목록이 유지됩니다.
 

@@ -288,7 +288,7 @@ teaching_html = ''.join(activity_html(item) for item in cv['sections']['Teaching
 
 content = f'''<section class="intro">
   <div><h1 class="name">{esc(cv['name'])}</h1>{intro}
-  <nav class="contact" aria-label="Contact and CV"><a href="mailto:{esc(cv['email'])}">Email</a> / <a href="cv.html">CV</a> / <a href="{esc(download)}" download>CV PDF</a></nav></div>
+  <nav class="contact" aria-label="Contact and CV"><a href="mailto:{esc(cv['email'])}">Email</a> / <a href="{esc(download)}" target="_blank" rel="noopener noreferrer">CV</a> / <a href="{esc(cv['linkedin'])}" target="_blank" rel="noopener noreferrer">LinkedIn</a></nav></div>
   <div class="profile"><img class="profile-photo" src="assets/images/lsy-profile.jpg" width="800" height="800" alt="Portrait of Seungyeop Lee by the sea" fetchpriority="high" decoding="async"></div>
 </section>
 <section class="research-interests"><h2>Research Interests</h2>{research}</section>

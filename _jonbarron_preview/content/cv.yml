@@ -3,10 +3,11 @@ cv:
   name: Seungyeop Lee
   label: Software Engineer, Samsung Electronics
   email: yeoplee0906@gmail.com
+  linkedin: https://www.linkedin.com/in/seungyeop-lee-1b4663252/
   phone: "+82 (0)10-9132-4163"
   location: Suwon, Republic of Korea
-  download: assets/documents/Seungyeop_Lee_CV.pdf
-  source_download: assets/documents/Seungyeop_Lee_CV_v3.docx
+  download: assets/documents/CV_SeungyeopLee.pdf
+  source_download: assets/documents/CV_SeungyeopLee.pdf
   sections:
     Research Interests:
       - name: Lower-limb wearable robots, vision-based perception, and human-robot interaction

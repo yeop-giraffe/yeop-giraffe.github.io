@@ -11,6 +11,7 @@
 
 ## 현재 상태
 
+- 2026-10-11 CV·LinkedIn 변경 및 공개 반영 요청: 메인 연락처를 Email / CV / LinkedIn으로 정리한다. `CV`는 사용자가 제공한 `CV_SeungyeopLee.pdf` 원본을 새 탭에서 열고 별도의 `CV PDF` 링크는 제거한다. 파일은 `site/assets/documents/CV_SeungyeopLee.pdf`에 변경 없이 보존하고, 제공 PDF를 이전 CV 생성기로 덮어쓰지 않는다. LinkedIn은 사용자 지정 프로필 주소로 연결한다. 기존 웹 CV·원본 자료는 보존하며, 이번 변경은 사용자의 명시적 요청에 따라 푸시한다.
 - 2026-10-09 공개 반영 요청: 사용자가 누적 로컬 변경을 푸시하도록 명시적으로 요청했다. 이번 대상은 공통 요약·본문·바로가기 서식, Exosuit 대표 이미지·설명·최종 배치, 삼성 HW·SW 로고, 프로필 탭 아이콘, Skills 태그 및 홈 GitHub 링크 제거다. 아래의 로컬 상태 기록은 각 작업 당시 상태이며 이번 요청으로 함께 공개한다. 이후 새 수정도 별도 푸시 요청 전까지는 로컬에서 진행한다.
 - 2026-10-09 Skills 서식: 일반 프로젝트 5개의 Skills를 본문과 같은 글꼴·16px 크기로 맞추고, 각 스킬에 옅은 배경·테두리와 8px 간격을 적용했다. 좁은 화면에서 태그는 줄바꿈되며, Skills 텍스트·기존 HTML·논문 상세 페이지와 본문 코드 표기는 유지한다. 로컬에서 확인하고 푸시는 하지 않는다.
 - 2026-10-09 Exosuit 상세 이미지 최종 배치: Overview는 대표 이미지 왼쪽·기존 설명 오른쪽으로 배치한다. Sensor-to-motor control pipeline은 Sensor Modules and Communication으로 옮겨 센서 모듈 사진 왼쪽에 배치하고 두 이미지 높이를 맞춘다. 800px 이하에서는 각 묶음을 세로로 배치한다. 원본 확대 링크를 유지하고 이미지 파일·기존 본문은 보존했다. 로컬 작업이다.
@@ -24,7 +25,7 @@
 - 프로젝트 8개의 내용이 준비되어 있다. DART·Depth·석사논문은 Academic Project Page Template 기반 독립 HTML이며, 나머지는 생성기가 만드는 페이지다.
 - `_project_page_template/index.html`은 재사용할 빈 단일 HTML 템플릿이다. 모든 프로젝트가 이 템플릿으로 전환된 상태는 아니다.
 - 이전 요청의 공개 배포와 ICROS·석사논문 영어 PDF 게시를 완료했다. ICROS는 원본 영어 제목을 유지하고 번역 노트를 생략하며, 석사논문은 전체 내용을 36페이지로 재배치하고 목차를 갱신했다.
-- 홈페이지에는 Leadership와 Teaching & Mentoring이 있다. PhD 지원용 검토에서 연구 방향·개인 기여를 보강하고, 모든 프로젝트 상단에 요약을 추가했다. 웹 CV와 다운로드용 CV PDF는 같은 `content/cv.yml`에서 생성한다. 세부 평가는 `docs/research-website-review-2026-10-07.md`에 있다.
+- 홈페이지에는 Leadership와 Teaching & Mentoring이 있다. PhD 지원용 검토에서 연구 방향·개인 기여를 보강하고, 모든 프로젝트 상단에 요약을 추가했다. 웹 CV는 `content/cv.yml`에서 생성하며, 현재 메인의 CV 링크는 2026-10-11 제공된 PDF 원본을 사용한다. 세부 평가는 `docs/research-website-review-2026-10-07.md`에 있다.
 
 ## 역할과 파일 범위
 
