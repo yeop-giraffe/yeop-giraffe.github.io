@@ -24,7 +24,24 @@ def author_html(author, highlight=False):
 
 def page(title, content, prefix='', description='', body_class='', canonical_path=''):
     reading_css = f'\n  <link rel="stylesheet" href="{prefix}project-reading.css">' if body_class in ('home-page', 'project-page') else ''
-    social_title = f'\n  <meta property="og:title" content="{esc(title)}">\n  <meta name="twitter:title" content="{esc(title)}">' if body_class == 'home-page' else ''
+    social_meta = ''
+    if body_class == 'home-page':
+        social_image = 'https://yeop-giraffe.github.io/assets/images/lsy-profile.jpg'
+        social_meta = f'''
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yeop-giraffe.github.io/">
+  <meta property="og:title" content="{esc(title)}">
+  <meta property="og:description" content="{esc(description)}">
+  <meta property="og:image" content="{social_image}">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="Portrait of Seungyeop Lee by the sea">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{esc(title)}">
+  <meta name="twitter:description" content="{esc(description)}">
+  <meta name="twitter:image" content="{social_image}">
+  <meta name="twitter:image:alt" content="Portrait of Seungyeop Lee by the sea">'''
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -33,7 +50,7 @@ def page(title, content, prefix='', description='', body_class='', canonical_pat
   <meta name="author" content="Seungyeop Lee">
   <meta name="description" content="{esc(description)}">
   <link rel="icon" type="image/png" sizes="64x64" href="{prefix}assets/images/profile-favicon.png">
-  <title>{esc(title)}</title>{social_title}
+  <title>{esc(title)}</title>{social_meta}
   <link rel="canonical" href="https://yeop-giraffe.github.io/{esc(canonical_path)}">
   <link rel="stylesheet" href="{prefix}stylesheet.css">
   <link rel="stylesheet" href="{prefix}site.css">{reading_css}
