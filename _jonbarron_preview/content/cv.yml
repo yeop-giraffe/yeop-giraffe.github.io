@@ -150,7 +150,7 @@ cv:
           - label: Club Instagram
             url: https://www.instagram.com/horangnabi_ku/
         highlights:
-          - Founded Korea University's first model aircraft club and led UAV projects, operations, and undergraduate study activities.
+          - Founded Korea University's first model aircraft club and led team building and UAV projects.
       - name: Korea Robot Aircraft Competition
         company: Korea Aerospace Industries Association
         position: Computer Vision Development
@@ -184,9 +184,9 @@ cv:
         start_date: Jan. 2020
         end_date: Oct. 2020
         homepage_highlights:
-          - Developed a drone education program for high school and university students as a campus start-up initiative. Received First Prize (Jun. 2020).
+          - Developed a campus drone education program for high school and university students. Received First Prize (Jun. 2020).
         highlights:
-          - Developed a drone education program for high school and university students as a campus start-up initiative.
+          - Developed a campus drone education program for high school and university students.
     Awards and Honors:
       - title: Intelligent Robotics Overseas Research Fellowship
         start_date: Sep. 2023
@@ -214,17 +214,25 @@ cv:
         keywords: [Python, C++, ROS, MATLAB, "Microprocessors (Jetson, Arduino, Raspberry Pi)"]
     Teaching and Mentoring:
       - title: Teaching Assistant, Dynamics
+        company: Korea University
         date: Fall 2024
         highlights:
           - Taught two-link manipulator modeling using Adams simulation.
       - title: Teaching Assistant, Robotics
+        company: Korea University
         dates: Spring 2023, Spring 2024
         highlights:
           - Taught Adams simulation, Raspberry Pi, and PID-based DC motor control.
-      - title: Robotics Career Mentor, SC Joint Career Consulting
-        date: Mar. 17, 2026
+      - title: Robotics Career Mentor, Sector Council (SC) Mentoring Program
+        date: Mar. 2026
         highlights:
-          - Participated in a government-supported career mentoring event as a Samsung Electronics engineer.
+          - Led a session in a government-supported career mentoring event as a Samsung Electronics engineer.
+      - title: Model Aircraft Team Mentor, Horang-Nabi
+        company: Korea University
+        start_date: Jan. 2022
+        end_date: Aug. 2022
+        highlights:
+          - Mentored a club team on the structural design of a model aircraft.
     References:
       - name: Dr. Shinsuk Park
         position: Professor, Department of Mechanical Engineering
