@@ -11,6 +11,7 @@
 
 ## 현재 상태
 
+- 2026-10-29 CV PDF 교체 및 공개 반영 요청: 사용자가 제공한 최신 `C:/Users/Seungyeop/Desktop/유학/지원자료/CV_SeungyeopLee.pdf`를 동일한 웹 자산 경로에 원본 바이트 그대로 복사했다. 2페이지 PDF이며 SHA-256은 `6e027f5a3db25eaa58c38dac643b8c4c598f370a060ca98b508e0f3777be6dfa`다. 기존 메인 CV 링크를 유지하고 다른 페이지 내용은 변경하지 않는다. 사용자의 명시적 요청에 따라 푸시·공개 반영한다.
 - 2026-10-15 Leadership·Teaching & Mentoring 로컬 갱신: 외부 원본 `C:/Users/Seungyeop/Desktop/유학/지원자료/Seungyeop_Lee_CV_v7.docx`의 해당 항목을 확인했다. 동아리 설명은 팀 구성과 UAV 프로젝트 운영으로, DRONEDU는 캠퍼스 드론 교육 프로그램으로 정리한다. SC는 Sector Council (SC) Mentoring Program의 세션 진행 역할과 2026년 3월로 갱신하고, Horang-Nabi 모형항공기 팀의 구조 설계 멘토링(2022년 1–8월)을 추가한다. 조교의 Korea University 소속을 표시하며 기존 학기 표기·Founding 제목·Instagram 링크·수상 문장을 유지한다. 원본 문서·현재 연결된 CV PDF는 변경하지 않는다. 로컬 검수를 마쳤으며, 사용자의 후속 푸시 요청에 따라 이번 변경을 공개 반영한다.
 - 2026-10-11 링크 미리보기 이미지 및 공개 반영 요청: 메인 페이지의 Open Graph·Twitter 이미지에 기존 800×800 프로필 사진의 공개 HTTPS 주소를 지정한다. 제목·설명·대표 URL도 함께 명시하며 삼성 로고가 미리보기로 선택되는 것을 피하도록 대표 이미지를 설정한다. 사진 원본과 화면 배치는 변경하지 않고, 사용자의 요청에 따라 푸시한다. 공유 앱의 기존 캐시가 바로 갱신되는지는 별도로 확인해야 한다.
 - 2026-10-11 CV·LinkedIn 변경 및 공개 반영 요청: 메인 연락처를 Email / CV / LinkedIn으로 정리한다. `CV`는 사용자가 제공한 `CV_SeungyeopLee.pdf` 원본을 새 탭에서 열고 별도의 `CV PDF` 링크는 제거한다. 파일은 `site/assets/documents/CV_SeungyeopLee.pdf`에 변경 없이 보존하고, 제공 PDF를 이전 CV 생성기로 덮어쓰지 않는다. LinkedIn은 사용자 지정 프로필 주소로 연결한다. 기존 웹 CV·원본 자료는 보존하며, 이번 변경은 사용자의 명시적 요청에 따라 푸시한다.
