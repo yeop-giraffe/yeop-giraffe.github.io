@@ -4,19 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Seungyeop Lee">
-  <meta name="description" content="Hardware-in-the-loop integration of a physical controller, production robot software and Isaac Sim sensors at Samsung Electronics.">
+  <meta name="description" content="Iterative controller refinement for robot vacuum cleaners using threshold-climbing simulation feedback, an LLM, and an Isaac Sim hardware-in-the-loop test environment.">
   <link rel="icon" type="image/png" sizes="64x64" href="../assets/images/profile-favicon.png">
-  <title>Hardware-in-the-Loop Simulation for Robot Vacuum Cleaners | Seungyeop Lee</title>
+  <title>HIL-Based Controller Refinement for Robot Vacuum Cleaners | Seungyeop Lee</title>
   <link rel="canonical" href="https://yeop-giraffe.github.io/projects/hardware-in-the-loop.html">
   <link rel="stylesheet" href="../stylesheet.css">
   <link rel="stylesheet" href="../site.css">
   <link rel="stylesheet" href="../project-reading.css">
 </head>
 <body class="project-page">
-<main><nav><a href="../index.html#projects">← Selected Projects</a></nav><h1>Hardware-in-the-Loop Simulation for Robot Vacuum Cleaners</h1><p class="muted">System Integration / HIL / NVIDIA Isaac Sim</p><p class="project-context">Samsung Electronics, Robot Vacuum Cleaner Development Lab · May 2026 – Present</p><section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Engineering goal</dt><dd>Connect production robot control hardware and software to a simulated sensor environment.</dd><dt>My contribution</dt><dd>Integrated the controller board, production control software and Isaac Sim sensor inputs with Samsung R&amp;D Institute-Delhi.</dd><dt>Outcome</dt><dd>An integrated hardware-in-the-loop test system for robot vacuum cleaners.</dd></dl></section><nav class="section-nav" aria-label="On this page"><a href="#summary">Summary</a><a href="#overview">Overview</a><a href="#test-system">Test System</a><a href="#my-contribution">My Contribution</a><a href="#skills">Skills</a></nav><h2 id="overview">Overview</h2>
-<p>Developed at Samsung Electronics in collaboration with <strong>Samsung R&amp;D Institute-Delhi</strong>, this <strong>NVIDIA Isaac Sim-based hardware-in-the-loop (HIL) test system</strong> connects physical control hardware and production control software to simulated robot sensors.</p>
-<h2 id="test-system">Test System</h2>
-<p>The setup keeps the physical controller and production control software in the test loop, while Isaac Sim supplies simulated sensor observations.</p>
+<main><nav><a href="../index.html#projects">← Selected Projects</a></nav><h1>HIL-Based Controller Refinement for Robot Vacuum Cleaners</h1><p class="muted">Robot Control / LLM-Based Refinement / HIL</p><p class="project-context">Samsung Electronics, Robot Vacuum Cleaner SW Lab · May 2026 – Present</p><section class="project-summary" id="summary" aria-labelledby="summary-title"><h2 id="summary-title">Project Summary</h2><dl class="summary-facts"><dt>Engineering goal</dt><dd>Improve threshold-crossing reliability through iterative controller refinement using simulation feedback.</dd><dt>My contribution</dt><dd>HIL system integration, threshold-climbing evaluation, and development of the LLM-based refinement loop.</dd><dt>Status</dt><dd>Built the HIL test system with Samsung R&amp;D Institute-Delhi; controller refinement is ongoing.</dd></dl></section><nav class="section-nav" aria-label="On this page"><a href="#summary">Summary</a><a href="#overview">Overview</a><a href="#controller-refinement-workflow">Controller Refinement Workflow</a><a href="#hil-test-environment">HIL Test Environment</a><a href="#my-contributions">My Contributions</a><a href="#skills">Skills</a></nav><h2 id="overview">Overview</h2>
+<p>At Samsung Electronics' <strong>Robot Vacuum Cleaner SW Lab</strong>, this work uses an <strong>NVIDIA Isaac Sim-based hardware-in-the-loop (HIL) test system</strong> to support iterative controller refinement for threshold crossing.</p>
+<p>The HIL system, built in collaboration with <strong>Samsung R&amp;D Institute-Delhi</strong>, connects physical control hardware and production control software to simulated robot sensors. Current work develops an <strong>LLM-based refinement loop</strong> that uses threshold-climbing simulation feedback to guide controller-code revisions within this workflow.</p>
+<h2 id="controller-refinement-workflow">Controller Refinement Workflow</h2>
+<p>Threshold-climbing evaluations in <strong>NVIDIA Isaac Sim</strong> characterize the robot vacuum's traversal performance and failure modes. These observations provide simulation feedback for controller refinement.</p>
+<p>An <strong>LLM-based loop</strong> is being developed to analyze this feedback and iteratively revise controller code. The goal is to improve threshold-crossing reliability through repeated evaluation and code refinement.</p>
+<h2 id="hil-test-environment">HIL Test Environment</h2>
+<p>The HIL setup keeps the physical controller and production control software in the test loop, while Isaac Sim supplies simulated sensor observations.</p>
 <table>
 <thead>
 <tr>
@@ -39,10 +43,14 @@
 </tr>
 </tbody>
 </table>
-<h2 id="my-contribution">My Contribution</h2>
-<p>Integration responsibilities covered the physical controller board, production control software and Isaac Sim sensor inputs. System setup was carried out in collaboration with Samsung R&amp;D Institute-Delhi.</p>
+<h2 id="my-contributions">My Contributions</h2>
+<ul>
+<li>Built the HIL test system by integrating the physical controller board, production control software, and Isaac Sim sensor inputs in collaboration with Samsung R&amp;D Institute-Delhi.</li>
+<li>Evaluating the threshold-climbing mechanism in Isaac Sim to characterize traversal performance and failure modes as feedback for controller refinement.</li>
+<li>Developing the LLM-based loop to analyze this feedback and iteratively revise controller code.</li>
+</ul>
 <h2 id="skills">Skills</h2>
-<p><code>Hardware-in-the-Loop</code> <code>NVIDIA Isaac Sim</code> <code>Robot Software</code> <code>System Integration</code> <code>Simulation Validation</code></p></main>
+<p><code>LLM-Based Controller Refinement</code> <code>Robot Control</code> <code>NVIDIA Isaac Sim</code> <code>Hardware-in-the-Loop</code> <code>System Integration</code> <code>Simulation Evaluation</code></p></main>
 <footer>Website template by <a href="https://github.com/jonbarron/jonbarron.github.io">Jon Barron</a>.</footer>
 </body>
 </html>

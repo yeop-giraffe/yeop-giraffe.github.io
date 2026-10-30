@@ -1,26 +1,33 @@
 ---
-title: Hardware-in-the-Loop Simulation for Robot Vacuum Cleaners
-description: Hardware-in-the-loop integration of a physical controller, production robot software and Isaac Sim sensors at Samsung Electronics.
+title: HIL-Based Controller Refinement for Robot Vacuum Cleaners
+description: Iterative controller refinement for robot vacuum cleaners using threshold-climbing simulation feedback, an LLM, and an Isaac Sim hardware-in-the-loop test environment.
 importance: 4
-display_category: System Integration / HIL / NVIDIA Isaac Sim
+display_category: Robot Control / LLM-Based Refinement / HIL
 period: May 2026 – Present
-affiliation: Samsung Electronics, Robot Vacuum Cleaner Development Lab
-summary: Built an Isaac Sim-based HIL test system with Samsung R&D Institute-Delhi, integrating a physical controller board and production control software with simulated robot sensors.
-role_summary: "Controller board and production software integration with Isaac Sim sensor inputs."
+affiliation: Samsung Electronics, Robot Vacuum Cleaner SW Lab
+summary: Developing an LLM-based controller refinement loop on an Isaac Sim HIL test system. Simulation feedback from threshold-climbing evaluation guides iterative code revisions, with the goal of improving threshold-crossing reliability.
+role_summary: "Built the HIL test environment with Samsung R&D Institute-Delhi; evaluating threshold climbing and developing the LLM-based refinement loop."
 project_brief:
-  Engineering goal: Connect production robot control hardware and software to a simulated sensor environment.
-  My contribution: Integrated the controller board, production control software and Isaac Sim sensor inputs with Samsung R&D
-    Institute-Delhi.
-  Outcome: An integrated hardware-in-the-loop test system for robot vacuum cleaners.
+  Engineering goal: Improve threshold-crossing reliability through iterative controller refinement using simulation feedback.
+  My contribution: HIL system integration, threshold-climbing evaluation, and development of the LLM-based refinement loop.
+  Status: Built the HIL test system with Samsung R&D Institute-Delhi; controller refinement is ongoing.
 ---
 
 ## Overview
 
-Developed at Samsung Electronics in collaboration with **Samsung R&D Institute-Delhi**, this **NVIDIA Isaac Sim-based hardware-in-the-loop (HIL) test system** connects physical control hardware and production control software to simulated robot sensors.
+At Samsung Electronics' **Robot Vacuum Cleaner SW Lab**, this work uses an **NVIDIA Isaac Sim-based hardware-in-the-loop (HIL) test system** to support iterative controller refinement for threshold crossing.
 
-## Test System
+The HIL system, built in collaboration with **Samsung R&D Institute-Delhi**, connects physical control hardware and production control software to simulated robot sensors. Current work develops an **LLM-based refinement loop** that uses threshold-climbing simulation feedback to guide controller-code revisions within this workflow.
 
-The setup keeps the physical controller and production control software in the test loop, while Isaac Sim supplies simulated sensor observations.
+## Controller Refinement Workflow
+
+Threshold-climbing evaluations in **NVIDIA Isaac Sim** characterize the robot vacuum's traversal performance and failure modes. These observations provide simulation feedback for controller refinement.
+
+An **LLM-based loop** is being developed to analyze this feedback and iteratively revise controller code. The goal is to improve threshold-crossing reliability through repeated evaluation and code refinement.
+
+## HIL Test Environment
+
+The HIL setup keeps the physical controller and production control software in the test loop, while Isaac Sim supplies simulated sensor observations.
 
 | Component | Role in the HIL setup |
 | --- | --- |
@@ -28,10 +35,12 @@ The setup keeps the physical controller and production control software in the t
 | Production control software | Integrates the robot-control software used in the product. |
 | NVIDIA Isaac Sim | Provides simulated robot sensor inputs. |
 
-## My Contribution
+## My Contributions
 
-Integration responsibilities covered the physical controller board, production control software and Isaac Sim sensor inputs. System setup was carried out in collaboration with Samsung R&D Institute-Delhi.
+- Built the HIL test system by integrating the physical controller board, production control software, and Isaac Sim sensor inputs in collaboration with Samsung R&D Institute-Delhi.
+- Evaluating the threshold-climbing mechanism in Isaac Sim to characterize traversal performance and failure modes as feedback for controller refinement.
+- Developing the LLM-based loop to analyze this feedback and iteratively revise controller code.
 
 ## Skills
 
-`Hardware-in-the-Loop` `NVIDIA Isaac Sim` `Robot Software` `System Integration` `Simulation Validation`
+`LLM-Based Controller Refinement` `Robot Control` `NVIDIA Isaac Sim` `Hardware-in-the-Loop` `System Integration` `Simulation Evaluation`
