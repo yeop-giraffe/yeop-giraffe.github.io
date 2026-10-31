@@ -11,6 +11,7 @@
 
 ## 현재 상태
 
+- 2026-10-31 Leadership·Teaching & Mentoring 내부 줄간격 로컬 조정: 사용자 후속 설명에 따라 활동 사이의 24px 여백은 유지한다. 각 활동 안의 줄 높이는 1.75에서 1.6으로, 날짜를 제외한 소속·설명 문단의 위 여백은 6px에서 4px로 줄인다. 글자 크기·내용·다른 섹션의 간격은 변경하지 않는다. 데스크톱·모바일 로컬 검수를 마쳤으며 사용자의 후속 푸시 요청에 따라 공개 반영한다. 서식은 `site/project-reading.css`에서 관리한다.
 - 2026-10-31 삼성 SW 프로젝트 로컬 확장: 최신 `CV_SeungyeopLee.pdf`를 확인하고, 같은 업무라는 사용자 설명에 따라 기존 `hardware-in-the-loop.html`을 HIL-Based Controller Refinement for Robot Vacuum Cleaners로 정리한다. HIL은 시험 환경, Isaac Sim 문턱 등반 평가는 simulation feedback 확보, LLM 기반 controller-code revision은 반복 개선 단계로 하나의 흐름에서 설명한다. 기존 HIL 구축 및 Samsung R&D Institute-Delhi 협업을 보존하며 controller refinement는 진행 중으로 표시한다. 메인 카드·상단 요약·상세·Skills와 SW Lab 소속을 함께 갱신한다. 새 성능 수치나 실기 검증 결과는 추가하지 않는다. 기존 URL과 삼성 로고를 유지한다. 로컬 검수를 마쳤으며 사용자의 후속 푸시 요청에 따라 공개 반영한다.
 - 2026-10-29 CV PDF 교체 및 공개 반영 요청: 사용자가 제공한 최신 `C:/Users/Seungyeop/Desktop/유학/지원자료/CV_SeungyeopLee.pdf`를 동일한 웹 자산 경로에 원본 바이트 그대로 복사했다. 2페이지 PDF이며 SHA-256은 `6e027f5a3db25eaa58c38dac643b8c4c598f370a060ca98b508e0f3777be6dfa`다. 기존 메인 CV 링크를 유지하고 다른 페이지 내용은 변경하지 않는다. 사용자의 명시적 요청에 따라 푸시·공개 반영한다.
 - 2026-10-15 Leadership·Teaching & Mentoring 로컬 갱신: 외부 원본 `C:/Users/Seungyeop/Desktop/유학/지원자료/Seungyeop_Lee_CV_v7.docx`의 해당 항목을 확인했다. 동아리 설명은 팀 구성과 UAV 프로젝트 운영으로, DRONEDU는 캠퍼스 드론 교육 프로그램으로 정리한다. SC는 Sector Council (SC) Mentoring Program의 세션 진행 역할과 2026년 3월로 갱신하고, Horang-Nabi 모형항공기 팀의 구조 설계 멘토링(2022년 1–8월)을 추가한다. 조교의 Korea University 소속을 표시하며 기존 학기 표기·Founding 제목·Instagram 링크·수상 문장을 유지한다. 원본 문서·현재 연결된 CV PDF는 변경하지 않는다. 로컬 검수를 마쳤으며, 사용자의 후속 푸시 요청에 따라 이번 변경을 공개 반영한다.

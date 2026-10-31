@@ -4,6 +4,8 @@
 .project-page :is(p, a, li, strong, td, th) { font-size: inherit; }
 .home-page .papertitle { font-size: 16px; line-height: 1.5; }
 .home-page .project-contribution { font-size: 15px; line-height: 1.65; }
+.home-page .activity-entry { line-height: 1.6; }
+.home-page .activity-entry p:not(.activity-date) { margin-top: 4px; }
 .home-page .activity-entry h3 { font-size: 16px; }
 .home-page .activity-entry .activity-date { font-size: 13px; }
 .home-page .activity-meta { font-size: 15px; }
